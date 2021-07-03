@@ -1,0 +1,7 @@
+Ian Ronaldo,0,1116877810,N,N
+Monica Riano,19,1002557005,N,S
+Ignacio Rivas,20,22.222.222-2,N,S
+Vicente Pérez,21,33.333.333-3,N,N
+Ivan Ramirez,22,1116872698,S,N
+Diego Duarte,24,11.111.111-1,N,N
+Rubén Sánchez,34,44.444.444-1,N,N
