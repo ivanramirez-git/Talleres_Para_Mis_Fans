@@ -170,7 +170,7 @@ int main() {
 	
 	//imprimirVector(edades);    
     
-    int indice;
+    string indice;
     string ruta;
     string textoTemporal;
     char cadenaTemporal[20];
@@ -187,7 +187,7 @@ int main() {
         cout<<"4. Salir"<<endl;
         cout<<"-> ";
         cin>>indice;
-        switch(indice) {
+        switch(atoi(&indice[0])) {
 
             // El sistema debe preguntar cuántas personas nuevas va a agregar
             case 1:     
@@ -213,7 +213,7 @@ int main() {
                         
                         cout<<" Ingrese la edad: ";
                         cin>>indice;
-                        datoTemporal.setEdad(indice);
+                        datoTemporal.setEdad(atoi(&indice[0]));
                         
                         cout<<" Ingrese el RUT: ";
                         cin>>textoTemporal;
@@ -300,7 +300,7 @@ int main() {
                     cin>>indice;
                     falla=false;
 
-                    switch(indice) {
+                    switch(atoi(&indice[0])) {
                         case 1:
 						//Cuantas personas estan vacunadas y cuantas no
 							int numVacunados, numNoVacunados;
