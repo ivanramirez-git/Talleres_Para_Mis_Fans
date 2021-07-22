@@ -34,11 +34,18 @@ int main(){
 
     double i=27/(4*PI);
     double aproximacion;
+    /*
     cout<<"Ingrese en N para la aproximacion: ";
     cin>>aproximacion;
     cout<<"La aproximacion es: "<<ramanujan(aproximacion)<<endl;
-    cout<<"La calculadora es: "<<i;
+    */
+    for (double i = 1; i <=15; ++i)
+    {
+        /* code */
+        cout<<"La aproximacion cuando N es "<<i<<" es "<< ramanujan(i)<<endl;
+    }
 
+    cout<<"Con la calculadora es: "<<i;
     //cout << "Hello World!";
     return 0;
 }

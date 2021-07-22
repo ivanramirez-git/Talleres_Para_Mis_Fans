@@ -20,13 +20,12 @@ int normaVector(int v[]){
 int main(){
 
     int v[20];
-
     int norma;
-
     srand(3);
 
+
     for(int i = 0; i<20; i++){
-    	v[i]=rand() % 13 + 5;
+    	v[i]=rand() % 13 + 5; // Aleatorio en el intervalo [5,18]
     }
 
     norma = normaVector(v);
