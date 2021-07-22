@@ -13,7 +13,6 @@ void fdex(float x){
     }else{
         cout<<"No se puede dividir por cero."<<endl;
     }
-
 }
 
 int main(){
