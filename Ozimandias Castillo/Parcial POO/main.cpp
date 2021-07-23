@@ -1,12 +1,18 @@
 // Your C++ Program
 
 #include <iostream>
-#include "Cabecera.h"
+#include "Manager.h"
+#include
 
 int main() {
 
-    Clase clase;
-    std::cout<<clase.mensaje;
+    Enemigo enemigo;
+    
+    enemigo = CreadorEnemigos.CrearSoldado();
+    enemigo.setTipo("ACUATICO");
+
+    enemigo.setEspecialidadAdd("BARCO");
+    enemigo.setEspecialidadAdd("SUBMARINO");
 
     return 0;
 }
