@@ -7,9 +7,11 @@ using namespace std;
 int obtenerCubo(int n){
     int num=0, numeros=-1;
     bool fin=true;
-
-
     
+    
+    
+    
+    /*    
     for(int i=-1;i<n;i+=2){
         numeros=0;
         cout<<"."<<endl;
@@ -18,7 +20,9 @@ int obtenerCubo(int n){
         }
     }
     cout<<numeros<<endl;
-    /*
+
+
+
     for (int i = 1; i <= n; i++)
     {
         if((i%2)!=0){

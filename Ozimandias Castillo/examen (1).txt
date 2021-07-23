@@ -1,0 +1,11 @@
+Diseñe la siguiente estructura de clases:
+
+EN CODIGO (30%)
+
+Debe implementar cada Clase con los atributos respectivos considerando la ecampsulación donde se requiera.
+En la firma de los métodos puede optar simplemente por imprimir en pantalla el nombre del método y a partir de que clase se llama a dicho método
+EN PAPEL (30%) (Debe subir un PDF)
+
+Debe indicar que Patrones de Diseño se han implementado en el diagrama
+Indicar CUALES SON  Clases HIJAS, PADRES, INTERFACES O CLASES ABSTRACTAS
+Implementar un ENEMIGO que será un ACUTICO y se especializará en BARCO y SUBMARINO y debe implementar un adaptador UNICO para ambos que les permita sobreescribir el metodo moverse con el adaptador Navegador.
