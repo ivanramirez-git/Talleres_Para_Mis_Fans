@@ -14,5 +14,7 @@ int main() {
     enemigo.setEspecialidadAdd("BARCO");
     enemigo.setEspecialidadAdd("SUBMARINO");
 
+    
+
     return 0;
 }
