@@ -25,9 +25,9 @@ int main(){
     
     //obtenerCubo(5);
     int n=rand() % 10 + 1; // Aleatorio en el intervalo [1,10]   
-    
+    cout<<"n es: "<<n<<endl;
     for(int i = 1; i<=n; i++){
-        cout<<"El cubo de "<<n<<" es: "<<obtenerCubo(i)<<endl;
+        cout<<"El cubo de "<<i<<" es: "<<obtenerCubo(i)<<endl;
     }
     //cout << "Hello World!";
     return 0;
