@@ -8,11 +8,11 @@
 using namespace std;
 
 double factorial(double numero){
-    double fact=1;
+    double fact=1.0;
     if(numero<0) fact =0;
     else if(numero==0) fact=1;
     else{
-      for (int i = 1; i <= numero; i++){
+      for (double i = 1; i <= numero; i++){
          fact = fact*i;
       }
     }
@@ -25,7 +25,7 @@ double  ramanujan(int N){
     for (double n = 0; n < N; n++)
     {
         /* code */
-        aproximacion+=(((factorial(2*n))*(factorial(3*n)))/(pow(factorial(n),5)))*(1/(pow(1458,n)))*((15*n)+2);
+        aproximacion+=(((factorial(2.0*n))*(factorial(3.0*n)))/(pow(factorial(n),5.0)))*(1.0/(pow(1458.00,n)))*((15.0*n)+2.0);
     }
     return aproximacion;
 }
@@ -42,10 +42,10 @@ int main(){
     for (double i = 1; i <=15; ++i)
     {
         /* code */
-        cout<<"La aproximacion cuando N es "<<i<<" es "<< ramanujan(i)<<endl;
+        cout<<"La aproximacion cuando N es "<<i<<" es "<< 1.0/(ramanujan(i)*(4.0/27.0))<<endl;
     }
 
-    cout<<"Con la calculadora es: "<<i;
+    cout<<"Con la calculadora es: "<<1.0/(i*(4.0/27.0))<<endl;
     //cout << "Hello World!";
     return 0;
 }

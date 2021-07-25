@@ -6,7 +6,7 @@
 
 using namespace std;
 
-int normaVector(int v[]){
+double normaVector(int v[]){
 
     int num=0;
     for(int i=0; i<20;i++){
