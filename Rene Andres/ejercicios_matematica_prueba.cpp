@@ -8,7 +8,7 @@ int menu()
     int opcion;
     cout<<"*********************************"<<endl;
     cout<<".:: BIENVENIDX ::."<<endl;
-    cout<<"Elija el producto y la cantidad que desea comprar"<<endl;
+    cout<<"Elija el punto de la prueba"<<endl;
     cout<<"1. Punto 1: raices "<<endl;
     cout<<"2. Punto 2: aproximacion n! "<<endl;
     cout<<"3. Punto 3: ventas "<<endl;
