@@ -12,7 +12,6 @@ double normaVector(int v[]){
     for(int i=0; i<20;i++){
         num=num + pow(v[i],2);
     }
-
     return sqrt(num);
 }
 
