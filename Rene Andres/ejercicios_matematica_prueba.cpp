@@ -19,16 +19,6 @@ int menu()
     return opcion;
 }
 
-double normaVector(int v[]){
-
-    double num=0;
-    for(int i=0; i<20;i++){
-        num=num + pow(v[i],2);
-    }
-    return sqrt(num);
-}
-
-
 int aleatorio_entre(int a, int b)
 {
     
@@ -92,10 +82,9 @@ void ejercicio2()
     cout<<"n! formula de clase | n! aproximacion"<<endl;
 
     for(int i=10;i<=100;i=i+10){
-        cout<<"n= "<<i <<" : "<<factorial(i)<<"       |       "<<Stirling(i)<<endl;
+        cout<<"n= "<<i <<" :    "<<factorial(i)<<"         |         "<<Stirling(i)<<endl;
     }
 }
-
 
 int menu_ventas()
 {
@@ -180,8 +169,7 @@ void ejercicio3()
 
                 cout<<"Valor de compra:         "<<compra<<endl;
                 cout<<"IVA:                     0.6"<<endl;
-                cout<<"Total:                   "<<compra+0.6<<endl;                
-
+                cout<<"Total:                   "<<compra*1.12<<endl;                
 
             break;
             default: cout<<"No ha seleccionado una opcion correcta"<<endl;
