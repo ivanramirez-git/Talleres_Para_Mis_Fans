@@ -168,7 +168,7 @@ void ejercicio3()
                 compra=valorCompra(num_leche,num_queso,num_galletas,num_pan);
 
                 cout<<"Valor de compra:         "<<compra<<endl;
-                cout<<"IVA:                     0.6"<<endl;
+                cout<<"IVA:                     "<<compra*0.12<<endl;
                 cout<<"Total:                   "<<compra*1.12<<endl;                
 
             break;
