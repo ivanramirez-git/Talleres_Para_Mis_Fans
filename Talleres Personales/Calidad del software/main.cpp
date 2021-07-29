@@ -38,8 +38,10 @@ struct ventasMes;
 
 int main() {
 
+    // Grupo 4
     vector<ventasMes> ventasMeses;
-    Cliente cliente;    // Grupo 4
+    Cliente cliente;    
+    
     for(int i=0;i<ventasMeses.darUltimoMes().clientes.size();i++){
 
         cliente=ventasMeses.darUltimoMes().clientes[i];   
