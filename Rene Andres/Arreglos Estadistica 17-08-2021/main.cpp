@@ -98,25 +98,23 @@ int main()
 
             ingreso_datos_arreglo_aleatorios_semilla(datos,n,20,70,1);
 
-            
             cout<<endl;
-            cout<<"Normal"<<endl;
+            cout<<"Arreglo: "<<endl;
             impresion_arreglo(datos,n);
 
             cout<<endl;
-            cout<<"Ascendente"<<endl;
+            cout<<"Ascendente: "<<endl;
             ordenar_ascendente(datos,n);
             impresion_arreglo(datos,n);
             
             cout<<endl;
-            cout<<"Descendente"<<endl;
+            cout<<"Descendente: "<<endl;
             ordenar_descendente(datos,n);
             impresion_arreglo(datos,n);
 
             cout<<endl;
-            cout<<"Estadistica"<<endl;
+            cout<<"Estadistica: "<<endl;
             estadistica_descriptiva(datos,n);
-
         }
         break;
 
