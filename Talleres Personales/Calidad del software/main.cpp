@@ -38,12 +38,12 @@ struct ventasMes;
 
 int main() {
 
-    // Grupo 4
-    vector<ventasMes> ventasMeses;
-    Cliente cliente;    
     
-    for(int i=0;i<ventasMeses.darUltimoMes().clientes.size();i++){
+    vector<ventasMes> ventasMeses;
+    Cliente cliente; 
 
+    // Grupo 4
+    for(int i=0;i<ventasMeses.darUltimoMes().clientes.size();i++){
         cliente=ventasMeses.darUltimoMes().clientes[i];   
         if(ventasMeses.sumarCompras(cliente, 6) > 500){
             if(ventasMeses.sumarDevoluciones(cliente, 6)< ventasMeses.sumarCompras(cliente, 6)*0.15 ){

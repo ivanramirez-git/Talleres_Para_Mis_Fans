@@ -1,0 +1,12 @@
+El promedio de notas es: 3.57143
+Las notas sobre el promedio son:
+ Alumno 1 Nota: 6
+ Alumno 4 Nota: 6
+ Alumno 5 Nota: 5
+ Alumno 7 Nota: 5
+42 78 68 43 81 47 52 33 58 17 22 87 77 81 60 52 41 21 25 89 
+Suma: 1074
+Promedio: 53.7
+Maximo: 89
+Minimo: 17
+89 25 21 41 52 60 81 77 87 22 17 58 33 52 47 81 43 68 78 42 
