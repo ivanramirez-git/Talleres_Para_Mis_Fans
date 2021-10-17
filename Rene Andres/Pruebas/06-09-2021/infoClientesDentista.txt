@@ -1,0 +1,7 @@
+Clientes Dental White
+Nombre    Apellido  Cedula    Telefono  Edad Servicios recibidos
+Luis      Arias          12345       321 60 limpieza         implantes
+Juan      Vaca           67890       654 30 curacion         curacion
+Diego     Castro         23456       987 10 curacion         rayosx      
+Ana       Diaz           34567       562 28 limpieza         blanqueamiento
+Sara      Toledo         98745       852 25 limpieza         curacion

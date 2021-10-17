@@ -1,0 +1,161 @@
+ant -f "D:\\GitHub\\Talleres_Para_Mis_Fans\\Santiago Ochoa\\Tortuga\\Tortuga\\Tortuga" -Dnb.internal.action.name=run run
+init:
+Deleting: D:\GitHub\Talleres_Para_Mis_Fans\Santiago Ochoa\Tortuga\Tortuga\Tortuga\build\built-jar.properties
+deps-jar:
+Updating property file: D:\GitHub\Talleres_Para_Mis_Fans\Santiago Ochoa\Tortuga\Tortuga\Tortuga\build\built-jar.properties
+compile:
+run:
+
+***************************************************************
+*                    Juego de la tortuga                      *
+***************************************************************
+                              
+ →                                                        
+                                                          
+                                                          
+                                                          
+                                                          
+                                                          
+                                                          
+                                                          
+                                                          
+                                                          
+                                                          
+                                                          
+                                                          
+                                                          
+                                                          
+                                                          
+                                                          
+                                                          
+                                                          
+                                                          
+                                                          
+                                                          
+                                                          
+                                                          
+                                                          
+                                                          
+                                                          
+                                                          
+                              
+
+**************************
+*   Valores de tortuga   *
+**************************
+0	1	1	3	
+
+*************************************************************
+*         Ingrese las instrucciones para la tortuga         *
+*************************************************************
+*   a= Girar a la derecha: se girara a la derecha un n°    *
+*   b= Girar a la izquierda: se girara a la izquierda un n°*
+*   c= Avanzar se avanzara en la dirección de la tortuga   *
+*   d= Subir Lapiz: no marcara al moverse por el tablero   *
+*   e= Bajar Lapiz: marcara al moverse por el tablero      *
+*   f= Borrador: quitara las marcas posteriores            *
+*   g= Limpiar Tablero: regresara a los valores iniciales  *
+*   h= Ejecutar: se realizaran los comandos escritos       *
+*************************************************************
+
+Ingrese instrucción: 1
+c
+¿Cuantos espacios desea avanzar?
+15
+Ingrese instrucción: 2
+a
+¿Desea girar 45° ó 90°
+90
+Ingrese instrucción: 3
+c
+¿Cuantos espacios desea avanzar?
+15
+Ingrese instrucción: 4
+e
+Ingrese instrucción: 5
+a
+¿Desea girar 45° ó 90°
+90
+Ingrese instrucción: 6
+c
+¿Cuantos espacios desea avanzar?
+10
+Ingrese instrucción: 7
+a
+¿Desea girar 45° ó 90°
+90
+Ingrese instrucción: 8
+c
+¿Cuantos espacios desea avanzar?
+10
+Ingrese instrucción: 9
+a
+¿Desea girar 45° ó 90°
+45
+Ingrese instrucción: 10
+c
+¿Cuantos espacios desea avanzar?
+5
+Ingrese instrucción: 11
+a
+¿Desea girar 45° ó 90°
+90
+Ingrese instrucción: 12
+c
+¿Cuantos espacios desea avanzar?
+5
+Ingrese instrucción: 13
+a
+¿Desea girar 45° ó 90°
+45
+Ingrese instrucción: 14
+c
+¿Cuantos espacios desea avanzar?
+10
+Ingrese instrucción: 15
+h
+
+***************************************************************
+*                    Juego de la tortuga                      *
+***************************************************************
+                              
+                     ::                                   
+                   ::  ::                                 
+                 ::      ::                               
+               ::          ::                             
+             ::              ::                           
+           ::                  ::                         
+           ::                  ::                         
+           ::                  ::                         
+           ::                  ::                         
+           ::                  ::                         
+           ::                  ::                         
+           ::                  ::                         
+           ::                  ::                         
+           ::                  ::                         
+           ::                  ::                         
+           ::::::::::::::::::::⇓                          
+                                                          
+                                                          
+                                                          
+                                                          
+                                                          
+                                                          
+                                                          
+                                                          
+                                                          
+                                                          
+                                                          
+                                                          
+                              
+
+**************************
+*   Valores de tortuga   *
+**************************
+1	16	16	6	
+
+
+*********************************************************************
+* Finalizo los comandos, ¿desea continuar con su dibujo?, cualquier *
+*      cosa que no sea NO se asumira como que desea continuar       *
+*********************************************************************

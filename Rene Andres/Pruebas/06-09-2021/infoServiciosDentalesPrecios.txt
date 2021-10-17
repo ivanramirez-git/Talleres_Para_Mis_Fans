@@ -1,0 +1,8 @@
+Servicios Dental WHite
+SERVICIO  COSTO
+limpieza          25
+curacion            35
+implantes            500
+protesis            250
+rayosx          40
+blanqueamiento              150
