@@ -1,0 +1,6 @@
+C:\Users\aulasingenieria\AppData\Local\JetBrains\CLion2021.2\cygwin_cmake\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - Unix Makefiles" "/cygdrive/d/GitHub/Talleres_Para_Mis_Fans/Helo Lagos"
+CMake Error: CMake was unable to find a build program corresponding to "Unix Makefiles".  CMAKE_MAKE_PROGRAM is not set.  You probably need to select a different build tool.
+CMake Error: CMAKE_C_COMPILER not set, after EnableLanguage
+CMake Error: CMAKE_CXX_COMPILER not set, after EnableLanguage
+-- Configuring incomplete, errors occurred!
+See also "/cygdrive/d/GitHub/Talleres_Para_Mis_Fans/Helo Lagos/cmake-build-debug/CMakeFiles/CMakeOutput.log".
