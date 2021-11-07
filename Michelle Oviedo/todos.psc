@@ -1,3 +1,151 @@
+// este es el ejemplo más simple de esta ayuda, 
+// toma dos numeros, los suma y muestra el resultado
+
+Proceso Suma
+
+    Definir A,B,C como Reales;
+
+    // para cargar un dato, se le muestra un mensaje al usuario
+    // con la instrucción Escribir, y luego se lee el dato en 
+    // una variable (A para el primero, B para el segundo) con 
+    // la instrucción Leer
+
+    Escribir "Ingrese el primer numero:";
+    Leer A;
+
+    Escribir "Ingrese el segundo numero:";
+    Leer B;
+
+
+    // ahora se calcula la suma y se guarda el resultado en la
+    // variable C mediante la asignación (<-)
+    
+    C <- A+B;
+
+
+    // finalmente, se muestra el resultado, precedido de un 
+    // mensaje para avisar al usuario, todo en una sola
+    // instrucción Escribir
+    
+    Escribir "El resultado es: ",C;
+
+FinProceso
+
+
+Proceso TaTeTi
+    
+    // incializa dos matrices de 3x3, una para guardar la ficha que se ve, 
+    // y otra para un valor asociado a la ficha, para un jugador sera 1, para
+    // el otro 2, entoces para ver quien gano se multiplica por fila, por 
+    // columna y por diagonal, si el resultado es 1 gano el primer jugador,
+    // si es 8 gano el segundo, si es 0 es porque faltaba completar, si
+    // es otra cosa, estan las tres fichas, pero no son del mismo jugador
+    Dimension Tab1[3,3]
+    Dimension Tab2[3,3]
+    Para i<-1 Hasta 3 Hacer
+        Para j<-1 Hasta 3 Hacer
+            Tab1[i,j]<-0
+            Tab2[i,j]<-" "
+        FinPara
+    FinPara
+    TurnoJugador1<-Verdadero
+    Terminado<-Falso
+    Ganador<-Falso
+    CantTurnos<-0
+    
+    Mientras ~ Terminado hacer
+        
+        // dibuja el tablero
+        Borrar Pantalla
+        Escribir " "
+        Escribir "      ||     ||     "
+        Escribir "   ",Tab2[1,1],"  ||  ",Tab2[1,2],"  ||  ",Tab2[1,3]
+        Escribir "     1||    2||    3"
+        Escribir " =====++=====++======"
+        Escribir "      ||     ||     "
+        Escribir "   ",Tab2[2,1],"  ||  ",Tab2[2,2],"  ||  ",Tab2[2,3]
+        Escribir "     4||    5||    6"
+        Escribir " =====++=====++======"
+        Escribir "      ||     ||     "
+        Escribir "   ",Tab2[3,1],"  ||  ",Tab2[3,2],"  ||  ",Tab2[3,3]
+        Escribir "     7||    8||    9"
+        Escribir " "
+        
+        Si ~ Ganador y CantTurnos<9 Entonces
+            
+            // carga auxiliares segun a qué jugador le toca
+            Si TurnoJugador1 Entonces
+                Ficha<-'O'; Valor<- 1; Objetivo<-1
+                Escribir "Turno del jugador 1 (X)"
+            Sino
+                Ficha<-'X'; Valor<- 2; Objetivo<-8
+                Escribir "Turno del jugador 2 (O)"
+            FinSi
+            
+            // pide la posición para colocar la ficha y la valida
+            Escribir "Ingrese la Posición (1-9):"
+            
+            Repetir
+                Leer Pos
+                Si Pos<1 o Pos>9 Entonces
+                    Escribir "Posición incorrecta, ingrese nuevamente: "
+                    Pos<-99;
+                Sino
+                    i<-trunc((Pos-1)/3)+1
+                    j<-((Pos-1) MOD 3)+1
+                    Si Tab1[i,j]<>0 Entonces
+                        pos<-99
+                        Escribir "Posición incorrecta, ingrese nuevamente: "
+                    FinSi
+                FinSi
+            Hasta Que Pos<>99
+            // guarda la ficha en la matriz tab2 y el valor en tab1
+            CantTurnos<-CantTurnos+1
+            Tab1[i,j]<-Valor
+            Tab2[i,j]<-Ficha
+            
+            // verifica si ganó, buscando que el producto de las fichas en el tablero de Objetivo
+            aux_d1<-1; aux_d2<-1
+            Para i<-1 hasta 3 hacer
+                aux_i<-1; aux_j<-1
+                aux_d1<-aux_d1*Tab1[i,i]
+                aux_d2<-aux_d2*Tab1[i,4-i]
+                Para j<-1 hasta 3 hacer
+                    aux_i<-aux_i*Tab1[i,j]
+                    aux_j<-aux_j*Tab1[j,i]
+                FinPara
+                Si aux_i=Objetivo o aux_j=Objetivo Entonces
+                    Ganador<-Verdadero
+                FinSi
+            FinPara
+            Si aux_d1=Objetivo o aux_d2=Objetivo Entonces
+                Ganador<-Verdadero
+            Sino
+                TurnoJugador1 <- ~ TurnoJugador1
+            FinSi
+            
+        Sino
+            
+            Si Ganador Entonces
+                Escribir "Ganador: "
+                Si TurnoJugador1 Entonces
+                    Escribir "Jugador 1!"
+                Sino
+                    Escribir "Jugador 2!"
+                FinSi
+            Sino
+                Escribir "Empate!"
+            FinSi
+            Terminado<-Verdadero
+            
+        FinSi
+        
+    FinMientras
+    
+FinProceso
+
+
+
 SubAlgoritmo division
 	
 	Definir femeninos Como Entero
@@ -133,8 +281,28 @@ SubAlgoritmo circo
 		Escribir "El total es de: " (230 * mayores)
 	FinSi
 
-FinSubAlgoritmo
+SubAlgoritmo producto
 
+	//	Una persona adquirió un producto para pagar en 20 meses. El primer mes pagó 10 euros, el segundo 20 euros, el tercero 40 euros y así sucesivamente. Realizar un algoritmo para determinar cuánto debe pagar mensualmente y el total de lo que pagó después de los 20 meses.
+
+	Definir totalPagar Como Entero
+	Definir meses Como Entero
+
+	totalPagar <- 10
+	meses <- 20
+
+
+	// Imprimir cuota de cada mes y cuanto debe pagarse despues de los 20 meses
+	Mientras meses <= 20
+		Escribir "El total a pagar en el mes " meses " es de: " totalPagar
+		totalPagar <- totalPagar * 2
+		meses <- meses + 1
+	FinMientras
+
+	Escribir "El total a pagar despues de los 20 meses es de: " totalPagar
+
+FinSubAlgoritmo
+	
 Algoritmo todos
 	
 	// Ejecutar el algoritmo segun la opcion
@@ -161,3 +329,185 @@ Algoritmo todos
 	FinMientras
 	
 FinAlgoritmo
+
+SubAlgoritmo llenarDatos(lista)
+	
+	// Llenar los datos de una lista de enteros
+	
+	Definir i Como Entero
+	Definir numero Como Entero
+	
+	i <- 0
+	
+	Mientras i < 10
+		Escribir "Ingrese un numero"
+		Leer numero
+
+FinAlgoritmo
+
+SubAlgoritmo serie
+	
+	// Una empresa esta dividida en N sedes, cada sede en M secciones, y cada seccion tiene un numero no determinado de empleados.
+	// De cada empleado se conoce nombre, sexo, edad, salario basico y deducciones.
+	// Elabore un algoritmo que permita calcular e imprimir:
+	// a) El promedio de edad de los empleados por cada seccion y por cada sede.
+	// b) El porcentaje de mujeres de 18 anos por seccion y por sede.
+	// c) El numero de mujeres que ganan mas de 4 salarios minimos por seccion.
+	// d) Un mensaje "si existe al menos un empleado hombre que gane mas de 20 salarios minimos" de toda la empresa.
+	// e) El nombre y la edad de la mujer mas joven por cada seccion.
+	// f) El nombre y la edad del hombre mas viejo por cada sede.
+	// g) El valor de las deducciones mas altas de toda la empresa.
+	// h) El promedio de salarios netos de las mujeres mayores de 18 años por sede y seccion.
+	// i) El porcentaje de empleados hombres que ganan menos de dos salarios minimos por cada seccion.
+	// j) El salario neto mas bajo de toda la empresa.
+
+
+	// Definir variables
+
+	Escribir "Cual es el nombre de la empresa?"
+	Leer nombreEmpresa
+
+	Escribir "Cuantas sedes tiene la empresa?"
+	Leer sedesNumero
+
+	//Dimension de sedes
+	Dimension sedesNombre(sedesNumero)
+	Dimension sedesNumeroSecciones(sedesNumero)
+
+	i <- 1
+
+	// Ingresar nombre y cantidad de secciones de sedes
+	Mientras i <= sedesNumero
+		Escribir "Ingrese el nombre de la sede " i
+		Leer sedesNombre(i)
+		Escribir "Cuantas secciones tiene la sede " i ". " sedesNombre(i)
+		Leer sedesNumeroSecciones(i)
+		i <- i + 1
+	FinMientras
+
+	//Dimension de secciones
+	Mientras i <= sedesNumero
+		Escribir "Cuantas secciones tiene la sede " i "?"
+		Leer sedesNumeroSecciones[i]
+		i <- i + 1
+	FinMientras
+
+
+	// Definir dimensiones de secciones
+	Dimension seccionesNombres(sedesNumero)
+	Dimension seccionesEdades(sedesNumero)
+
+	// Definir las estructuras
+	
+
+
+
+
+FinSubAlgoritmo
+
+
+Algoritmo principal
+
+	Empresa <- ""
+
+	// Definir variables
+	Escribir "Bienvenido al programa de empresas"
+	Escribir "Ingrese el nombre de la empresa: "
+	Leer nombreEmpresa
+
+	Escribir "Ingrese el numero de sedes: "
+	Leer sedesNumero
+
+	// Definir dimensiones de sedes
+	Dimension sedesNombres(sedesNumero)
+	Dimension sedesNumeroSecciones(sedesNumero)
+
+	// Guardar datos empresa
+	Empresa <- "{°nombre°:°" + nombreEmpresa + "°,°sedes°:["
+
+	i <- 1
+	Mientras i <= sedesNumero
+		Escribir "Ingrese el nombre de la sede " i
+		Leer sedesNombres(i)
+
+		Escribir "Cuantas secciones tiene la sede " i ". " sedesNombres(i)
+		Leer sedesNumeroSecciones(i)
+
+		// Definir dimensiones de secciones
+		Dimension seccionesNombres(sedesNumeroSecciones(i))
+		Dimension seccionesNumeroPersonas(sedesNumeroSecciones(i))
+
+		j <- 1
+		Mientras j <= sedesNumeroSecciones(i)
+			Escribir "Ingrese el nombre de la seccion " j " de la sede " i
+			Leer seccionesNombres(j)
+
+			Escribir "Cuantas personas tiene la seccion " j " de la sede " i
+			Leer seccionesNumeroPersonas(j)
+
+			// Definir dimensiones de personas
+			Dimension personasNombres(seccionesNumeroPersonas(j))
+			Dimension personasSexo(seccionesNumeroPersonas(j))
+			Dimension personasEdades(seccionesNumeroPersonas(j))
+			Dimension personasSalarios(seccionesNumeroPersonas(j))
+			Dimension personasDeducciones(seccionesNumeroPersonas(j))
+
+			k <- 1
+			Mientras k <= seccionesNumeroPersonas(j)
+				Escribir "Ingrese el nombre de la persona " k " de la seccion " j " de la sede " i
+				Leer personasNombres(k)
+
+				Escribir "Ingrese el sexo de la persona " k " de la seccion " j " de la sede " i
+				Leer personasSexo(k)
+
+				Escribir "Ingrese la edad de la persona " k " de la seccion " j " de la sede " i
+				Leer personasEdades(k)
+
+				Escribir "Ingrese el salario de la persona " k " de la seccion " j " de la sede " i
+				Leer personasSalarios(k)
+
+				Escribir "Ingrese las deducciones de la persona " k " de la seccion " j " de la sede " i
+				Leer personasDeducciones(k)
+
+				k <- k + 1
+			FinMientras
+
+			// Guardar datos seccion
+			Empresa <- Empresa + "{°nombre°:°" + seccionesNombres(j) + "°,°personas°:["
+
+			l <- 1
+			Mientras l <= seccionesNumeroPersonas(j)
+				Empresa <- Empresa + "{°nombre°:°" + personasNombres(l) + "°,°sexo°:°" + personasSexo(l) + "°,°edad°:°" + personasEdades(l) + "°,°salario°:°" + personasSalarios(l) + "°,°deducciones°:°" + personasDeducciones(l) + "°}"
+				l <- l + 1
+			FinMientras
+
+			Empresa <- Empresa + "]}"
+			j <- j + 1
+		FinMientras
+
+		Empresa <- Empresa + "]}"
+		i <- i + 1
+	FinMientras
+
+	Empresa <- Empresa + "}"
+
+	Escribir Empresa
+	
+FinAlgoritmo
+
+
+	// Una empresa esta dividida en N sedes, cada sede en M secciones, y cada seccion tiene un numero no determinado de empleados.
+	// De cada empleado se conoce nombre, sexo, edad, salario basico y deducciones.
+	// Elabore un algoritmo que permita calcular e imprimir:
+	// a) El promedio de edad de los empleados por cada seccion y por cada sede.
+	// b) El porcentaje de mujeres de 18 anos por seccion y por sede.
+	// c) El numero de mujeres que ganan mas de 4 salarios minimos por seccion.
+	// d) Un mensaje "si existe al menos un empleado hombre que gane mas de 20 salarios minimos" de toda la empresa.
+	// e) El nombre y la edad de la mujer mas joven por cada seccion.
+	// f) El nombre y la edad del hombre mas viejo por cada sede.
+	// g) El valor de las deducciones mas altas de toda la empresa.
+	// h) El promedio de salarios netos de las mujeres mayores de 18 años por sede y seccion.
+	// i) El porcentaje de empleados hombres que ganan menos de dos salarios minimos por cada seccion.
+	// j) El salario neto mas bajo de toda la empresa.
+
+

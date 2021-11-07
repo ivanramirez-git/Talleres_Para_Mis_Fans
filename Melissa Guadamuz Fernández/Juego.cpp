@@ -30,11 +30,10 @@ bool validarJugada(int vector[]) {
     }
 }
 
-// Funcion que valida imput de jugada, retorna -3 si se debe salir del Juego, -2 si debe salir de la partida, -1 si se ingreso una jugada invalida y si se ingreso una jugada valida retornar la posicion de la matriz donde se encuentra la jugada
-int validarEntrada(string imput){
-    if (imput == "salir") {
-        return -3;
-    } else if (imput == "salirPartida") {
+// Funcion que valida imput de jugada retorna -2 si debe salir de la partida, -1 si se ingreso una jugada invalida y si se ingreso una jugada valida retornar la posicion de la matriz donde se encuentra la jugada
+int 
+validarEntrada(string imput){
+    if (imput == "salirPartida") {
         return -2;
     } else {
 
@@ -53,7 +52,7 @@ int validarEntrada(string imput){
 
         int posicion1 = imput[0] - '0';
         int posicion2 = imput[1] - '0' - 1;
-        return posicion1 * 10 + posicion2;
+        return (posicion1 * 10 + posicion2) + 1;
     }
 }
 
@@ -167,6 +166,27 @@ void imprimirTableros(int tablero1[8][8], int tablero2[8][8], int puntaje1, int 
     }
 }
 
+// Imprimir puntajes
+void imprimirPuntajes(int puntaje1, int puntaje2, string jugador1, string jugador2) {
+    cout << "Puntaje de " << jugador1 << ": " << puntaje1 << endl;
+    cout << "Puntaje de " << jugador2 << ": " << puntaje2 << endl;
+}
+
+// fin
+void fin(string jugador1, string jugador2, int puntajeJugador1, int puntajeJugador2) {
+    
+        imprimirPuntajes( puntajeJugador1 ,  puntajeJugador2,  jugador1,  jugador2);
+
+        if(puntajeJugador1>puntajeJugador2){
+            cout << jugador1 << " gana" << endl;
+        }else if(puntajeJugador1<puntajeJugador2){
+            cout << jugador2 << " gana" << endl;
+        }else{
+            cout << "Empate" << endl;
+        }
+        exit(0);
+}
+
 
 // Juego
 
@@ -201,7 +221,7 @@ int main(){
     int *posicionesJugador2 = new int[2];
 
     // Vector que guarda los turnos de jugadas en curso
-    int posicionesJugada[3]={0};
+    int jugadaActual[3]={0};
 
     // Llenar tableros con numeros aleatorios
     llenarTablero(tableroJugador1);
@@ -228,6 +248,17 @@ int main(){
     // Configuracion de salida
     bool salida = false;
 
+    // Configuracion de puntaje
+    int puntajeJugador1 = 0;
+    int puntajeJugador2 = 0;
+
+    // Retorno de entrada
+    int retorno = 0;
+
+
+    // Tablero temporal
+    int tableroTemporal[8][8]={0};
+
     // Imput
     string input;
         
@@ -241,32 +272,358 @@ int main(){
     // Juego se puede volver a jugar despues de terminar una partida
     while(!salida){
         // Juego
-        while(!ganador){
-            // Imprimir Tableros
-            imprimirTableros(tableroJugador1, tableroJugador2, marcadorJugador1, marcadorJugador2, jugador1, jugador2, turno);
-            // Instrucciones
-            cout << "Ingrese la posicion de la jugada (ejemplo: 12) o escriba salir para salir del juego: ";
-            cin >> input;
-            // Salir
-            if(input == "salir"){
-                salida = true;
-                break;
+        cout<<".. :: || Juego iniciado || :: .."<<endl;
+        // Imprimir Tableros
+        imprimirTableros(tableroJugador1, tableroJugador2, marcadorJugador1, marcadorJugador2, jugador1, jugador2, turno);
+        // Instrucciones
+        cout << "Ingrese la posicion de la jugada (ejemplo: 12) o escriba salir para salir del juego: ";
+
+        int turnos30 = 30;
+
+        while(!ganador){    
+            // Jugadas
+            // Turno de jugador 1
+                jugadaActual[0] = 0;
+                jugadaActual[1] = 0;
+                jugadaActual[2] = 0;    
+            
+            cout << endl;
+            cout << endl;            
+
+            // imprimir turno de jugador 1
+            cout << "Turno de " << jugador1 << endl;
+            // Imput
+            imprimirTableroConCoordenadas(tableroJugador1,jugador1);
+            /*
+            */
+
+            // Copiar tablero
+            for (int i = 0; i < 8; i++) {
+                for (int j = 0; j < 8; j++) {
+                    tableroTemporal[i][j] = tableroJugador1[i][j];
+                }
             }
+            // turno
+
+            for(int i=0;i<3 && jugadaActual[0]+jugadaActual[1]<20;i++){  
+
+                cout << "-> ";
+                cin >> input;
+                if(input == "salir"){
+                    fin(jugador1,  jugador2, puntajeJugador1,  puntajeJugador2);
+                }
+                if (input == "sarirPartida"){
+                    cout << "Iniciando una nueva partida" << endl;
+                    // reiniciar tableros
+                    llenarTablero(tableroJugador1);
+                    llenarTablero(tableroJugador2);
+                    // reiniciar turnos
+                    turnoJugador1 = 1;
+                    turnoJugador2 = 1;
+                    // reiniciar marcador
+                    marcadorJugador1 = 0;
+                    marcadorJugador2 = 0;
+                    // reiniciar ganador
+                    ganador = false;
+                    // reiniciar jugada
+                    jugada = false;
+                    // reiniciar jugada valida
+                    jugadaValida = false;
+                    // reiniciar salida
+                    salida = false;
+                    // reiniciar puntaje
+                    puntajeJugador1 = 0;
+                    puntajeJugador2 = 0;
+                    // reiniciar posiciones jugada
+                    jugadaActual[0] = 0;
+                    jugadaActual[1] = 0;
+                    jugadaActual[2] = 0;
+                    // reiniciar posiciones jugada
+                    posicionesJugador1[0] = 0;
+                    posicionesJugador1[1] = 0;
+                    posicionesJugador2[0] = 0;
+                    posicionesJugador2[1] = 0;
+                    // reiniciar tablero temporal
+                    for (int i = 0; i < 8; i++) {
+                        for (int j = 0; j < 8; j++) {
+                            tableroTemporal[i][j] = 0;
+                        }
+                    }
+                    // reiniciar imput
+                    input = "";
+                    // reiniciar retorno
+                    retorno = 0;
+                    break;
+                }
+
+                retorno = validarEntrada(input);
+                if(retorno < 0){
+                    cout << "Ingrese una posicion valida" << endl;
+                    cout << "Pierde turno" << endl;
+                    break;
+                }else{
+                    jugadaValida = false;
+                    
+                    int posI, posJ;
+                    posI = retorno / 10;
+                    posJ = retorno % 10;
+                    do{
+                        if(tableroTemporal[posI][posJ] != 0){
+
+                            jugadaValida = true;
+                            jugadaActual[i] = tableroTemporal[posI][posJ];
+                            tableroTemporal[posI][posJ] = 0;
+                            imprimirTableroConCoordenadas(tableroTemporal, "Jugada Actual");
+                            cout<<i+1<<". Ok"<<endl;
+                            //break;
+                        }else{
+                            cout << "Posicion ya fue elegida, ingrese otra posicion: ";
+                            cin >> input;
+                            if(input == "salir"){
+                                fin(jugador1,  jugador2, puntajeJugador1,  puntajeJugador2);
+                            }
+                            retorno = validarEntrada(input);
+                            if(retorno < 0){
+                                cout<< jugador1 <<" pierde turno"<<endl;
+                                break;
+                            }else{
+                                posI = retorno / 10;
+                                posJ = retorno % 10;
+                            }
+                        }
+                        if(i==0){
+                            cout << "Seleccion: {" << jugadaActual[i] <<"}"<< endl;
+                        }else if(i==1){
+                            
+                                
+                            cout << "Seleccion: {" << jugadaActual[i] <<","<< jugadaActual[i-1] <<"}"<< endl;
+
+                            if(jugadaActual[i]+jugadaActual[i-1]==20){
+                                cout << "+2 Puntos"<< endl;
+                                puntajeJugador1 += 2;
+                                marcadorJugador1 += 2;
+
+                                // tablero jugar 1 = tablero temporal
+                                for (int i = 0; i < 8; i++) {
+                                    for (int j = 0; j < 8; j++) {
+                                        tableroJugador1[i][j] = tableroTemporal[i][j];
+                                    }
+                                }
+
+                            }
+
+                        }else if(i==2){
+                            cout << "Seleccion: {" << jugadaActual[i] <<","<< jugadaActual[i-1] <<","<< jugadaActual[i-2] <<"}"<< endl;
+
+                            if(jugadaActual[i]+jugadaActual[i-1]+jugadaActual[i-2]==20){
+                                cout << "+3 Puntos"<< endl;
+                                puntajeJugador1 += 3;
+                                marcadorJugador1 += 3;
+
+                                // tablero jugar 1 = tablero temporal
+                                for (int i = 0; i < 8; i++) {
+                                    for (int j = 0; j < 8; j++) {
+                                        tableroJugador1[i][j] = tableroTemporal[i][j];
+                                    }
+                                }
+
+                            }
+                        }
+
+
+                            
+
+
+                    }while(!jugadaValida);
+                }
+                
+            }
+                
+            imprimirPuntajes( puntajeJugador1 ,  puntajeJugador2,  jugador1,  jugador2);
+
+            // Jugadas
+            // Turno de jugador 2
+                jugadaActual[0] = 0;
+                jugadaActual[1] = 0;
+                jugadaActual[2] = 0;    
+            
+            cout << endl;
+            cout << endl;            
+
+            // imprimir turno de jugador 2
+            cout << "Turno de " << jugador2 << endl;
+            // Imput
+            imprimirTableroConCoordenadas(tableroJugador2,jugador2);
+            /*
+            */
+
+           // copiar tablero temporal de tablero jugador 2
+            for (int i = 0; i < 8; i++) {
+                for (int j = 0; j < 8; j++) {
+                    tableroTemporal[i][j] = tableroJugador2[i][j];
+                }
+            }
+           
+           
+            for(int i=0;i<3 && jugadaActual[0]+jugadaActual[1]<20;i++){  
+
+                cout << "-> ";
+                cin >> input;
+                if(input == "salir"){
+                    fin(jugador1,  jugador2, puntajeJugador1,  puntajeJugador2);
+                }
+                if (input == "salir") {
+                    salida = true;
+                    break;
+                }
+                if (input == "sarirPartida"){
+                    cout << "Iniciando una nueva partida" << endl;
+                    // reiniciar tableros
+                    llenarTablero(tableroJugador1);
+                    llenarTablero(tableroJugador2);
+                    // reiniciar turnos
+                    turnoJugador1 = 1;
+                    turnoJugador2 = 1;
+                    // reiniciar marcador
+                    marcadorJugador1 = 0;
+                    marcadorJugador2 = 0;
+                    // reiniciar ganador
+                    ganador = false;
+                    // reiniciar jugada
+                    jugada = false;
+                    // reiniciar jugada valida
+                    jugadaValida = false;
+                    // reiniciar salida
+                    salida = false;
+                    // reiniciar puntaje
+                    puntajeJugador1 = 0;
+                    puntajeJugador2 = 0;
+                    // reiniciar posiciones jugada
+                    jugadaActual[0] = 0;
+                    jugadaActual[1] = 0;
+                    jugadaActual[2] = 0;
+                    // reiniciar posiciones jugada
+                    posicionesJugador1[0] = 0;
+                    posicionesJugador1[1] = 0;
+                    posicionesJugador2[0] = 0;
+                    posicionesJugador2[1] = 0;
+                    // reiniciar tablero temporal
+                    for (int i = 0; i < 8; i++) {
+                        for (int j = 0; j < 8; j++) {
+                            tableroTemporal[i][j] = 0;
+                        }
+                    }
+                    // reiniciar input
+                    input = "";
+                    break;
+                }
+
+                retorno = validarEntrada(input);
+                if(retorno < 0){
+                    cout << "Ingrese una posicion valida" << endl;
+                    cout << "Pierde turno" << endl;
+                    break;
+                }else{
+                    jugadaValida = false;
+                    
+                    int posI, posJ;
+                    posI = retorno / 10;
+                    posJ = retorno % 10;
+                    do{
+                        if(tableroTemporal[posI][posJ] != 0){
+
+                            jugadaValida = true;
+                            jugadaActual[i] = tableroTemporal[posI][posJ];
+                            tableroTemporal[posI][posJ] = 0;
+                            imprimirTableroConCoordenadas(tableroTemporal, "Jugada Actual");
+                            cout<<i+1<<". Ok"<<endl;
+                            //break;
+                        }else{
+                            cout << "Posicion ya fue elegida, ingrese otra posicion: ";
+                            cin >> input;
+                            if(input == "salir"){
+                                fin(jugador1,  jugador2, puntajeJugador1,  puntajeJugador2);
+                            }
+
+                            retorno = validarEntrada(input);
+                            if(retorno < 0){
+                                cout<< jugador2 <<" pierde turno"<<endl;
+                                break;
+                            }else{
+                                posI = retorno / 10;
+                                posJ = retorno % 10;
+                            }
+                        }
+                        if(i==0){
+                            cout << "Seleccion: {" << jugadaActual[i] <<"}"<< endl;
+                        }else if(i==1){
+                            
+                                
+                            cout << "Seleccion: {" << jugadaActual[i] <<","<< jugadaActual[i-1] <<"}"<< endl;
+
+                            if(jugadaActual[i]+jugadaActual[i-1]==20){
+                                cout << "+2 Puntos"<< endl;
+                                puntajeJugador2 += 2;
+                                marcadorJugador2 += 2;
+                                
+                                // tablero jugar 2 = tablero temporal
+                                for (int i = 0; i < 8; i++) {
+                                    for (int j = 0; j < 8; j++) {
+                                        tableroJugador2[i][j] = tableroTemporal[i][j];
+                                    }
+                                }
+
+                            }
+
+                        }else if(i==2){
+                            cout << "Seleccion: {" << jugadaActual[i] <<","<< jugadaActual[i-1] <<","<< jugadaActual[i-2] <<"}"<< endl;
+
+                            if(jugadaActual[i]+jugadaActual[i-1]+jugadaActual[i-2]==20){
+                                cout << "+3 Puntos"<< endl;
+                                puntajeJugador2 += 3;
+                                marcadorJugador2 += 3;
+
+                                // tablero jugar 2 = tablero temporal
+                                for (int i = 0; i < 8; i++) {
+                                    for (int j = 0; j < 8; j++) {
+                                        tableroJugador2[i][j] = tableroTemporal[i][j];
+                                    }
+                                }
+
+                            }
+                        }
+                    }while(!jugadaValida);
+                }
+
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+            imprimirPuntajes( puntajeJugador1 ,  puntajeJugador2,  jugador1,  jugador2);
+
+           turnos30++;
+           if(turnos30==30){
+                break;
+           }
+
+            // turno
+
         }
+        fin(jugador1,  jugador2, puntajeJugador1,  puntajeJugador2);
+        break;
     }
 
-
-    
-
-    
-
-
-
-    
-
-
-
-
-    
     return 0;
 }
