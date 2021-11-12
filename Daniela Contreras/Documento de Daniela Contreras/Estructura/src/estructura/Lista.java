@@ -33,6 +33,20 @@ public class Lista {
     public Nodo getFin() {
         return fin;
     }
+
+    //metodo que inserta un nodo al principio de la lista
+    public void insertarInicio(Nodo nuevo){
+        if(cabeza == null){
+            cabeza = nuevo;
+            fin = nuevo;
+        }else{
+            nuevo.setSiguiente(cabeza);
+            cabeza = nuevo;
+        }
+    }
+
+
+
     //Metodo que adiciona un Nodo al final de la Lista
     public void adicionarFinal(Nodo n){
         if(cabeza == null){
@@ -154,6 +168,24 @@ public class Lista {
         if(actual != null){
           System.out.println((int)actual.getDato());
           mostrarRecursivamente(actual.getSig());//llamamiento recursivo
+        }
+    }
+    // Elimina el antes del ultimo elemento de la lista
+    public void eliminarAntepenultimo(){
+        Nodo actual = cabeza;
+        Nodo ultimo = new Nodo();
+        Nodo anterior = null;
+        while(actual != null){
+            if(actual.getSig().getSig() == null) {
+                ultimo= actual.getSig();
+                ultimo.setSig(null);
+                anterior.setSig(ultimo);
+                break;
+            }
+            else{
+                anterior = actual;
+                actual = actual.getSig();
+            }
         }
     }
 }

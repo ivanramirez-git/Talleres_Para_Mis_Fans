@@ -34,4 +34,9 @@ public class Nodo {
     public Nodo getSig() {
         return sig;
     }
+
+    //metodo que cambia el valor de la variable sig
+    public void setSiguiente(Nodo cabeza){
+        this.sig = cabeza;
+    }
 }

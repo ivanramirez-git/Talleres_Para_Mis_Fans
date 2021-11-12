@@ -1,7 +1,5 @@
 #include <iostream>
 
-using namespace std;
-
 // funcion que realiza una sumatoria 1 + 2 + 3 + ... + n
 int sumatoria(int n) {
 	int suma = 0;
@@ -16,9 +14,9 @@ int sumatoria(int n) {
 int main(){
 
 	int n;
-	cout << "Ingrese un numero: ";
-	cin >> n;
-	cout << "La sumatoria de los numeros del 1 al " << n << " es: " << sumatoria(n) << endl;
+	std::cout << "Ingrese un numero: ";
+	std::cin >> n;
+	std::cout << "La sumatoria de los numeros del 1 al " << n << " es: " << sumatoria(n) << std::endl;
 	
 	
 	return 0;

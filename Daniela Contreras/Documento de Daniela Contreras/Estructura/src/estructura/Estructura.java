@@ -24,20 +24,21 @@ public class Estructura {
         Scanner entrada = new Scanner(System.in);
         Lista a = new Lista(null,null);
         Lista b = new Lista(null,null);
-        Lista c;
+        Nodo c = new Nodo(null,null);
         int dato;
-        while(true){
+        /*boolean salir = false;
+        while(!salir){
             System.out.print("Ingrese un dato entero (0 - termina):");
             dato = entrada.nextInt();
             if(dato == 0){
-                break;// termina el ciclo
+                salir=true;// termina el ciclo
             }
             else{
                Nodo n = new Nodo(null,null);
                n.setDato(dato);
                a.adicionarFinal(n);
             }
-        }
+        }*/
         while(true){
             System.out.print("Ingrese un dato entero (0 - termina):");
             dato = entrada.nextInt();
@@ -50,8 +51,34 @@ public class Estructura {
                b.adicionarFinal(n);
             }
         }
+
+        System.out.println("Mostrando los datos de la lista");
+        b.mostrar();
+
+        // Eliminar el antepenultimo elemento de la lista b
+        System.out.println("Eliminando el antepenultimo elemento de la lista");
+        b.eliminarAntepenultimo();
+
+        // Mostrar los datos de la lista
+        System.out.println("Mostrando los datos de la lista");
+        b.mostrar();
+
+
+        // Adicion un nodo antes del primer nodo de la lista b
+        Nodo n = new Nodo(null,null);
+
+        // Ingresar dato al inicio de la lista pedido al usuario
+        System.out.print("Ingrese un dato entero (0 - termina):");
+        dato = entrada.nextInt();
+        if(dato == 0){
+
+        }else{
+            n.setDato(dato);
+            b.insertarInicio(n);
+        }
         
         System.out.println("Mostrando los datos de la lista");
         b.mostrar();
+
     }
 }
