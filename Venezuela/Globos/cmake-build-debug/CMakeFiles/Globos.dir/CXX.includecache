@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/GitHub/Talleres_Para_Mis_Fans/Venezuela/Globos/main.cpp
+iostream
+-
+string
+-
+vector
+-
+math.h
+-
+modelo/Globo.h
+D:/GitHub/Talleres_Para_Mis_Fans/Venezuela/Globos/modelo/Globo.h
+modelo/Data.h
+D:/GitHub/Talleres_Para_Mis_Fans/Venezuela/Globos/modelo/Data.h
+
+D:/GitHub/Talleres_Para_Mis_Fans/Venezuela/Globos/modelo/Consumo.h
+iostream
+-
+
+D:/GitHub/Talleres_Para_Mis_Fans/Venezuela/Globos/modelo/Data.h
+stdio.h
+-
+string.h
+-
+
+D:/GitHub/Talleres_Para_Mis_Fans/Venezuela/Globos/modelo/Globo.h
+Consumo.h
+D:/GitHub/Talleres_Para_Mis_Fans/Venezuela/Globos/modelo/Consumo.h
+

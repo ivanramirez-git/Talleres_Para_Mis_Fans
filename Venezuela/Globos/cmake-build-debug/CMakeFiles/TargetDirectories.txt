@@ -1,0 +1,3 @@
+D:/GitHub/Talleres_Para_Mis_Fans/Venezuela/Globos/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+D:/GitHub/Talleres_Para_Mis_Fans/Venezuela/Globos/cmake-build-debug/CMakeFiles/Globos.dir
+D:/GitHub/Talleres_Para_Mis_Fans/Venezuela/Globos/cmake-build-debug/CMakeFiles/edit_cache.dir
