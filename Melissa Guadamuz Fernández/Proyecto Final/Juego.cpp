@@ -5,8 +5,6 @@
 #include <unordered_map>
 #include <algorithm>
 
-
-
 #define MAX 10
 #define Juego_Archivo "Juego.dat"
 #define Jugadores_Archivo "Jugadores.dat"
@@ -40,6 +38,19 @@ struct Juego
     int puntosJugador2;
 };
 
+// Funcion que convierte un string a un entero
+int stringToInt(string str)
+{
+    int numero = 0;
+    for (int i = 0; i < str.length(); i++)
+    {
+        numero = numero * 10 + (str[i] - '0');
+        //cout <<"i: "<<  i << " str[i]: " << str[i] << " numero: " << numero << " str.lenght(): "<<str.length()<< endl;
+    }
+    //cout << endl;
+    return numero;
+}
+
 
 /* 
 1;1638;4;2892;3
@@ -54,6 +65,14 @@ bool cargarJuegos(vector<Juego> &juegos)
 {
     ifstream archivo;
     Juego juego;
+
+    // Variables para guardar los datos del archivo
+    string numero;
+    string jugador1;
+    string jugador2;
+    string puntosJugador1;
+    string puntosJugador2;
+
     archivo.open(Juego_Archivo);
     if (archivo.fail())
     {
@@ -63,25 +82,38 @@ bool cargarJuegos(vector<Juego> &juegos)
     // Los datos estan divididos por ;
     while (!archivo.eof())
     {
-        archivo >> juego.numero;
         if (archivo.eof())
+        {
             break;
-        archivo.ignore();
-        getline(archivo, juego.jugador1.nombreCompleto, ';');
-        getline(archivo, juego.jugador1.documento, ';');
-        archivo >> juego.puntosJugador1;
-        archivo.ignore();
-        getline(archivo, juego.jugador2.nombreCompleto, ';');
-        getline(archivo, juego.jugador2.documento, ';');
-        archivo >> juego.puntosJugador2;
-        archivo.ignore();
+        }
+        getline(archivo, numero, ';');
+        getline(archivo, jugador1, ';');
+        getline(archivo, puntosJugador1, ';');
+        getline(archivo, jugador2, ';');
+        getline(archivo, puntosJugador2, '\n');
+
+        
+
+        // Guardamos los datos en la estructura
+        if (archivo.eof())
+        {
+            break;
+        }
+        juego.numero = stringToInt(numero);
+        juego.jugador1.nombreCompleto = jugador1;
+        juego.jugador2.nombreCompleto = jugador2;
+        juego.puntosJugador1 = stringToInt(puntosJugador1);
+
+        // Guardando el ultimo numero de la linea
+        juego.puntosJugador2 = 0;
+        juego.puntosJugador2 = juego.puntosJugador2 * 10 + (puntosJugador2[0] - '0');
+
+        // Agregamos el juego a la lista
         juegos.push_back(juego);
     }
     archivo.close();
-    cout << "Se cargaron " << juegos.size() << " juegos" << endl;
     return true;
 }
-
 
 // Funcion para leer un archivo de texto de un Jugador con el siguiente formato
 /*
@@ -256,7 +288,70 @@ void iniciarJuego(vector<Juego> &juegos, vector<Jugador> jugadores)
     guardarJugadores(jugadores);
 }
 
+void guardarEstructuras(vector<Juego> &juegos, vector<Jugador> jugadores)
+{
+    guardarJuegos(juegos);
+    guardarJugadores(jugadores);
+}
 
+void mostrarMejoresJugadores(vector<Juego> juegos, vector<Jugador> jugadores)
+{
+    vector<string> nombres;
+    vector<int> puntos;
+
+}
+
+void menuPrincipal(vector<Juego> juegos, vector<Jugador> jugadores){
+    
+    int opcion;
+    do
+    {
+        /*
+        
+        Menú Principal
+        1.Jugar
+        2.Los 10 mejores jugadores
+        3.Reporte general de jugadores 
+        4.Ingresar jugadores 
+        5.Salir
+
+        */
+        cout << "Menú Principal" << endl;
+        cout << "1. Jugar" << endl;
+        cout << "2. Los 10 mejores jugadores" << endl;
+        cout << "3. Reporte general de jugadores" << endl;
+        cout << "4. Ingresar jugadores" << endl;
+        cout << "5. Salir" << endl;
+        cout << "Ingrese una opción: ";
+        cin >> opcion;
+        cout << endl;
+        switch (opcion)
+        {
+        case 1:
+            //iniciarNuevoJuego(juegos, jugadores);
+            break;
+        case 2:
+            //mostrarMejoresJugadores(jugadores);
+            
+            mostrarMejoresJugadores(juegos,jugadores);
+
+            break;
+        case 3:
+            //mostrarReporteGeneral(jugadores);
+            break;
+        case 4:
+            //ingresarJugadores(jugadores);
+            break;
+        case 5:
+            cout << "Gracias por jugar" << endl;
+            guardarEstructuras(juegos, jugadores);
+            break;
+        default:
+            cout << "Opción inválida" << endl;
+            break;
+        }
+    } while (opcion != 5);
+}
 
 int main()
 {
@@ -269,7 +364,7 @@ int main()
     cargarJugadores(jugadores);
     
     // Imprimir los datos de los jugadores
-    imprimirJugadores(jugadores);
+    //imprimirJugadores(jugadores);
 
     // Cargar los datos de los juegos
     cargarJuegos(juegos);
@@ -278,30 +373,7 @@ int main()
     imprimirJuegos(juegos);
 
     // Menu
-    int opcion;
-    do
-    {
-        cout << "1. Agregar Jugador" << endl;
-        cout << "2. Guardar Jugador" << endl;
-        cout << "3. Salir" << endl;
-        cout << "Ingrese una opcion: ";
-        cin >> opcion;
-        cout << endl;
-        switch (opcion)
-        {
-        case 1:
-            agregarJugador(jugadores);
-            break;
-        case 2:
-            iniciarJuego(juegos, jugadores);
-            break;
-        case 3:
-            break;
-        default:
-            cout << "Opcion no valida" << endl;
-            break;
-        }
-    } while (opcion != 3);
+    menuPrincipal(juegos, jugadores);
     
     return 0;
 }
