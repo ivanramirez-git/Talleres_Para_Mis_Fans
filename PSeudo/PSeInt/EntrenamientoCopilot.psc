@@ -1391,3 +1391,491 @@ SubProceso punto2_cadenas
 	
 FinSubProceso
 
+
+
+// Desarolle un algoritmo que permita calcular y mostrar el monto que recibe mensualmente un trabajador por su antiguedad, si esta se calcula como un porcentaje de su salario mensual, de acuerdo a la siguiente tabla:
+    /*
+    Anos trabajados     Porcentaje
+    De 3 a 10 años      10% de su salario mensual
+    De 11 a 20 años     25% de su salario mensual
+    De 21 a 35 años     50% de su salario mensual
+    Mas de 35 anos      80% de su salario mensual
+    */
+Algoritmo punto1
+    // Ingrese la antiguedad del trabajador
+    Escribir "Ingrese la antiguedad del trabajador: "
+    Leer antiguedad
+    Escribir "Ingrese el salario mensual del trabajador: "
+    Leer salario
+    // Calcular el monto que recibe mensualmente
+    Si antiguedad>=3 y antiguedad<=10
+        monto<-salario*0.1
+    FinSi
+    Si antiguedad>=11 y antiguedad<=20
+        monto<-salario*0.25
+    FinSi
+    Si antiguedad>=21 y antiguedad<=35
+        monto<-salario*0.5
+    FinSi
+    Si antiguedad>35
+        monto<-salario*0.8
+    FinSi
+    // Mostrar el monto que recibe mensualmente
+    Escribir "El monto que recibe mensualmente es: " monto
+
+    
+FinAlgoritmo
+
+
+
+
+
+// Desarolle un algoritmo que lea los angulos interiones de un triangulo y muestre un mensaje indicando si es: Acutangulo, Obtusangulo o Rectangulo.
+Algoritmo punto2
+    // Ingrese los angulos internos del triangulo
+    Escribir "Ingrese los angulos internos del triangulo: "
+    Leer angulo1
+    Leer angulo2
+    Leer angulo3
+    // Acutangulo si sus 3 angulos miden menos de 90 grados
+    Si angulo1<90 y angulo2<90 y angulo3<90 y angulo1+angulo2+angulo3==180
+        Escribir "El triangulo es acutangulo"
+    FinSi
+    // Obtusangulo si uno de sus 3 angulos mide mas de 90 grados
+    Si angulo1>90 o angulo2>90 o angulo3>90 y angulo1+angulo2+angulo3==180
+        Escribir "El triangulo es obtusangulo"
+    FinSi
+    // Rectangulo si uno de sus 3 angulos miden exactamente 90 grados
+    Si angulo1==90 o angulo2==90 o angulo3==90 y angulo1+angulo2+angulo3==180
+        Escribir "El triangulo es rectangulo"
+    FinSi
+    // Si no es ninguno de los anteriores
+    Si angulo1+angulo2+angulo3!=180
+        Escribir "No puede ser un triangulo"
+    FinSi
+FinAlgoritmo
+
+
+
+//Desarrolle un algoritmo que lea 3 numeros, verifique si son consecutivos, idependientemente del orden en que se hayan ingresado, y muestre uno de los siguientes mensajes:
+    /*
+    Los numeros son consecutivos
+    Los numeros no son consecutivos
+    */
+Algoritmo punto3
+    // Ingrese los 3 numeros
+    Escribir "Ingrese los 3 numeros: "
+    Escribir "Ingrese el primer numero: "
+    Leer num1
+    Escribir "Ingrese el segundo numero: "
+    Leer num2
+    Escribir "Ingrese el tercer numero: "
+    Leer num3
+    // Verificar si son consecutivos
+    suma<-num1+num2+num3
+    promedio<-suma/3
+    Si num1 == promedio o num2 == promedio o num3 == promedio
+        Si num1 == num2+1 o num1 == num2-1 o num1 == num3+1 o num1 == num3-1
+            Escribir "Los numeros son consecutivos"
+        FinSi
+    SiNo
+        Escribir "Los numeros no son consecutivos"
+    FinSi
+FinAlgoritmo
+
+
+
+Z es el numero real positivo menor que 1, para el
+cual queremos la representacion en base B, con no mas de K cifras. CIFRA es el vector
+con las cifras en la representacion en base B, y [PROD] es la parte entera del PROD.
+
+Algoritmo punto4
+    Definir NUM_ENTERO como entero;
+    Definir NUM_REAL como real;
+	
+	
+    // Ingrese el numero real positivo menor que 1 validando que sea menor que 1
+    Escribir "Ingrese el numero real positivo menor que 1: "
+    Leer Z
+    // Validar que sea menor que 1
+    Mientras Z>=1
+        Escribir "El numero ingresado no es menor que 1"
+        // Ingrese el numero real positivo menor que 1 validando que sea menor que 1
+        Escribir "Ingrese el numero real positivo menor que 1: "
+        Leer Z
+    FinMientras
+	
+	
+    // Ingrese la base
+    Escribir "Ingrese la base esperada: "
+    Leer B
+	
+    // Ingrese el numero de cifras
+    Escribir "Ingrese el numero de cifras: "
+    Leer K
+	
+    Dimension CIFRA[K];
+    Definir PROD como real;
+	
+    I<-1
+    // Iniciar ciclo
+    Mientras I<>K
+        PROD<-Z*B
+        NUM_ENTERO<-TRUNC(PROD)
+        Z<-PROD-NUM_ENTERO
+        CIFRA[I]<-NUM_ENTERO
+        Si Z==0
+            I<-1            
+            Escribir "El numero en base ", B, " es: "
+            Mientras I<>K
+                Escribir sin saltar CIFRA[I]
+                I<-I+1
+            FinMientras
+        SiNo
+            I<-I+1
+        FinSi
+    FinMientras
+    Si Z!=0
+        I<-1
+        Escribir "El numero en base ", B, " es: "
+        Mientras I<>K
+            Escribir sin saltar CIFRA[I]
+            I<-I+1
+        FinMientras
+    FinSi
+	
+    // Fin del ciclo
+FinAlgoritmo
+
+
+
+
+// Algoritmo que lee un numero N y  crea una dimension y pide los datos enteros, cuando se llena imprime  arreglo lleno
+Algoritmo punto5
+    // Ingrese el numero de datos
+    Escribir "Ingrese el numero de datos: "
+    Leer N
+    // Iniciar ciclo
+    I<-1
+    Mientras I<>N
+        // Ingrese el dato
+        Escribir "Ingrese el dato: "
+        Leer DATO
+        // Agregar el dato al arreglo
+        Arreglo[I]<-DATO
+        I<-I+1
+    FinMientras
+    // Imprimir arreglo
+    Escribir "El arreglo es: "
+    I<-1
+    Mientras I<>N
+        Escribir sin saltar Arreglo[I]
+        I<-I+1
+    FinMientras
+FinAlgoritmo
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Actividad 6 - Ejercicio 1
+// Sumar todos los elementos de un arreglo de tamaño n. Utilizar un acumulador inicializado en 0.
+Algoritmo act6Punto1
+    // Ingrese el numero de datos
+    Escribir "Ingrese el numero de datos: "
+    Leer N
+    // Dimensionar el arreglo
+    Dimension Arreglo[N];
+    // Pedir los datos
+    I<-1
+    Mientras I<=N
+        // Ingrese el dato
+        Escribir "Ingrese el dato " , I, ": "
+        Leer Arreglo[I]
+        I<-I+1
+    FinMientras
+    
+    // Iniciar acumulador
+    Acumulador<-0
+    // Sumar los elementos del arreglo
+    I<-1
+    Mientras I<=N
+        Acumulador<-Acumulador+Arreglo[I]
+        I<-I+1
+    FinMientras
+    // Imprimir el resultado
+    Escribir "La suma de los elementos del arreglo es: ", Acumulador
+FinAlgoritmo
+
+
+
+
+
+// Actividad 6 - Ejercicio 2
+// Sumar los elementos de dos vectores y guardar el resultado en un tercer vector.
+Algoritmo act6Punto2
+    // Ingrese el numero de datos
+    Escribir "Ingrese el numero de datos: "
+    Leer N
+    // Dimensionar los vectores
+    Dimension Arreglo1[N];
+    Dimension Arreglo2[N];
+    Dimension Arreglo3[N];
+    // Pedir los datos
+    I<-1
+    Mientras I<=N
+        // Ingrese el dato
+        Escribir "Ingrese el dato " , I, " del primer arreglo: "
+        Leer Arreglo1[I]
+        I<-I+1
+    FinMientras
+    I<-1
+    Mientras I<=N
+        // Ingrese el dato
+        Escribir "Ingrese el dato " , I, " del segundo arreglo: "
+        Leer Arreglo2[I]
+        I<-I+1
+    FinMientras
+    // Sumar los elementos del arreglo
+    I<-1
+    Mientras I<=N
+        Arreglo3[I]<-Arreglo1[I]+Arreglo2[I]
+        I<-I+1
+    FinMientras
+    // Imprimir el resultado
+    Escribir "El arreglo resultante es: "
+    I<-1
+    Mientras I<=N
+        Escribir sin saltar Arreglo3[I] " "
+        I<-I+1
+    FinMientras
+FinAlgoritmo
+
+
+
+
+
+
+// Actividad 6 - Ejercicio 3
+// Llenar un vector de 10 posiciones con numeros aleatorios entre 1 y 100.
+// Para los numero aleatorios utilizar la funcion azar.
+Algoritmo act6Punto3
+    // Dimensionar el arreglo
+    Dimension Arreglo[10];
+    // Pedir los datos
+    I<-1
+    Mientras I<=10
+        // Ingrese el dato
+        Arreglo[I]<-azar(100)
+        I<-I+1
+    FinMientras
+    // Imprimir el resultado
+    Escribir "El arreglo resultante es: "
+    I<-1
+    Escribir sin saltar "["
+    Mientras I<=10
+        Si I+1<=10
+            Escribir sin saltar Arreglo[I], ", "
+        SiNo
+            Escribir sin saltar Arreglo[I]
+        FinSi
+        I<-I+1
+    FinMientras
+    Escribir sin saltar "]"
+FinAlgoritmo
+
+
+
+
+
+// Actividad 6 - Ejercicio 4
+// Llenar un vector con numeros enteros (positivos o negativos)
+// Mostrar la cantidad de numeros positivos que hay en el vector.
+Algoritmo act6Punto4
+    // Ingrese el numero de datos
+    Escribir "Ingrese el numero de datos: "
+    Leer N
+    // Dimensionar el arreglo
+    Dimension Arreglo[N];
+    // Pedir los datos
+    I<-1
+    Mientras I<=N
+        // Ingrese el dato
+        Escribir "Ingrese el dato " , I, ": "
+        Leer Arreglo[I]
+        I<-I+1
+    FinMientras
+    // Iniciar acumulador
+    I<-1
+    Acumulador<-0
+    Mientras I<=N
+        // Si el dato es positivo
+        Si Arreglo[I]>0
+            // Acumular
+            Acumulador<-Acumulador+1
+        FinSi
+        I<-I+1
+    FinMientras
+    // Imprimir el resultado
+    Escribir "La cantidad de numeros positivos es: ", Acumulador
+FinAlgoritmo
+
+
+
+
+
+// Actividad 6 - Ejercicio 5
+// Almacene en un arreglo de n posiciones nombres de paises ("Argentina","Brasil","Chile","Colombia","Ecuador","Peru","Uruguay","Venezuela","Bolivia","Paraguay").
+// Implementar una opcion que al digitar una posicion muestre el dato que contiene.
+Algoritmo act6Punto5
+
+    // Dimensionar el arreglo
+    Dimension Arreglo[10];
+    // Iniciar arreglo 
+    Arreglo[1]<-"Argentina"
+    Arreglo[2]<-"Brasil"
+    Arreglo[3]<-"Chile"
+    Arreglo[4]<-"Colombia"
+    Arreglo[5]<-"Ecuador"
+    Arreglo[6]<-"Peru"
+    Arreglo[7]<-"Uruguay"
+    Arreglo[8]<-"Venezuela"
+    Arreglo[9]<-"Bolivia"
+    Arreglo[10]<-"Paraguay"
+
+    // Ingrese un indice
+    Escribir "Ingrese un indice: "
+    Leer I
+    // Imprimir el dato
+    Escribir "El dato en la posicion ", I, " es: ", Arreglo[I]
+FinAlgoritmo
+
+
+
+
+
+// Actividad 7 - Ejercicio 1
+// Dimencionar una Matriz de NxN pedir los datos y mostrar la suma de los elementos de la diagonal principal y la diagonal secundaria.
+Algoritmo act7Punto1
+    // Ingrese el numero de datos
+    Escribir "Ingrese el numero de datos: "
+    Leer N
+    // Dimensionar el arreglo
+    Dimension Arreglo[N,N];
+    // Pedir los datos
+    I<-1
+    Mientras I<=N
+        J<-1
+        Mientras J<=N
+            // Ingrese el dato
+            Escribir "Ingrese el dato " , I, "," , J, ": "
+            Leer Arreglo[I,J]
+            J<-J+1
+        FinMientras
+        I<-I+1
+    FinMientras
+    // Iniciar acumulador
+    Acumulador<-0
+    // Sumar los elementos de la diagonal principal
+    I<-1
+    Mientras I<=N
+        Acumulador<-Acumulador+Arreglo[I,I]
+        I<-I+1
+    FinMientras
+    // Sumar los elementos de la diagonal secundaria
+    I<-1
+    Acumulador2<-0
+    Mientras I<=N
+        Acumulador2<-Acumulador2+Arreglo[I,N-I+1]
+        I<-I+1
+    FinMientras
+    // Imprimir el resultado
+    Escribir "La suma de los elementos de la diagonal principal es: ", Acumulador
+    Escribir "La suma de los elementos de la diagonal secundaria es: ", Acumulador2
+FinAlgoritmo
+
+
+
+
+
+// Actividad 7 - Ejercicio 2
+// Dimencionar una Matriz de NxN pedir los datos y mostrar la suma de los elementos por encima de la diagonal principal.
+Algoritmo act7Punto2
+    // Ingrese el numero de datos
+    Escribir "Ingrese el numero de datos: "
+    Leer N
+    // Dimensionar el arreglo
+    Dimension Arreglo[N,N];
+    // Pedir los datos
+    I<-1
+    Mientras I<=N
+        J<-1
+        Mientras J<=N
+            // Ingrese el dato
+            Escribir "Ingrese el dato " , I, "," , J, ": "
+            Leer Arreglo[I,J]
+            J<-J+1
+        FinMientras
+        I<-I+1
+    FinMientras
+    // Iniciar acumulador
+    Acumulador<-0
+    // Sumar los elementos superiores a la diagonal Principal
+    I<-1
+    Mientras I<=N
+        J<-I+1
+        Mientras J<=N
+            Acumulador<-Acumulador+Arreglo[I,J]
+            J<-J+1
+        FinMientras
+        I<-I+1
+    FinMientras
+    // Imprimir el resultado
+    Escribir "La suma de los elementos superiores a la diagonal principal es: ", Acumulador
+FinAlgoritmo
+
+
+
+
+// Actividad 7 - Ejercicio 3
+// Dado una matriz de N elementos llenarla con datos leidos desde el teclado, imprimir el contenido de la matriz de forma inversa.
+// Actividad 7 - Ejercicio 3
+// Dado una matriz de N elementos llenarla con datos leidos desde el teclado, imprimir el contenido de la matriz de forma inversa.
+Algoritmo act7Punto3
+    // Ingrese el numero de datos
+    Escribir "Ingrese el numero de datos: "
+    Leer N
+    // Dimensionar el matriz de NxN
+    Dimension Arreglo[N,N];
+    // Pedir los datos
+    I<-1
+    Mientras I<=N
+        J<-1
+        Mientras J<=N
+            // Ingrese el dato
+            Escribir "Ingrese el dato " , I, "," , J, ": "
+            Leer Arreglo[I,J]
+            J<-J+1
+        FinMientras
+        I<-I+1
+    FinMientras
+    // Imprimir la matriz de forma inversa con saltos de linea y espacios
+    I<-N
+    Mientras I>=1
+        J<-N
+        Mientras J>=1
+            Escribir sin saltar de linea Arreglo[I,J]
+            J<-J-1
+        FinMientras
+        Escribir ""
+        I<-I-1
+    FinMientras
+FinAlgoritmo

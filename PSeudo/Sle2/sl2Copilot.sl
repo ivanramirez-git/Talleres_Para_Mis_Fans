@@ -1949,3 +1949,271 @@ inicio
         }
     }
 fin
+
+
+
+
+
+// Realizar un programa que imprima los valores que se encuentran en el interior de una matriz de NxN elementos, donde N es un número ingresado por el usuario, N >= 3.
+// El programa debe permitir al usuario las siguientes opciones:
+// Pedir el tamaño de la matriz
+// Cargar matriz
+// Menu
+// 1. Imprimir matriz completada
+// 2. Imprimir el centro de la matriz
+// 3. Imprimir los bordes de la matriz
+
+var
+   // Matriz de NxN
+   matriz : matriz [*,*] numerico
+   // Variables auxiliares
+   num1, num2, num3 : numerico
+   contador, contador1, contador2, contador3 : numerico
+   // Variables para el menu
+   opcion : numerico
+inicio
+       // Pedir tamaño de la matriz
+      imprimir("\nIngrese el tamaño de la matriz: ")
+      leer(num1)
+      si(num1<3){
+         imprimir("\nTamaño invalido")
+      }
+      // Cargar matriz
+      contador=1
+      mientras(contador<=num1){
+         contador1=1
+         mientras(contador1<=num1){
+            imprimir("\nIngrese el valor de la posicion ",contador,",",contador1,": ")
+            leer(matriz[contador,contador1])
+            contador1=contador1+1
+         }
+         contador=contador+1
+      }
+      // Menu
+      desde num3=1 hasta 3{
+         // Mostrar menu
+         imprimir("\n\nMenu:\n")
+         imprimir("1. Imprimir matriz completa\n")
+         imprimir("2. Imprimir el centro de la matriz\n")
+         imprimir("3. Imprimir los bordes de la matriz\n")
+         imprimir("4. Salir\n")
+         imprimir("\nIngrese una opcion: ")
+         leer(opcion)
+
+         // Validar opcion
+         si(opcion<1 || opcion>4){
+            imprimir("\nOpcion invalida")
+         }
+         si(opcion==1){
+            // Imprimir matriz completa
+            imprimir("\n\nMatriz completa:\n")
+            contador=1
+            mientras(contador<=num1){
+               contador1=1
+               mientras(contador1<=num1){
+                  imprimir(matriz[contador,contador1],"\t")
+                  contador1=contador1+1
+               }
+               imprimir("\n")
+               contador=contador+1
+            }
+         }
+         si(opcion==2){
+            // Imprimir el centro de la matriz
+            imprimir("\n\nCentro de la matriz:\n")
+            contador=1
+            mientras(contador<=num1){
+               contador1=1
+               mientras(contador1<=num1){
+                  imprimir(matriz[contador,contador1],"\t")
+                  contador1=contador1+1
+               }
+               imprimir("\n")
+               contador=contador+1
+            }
+         }
+         si(opcion==3){
+            // Imprimir los bordes de la matriz
+            imprimir("\n\nBordes de la matriz:\n")
+            contador=1
+            mientras(contador<=num1){
+               imprimir(matriz[contador,1],"\t")
+               contador=contador+1
+            }
+            imprimir("\n")
+            contador=1
+            mientras(contador<=num1){
+               imprimir(matriz[num1,contador],"\t")
+               contador=contador+1
+            }
+            imprimir("\n")
+            contador=1
+            mientras(contador<=num1){
+               imprimir(matriz[contador,num1],"\t")
+               contador=contador+1
+            }
+         }
+         si(opcion==4){
+            // Salir
+            imprimir("\nSaliendo...")
+         }
+      }
+fin
+
+
+
+
+// Crear un programa que para ingresar numero en un vector de 15 posiciones.
+// Luego imprima los valos de almacenados en las posiciones impares y que a su vez sean multiplos de 2.
+// Calcule el promedio de los valores impares e imprima tambien este resultado.
+var
+   // Vector de 15 posiciones
+   vector : vector [15] numerico
+   // Variables auxiliares
+   num1, num2, num3 : numerico
+inicio
+      // Cargar vector
+      imprimir("\nIngrese los valores del vector: ")
+      contador=1
+      mientras(contador<=15){
+         imprimir("\nIngrese el valor de la posicion ",contador,": ")
+         leer(vector[contador])
+         contador=contador+1
+      }
+      // Imprimir valores en posiciones impares
+      imprimir("\n\nValores en posiciones impares:\n")
+      contador=1
+      num1=0
+      mientras(contador<=15){
+         imprimir(vector[contador],"\t")
+         contador=contador+2
+         num1=num1+vector[contador]
+      }
+      imprimir("\n\nEl promedio de los valores en posiciones impares es: ",num1/7)
+fin
+
+
+
+
+// Crea un programa para ingresar valores enteros en un vector de 15 posiciones.
+// imprimir el vector al reves.
+// imprimir el promedio de los valores.
+// imprimir la posicion de los valores inferiores al promedio.
+
+var
+   // Vector de 15 posiciones
+   vector : vector [15] numerico
+   // Variables auxiliares
+   num1, num2, num3 : numerico
+inicio
+      // Cargar vector
+      imprimir("\nIngrese los valores del vector: ")
+      contador=1
+      mientras(contador<=15){
+         imprimir("\nIngrese el valor de la posicion ",contador,": ")
+         leer(vector[contador])
+         contador=contador+1
+      }
+      // Imprimir vector al reves
+      imprimir("\n\nVector al reves:\n")
+      contador=15
+      mientras(contador>=1){
+         imprimir(vector[contador],"\t")
+         contador=contador-1
+      }
+      // Imprimir promedio
+      imprimir("\n\nPromedio: ")
+      num1=0
+      contador=1
+      mientras(contador<=15){
+         num1=num1+vector[contador]
+         contador=contador+1
+      }
+      imprimir(num1/15)
+      // Imprimir posiciones inferiores al promedio
+      imprimir("\n\nPosiciones inferiores al promedio:\n")
+      contador=1
+      mientras(contador<=15){
+         si(vector[contador]<num1/15){
+            imprimir(vector[contador],"\t")
+         }
+         contador=contador+1
+      }
+fin
+
+
+// En una matriz que almacena los  puntajes por tres alumnos, en cuatro materias, se pide mostrar.
+// La materia con promedio mas alto
+// El alumno con mayor cantidad de puntos acumulados
+// El puntaje mas alto entre todos los alumnos
+
+var
+   // Matriz de 3x4
+   matriz : matriz [3,4] numerico
+   // Variables auxiliares
+   num1, num2, num3 : numerico
+inicio
+      // Cargar matriz
+      imprimir("\nIngrese los valores de la matriz: ")
+      contador=1
+      mientras(contador<=3){
+         contador1=1
+         mientras(contador1<=4){
+            imprimir("\nIngrese el valor de la posicion ",contador,",",contador1,": ")
+            leer(matriz[contador,contador1])
+            contador1=contador1+1
+         }
+         contador=contador+1
+      }
+      // Imprimir materia con mayor promedio
+      imprimir("\n\nMateria con mayor promedio:\n")
+      num1=0
+      num2=0
+      contador=1
+      mientras(contador<=3){
+         contador1=1
+         mientras(contador1<=4){
+            num1=num1+matriz[contador,contador1]
+            contador1=contador1+1
+         }
+         si(num1>num2){
+            num2=num1
+            num3=contador
+         }
+         num1=0
+         contador=contador+1
+      }
+      imprimir("\nLa materia ",num3," tiene el promedio mas alto: ",num2/4)
+      // Imprimir alumno con mayor cantidad de puntos
+      imprimir("\n\nAlumno con mayor cantidad de puntos:\n")
+      num1=0
+      num2=0
+      contador=1
+      mientras(contador<=3){
+         num1=num1+matriz[contador,4]
+         si(num1>num2){
+            num2=num1
+            num3=contador
+         }
+         num1=0
+         contador=contador+1
+      }
+      imprimir("\nEl alumno ",num3," tiene el mayor puntaje: ",num2)
+      // Imprimir puntaje mas
+      imprimir("\n\nPuntaje mas alto:\n")
+      num1=0
+      num2=0
+      contador=1
+      mientras(contador<=3){
+         contador1=1
+         mientras(contador1<=4){
+            si(matriz[contador,contador1]>num1){
+               num1=matriz[contador,contador1]
+               num2=contador
+            }
+            contador1=contador1+1
+         }
+         contador=contador+1
+      }
+      imprimir("\nEl alumno ",num2," tiene el puntaje mas alto: ",num1)
+fin

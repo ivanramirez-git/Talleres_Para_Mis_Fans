@@ -6,9 +6,10 @@
 #include <algorithm>
 
 #define MAX 10
-#define Juego_Archivo "Juego.dat"
-#define Jugadores_Archivo "Jugadores.dat"
+#define MAX_TURNOS 40
+#define Juego_Archivo "Juego_test.dat"
 #define Juego_Archivo_Pruebas "Juego_test.dat"
+#define Jugadores_Archivo "Jugadores_test.dat"
 #define Jugadores_Archivo_Pruebas "Jugadores_test.dat"
 
 using namespace std;
@@ -100,8 +101,8 @@ bool cargarJuegos(vector<Juego> &juegos)
             break;
         }
         juego.numero = stringToInt(numero);
-        juego.jugador1.nombreCompleto = jugador1;
-        juego.jugador2.nombreCompleto = jugador2;
+        juego.jugador1.documento = jugador1;
+        juego.jugador2.documento = jugador2;
         juego.puntosJugador1 = stringToInt(puntosJugador1);
 
         // Guardando el ultimo numero de la linea
@@ -166,10 +167,10 @@ bool guardarJuegos(vector<Juego> &juegos)
     }
     for (int i = 0; i < juegos.size(); i++)
     {
-        archivo << juegos[i].numero << ";";
-        archivo << juegos[i].jugador1.nombreCompleto << ";";
+        archivo << i << ";";
+        archivo << juegos[i].jugador1.documento << ";";
         archivo << juegos[i].puntosJugador1 << ";";
-        archivo << juegos[i].jugador2.nombreCompleto << ";";
+        archivo << juegos[i].jugador2.documento << ";";
         archivo << juegos[i].puntosJugador2 << endl;
     }
     archivo.close();
@@ -201,9 +202,9 @@ void imprimirJuegos(vector<Juego> juegos)
     for (int i = 0; i < juegos.size(); i++)
     {
         cout << "Juego " << juegos[i].numero << endl;
-        cout << "Jugador 1: " << juegos[i].jugador1.nombreCompleto << endl;
+        cout << "Jugador 1: " << juegos[i].jugador1.documento << endl;
         cout << "Puntos Jugador 1: " << juegos[i].puntosJugador1 << endl;
-        cout << "Jugador 2: " << juegos[i].jugador2.nombreCompleto << endl;
+        cout << "Jugador 2: " << juegos[i].jugador2.documento << endl;
         cout << "Puntos Jugador 2: " << juegos[i].puntosJugador2 << endl;
         cout << endl;
     }
@@ -276,16 +277,13 @@ Tablero crearTableroAleatorio()
     return tablero;
 }
 
-
-// Turno 1 - Jugador 1
-
-
 // Funcion para iniciar un juego y agregarlo en un vector de Juegos
 void iniciarJuego(vector<Juego> &juegos, vector<Jugador> jugadores)
 {
-    cout << "Juego " << endl;
+    cout << "Juego Nuevo" << endl;
     // Guardar archivo jugador
-    guardarJugadores(jugadores);
+    Tablero tablero = crearTableroAleatorio();
+    
 }
 
 void guardarEstructuras(vector<Juego> &juegos, vector<Jugador> jugadores)
@@ -296,9 +294,209 @@ void guardarEstructuras(vector<Juego> &juegos, vector<Jugador> jugadores)
 
 void mostrarMejoresJugadores(vector<Juego> juegos, vector<Jugador> jugadores)
 {
-    vector<string> nombres;
+    vector<string> documentos;
     vector<int> puntos;
+    // cargar lista de jugadores
+    for (int i = 0; i < jugadores.size(); i++)
+    {
+        documentos.push_back(jugadores[i].documento);
+        puntos.push_back(0);
+    }
+    // buscar en los juegos los puntos de cada jugador
+    for (int i = 0; i < documentos.size(); i++)
+    {
+        for (int j = 0; j < juegos.size(); j++)
+        {
+            if (juegos[j].jugador1.documento == documentos[i])
+                puntos[i] += juegos[j].puntosJugador1;
+            if (juegos[j].jugador2.documento == documentos[i])
+                puntos[i] += juegos[j].puntosJugador2;
+        }
+    }
+    // ordenar los puntos
+    for (int i = 0; i < puntos.size() - 1; i++)
+    {
+        for (int j = i + 1; j < puntos.size(); j++)
+        {
+            if (puntos[i] < puntos[j])
+            {
+                int aux = puntos[i];
+                puntos[i] = puntos[j];
+                puntos[j] = aux;
+                string aux2 = documentos[i];
+                documentos[i] = documentos[j];
+                documentos[j] = aux2;
+            }
+        }
+    }
+    // imprimir los mejores jugadores
+    for (int i = 0; i < documentos.size() && i < 10; i++)
+    {
+        cout << "Jugador " << i + 1 << endl;
+        cout << "Nombre: " << jugadores[buscarJugador(jugadores, documentos[i])].nombreCompleto << endl;
+        cout << "Puntos: " << puntos[i] << endl;
+        cout << endl;
+    }
 
+}
+
+// Funcion que imprime un tablero con \t \n | + - para que sea mas legible 
+void imprimirTablero(Tablero tablero)
+{
+    cout << "  ";
+    for (int i = 0; i < MAX; i++)
+    {
+        cout << i + 1 << " ";
+    }
+    cout << endl;
+    for (int i = 0; i < MAX; i++)
+    {
+        cout << i + 1 << " ";
+        for (int j = 0; j < MAX; j++)
+        {
+            cout << tablero.principal[i][j] << " ";
+        }
+        cout << endl;
+    }
+}
+
+int jugada(Tablero &tablero, Jugador &jugador, int &puntos)
+{
+    // Variables
+    int dado1, dado2, producto, posI, posJ, retorno;
+
+    // Imprimir tablero
+    imprimirTablero(tablero);
+
+    // Iniciando jugada
+    cout << "Jugador " << jugador.nombreCompleto << endl;
+    cout << "Presione enter para tirar los dados..." << endl;
+    cin.ignore();
+    cin.get();
+
+    // Tirar dados
+    dado1 = tirarDado();
+    dado2 = tirarDado();
+
+    // Imprimir resultados visualmente
+    cout << "-------" << endl;
+    cout << "|  " << dado1 << "  |" << endl;
+    cout << "-------" << endl;
+    cout << "-------" << endl;
+    cout << "|  " << dado2 << "  |" << endl;
+    cout << "-------" << endl;
+
+    // Multiplicar puntos
+    producto = dado1 * dado2;
+
+    // Retorno 0
+    retorno = 0;
+
+    // Buscar producto en tablero
+    for (int i = 0; i < MAX; i++)
+    {
+        for (int j = 0; j < MAX; j++)
+        {
+            if (tablero.principal[i][j] == producto)
+            {
+                // Sumar puntos
+                puntos += producto;
+                // Sumar contador
+                tablero.contador[i][j]++;
+                // Guardar posicion
+                posI = i;
+                posJ = j;
+                // Si contador = 4
+                if (tablero.contador[i][j] == 4)
+                {
+                    retorno++;
+                    tablero.contador[i][j] = 0;
+                }
+                // Salir del for
+                i = MAX;
+                break;
+            }
+        }
+    }
+    // Verificar si gano puntos
+    if (retorno > 0)
+    {
+        cout << "Felicidades, ganaste " << retorno << " puntos!" << endl;
+        cout << "Presione enter para continuar..." << endl;
+        cin.ignore();
+        cin.get();
+        return retorno;
+    }
+    else
+    {
+        cout << "No ganaste puntos" << endl;
+        cout << endl;
+        return 0;
+    }
+}
+
+void iniciarNuevoJuego(vector<Juego> &juegos, vector<Jugador> jugadores)
+{
+    // Variables
+    string documento1;
+    string documento2;
+    int num1;
+
+    cout << "Juego Nuevo" << endl;
+    do
+    {
+        cout << "Ingrese el documento del jugador 1: ";
+        cin >> documento1;
+        // Buscar jugador
+        num1 = buscarJugador(jugadores, documento1);
+        if (num1 == -1)
+        {
+            cout << "Jugador no encontrado" << endl;
+            cout << endl;
+        }
+    } while (num1 == -1);
+    do
+    {
+        cout << "Ingrese el documento del jugador 2: ";
+        cin >> documento2;
+        // Buscar jugador
+        num1 = buscarJugador(jugadores, documento2);
+        if (num1 == -1)
+        {
+            cout << "Jugador no encontrado" << endl;
+            cout << endl;
+        }
+    } while (num1 == -1);
+
+    // Iniciar juego
+    Juego juego;
+    juego.jugador1 = jugadores[buscarJugador(jugadores, documento1)];
+    juego.jugador2 = jugadores[buscarJugador(jugadores, documento2)];
+
+    // Turno 
+    num1 = 0;
+
+    // Iniciar tablero
+    Tablero tablero = crearTableroAleatorio();
+
+    while (num1 < MAX_TURNOS)
+    {
+        juego.puntosJugador1 = jugada(tablero, juego.jugador1, juego.puntosJugador1);
+        juego.puntosJugador2 = jugada(tablero, juego.jugador2, juego.puntosJugador2);
+
+        // Preguntar si seguir jugando
+        char respuesta;
+        cout << "Desea seguir jugando? (s/n): ";
+        cin >> respuesta;
+        if (respuesta == 'n')
+        {
+            // Guardar juego
+            juegos.push_back(juego);
+            // Salir del while
+            break;
+        }
+        num1++;
+    }        
 }
 
 void menuPrincipal(vector<Juego> juegos, vector<Jugador> jugadores){
@@ -328,19 +526,16 @@ void menuPrincipal(vector<Juego> juegos, vector<Jugador> jugadores){
         switch (opcion)
         {
         case 1:
-            //iniciarNuevoJuego(juegos, jugadores);
+            iniciarNuevoJuego(juegos, jugadores);
             break;
-        case 2:
-            //mostrarMejoresJugadores(jugadores);
-            
+        case 2:            
             mostrarMejoresJugadores(juegos,jugadores);
-
             break;
         case 3:
-            //mostrarReporteGeneral(jugadores);
+            imprimirJugadores(jugadores);
             break;
         case 4:
-            //ingresarJugadores(jugadores);
+            agregarJugador(jugadores);
             break;
         case 5:
             cout << "Gracias por jugar" << endl;
@@ -363,14 +558,8 @@ int main()
     // Cargar los datos de los jugadores
     cargarJugadores(jugadores);
     
-    // Imprimir los datos de los jugadores
-    //imprimirJugadores(jugadores);
-
     // Cargar los datos de los juegos
     cargarJuegos(juegos);
-
-    // Imprimir los datos de los juegos
-    imprimirJuegos(juegos);
 
     // Menu
     menuPrincipal(juegos, jugadores);
