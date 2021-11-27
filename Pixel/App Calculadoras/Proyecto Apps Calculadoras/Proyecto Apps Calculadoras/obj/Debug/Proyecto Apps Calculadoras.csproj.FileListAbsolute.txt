@@ -1,0 +1,12 @@
+D:\GitHub\Talleres_Para_Mis_Fans\Pixel\App Calculadoras\Proyecto Apps Calculadoras\Proyecto Apps Calculadoras\obj\Debug\Proyecto Apps Calculadoras.csproj.AssemblyReference.cache
+D:\GitHub\Talleres_Para_Mis_Fans\Pixel\App Calculadoras\Proyecto Apps Calculadoras\Proyecto Apps Calculadoras\obj\Debug\Proyecto Apps Calculadoras.csproj.SuggestedBindingRedirects.cache
+D:\GitHub\Talleres_Para_Mis_Fans\Pixel\App Calculadoras\Proyecto Apps Calculadoras\Proyecto Apps Calculadoras\obj\Debug\Proyecto_Apps_Calculadoras.FormPrincipal.resources
+D:\GitHub\Talleres_Para_Mis_Fans\Pixel\App Calculadoras\Proyecto Apps Calculadoras\Proyecto Apps Calculadoras\obj\Debug\Proyecto_Apps_Calculadoras.FormCientifica.resources
+D:\GitHub\Talleres_Para_Mis_Fans\Pixel\App Calculadoras\Proyecto Apps Calculadoras\Proyecto Apps Calculadoras\obj\Debug\Proyecto_Apps_Calculadoras.Properties.Resources.resources
+D:\GitHub\Talleres_Para_Mis_Fans\Pixel\App Calculadoras\Proyecto Apps Calculadoras\Proyecto Apps Calculadoras\obj\Debug\Proyecto Apps Calculadoras.csproj.GenerateResource.cache
+D:\GitHub\Talleres_Para_Mis_Fans\Pixel\App Calculadoras\Proyecto Apps Calculadoras\Proyecto Apps Calculadoras\obj\Debug\Proyecto Apps Calculadoras.csproj.CoreCompileInputs.cache
+D:\GitHub\Talleres_Para_Mis_Fans\Pixel\App Calculadoras\Proyecto Apps Calculadoras\Proyecto Apps Calculadoras\bin\Debug\Proyecto Apps Calculadoras.exe.config
+D:\GitHub\Talleres_Para_Mis_Fans\Pixel\App Calculadoras\Proyecto Apps Calculadoras\Proyecto Apps Calculadoras\bin\Debug\Proyecto Apps Calculadoras.exe
+D:\GitHub\Talleres_Para_Mis_Fans\Pixel\App Calculadoras\Proyecto Apps Calculadoras\Proyecto Apps Calculadoras\bin\Debug\Proyecto Apps Calculadoras.pdb
+D:\GitHub\Talleres_Para_Mis_Fans\Pixel\App Calculadoras\Proyecto Apps Calculadoras\Proyecto Apps Calculadoras\obj\Debug\Proyecto Apps Calculadoras.exe
+D:\GitHub\Talleres_Para_Mis_Fans\Pixel\App Calculadoras\Proyecto Apps Calculadoras\Proyecto Apps Calculadoras\obj\Debug\Proyecto Apps Calculadoras.pdb
