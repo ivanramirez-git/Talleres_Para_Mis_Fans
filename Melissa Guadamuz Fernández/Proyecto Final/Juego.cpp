@@ -159,7 +159,7 @@ bool cargarJugadores(vector<Jugador> &jugadores)
 bool guardarJuegos(vector<Juego> &juegos)
 {
     ofstream archivo;
-    archivo.open(Juego_Archivo_Pruebas);
+    archivo.open(Juego_Archivo_Pruebas); // Juego_Archivo_Pruebas = Juego_test.dat, Se utiliza _test mientras se desarrollaba el programa, y olvide cambiar el nombre de los archivos a Juego.dat
     if (archivo.fail())
     {
         cout << "Error al abrir el archivo" << endl;
@@ -175,13 +175,13 @@ bool guardarJuegos(vector<Juego> &juegos)
     }
     archivo.close();
     return true;
-}
+} // Revision: Funcion o procedimiento que crea el archivo juego.dat
 
 // Jugadores
 bool guardarJugadores(vector<Jugador> &jugadores)
 {
     ofstream archivo;
-    archivo.open(Jugadores_Archivo_Pruebas);
+    archivo.open(Jugadores_Archivo_Pruebas); // Jugadores_Archivo_Pruebas = Jugadores_test.dat, Se utiliza _test mientras se desarrollaba el programa, y olvide cambiar el nombre de los archivos a Jugadores.dat
     if (archivo.fail())
     {
         cout << "Error al abrir el archivo" << endl;
@@ -194,7 +194,7 @@ bool guardarJugadores(vector<Jugador> &jugadores)
     }
     archivo.close();
     return true;
-}
+} // Revision: Funcion o procedimiento que crea el archivo para guardar la informacion de los jugadores.
 
 // Funcion para imprimir un vector de Juegos
 void imprimirJuegos(vector<Juego> juegos)
@@ -338,7 +338,7 @@ void mostrarMejoresJugadores(vector<Juego> juegos, vector<Jugador> jugadores)
         cout << endl;
     }
 
-}
+} // Revision: Funcion o Procedimiento que dezpliega los 10 mejores jugadores
 
 // Funcion que imprime un tablero con \t \n | + - para que sea mas legible 
 void imprimirTablero(Tablero tablero)
