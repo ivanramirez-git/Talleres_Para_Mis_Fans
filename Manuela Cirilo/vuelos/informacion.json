@@ -1,0 +1,367 @@
+{
+    "nombre": "Compañia UTEC Aereolineas",
+    "descripcion": "Sistema para gestion de ventas de pasajes",
+    "info_vuelos": [
+        {
+            "Destino": "Arequipa", 
+            "Dia": "Lunes", 
+            "Hora": "700", 
+            "Modelo Avion": "1", 
+            "Nro Vuelo": "UT0001", 
+            "Origen": "Lima", 
+            "Precio Base": "60"
+        }, 
+        {
+            "Destino": "Arequipa", 
+            "Dia": "Martes", 
+            "Hora": "700", 
+            "Modelo Avion": "1", 
+            "Nro Vuelo": "UT0001", 
+            "Origen": "Lima", 
+            "Precio Base": "60"
+        }, 
+        {
+            "Destino": "Arequipa", 
+            "Dia": "Miercoles", 
+            "Hora": "700", 
+            "Modelo Avion": "1", 
+            "Nro Vuelo": "UT0001", 
+            "Origen": "Lima", 
+            "Precio Base": "60"
+        }, 
+        {
+            "Destino": "Arequipa", 
+            "Dia": "Jueves", 
+            "Hora": "700", 
+            "Modelo Avion": "1", 
+            "Nro Vuelo": "UT0001", 
+            "Origen": "Lima", 
+            "Precio Base": "60"
+        }, 
+        {
+            "Destino": "Arequipa", 
+            "Dia": "Viernes", 
+            "Hora": "700", 
+            "Modelo Avion": "1", 
+            "Nro Vuelo": "UT0001", 
+            "Origen": "Lima", 
+            "Precio Base": "60"
+        }, 
+        {
+            "Destino": "Arequipa", 
+            "Dia": "Lunes", 
+            "Hora": "1800", 
+            "Modelo Avion": "1", 
+            "Nro Vuelo": "UT0002", 
+            "Origen": "Lima", 
+            "Precio Base": "60"
+        }, 
+        {
+            "Destino": "Arequipa", 
+            "Dia": "Martes", 
+            "Hora": "1800", 
+            "Modelo Avion": "1", 
+            "Nro Vuelo": "UT0002", 
+            "Origen": "Lima", 
+            "Precio Base": "60"
+        }, 
+        {
+            "Destino": "Arequipa", 
+            "Dia": "Miercoles", 
+            "Hora": "1800", 
+            "Modelo Avion": "1", 
+            "Nro Vuelo": "UT0002", 
+            "Origen": "Lima", 
+            "Precio Base": "60"
+        }, 
+        {
+            "Destino": "Arequipa", 
+            "Dia": "Jueves", 
+            "Hora": "1800", 
+            "Modelo Avion": "1", 
+            "Nro Vuelo": "UT0002", 
+            "Origen": "Lima", 
+            "Precio Base": "60"
+        }, 
+        {
+            "Destino": "Arequipa", 
+            "Dia": "Viernes", 
+            "Hora": "1800", 
+            "Modelo Avion": "2", 
+            "Nro Vuelo": "UT0002", 
+            "Origen": "Lima", 
+            "Precio Base": "60"
+        }, 
+        {
+            "Destino": "Arequipa", 
+            "Dia": "Viernes", 
+            "Hora": "1200", 
+            "Modelo Avion": "1", 
+            "Nro Vuelo": "UT0003", 
+            "Origen": "Lima", 
+            "Precio Base": "60"
+        }, 
+        {
+            "Destino": "Arequipa", 
+            "Dia": "Viernes", 
+            "Hora": "2100", 
+            "Modelo Avion": "2", 
+            "Nro Vuelo": "UT0004", 
+            "Origen": "Lima", 
+            "Precio Base": "60"
+        }, 
+        {
+            "Destino": "Arequipa", 
+            "Dia": "Sabado", 
+            "Hora": "1200", 
+            "Modelo Avion": "1", 
+            "Nro Vuelo": "UT0005", 
+            "Origen": "Lima", 
+            "Precio Base": "60"
+        }, 
+        {
+            "Destino": "Arequipa", 
+            "Dia": "Domingo", 
+            "Hora": "800", 
+            "Modelo Avion": "2", 
+            "Nro Vuelo": "UT0006", 
+            "Origen": "Lima", 
+            "Precio Base": "60"
+        }, 
+        {
+            "Destino": "Arequipa", 
+            "Dia": "Domingo", 
+            "Hora": "1800", 
+            "Modelo Avion": "2", 
+            "Nro Vuelo": "UT0006", 
+            "Origen": "Lima", 
+            "Precio Base": "60"
+        }, 
+        {
+            "Destino": "Lima", 
+            "Dia": "Lunes", 
+            "Hora": "900", 
+            "Modelo Avion": "1", 
+            "Nro Vuelo": "UT1001", 
+            "Origen": "Arequipa", 
+            "Precio Base": "70"
+        }, 
+        {
+            "Destino": "Lima", 
+            "Dia": "Martes", 
+            "Hora": "900", 
+            "Modelo Avion": "1", 
+            "Nro Vuelo": "UT1001", 
+            "Origen": "Arequipa", 
+            "Precio Base": "70"
+        }, 
+        {
+            "Destino": "Lima", 
+            "Dia": "Miercoles", 
+            "Hora": "900", 
+            "Modelo Avion": "1", 
+            "Nro Vuelo": "UT1001", 
+            "Origen": "Arequipa", 
+            "Precio Base": "70"
+        }, 
+        {
+            "Destino": "Lima", 
+            "Dia": "Jueves", 
+            "Hora": "900", 
+            "Modelo Avion": "1", 
+            "Nro Vuelo": "UT1001", 
+            "Origen": "Arequipa", 
+            "Precio Base": "70"
+        }, 
+        {
+            "Destino": "Lima", 
+            "Dia": "Viernes", 
+            "Hora": "900", 
+            "Modelo Avion": "1", 
+            "Nro Vuelo": "UT1001", 
+            "Origen": "Arequipa", 
+            "Precio Base": "70"
+        }, 
+        {
+            "Destino": "Lima", 
+            "Dia": "Lunes", 
+            "Hora": "2000", 
+            "Modelo Avion": "1", 
+            "Nro Vuelo": "UT1002", 
+            "Origen": "Arequipa", 
+            "Precio Base": "70"
+        }, 
+        {
+            "Destino": "Lima", 
+            "Dia": "Martes", 
+            "Hora": "2000", 
+            "Modelo Avion": "1", 
+            "Nro Vuelo": "UT1002", 
+            "Origen": "Arequipa", 
+            "Precio Base": "70"
+        }, 
+        {
+            "Destino": "Lima", 
+            "Dia": "Miercoles", 
+            "Hora": "2000", 
+            "Modelo Avion": "1", 
+            "Nro Vuelo": "UT1002", 
+            "Origen": "Arequipa", 
+            "Precio Base": "70"
+        }, 
+        {
+            "Destino": "Lima", 
+            "Dia": "Jueves", 
+            "Hora": "2000", 
+            "Modelo Avion": "1", 
+            "Nro Vuelo": "UT1002", 
+            "Origen": "Arequipa", 
+            "Precio Base": "70"
+        }, 
+        {
+            "Destino": "Lima", 
+            "Dia": "Viernes", 
+            "Hora": "2000", 
+            "Modelo Avion": "2", 
+            "Nro Vuelo": "UT1002", 
+            "Origen": "Arequipa", 
+            "Precio Base": "70"
+        }, 
+        {
+            "Destino": "Lima", 
+            "Dia": "Sabado", 
+            "Hora": "1500", 
+            "Modelo Avion": "2", 
+            "Nro Vuelo": "UT1003", 
+            "Origen": "Arequipa", 
+            "Precio Base": "70"
+        }, 
+        {
+            "Destino": "Lima", 
+            "Dia": "Domingo", 
+            "Hora": "1500", 
+            "Modelo Avion": "2", 
+            "Nro Vuelo": "UT1003", 
+            "Origen": "Arequipa", 
+            "Precio Base": "70"
+        }, 
+        {
+            "Destino": "Lima", 
+            "Dia": "Domingo", 
+            "Hora": "2100", 
+            "Modelo Avion": "2", 
+            "Nro Vuelo": "UT1004", 
+            "Origen": "Arequipa", 
+            "Precio Base": "70"
+        }, 
+        {
+            "Destino": "Cusco", 
+            "Dia": "Lunes", 
+            "Hora": "600", 
+            "Modelo Avion": "2", 
+            "Nro Vuelo": "UT3001", 
+            "Origen": "Lima", 
+            "Precio Base": "90"
+        }, 
+        {
+            "Destino": "Cusco", 
+            "Dia": "Miercoles", 
+            "Hora": "600", 
+            "Modelo Avion": "2", 
+            "Nro Vuelo": "UT3001", 
+            "Origen": "Lima", 
+            "Precio Base": "90"
+        }, 
+        {
+            "Destino": "Cusco", 
+            "Dia": "Viernes", 
+            "Hora": "600", 
+            "Modelo Avion": "2", 
+            "Nro Vuelo": "UT3001", 
+            "Origen": "Lima", 
+            "Precio Base": "90"
+        }, 
+        {
+            "Destino": "Cusco", 
+            "Dia": "Domingo", 
+            "Hora": "1500", 
+            "Modelo Avion": "1", 
+            "Nro Vuelo": "UT3002", 
+            "Origen": "Lima", 
+            "Precio Base": "90"
+        }, 
+        {
+            "Destino": "Lima", 
+            "Dia": "Lunes", 
+            "Hora": "800", 
+            "Modelo Avion": "2", 
+            "Nro Vuelo": "UT4001", 
+            "Origen": "Cusco", 
+            "Precio Base": "60"
+        }, 
+        {
+            "Destino": "Lima", 
+            "Dia": "Miercoles", 
+            "Hora": "800", 
+            "Modelo Avion": "2", 
+            "Nro Vuelo": "UT4001", 
+            "Origen": "Cusco", 
+            "Precio Base": "60"
+        }, 
+        {
+            "Destino": "Lima", 
+            "Dia": "Viernes", 
+            "Hora": "800", 
+            "Modelo Avion": "2", 
+            "Nro Vuelo": "UT4001", 
+            "Origen": "Cusco", 
+            "Precio Base": "60"
+        }, 
+        {
+            "Destino": "Lima", 
+            "Dia": "Domingo", 
+            "Hora": "1800", 
+            "Modelo Avion": "2", 
+            "Nro Vuelo": "UT4002", 
+            "Origen": "Cusco", 
+            "Precio Base": "60"
+        }, 
+        {
+            "Destino": "Cusco", 
+            "Dia": "Viernes", 
+            "Hora": "1200", 
+            "Modelo Avion": "1", 
+            "Nro Vuelo": "UT5001", 
+            "Origen": "Arequipa", 
+            "Precio Base": "100"
+        }, 
+        {
+            "Destino": "Cusco", 
+            "Dia": "Domingo", 
+            "Hora": "1500", 
+            "Modelo Avion": "1", 
+            "Nro Vuelo": "UT5002", 
+            "Origen": "Arequipa", 
+            "Precio Base": "100"
+        }, 
+        {
+            "Destino": "Arequipa", 
+            "Dia": "Viernes", 
+            "Hora": "1500", 
+            "Modelo Avion": "1", 
+            "Nro Vuelo": "UT6001", 
+            "Origen": "Cusco", 
+            "Precio Base": "80"
+        }, 
+        {
+            "Destino": "Arequipa", 
+            "Dia": "Domingo", 
+            "Hora": "1700", 
+            "Modelo Avion": "1", 
+            "Nro Vuelo": "UT6002", 
+            "Origen": "Cusco", 
+            "Precio Base": "80"
+        }
+    ],
+    "clientes": "Lista de clientes"
+}
