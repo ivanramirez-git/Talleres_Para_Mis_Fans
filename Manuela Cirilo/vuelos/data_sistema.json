@@ -363,5 +363,30 @@
             "Precio Base": "80"
         }
     ],
-    "clientes": "Lista de clientes"
+    "clientes": [
+        {
+            "Aapellidos": "Perez Gonzalez",
+            "nombres": "Juan Esteban", 
+            "dni": "12345678",
+            "email": "juan_perez@aol.com"
+        },
+        {
+            "Aapellidos": "Alvarez Fernandez",
+            "nombres": "Jorge Luis",
+            "dni": "12345678",
+            "email": "jorge_alvarez@email.edu.pe"
+        }
+    ],
+    "reservas": [
+        {
+            "id": "A2SEDQWE",
+            "fecha": "2021-12-29",
+            "NroVuelo": "UT1002",
+            "dia": "Lunes",
+            "asiento": "A1",
+            "precio_pagado": "70",
+            "checkin": "false",
+            "dni": "12345678"           
+        }
+    ]
 }

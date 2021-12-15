@@ -1,34 +1,36 @@
-import csv
-import json
+import funciones
+import sistema
 
-# convertir un archivo csv a formato json
-sv_file = open('vuelos/info.csv', 'r')
-json_file = open('vuelos/info.json', 'w')
+# Bienvenidos a el sistema de gestion de pasajes de aviones UTEC AEREOLINEAS
+print(".:: Bienvenidos a el sistema de gestion de pasajes de aviones UTEC AEREOLINEAS ::.")
 
-# archivo csv a lista separada por puntos y comas
-csv_reader = csv.DictReader(sv_file, delimiter=';')
+# 1. Ventas
+# 2. Consultas
+# 3. Clientes
+# 4. Salir
 
-
-# lista vacia para guardar los datos
-vuelos = []
-
-
-# recorrer la lista de datos
-for row in csv_reader:
-    # guardar los datos en la lista
-    vuelos.append(row)
-
-
-# convertir la lista a json
-json_string = json.dumps(vuelos, indent=4, sort_keys=True)
-
-
-# escribir el json en el archivo
-json_file.write(json_string)
-
-
-# cerrar los archivos
-sv_file.close()
-json_file.close()
-
-
+while True:
+    print("\n1. Ventas")
+    print("2. Consultas")
+    print("3. Clientes")
+    print("4. Salir")
+    opcion = funciones.opcion("\nIngrese una opcion: ", 1, 4)
+    if opcion == 1:
+        # Preguntar si es solo ida o ida y vuelta
+        print("\n1. Solo ida")
+        print("2. ida y vuelta")
+        opcion = funciones.opcion("\nIngrese una opcion: ", 1, 2)
+        if opcion == 1:
+            # Pedir datos de cliente
+            print("\nIngrese los datos del cliente: ")
+            nombre = funciones.entrada("Nombre: ")
+            apellido = funciones.entrada("Apellido: ")
+            dni = funciones.entrada_dni("DNI: ")
+            correo = funciones.entrada_correo("Correo: ")
+            # Pedir datos de vuelo
+            print("\nIngrese los datos del vuelo: ")
+            origenes = sistema.get_list_origenes()
+            origen = funciones.opcion("Origen: ", origenes)
+            destinos = sistema.get_list_destinos(origen)
+            destino = funciones.opcion("Destino: ", destinos)
+            fecha = funciones.entrada("Fecha (dd/mm/aaaa): ")
