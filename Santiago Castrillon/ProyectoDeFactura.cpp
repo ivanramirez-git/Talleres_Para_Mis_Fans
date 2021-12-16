@@ -127,12 +127,17 @@ void mostrarCliente(Cliente cliente);
 void modificarCliente(Sistema &sistema);
 void eliminarCliente(Sistema &sistema);
 
-// Prodcutos
-void listarProductos(Inventario inventario);
-int buscarProducto(Inventario inventario, int codigo);
-
 // Facturas
 void visualizarFactura(Factura factura);
+void visualizarFacturasMayorAMenor(Sistema &sistema);
+
+// Productos
+void listarProductos(Inventario inventario);
+int buscarProducto(Inventario inventario, int codigo);
+void mostrarProducto(Inventario inventario);
+void modificarProducto(Inventario &inventario);
+void eliminarProducto(Inventario &inventario);
+void agregarProducto(Inventario &inventario);
 
 // Devuelve el indice del cliente
 int buscarCliente(Sistema &sistema, string nif);
@@ -216,8 +221,9 @@ int main() {
     do {
         cout << "1. Ventas." << endl;
         cout << "2. Clientes." << endl;
-        cout << "3. Consultas." << endl;
-        cout << "4. Salir." << endl;
+        cout << "3. Productos." << endl;
+        cout << "4. Consultas." << endl;
+        cout << "5. Salir." << endl;
         cout << "Opcion: ";
         while (true) {
             cin >> opcion;
@@ -273,6 +279,36 @@ int main() {
         } else if (opcion == 3) {
             int opcion3;
             do {
+                cout << "1. Agregar producto." << endl;
+                cout << "2. Modificar producto." << endl;
+                cout << "3. Eliminar producto." << endl;
+                cout << "4. Listar productos." << endl;
+                cout << "5. Mostrar producto." << endl;
+                cout << "6. Regresar." << endl;
+                cout << "Opcion: ";
+                while (true) {
+                    cin >> opcion3;
+                    if (opcion3 >= 1 && opcion3 <= 5)
+                        break;
+                    cout << "Opcion invalida, intente de nuevo: ";
+                }
+                if (opcion3 == 1) {
+                    agregarProducto(sistema.inventario);
+                } else if (opcion3 == 2) {
+                    modificarProducto(sistema.inventario);
+                } else if (opcion3 == 3) {
+                    eliminarProducto(sistema.inventario);
+                } else if (opcion3 == 4) {
+                    listarProductos(sistema.inventario);
+                } else if (opcion3 == 5) {
+                    mostrarProducto(sistema.inventario);
+                } else if (opcion3 == 6) {
+                    break;
+                }
+            } while (true);
+        } else if (opcion == 4) {
+            int opcion3;
+            do {
                 cout << "1. Buscar factura." << endl;
                 cout << "2. Listar facturas." << endl;
                 cout << "3. Mostrar factura por producto." << endl;
@@ -286,26 +322,10 @@ int main() {
                     cout << "Opcion invalida, intente de nuevo: ";
                 }
                 if (opcion3 == 1) {
-                    int numeroFactura;
-                    cout << "Numero de factura: ";
-                    while (true) {
-                        cin >> numeroFactura;
-                        if (numeroFactura >= 1 && numeroFactura <= sistema.numeroFacturas)
-                            break;
-                        cout << "Numero de factura invalido, intente de nuevo: ";
-                    }
                     buscarFactura(sistema);
                 } else if (opcion3 == 2) {
                     listarFacturas(sistema);
                 } else if (opcion3 == 3) {
-                    int codigoProducto;
-                    cout << "Codigo de producto: ";
-                    while (true) {
-                        cin >> codigoProducto;
-                        if (codigoProducto >= 1 && codigoProducto <= sistema.inventario.numeroProductos)
-                            break;
-                        cout << "Codigo de producto invalido, intente de nuevo: ";
-                    }
                     mostrarFacturaPorProducto(sistema);
                 } else if (opcion3 == 4) {
                     visualizarFacturas(sistema);
@@ -916,5 +936,199 @@ void visualizarFacturas(Sistema &sistema) {
     for (int i = 0; i < sistema.numeroFacturas; i++) {
         factura = sistema.facturas[i];
         visualizarFactura(factura);
+    }
+}
+
+
+// Visualizar facturas de mayor a menor
+void visualizarFacturasMayorAMenor(Sistema &sistema) {
+    // Declaracion de variables
+    Factura factura;
+
+    // Vector auxiliar
+    Factura facturasAux[MAX_LENGTH];
+
+    // Copiar facturas en el vector auxiliar
+    for (int i = 0; i < sistema.numeroFacturas; i++) {
+        facturasAux[i] = sistema.facturas[i];
+    }
+
+    // Ordenar facturas por mayor a menor valor total
+    for (int i = 0; i < sistema.numeroFacturas; i++) {
+        for (int j = 0; j < sistema.numeroFacturas - 1; j++) {
+            if (facturasAux[j].numero < facturasAux[j + 1].numero) {
+                factura = facturasAux[j];
+                facturasAux[j] = facturasAux[j + 1];
+                facturasAux[j + 1] = factura;
+            }
+        }
+    }
+
+    // Listar facturas Ordenadas
+    cout << "Listado de facturas" << endl;
+    cout << "-------------------" << endl;
+    cout <<"Numero\tCliente\t\tFecha" << endl;
+    for (int i = 0; i < sistema.numeroFacturas; i++) {
+        factura = facturasAux[i];
+        visualizarFactura(factura);
+    }
+}
+
+// Mostrar producto
+void mostrarProducto(Inventario inventario){
+    // Pedir codigo
+    int codigo;
+    cout << "Codigo: ";
+    cin >> codigo;
+    while (codigo < 0) {
+        cout << "Codigo invalido" << endl;
+        cout << "Codigo: ";
+        cin >> codigo;
+    }
+
+    // Buscar producto
+    int posicion = buscarProducto(inventario, codigo);
+    if (posicion == -1) {
+        cout << "Producto no encontrado" << endl;
+    } else {
+        Producto producto = inventario.productos[posicion];
+        cout << "Codigo: " << producto.codigo << endl;
+        cout << "Cantidad: " << producto.cantidad << endl;
+        cout << "Concepto: " << producto.concepto << endl;
+        cout << "Precio: " << producto.precio << endl;
+    }
+}
+
+// Modificar producto del inventario
+void modificarProducto(Inventario &inventario){
+    // Pedir codigo
+    int codigo;
+    cout << "Codigo: ";
+    cin >> codigo;
+    while (codigo < 0) {
+        cout << "Codigo invalido" << endl;
+        cout << "Codigo: ";
+        cin >> codigo;
+    }
+
+    // Buscar producto
+    int posicion = buscarProducto(inventario, codigo);
+    if (posicion == -1) {
+        cout << "Producto no encontrado" << endl;
+    } else {
+        Producto producto = inventario.productos[posicion];
+        cout << "Codigo: " << producto.codigo << endl;
+        cout << "Cantidad: " << producto.cantidad << endl;
+        cout << "Concepto: " << producto.concepto << endl;
+        cout << "Precio: " << producto.precio << endl;
+
+        // Pedir nueva cantidad
+        int nuevaCantidad;
+        cout << "Nueva cantidad: ";
+        cin >> nuevaCantidad;
+        while (nuevaCantidad < 0) {
+            cout << "Cantidad invalida" << endl;
+            cout << "Nueva cantidad: ";
+            cin >> nuevaCantidad;
+        }
+
+        // Actualizar cantidad
+        producto.cantidad = nuevaCantidad;
+        inventario.productos[posicion] = producto;
+    }
+}
+
+// Eliminar producto del inventario
+void eliminarProducto(Inventario &inventario){
+    // Pedir codigo
+    int codigo;
+    cout << "Codigo: ";
+    cin >> codigo;
+    while (codigo < 0) {
+        cout << "Codigo invalido" << endl;
+        cout << "Codigo: ";
+        cin >> codigo;
+    }
+
+    // Buscar producto
+    int posicion = buscarProducto(inventario, codigo);
+    if (posicion == -1) {
+        cout << "Producto no encontrado" << endl;
+    } else {
+        Producto producto = inventario.productos[posicion];
+        cout << "Codigo: " << producto.codigo << endl;
+        cout << "Cantidad: " << producto.cantidad << endl;
+        cout << "Concepto: " << producto.concepto << endl;
+        cout << "Precio: " << producto.precio << endl;
+
+        // Pedir confirmacion
+        char confirmacion;
+        cout << "Confirmar eliminacion? (s/n): ";
+        cin >> confirmacion;
+        while (confirmacion != 's' && confirmacion != 'n') {
+            cout << "Confirmacion invalida" << endl;
+            cout << "Confirmar eliminacion? (s/n): ";
+            cin >> confirmacion;
+        }
+
+        // Eliminar producto
+        if (confirmacion == 's') {
+            for (int i = posicion; i < inventario.numeroProductos - 1; i++) {
+                inventario.productos[i] = inventario.productos[i + 1];
+            }
+            inventario.numeroProductos--;
+        }
+    }
+}
+
+void agregarProducto(Inventario &inventario){
+    // Pedir codigo
+    int codigo;
+    cout << "Codigo: ";
+    cin >> codigo;
+    while (codigo < 0) {
+        cout << "Codigo invalido" << endl;
+        cout << "Codigo: ";
+        cin >> codigo;
+    }
+
+    // Buscar producto
+    int posicion = buscarProducto(inventario, codigo);
+    if (posicion != -1) {
+        cout << "Producto ya existe" << endl;
+    } else {
+        // Pedir cantidad
+        int cantidad;
+        cout << "Cantidad: ";
+        cin >> cantidad;
+        while (cantidad < 0) {
+            cout << "Cantidad invalida" << endl;
+            cout << "Cantidad: ";
+            cin >> cantidad;
+        }
+
+        // Pedir concepto
+        string concepto;
+        cout << "Concepto: ";
+        cin >> concepto;
+
+        // Pedir precio
+        double precio;
+        cout << "Precio: ";
+        cin >> precio;
+        while (precio < 0) {
+            cout << "Precio invalido" << endl;
+            cout << "Precio: ";
+            cin >> precio;
+        }
+
+        // Agregar producto
+        Producto producto;
+        producto.codigo = codigo;
+        producto.cantidad = cantidad;
+        producto.concepto = concepto;
+        producto.precio = precio;
+        inventario.productos[inventario.numeroProductos] = producto;
+        inventario.numeroProductos++;
     }
 }
