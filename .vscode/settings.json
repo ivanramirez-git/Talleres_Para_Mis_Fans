@@ -40,6 +40,7 @@
         "utility": "cpp",
         "hashtable": "cpp",
         "*.cp": "c",
-        "ios": "cpp"
+        "ios": "cpp",
+        "random": "cpp"
     }
 }

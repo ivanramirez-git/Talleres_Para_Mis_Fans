@@ -25,7 +25,7 @@ int main()
             }
         }
         // Imprimir la ubicacion del digito en el tablero
-        cout << "El numero: " << aux << " esta en la fila: " << fila << " y la columna: " << columna << endl;
+        cout << "El numero: " << aux << " esta en la fila: " << fila + 1 << " y la columna: " << columna + 1 << endl;
 
     }
 
