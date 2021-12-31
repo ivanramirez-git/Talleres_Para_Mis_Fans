@@ -41,6 +41,7 @@
         "hashtable": "cpp",
         "*.cp": "c",
         "ios": "cpp",
-        "random": "cpp"
+        "random": "cpp",
+        "__locale": "cpp"
     }
 }
