@@ -2,7 +2,6 @@
 const _ = require('lodash');
 
 // Ejercicios con arrays
-
 // 1. Meses del año
 const meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
 
@@ -15,7 +14,7 @@ const mesesOrdenados2 = _.sortBy(meses);
 // Invertir el orden del array de meses.
 const mesesInvertidos = _.reverse(meses);
 
-// Añañadir un nuevo mes al array de meses.
+// Añadimos un nuevo mes al array de meses.
 const mesesNuevos = _.concat(meses, 'Septiembre');
 
 // Eliminar elementos duplicados del array de meses.
