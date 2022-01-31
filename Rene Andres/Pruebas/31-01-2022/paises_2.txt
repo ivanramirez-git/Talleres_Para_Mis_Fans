@@ -1,0 +1,13 @@
+Ecuador  17.3
+Peru  32.6
+Colombia  50.8
+Brasil 211
+Argentina  45.8
+Venezuela 28
+Chile  19.4
+Bolivia 11.3
+Paraguay 7
+Uruguay  3.5
+EEUU  329.5
+Mexico  128.9
+Canada  38.1

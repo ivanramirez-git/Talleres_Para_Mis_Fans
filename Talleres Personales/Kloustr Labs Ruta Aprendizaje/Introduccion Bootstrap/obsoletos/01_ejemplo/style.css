@@ -1,0 +1,41 @@
+.item1 {
+    grid-area: header; /* Elemento que ocupa el header */
+}
+
+.item2 {
+    grid-area: menu; /* Elemento que ocupa el menu */
+}
+
+.item3 {
+    grid-area: main; /* Elemento que ocupa el main */
+}
+
+.item4 {
+    grid-area: right; /* Elemento que ocupa el right */
+}
+
+.item5 {
+    grid-area: footer; /* Elemento que ocupa el footer */
+}
+
+.grid-container {
+    display: grid; /* Se utiliza para definir el grid */
+    grid-template-areas:
+        'header header header header header header' /* Se define el header */
+        'menu main main main right right' /* Se define el menu */
+        'menu footer footer footer footer footer'; /* Se define el footer */
+    grid-gap: 10px; /* Se define el espacio entre los elementos */
+    background-color: #2196F3; /* Se define el color de fondo */
+    padding: 10px; /* Se define el espacio entre los bordes y el contenido */
+}
+
+.grid-container>div {
+    background-color: rgba(255, 255, 255, 0.8); /* Se define el color de fondo */
+    text-align: center; /* Se define el alineamiento del texto */
+    padding: 20px 0; /* Se define el espacio entre los bordes y el contenido */
+    font-size: 30px; /* Se define el tamaño del texto */
+}
+
+div:hover {
+    border: rgb(238, 255, 0) 1px solid; /* Se define el borde cuando se pasa el mouse sobre el elemento */
+}
