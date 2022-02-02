@@ -12,20 +12,22 @@
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
 
-    <title>Configuración</title>
+    <title>Espaciado de Columnas</title>
 </head>
 
 <body>
-    <!-- Estructura de contenedores -->
-    <div class="container">
-        <div class="row p-5">
-            <!-- Button Group: https://getbootstrap.com/docs/5.1/components/button-group/ -->
-            <div class="btn-group" role="group" aria-label="Basic example">
-                <button type="button" class="btn btn-primary">Left</button>
-                <button type="button" class="btn btn-primary">Middle</button>
-                <button type="button" class="btn btn-primary">Right</button>
+    <!-- Estructura de Contenedores -->
+    <div class="container"> <!-- px-4 -->
+        <div class="row gx-5 gy-5"> <!-- gx-5 -->
+            <div class="col"> <!-- gy-5 -->
+                <div class="p-4 border bg-light">Custom column padding</div>
             </div>
-            <!-- Fin Button Group -->
+            <div class="col"> <!-- gy-5 -->
+                <div class="p-4 border bg-light">Custom column padding</div>
+            </div>
+            <div class="col-12"> <!-- gy-5 -->
+                <div class="p-4 border bg-light">Custom column padding</div>
+            </div>
         </div>
     </div>
 </body>
