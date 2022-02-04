@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CDN de Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+    <title>Input Group</title>
+</head>
+
+<body class="bg-light">
+    <!-- AQUÍ VAMOS A PONER TODO EL CONTENIDO Y COMPONENTES -->
+    <div class="container">
+        <div class="row">
+            <div class="col-4 offset-4 gy-5">
+                <!-- Sin input-group -->
+                <!-- Label -->
+                <label for="">Sin input group</label>
+                <div class="">
+                    <span class="input-group-text">@</span>
+                    <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+                        aria-describedby="addon-wrapping">
+                </div>
+                <hr>
+                <!-- Con input-group -->
+                <!-- Label -->
+                <label for="">Con input group</label>
+                <div class="input-group">
+                    <span class="input-group-text">@</span>
+                    <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+                        aria-describedby="addon-wrapping">
+                </div>
+                <hr>
+
+                <!-- Botones -->
+                <div class="input-group mb-3">
+                    <span class="input-group-text">$</span>
+                    <span class="input-group-text">0.00</span>
+                    <input type="text" class="form-control"
+                        aria-label="Dollar amount (with dot and two decimal places)">
+                </div>
+                <hr>
+
+                <!-- Dropdown -->
+                <div class="input-group mb-3">
+                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">Dropdown</button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Separated link</a></li>
+                    </ul>
+                    <input type="text" class="form-control" aria-label="Text input with dropdown button">
+                </div>
+                <hr>
+
+                <!-- FILE -->
+                <div class="input-group mb-3">
+                    <input type="file" class=" form-control" id="inputGroupFile02">
+                    <label class="input-group-text" for="inputGroupFile02">Upload</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
