@@ -42,6 +42,23 @@
         "*.cp": "c",
         "ios": "cpp",
         "random": "cpp",
-        "__locale": "cpp"
+        "__locale": "cpp",
+        "atomic": "cpp",
+        "bit": "cpp",
+        "complex": "cpp",
+        "cstdarg": "cpp",
+        "cstddef": "cpp",
+        "cstring": "cpp",
+        "ctime": "cpp",
+        "algorithm": "cpp",
+        "functional": "cpp",
+        "memory": "cpp",
+        "memory_resource": "cpp",
+        "numeric": "cpp",
+        "optional": "cpp",
+        "tuple": "cpp",
+        "fstream": "cpp",
+        "iomanip": "cpp",
+        "sstream": "cpp"
     }
 }
