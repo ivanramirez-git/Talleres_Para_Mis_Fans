@@ -4,7 +4,7 @@
 expresion = /^([0-9]+([.][0-9]+)?)(([+\-])([0-9]+([.][0-9]+)?))+$/;
 
 // Pruebas: "pruebas3.json"
-pruebas = require("../pruebas3.json");
+pruebas = require("./pruebas3.json");
 
 // Resultado:
 for (var i = 0; i < pruebas.length; i++) {
