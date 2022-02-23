@@ -1,10 +1,17 @@
-// Expresion para leer string con expresiones aritmeticas simples (Suma y resta de dos numeros positivos)
+// Expresion para leer string con expresiones aritmeticas simples 
+/*(
+    •	Suma +
+    •	Resta -
+    •	Multiplicación *
+    •	División /
+    •	Modulo %
+)*/
 
 // Expresion:
-expresion = /^([0-9]+([.][0-9]+)?)(([+\-])([0-9]+([.][0-9]+)?))+$/;
+expresion = /^([0-9]+([.][0-9]+)?)(([+\-*\/%])([0-9]+([.][0-9]+)?))+$/;
 
 // Pruebas: "pruebas3.json"
-pruebas = require("./pruebas3.json");
+pruebas = require("./pruebas4.json");
 
 // Resultado:
 for (var i = 0; i < pruebas.length; i++) {
