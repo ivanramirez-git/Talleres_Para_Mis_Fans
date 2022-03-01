@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+</head>
+
+<body>
+    <script>
+        // Producto1
+        var producto1 = {
+            nombre: "",
+            precio: 0,
+            cantidad: 0,
+            Unidad: "",
+            toString: function() {
+                return this.nombre + " " + this.precio + " " + this.cantidad + " " + this.Unidad;
+            }
+        };
+
+        // Producto2
+        var producto2 = {
+            nombre: "",
+            precio: 0,
+            cantidad: 0,
+            Unidad: "",
+            toString: function() {
+                return this.nombre + " " + this.precio + " " + this.cantidad + " " + this.Unidad;
+            }
+        };
+
+        // Producto3
+        var producto3 = {
+            nombre: "",
+            precio: 0,
+            cantidad: 0,
+            Unidad: "",
+            toString: function() {
+                return this.nombre + " " + this.precio + " " + this.cantidad + " " + this.Unidad;
+            }
+        };
+
+        // Funcion para modificar el producto1
+        function modificarProducto(num, nombre, precio, cantidad, Unidad) {
+            if (num == 1) {
+                producto1.nombre = nombre;
+                producto1.precio = precio;
+                producto1.cantidad = cantidad;
+                producto1.Unidad = Unidad;
+            }
+
+            if (num == 2) {
+                producto2.nombre = nombre;
+                producto2.precio = precio;
+                producto2.cantidad = cantidad;
+                producto2.Unidad = Unidad;
+            }
+
+            if (num == 3) {
+                producto3.nombre = nombre;
+                producto3.precio = precio;
+                producto3.cantidad = cantidad;
+                producto3.Unidad = Unidad;
+            }
+
+        }
+
+        // Calcular iva, retorna el iva
+        function calcularIva() {
+            var iva = 0;
+            const IVA = 0.16;
+
+            iva += producto1.precio * producto1.cantidad;
+            iva += producto2.precio * producto2.cantidad;
+            iva += producto3.precio * producto3.cantidad;
+            return iva * IVA;
+        }
+
+        // Calcular total, precio + iva
+        function calcularTotal() {
+            var total = 0;
+
+            total += producto1.precio * producto1.cantidad;
+            total += producto2.precio * producto2.cantidad;
+            total += producto3.precio * producto3.cantidad;
+            total += calcularIva();
+            return total;
+        }
+
+    </script>
+
+    <div>
+        <h1>Productos</h1>
+        <!-- Input para modificar los datos de los productos -->
+        <h2>Producto 1</h2>
+        <input type="text" id="nombre1" placeholder="Nombre" />
+        <input type="number" id="precio1" placeholder="Precio" />
+        <input type="number" id="cantidad1" placeholder="Cantidad" />
+        <input type="text" id="Unidad1" placeholder="Unidad" />
+
+        <h2>Producto 2</h2>
+        <input type="text" id="nombre2" placeholder="Nombre" />
+        <input type="number" id="precio2" placeholder="Precio" />
+        <input type="number" id="cantidad2" placeholder="Cantidad" />
+        <input type="text" id="Unidad2" placeholder="Unidad" />
+
+        <h2>Producto 3</h2>
+        <input type="text" id="nombre3" placeholder="Nombre" />
+        <input type="number" id="precio3" placeholder="Precio" />
+        <input type="number" id="cantidad3" placeholder="Cantidad" />
+        <input type="text" id="Unidad3" placeholder="Unidad" />
+
+        <script>
+            // funcion para memorizar los datos
+            function memorizarDatos() {
+                var nombre1 = document.getElementById("nombre1").value;
+                var precio1 = document.getElementById("precio1").value;
+                var cantidad1 = document.getElementById("cantidad1").value;
+                var Unidad1 = document.getElementById("Unidad1").value;
+
+                var nombre2 = document.getElementById("nombre2").value;
+                var precio2 = document.getElementById("precio2").value;
+                var cantidad2 = document.getElementById("cantidad2").value;
+                var Unidad2 = document.getElementById("Unidad2").value;
+
+                var nombre3 = document.getElementById("nombre3").value;
+                var precio3 = document.getElementById("precio3").value;
+                var cantidad3 = document.getElementById("cantidad3").value;
+                var Unidad3 = document.getElementById("Unidad3").value;
+
+                modificarProducto(1, nombre1, precio1, cantidad1, Unidad1);
+                modificarProducto(2, nombre2, precio2, cantidad2, Unidad2);
+                modificarProducto(3, nombre3, precio3, cantidad3, Unidad3);
+            }
+        </script>
+
+        <hr>
+        <button onclick="memorizarDatos()">Guardar</button>
+
+        <hr>
+        <!-- Botton carga tabla y muestra el total y el iva -->
+        <div id="tabla">
+
+        </div>
+        <script>
+            // Factura: No, nombre, precio, cantidad, Unidad, total, iva
+            function cargarTabla() {
+                var tabla = [];
+                tabla.push(producto1.toString());
+                tabla.push(producto2.toString());
+                tabla.push(producto3.toString());
+
+                var total = calcularTotal();
+                var iva = calcularIva();
+
+                tabla.push("Total: " + total);
+                tabla.push("IVA: " + iva);
+
+                var tablaHTML = "<table><tr><th>No</th><th>Nombre</th><th>Precio</th><th>Cantidad</th><th>Unidad</th><th>Total</th></tr>";
+                for (var i = 0; i < tabla.length; i++) {
+                    tablaHTML += "<tr><td>" + (i + 1) + "</td><td>" + tabla[i] + "</td></tr>";
+                }
+                tablaHTML += "</table>";
+
+                document.getElementById("tabla").innerHTML = tablaHTML; 
+
+
+            }
+        </script>
+
+        <button onclick="cargarTabla()">Calcular</button>
+    </div>
+</body>
+
+
+</html>
