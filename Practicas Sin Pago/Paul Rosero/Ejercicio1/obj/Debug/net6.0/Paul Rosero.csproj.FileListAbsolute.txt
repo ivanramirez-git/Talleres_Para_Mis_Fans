@@ -1,0 +1,15 @@
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Practicas Sin Pago\Paul Rosero\Ejercicio1\bin\Debug\net6.0\Paul Rosero.exe
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Practicas Sin Pago\Paul Rosero\Ejercicio1\bin\Debug\net6.0\Paul Rosero.deps.json
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Practicas Sin Pago\Paul Rosero\Ejercicio1\bin\Debug\net6.0\Paul Rosero.runtimeconfig.json
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Practicas Sin Pago\Paul Rosero\Ejercicio1\bin\Debug\net6.0\Paul Rosero.dll
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Practicas Sin Pago\Paul Rosero\Ejercicio1\bin\Debug\net6.0\ref\Paul Rosero.dll
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Practicas Sin Pago\Paul Rosero\Ejercicio1\bin\Debug\net6.0\Paul Rosero.pdb
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Practicas Sin Pago\Paul Rosero\Ejercicio1\obj\Debug\net6.0\Paul Rosero.csproj.AssemblyReference.cache
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Practicas Sin Pago\Paul Rosero\Ejercicio1\obj\Debug\net6.0\Paul Rosero.GeneratedMSBuildEditorConfig.editorconfig
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Practicas Sin Pago\Paul Rosero\Ejercicio1\obj\Debug\net6.0\Paul Rosero.AssemblyInfoInputs.cache
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Practicas Sin Pago\Paul Rosero\Ejercicio1\obj\Debug\net6.0\Paul Rosero.AssemblyInfo.cs
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Practicas Sin Pago\Paul Rosero\Ejercicio1\obj\Debug\net6.0\Paul Rosero.csproj.CoreCompileInputs.cache
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Practicas Sin Pago\Paul Rosero\Ejercicio1\obj\Debug\net6.0\Paul Rosero.dll
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Practicas Sin Pago\Paul Rosero\Ejercicio1\obj\Debug\net6.0\ref\Paul Rosero.dll
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Practicas Sin Pago\Paul Rosero\Ejercicio1\obj\Debug\net6.0\Paul Rosero.pdb
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Practicas Sin Pago\Paul Rosero\Ejercicio1\obj\Debug\net6.0\Paul Rosero.genruntimeconfig.cache

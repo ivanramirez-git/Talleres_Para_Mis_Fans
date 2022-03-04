@@ -1,0 +1,15 @@
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Practicas Sin Pago\Porta Valentino\Ejercicio1\bin\Debug\net6.0\Porta Valentino.exe
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Practicas Sin Pago\Porta Valentino\Ejercicio1\bin\Debug\net6.0\Porta Valentino.deps.json
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Practicas Sin Pago\Porta Valentino\Ejercicio1\bin\Debug\net6.0\Porta Valentino.runtimeconfig.json
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Practicas Sin Pago\Porta Valentino\Ejercicio1\bin\Debug\net6.0\Porta Valentino.dll
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Practicas Sin Pago\Porta Valentino\Ejercicio1\bin\Debug\net6.0\ref\Porta Valentino.dll
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Practicas Sin Pago\Porta Valentino\Ejercicio1\bin\Debug\net6.0\Porta Valentino.pdb
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Practicas Sin Pago\Porta Valentino\Ejercicio1\obj\Debug\net6.0\Porta Valentino.csproj.AssemblyReference.cache
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Practicas Sin Pago\Porta Valentino\Ejercicio1\obj\Debug\net6.0\Porta Valentino.GeneratedMSBuildEditorConfig.editorconfig
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Practicas Sin Pago\Porta Valentino\Ejercicio1\obj\Debug\net6.0\Porta Valentino.AssemblyInfoInputs.cache
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Practicas Sin Pago\Porta Valentino\Ejercicio1\obj\Debug\net6.0\Porta Valentino.AssemblyInfo.cs
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Practicas Sin Pago\Porta Valentino\Ejercicio1\obj\Debug\net6.0\Porta Valentino.csproj.CoreCompileInputs.cache
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Practicas Sin Pago\Porta Valentino\Ejercicio1\obj\Debug\net6.0\Porta Valentino.dll
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Practicas Sin Pago\Porta Valentino\Ejercicio1\obj\Debug\net6.0\ref\Porta Valentino.dll
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Practicas Sin Pago\Porta Valentino\Ejercicio1\obj\Debug\net6.0\Porta Valentino.pdb
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Practicas Sin Pago\Porta Valentino\Ejercicio1\obj\Debug\net6.0\Porta Valentino.genruntimeconfig.cache

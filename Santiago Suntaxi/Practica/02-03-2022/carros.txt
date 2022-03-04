@@ -1,0 +1,6 @@
+Placa	Marca	Avaluo
+0412a	Mazda	9000
+1245a	Ssdd	3500
+asd78	Renault	6000
+a4rst	Kia	3698
+asp12	Corolla	15987
