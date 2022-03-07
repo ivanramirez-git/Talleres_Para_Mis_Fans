@@ -1,0 +1,5 @@
+codigo$descripcion$stock$precio_unitario
+1$Leche$0$2.5
+2$Huevos$20$1.5
+3$Pan$30$1.0
+4$Cereal$40$3.0
