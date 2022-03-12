@@ -1,0 +1,15 @@
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Jose Mexico\Proyectos\11-03-2022_02\bin\Debug\net6.0\11-03-2022_02.exe
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Jose Mexico\Proyectos\11-03-2022_02\bin\Debug\net6.0\11-03-2022_02.deps.json
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Jose Mexico\Proyectos\11-03-2022_02\bin\Debug\net6.0\11-03-2022_02.runtimeconfig.json
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Jose Mexico\Proyectos\11-03-2022_02\bin\Debug\net6.0\11-03-2022_02.dll
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Jose Mexico\Proyectos\11-03-2022_02\bin\Debug\net6.0\ref\11-03-2022_02.dll
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Jose Mexico\Proyectos\11-03-2022_02\bin\Debug\net6.0\11-03-2022_02.pdb
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Jose Mexico\Proyectos\11-03-2022_02\obj\Debug\net6.0\11-03-2022_02.csproj.AssemblyReference.cache
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Jose Mexico\Proyectos\11-03-2022_02\obj\Debug\net6.0\11-03-2022_02.GeneratedMSBuildEditorConfig.editorconfig
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Jose Mexico\Proyectos\11-03-2022_02\obj\Debug\net6.0\11-03-2022_02.AssemblyInfoInputs.cache
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Jose Mexico\Proyectos\11-03-2022_02\obj\Debug\net6.0\11-03-2022_02.AssemblyInfo.cs
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Jose Mexico\Proyectos\11-03-2022_02\obj\Debug\net6.0\11-03-2022_02.csproj.CoreCompileInputs.cache
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Jose Mexico\Proyectos\11-03-2022_02\obj\Debug\net6.0\11-03-2022_02.dll
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Jose Mexico\Proyectos\11-03-2022_02\obj\Debug\net6.0\ref\11-03-2022_02.dll
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Jose Mexico\Proyectos\11-03-2022_02\obj\Debug\net6.0\11-03-2022_02.pdb
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Jose Mexico\Proyectos\11-03-2022_02\obj\Debug\net6.0\11-03-2022_02.genruntimeconfig.cache

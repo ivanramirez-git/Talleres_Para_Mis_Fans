@@ -1,0 +1,15 @@
+C:\Users\User\Documents\GitHub\Talleres_Para_Mis_Fans\Jose Mexico\bin\Debug\net6.0\Jose Mexico.exe
+C:\Users\User\Documents\GitHub\Talleres_Para_Mis_Fans\Jose Mexico\bin\Debug\net6.0\Jose Mexico.deps.json
+C:\Users\User\Documents\GitHub\Talleres_Para_Mis_Fans\Jose Mexico\bin\Debug\net6.0\Jose Mexico.runtimeconfig.json
+C:\Users\User\Documents\GitHub\Talleres_Para_Mis_Fans\Jose Mexico\bin\Debug\net6.0\Jose Mexico.dll
+C:\Users\User\Documents\GitHub\Talleres_Para_Mis_Fans\Jose Mexico\bin\Debug\net6.0\ref\Jose Mexico.dll
+C:\Users\User\Documents\GitHub\Talleres_Para_Mis_Fans\Jose Mexico\bin\Debug\net6.0\Jose Mexico.pdb
+C:\Users\User\Documents\GitHub\Talleres_Para_Mis_Fans\Jose Mexico\obj\Debug\net6.0\Jose Mexico.csproj.AssemblyReference.cache
+C:\Users\User\Documents\GitHub\Talleres_Para_Mis_Fans\Jose Mexico\obj\Debug\net6.0\Jose Mexico.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Documents\GitHub\Talleres_Para_Mis_Fans\Jose Mexico\obj\Debug\net6.0\Jose Mexico.AssemblyInfoInputs.cache
+C:\Users\User\Documents\GitHub\Talleres_Para_Mis_Fans\Jose Mexico\obj\Debug\net6.0\Jose Mexico.AssemblyInfo.cs
+C:\Users\User\Documents\GitHub\Talleres_Para_Mis_Fans\Jose Mexico\obj\Debug\net6.0\Jose Mexico.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\GitHub\Talleres_Para_Mis_Fans\Jose Mexico\obj\Debug\net6.0\Jose Mexico.dll
+C:\Users\User\Documents\GitHub\Talleres_Para_Mis_Fans\Jose Mexico\obj\Debug\net6.0\ref\Jose Mexico.dll
+C:\Users\User\Documents\GitHub\Talleres_Para_Mis_Fans\Jose Mexico\obj\Debug\net6.0\Jose Mexico.pdb
+C:\Users\User\Documents\GitHub\Talleres_Para_Mis_Fans\Jose Mexico\obj\Debug\net6.0\Jose Mexico.genruntimeconfig.cache
