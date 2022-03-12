@@ -1,6 +1,5 @@
 
 # Importar librerias
-import estudiantes
 import mysql.connector # Libreria para conectar con MySQL
 """
     1	Nombre	varchar(50)

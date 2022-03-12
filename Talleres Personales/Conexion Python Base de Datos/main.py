@@ -65,6 +65,8 @@ def actualizar():
 
 # Progran principal
 def main():
+    # Bienvenida
+    print("\n\t\t\tBIENVENIDO")
     # Crear objeto conexion
     conexion = Conexion()
     # Opcion
