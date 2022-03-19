@@ -496,18 +496,55 @@ Algoritmo principal
 FinAlgoritmo
 
 
-	// Una empresa esta dividida en N sedes, cada sede en M secciones, y cada seccion tiene un numero no determinado de empleados.
-	// De cada empleado se conoce nombre, sexo, edad, salario basico y deducciones.
-	// Elabore un algoritmo que permita calcular e imprimir:
-	// a) El promedio de edad de los empleados por cada seccion y por cada sede.
-	// b) El porcentaje de mujeres de 18 anos por seccion y por sede.
-	// c) El numero de mujeres que ganan mas de 4 salarios minimos por seccion.
-	// d) Un mensaje "si existe al menos un empleado hombre que gane mas de 20 salarios minimos" de toda la empresa.
-	// e) El nombre y la edad de la mujer mas joven por cada seccion.
-	// f) El nombre y la edad del hombre mas viejo por cada sede.
-	// g) El valor de las deducciones mas altas de toda la empresa.
-	// h) El promedio de salarios netos de las mujeres mayores de 18 años por sede y seccion.
-	// i) El porcentaje de empleados hombres que ganan menos de dos salarios minimos por cada seccion.
-	// j) El salario neto mas bajo de toda la empresa.
+// Sea una cola de caracteres. Por ejemplo: a, b, a, c, d, x, e, a, b, d. Ordenar de acuerdo al numero de repeticiones del dato
+// a. Asendentemente: c, x, e, b, b, d, d, a, a, a
+// b. Desendentemente: a, a, a, b, b, d, d, e, x, c
 
+Algoritmo ordenarCaracteres
 
+	// Definir variables
+	Dimension caracteres(10)
+	
+	// Ingreso de datos
+	i <- 1
+	Mientras i <= 10
+		Escribir "Ingrese un caracter: "
+		Leer caracteres(i)
+		i <- i + 1
+	FinMientras
+
+	// Ordenar ascendentemente
+	contador <- 0
+	j <- 1
+	Mientras j <= 10
+		k <- 1
+		Mientras k <= 10
+			Si caracteres(k) = caracteres(j)
+				contador <- contador + 1
+			FinSi
+			k <- k + 1
+		FinMientras
+
+		Escribir "El caracter " caracteres(j) " se repite " contador " veces"
+		j <- j + 1
+		contador <- 0
+	FinMientras
+
+	// Ordenar descendentemente
+	contador <- 0
+	j <- 1
+	Mientras j <= 10
+		k <- 1
+		Mientras k <= 10
+			Si caracteres(k) = caracteres(j)
+				contador <- contador + 1
+			FinSi
+			k <- k + 1
+		FinMientras
+
+		Escribir "El caracter " caracteres(j) " se repite " contador " veces"
+		j <- j + 1
+		contador <- 0
+	FinMientras
+	
+FinAlgoritmo
