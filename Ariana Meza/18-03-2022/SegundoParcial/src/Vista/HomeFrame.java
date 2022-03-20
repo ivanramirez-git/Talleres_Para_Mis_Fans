@@ -5,6 +5,8 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
+import Controlador.ControladorGUI;
+
 public class HomeFrame extends JFrame {
     
     private static final long serialVersionUID = 1L;
@@ -22,6 +24,11 @@ public class HomeFrame extends JFrame {
 
     // HomeFrame Panel principal
     JPanel pnlHomeFrame;
+
+    // Estado
+    private int estado;
+
+    ControladorGUI cg;
     
     public HomeFrame() {
 
@@ -30,6 +37,7 @@ public class HomeFrame extends JFrame {
         // setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
+        estado = 0;
         initComponents();
 
     }
@@ -87,18 +95,32 @@ public class HomeFrame extends JFrame {
     }
 
     private void btnCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, "Cerrar Sesion");
+        JOptionPane.showMessageDialog(null, "Cerrar Sesion");   
+        estado = 1;
+        System.out.println("estado: " + estado);
+        this.dispose();
     }
 
     private void btnSalonesActionPerformed(java.awt.event.ActionEvent evt) {
+        estado = 2;
         JOptionPane.showMessageDialog(null, "Salones");
     }
 
     private void btnReservarSalaActionPerformed(java.awt.event.ActionEvent evt) {
+        estado = 3;
         JOptionPane.showMessageDialog(null, "Reservar Sala");
     }
 
     private void btnMisReservasActionPerformed(java.awt.event.ActionEvent evt) {
+        estado = 4;
         JOptionPane.showMessageDialog(null, "Mis Reservas");
+    }
+
+    public int getEstado() {
+        return estado;
+    }
+
+    public void setEstado(int estado) {
+        this.estado = estado;
     }
 }

@@ -70,7 +70,7 @@ public class Administrador extends Usuario {
 
     @Override
     public String toString() {
-        return "Administrador{" + "fecha_de_creacion=" + fecha_de_creacion + ", creado_por_id_administrador=" + creado_por_id_administrador + '}';
+        return super.toString() + " Administrador{" + "fecha_de_creacion=" + fecha_de_creacion + ", creado_por_id_administrador=" + creado_por_id_administrador + '}';
     }
     
 }

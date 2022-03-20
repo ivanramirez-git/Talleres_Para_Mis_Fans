@@ -50,7 +50,7 @@ public class Cliente extends Usuario {
 
     @Override
     public String toString() {
-        return "Cliente{" +
+        return super.toString() + " Cliente{" +
                 "reservaciones=" + reservaciones +
                 '}';
     }    
