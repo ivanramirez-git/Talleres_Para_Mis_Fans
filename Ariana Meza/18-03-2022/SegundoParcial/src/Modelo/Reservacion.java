@@ -1,6 +1,8 @@
 package Modelo;
 
-public class Reservacion {
+import java.io.Serializable;
+
+public class Reservacion implements Serializable {
 
     // id, id_cliente, id_salon, fecha, hora_inicio, hora_fin
     private int id;

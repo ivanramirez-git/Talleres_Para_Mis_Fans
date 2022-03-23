@@ -21,7 +21,7 @@ public class SesionInicioFrame extends JFrame {
     private JPasswordField txtPassword;
     private JButton btnIniciarSesion;
     private JButton btnRegistrarse;
-    private JButton btnCancelar;
+    private JButton btnSalir;
     private JLabel lblError;
 
     private int estado;
@@ -46,7 +46,7 @@ public class SesionInicioFrame extends JFrame {
         txtPassword = new JPasswordField();
         btnIniciarSesion = new JButton("Iniciar Sesión");
         btnRegistrarse = new JButton("Registrarse");
-        btnCancelar = new JButton("Cancelar");
+        btnSalir = new JButton("Salir");
         lblError = new JLabel("");
 
         sesionRegistroPanel.setLayout(null);
@@ -79,9 +79,9 @@ public class SesionInicioFrame extends JFrame {
             }
         });
 
-        btnCancelar.setBounds(10, 110, 165, 25);
-        sesionRegistroPanel.add(btnCancelar);
-        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+        btnSalir.setBounds(10, 110, 165, 25);
+        sesionRegistroPanel.add(btnSalir);
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCancelarActionPerformed(evt);
             }
@@ -107,7 +107,7 @@ public class SesionInicioFrame extends JFrame {
     // OnClick del botón Cancelar
     private void btnCancelarActionPerformed(ActionEvent evt) {
         // Mensaje de confirmación
-        int confirmacion = JOptionPane.showConfirmDialog(null, "¿Está seguro que desea cancelar?", "Confirmar", JOptionPane.YES_NO_OPTION);
+        int confirmacion = JOptionPane.showConfirmDialog(null, "¿Está seguro que desea salir?", "Confirmar", JOptionPane.YES_NO_OPTION);
         if (confirmacion == 0) {
             estado = 3;
             this.dispose();

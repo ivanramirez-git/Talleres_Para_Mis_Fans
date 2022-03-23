@@ -1,6 +1,8 @@
 package Modelo;
 
-public class Administrador extends Usuario {
+import java.io.Serializable;
+
+public class Administrador extends Usuario implements Serializable{
 
     // fecha_de_creacion, creado_por_id_administrador
     private String fecha_de_creacion;
@@ -19,6 +21,18 @@ public class Administrador extends Usuario {
         this.permisoReservaciones = false;
         this.permisoUsuarios = false;
     }
+
+    public Administrador(){
+        super();
+        this.fecha_de_creacion = "";
+        this.creado_por_id_administrador = 0;
+        this.permisoSalones = false;
+        this.permisoClientes = false;
+        this.permisoReservaciones = false;
+        this.permisoUsuarios = false;
+    }
+
+
 
     public String getFecha_de_creacion() {
         return fecha_de_creacion;

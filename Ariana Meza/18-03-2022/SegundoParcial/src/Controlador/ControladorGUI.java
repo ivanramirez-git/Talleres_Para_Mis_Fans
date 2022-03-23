@@ -1,5 +1,10 @@
 package Controlador;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 import Modelo.Administrador;
@@ -8,8 +13,11 @@ import Modelo.Reservacion;
 import Modelo.Salon;
 import Modelo.Usuario;
 import Vista.HomeFrame;
+import Vista.ReservacionesFrame;
+import Vista.SalonesFrame;
 import Vista.SesionInicioFrame;
 import Vista.SesionRegistroFrame;
+import Vista.AgregarSalonFrame;
 
 public class ControladorGUI {
 
@@ -28,13 +36,60 @@ public class ControladorGUI {
     // int hora_inicio, int hora_fin, double precio)
 
     private boolean sesion = false;
-    private Usuario usuarioActual;
 
     // Constructor
     public ControladorGUI() {
         usuarios = new ArrayList<Usuario>();
         salones = new ArrayList<Salon>();
         reservaciones = new ArrayList<Reservacion>();
+        // Crear usuario administrador
+        Administrador admin = new Administrador(1, "admin", "admin", "admin@eventos.com", "admin", "2020-01-01", 1);
+        usuarios.add(admin);
+        cargarArchivos();
+    }
+
+    // Guardar ArrayLists en archivos binarios
+    public void guardarArchivos() {
+        try {
+            FileOutputStream usuariosBIN = new FileOutputStream("usuarios.bin");
+            FileOutputStream salonesBIN = new FileOutputStream("salones.bin");
+            FileOutputStream reservacionesBIN = new FileOutputStream("reservaciones.bin");
+            ObjectOutputStream usuariosOBJ = new ObjectOutputStream(usuariosBIN);
+            ObjectOutputStream salonesOBJ = new ObjectOutputStream(salonesBIN);
+            ObjectOutputStream reservacionesOBJ = new ObjectOutputStream(reservacionesBIN);
+            usuariosOBJ.writeObject(usuarios);
+            salonesOBJ.writeObject(salones);
+            reservacionesOBJ.writeObject(reservaciones);
+            usuariosOBJ.close();
+            salonesOBJ.close();
+            reservacionesOBJ.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    // Cargar ArrayLists de archivos binarios
+    public void cargarArchivos() {
+        try {
+            FileInputStream usuariosBIN = new FileInputStream("usuarios.bin");
+            FileInputStream salonesBIN = new FileInputStream("salones.bin");
+            FileInputStream reservacionesBIN = new FileInputStream("reservaciones.bin");
+            ObjectInputStream usuariosOBJ = new ObjectInputStream(usuariosBIN);
+            ObjectInputStream salonesOBJ = new ObjectInputStream(salonesBIN);
+            ObjectInputStream reservacionesOBJ = new ObjectInputStream(reservacionesBIN);
+            usuarios = (ArrayList<Usuario>) usuariosOBJ.readObject();
+            salones = (ArrayList<Salon>) salonesOBJ.readObject();
+            reservaciones = (ArrayList<Reservacion>) reservacionesOBJ.readObject();
+            usuariosOBJ.close();
+            salonesOBJ.close();
+            reservacionesOBJ.close();            
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public boolean isSesion() {
@@ -45,9 +100,8 @@ public class ControladorGUI {
         for (int i = 0; i < usuarios.size(); i++) {
             if (usuarios.get(i).getUsuario().equals(usuario) && usuarios.get(i).validarPassword(password)) {
                 sesion = true;
-                usuarioActual = usuarios.get(i);
                 // Llamar al frame home
-                HomeFrame homeFrame = new HomeFrame();
+                HomeFrame homeFrame = new HomeFrame( usuarios.get(i));
                 homeFrame.setVisible(true);
                 System.out.println("Sesion iniciada");
                 while (homeFrame.getEstado() != 1) {
@@ -58,14 +112,63 @@ public class ControladorGUI {
                         break;
                     } else if (homeFrame.getEstado() == 2) {
                         // Salones
-                        // salones();
+                        SalonesFrame salonesFrame = new SalonesFrame(salones, usuarios.get(i));
+                        salonesFrame.setVisible(true);
+                        while (salonesFrame.getEstado() != 1) {
+                            if (salonesFrame.getEstado() == 1) {
+                                // Atras
+                                salonesFrame.setEstado(0);
+                                break;
+                            } else if (salonesFrame.getEstado() == 2) {
+                                // Agregar Salon
+                                AgregarSalonFrame agregarSalonFrame = new AgregarSalonFrame();
+                                agregarSalonFrame.setVisible(true);
+                                while (agregarSalonFrame.getEstado() != 1) {
+                                    if (agregarSalonFrame.getEstado() == 1) {
+                                        // Atras
+                                        agregarSalonFrame.setEstado(0);
+                                        break;
+                                    } else if (agregarSalonFrame.getEstado() == 2) {
+                                        // Agregar Salon
+                                        Salon salon = new Salon(salones.size(), agregarSalonFrame.getNombre(),
+                                                agregarSalonFrame.getDescripcion(), agregarSalonFrame.getCapacidad(),
+                                                agregarSalonFrame.getPrecio());
+                                        salones.add(salon);
+                                        agregarSalonFrame.setEstado(0);
+                                        break;
+                                    }
+                                }
+                                salonesFrame.setEstado(0);
+                                break;
+                            }
+                        }
                         homeFrame.setEstado(0);
                     } else if (homeFrame.getEstado() == 3) {
-                        // Reservar Sala
-                        // reservarSala();
+                        // Reservaciones
+                        ReservacionesFrame reservacionesFrame = new ReservacionesFrame(salones);
+                        reservacionesFrame.setVisible(true);
+                        while (reservacionesFrame.getEstado() != 1) {
+                            if (reservacionesFrame.getEstado() == 1) {
+                                // Atras
+                                reservacionesFrame.setEstado(0);
+                                break;
+                            } else if (reservacionesFrame.getEstado() == 2) {
+                                // Agregar Reservacion
+                                Reservacion reservacion = new Reservacion(reservaciones.size(), usuarios.get(i).getId(),
+                                        reservacionesFrame.getSalon(), reservacionesFrame.getFecha(),
+                                        reservacionesFrame.getHoraInicio(), reservacionesFrame.getHoraFin());
+                                reservaciones.add(reservacion);
+                                reservacionesFrame.setEstado(0);
+                                break;
+                            }
                         homeFrame.setEstado(0);
+                        }
                     } else if (homeFrame.getEstado() == 4) {
                         // Mis Reservas
+                        // misReservas();
+                        homeFrame.setEstado(0);
+                    } else if (homeFrame.getEstado() == 5) {
+                        // Ver Reservas
                         // misReservas();
                         homeFrame.setEstado(0);
                     } else {
@@ -80,7 +183,6 @@ public class ControladorGUI {
 
     public void cerrarSesion() {
         sesion = false;
-        usuarioActual = null;
         System.out.println("Sesion cerrada");
     }
 
@@ -161,6 +263,9 @@ public class ControladorGUI {
         for (int i = 0; i < reservaciones.size(); i++) {
             System.out.println(reservaciones.get(i).toString());
         }
+
+        // Guardar Archivos
+        guardarArchivos();
 
     }
 }

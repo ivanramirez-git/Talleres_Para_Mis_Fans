@@ -1,6 +1,8 @@
 package Modelo;
 
-public class Salon {
+import java.io.Serializable;
+
+public class Salon implements Serializable {
 
     // id, nombre, descripcion, capacidad, precio
     private int id;

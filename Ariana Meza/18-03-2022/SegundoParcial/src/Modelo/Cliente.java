@@ -1,14 +1,20 @@
 package Modelo;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Cliente extends Usuario {
+public class Cliente extends Usuario implements Serializable {
 
     // Reservaciones
     ArrayList<Reservacion> reservaciones;
 
     public Cliente(int id, String usuario, String nombre, String email, String password) {
         super(id, usuario, nombre, email, password);
+        this.reservaciones = new ArrayList<Reservacion>();
+    }
+
+    public Cliente() {
+        super();
         this.reservaciones = new ArrayList<Reservacion>();
     }
 

@@ -1,6 +1,8 @@
 package Modelo;
 
-public class Usuario {
+import java.io.Serializable;
+
+public class Usuario implements Serializable {
 
     // id, usuario, nombre, email, password
     private int id;
@@ -15,6 +17,9 @@ public class Usuario {
         this.nombre = nombre;
         this.email = email;
         this.password = password;
+    }
+
+    public Usuario() {
     }
 
     public int getId() {
