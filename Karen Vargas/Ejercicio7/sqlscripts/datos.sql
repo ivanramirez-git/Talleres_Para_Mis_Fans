@@ -1,0 +1,1 @@
+INSERT INTO inmuebles (codigo, tipo, numero, valor) VALUES (1020, 'Apto', 201, 210000000);

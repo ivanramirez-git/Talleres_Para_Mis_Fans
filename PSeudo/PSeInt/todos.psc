@@ -548,3 +548,97 @@ Algoritmo ordenarCaracteres
 	FinMientras
 	
 FinAlgoritmo
+
+
+
+
+// Desarrolle un algoritmo tal que dada una matriz de nxm elementos indique si un nro x se encuentra en la matriz y en qué posición está.
+SubAlgoritmo buscarNroEnMatriz
+
+	// Pedir n y m
+	Escribir "n: "
+	Leer n
+	Escribir "m: "
+	Leer m
+
+	// Definir matriz
+	Dimension matriz(n, m)
+
+	// Ingreso de datos
+	i <- 1
+	Mientras i <= n
+		j <- 1
+		Mientras j <= m
+			Escribir "Ingrese el elemento " i "," j " de la matriz: "
+			Leer matriz(i, j)
+			j <- j + 1
+		FinMientras
+		i <- i + 1
+	FinMientras
+
+	// Buscar nro
+	Escribir "Ingrese el nro a buscar: "
+	Leer nro
+	i <- 1
+	Mientras i <= n
+		j <- 1
+		Mientras j <= m
+			Si matriz(i, j) = nro
+				Escribir "El nro " nro " se encuentra en la posicion " i "," j " de la matriz"
+			FinSi
+			j <- j + 1
+		FinMientras
+		i <- i + 1
+	FinMientras
+	
+FinSubAlgoritmo
+
+// Desarrolle un algoritmo tal que dada una matriz de nxm elementos y un nro entero x calcule la suma de sus múltiplos que se encuentren en la matriz.
+SubAlgoritmo sumarMultiplosMatriz
+
+	// Pedir n y m
+	Escribir "n: "
+	Leer n
+	Escribir "m: "
+	Leer m
+
+	// Definir matriz
+	Dimension matriz(n, m)
+
+	// Ingreso de datos
+	i <- 1
+	Mientras i <= n
+		j <- 1
+		Mientras j <= m
+			Escribir "Ingrese el elemento " i "," j " de la matriz: "
+			Leer matriz(i, j)
+			j <- j + 1
+		FinMientras
+		i <- i + 1
+	FinMientras
+
+	// Buscar multiplos y sumar
+	Escribir "Ingrese el nro a buscar: "
+	Leer nro
+	suma <- 0
+	i <- 1
+	Mientras i <= n
+		j <- 1
+		Mientras j <= m
+			Si (matriz(i, j) % nro) = 0
+				suma <- suma + matriz(i, j)
+			FinSi
+			j <- j + 1
+		FinMientras
+		i <- i + 1
+	FinMientras
+
+	Escribir "La suma de los multiplos de " nro " en la matriz es " suma
+FinSubAlgoritmo
+
+Algoritmo main
+	Escribir "Punto 1: Buscar numero en matriz"
+	buscarNroEnMatriz
+	Escribir "Punto 2: Sumar multiplos de un numero en una matriz"
+	sumarMultiplosMatriz
+FinAlgoritmo

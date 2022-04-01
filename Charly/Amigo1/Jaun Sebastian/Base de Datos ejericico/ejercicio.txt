@@ -1,0 +1,11 @@
+	#	Nombre	Tipo	Cotejamiento	Atributos	Nulo	Predeterminado	Comentarios	Extra	Acción
+	1	identificacion Primaria	varchar(15)	utf8mb4_general_ci		No	Ninguna			Cambiar Cambiar	Eliminar Eliminar	
+Más Más
+	2	nombre	varchar(50)	utf8mb4_general_ci		No	Ninguna			Cambiar Cambiar	Eliminar Eliminar	
+Más Más
+	3	estado	int(1)			No	Ninguna			Cambiar Cambiar	Eliminar Eliminar	
+Más Más
+	4	modelo	int(4)			No	Ninguna			Cambiar Cambiar	Eliminar Eliminar	
+Más Más
+	5	placa	varchar(6)	utf8mb4_general_ci		No	Ninguna			Cambiar Cambiar	Eliminar Eliminar	
+Más Más
