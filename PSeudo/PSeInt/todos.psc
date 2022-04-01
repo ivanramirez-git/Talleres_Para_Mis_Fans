@@ -634,6 +634,7 @@ SubAlgoritmo sumarMultiplosMatriz
 	FinMientras
 
 	Escribir "La suma de los multiplos de " nro " en la matriz es " suma
+	
 FinSubAlgoritmo
 
 Algoritmo main
