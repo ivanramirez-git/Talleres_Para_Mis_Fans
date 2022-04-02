@@ -1,0 +1,9 @@
+10,Juan
+50,Ana
+15,Antonio
+25,Francisco
+30,Daniel
+33,Sandra
+55,Pedro
+20,Fernanda
+5,ton

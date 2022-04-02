@@ -637,9 +637,292 @@ SubAlgoritmo sumarMultiplosMatriz
 	
 FinSubAlgoritmo
 
+// Desarrolle un algoritmo tal que dada una matriz de nxm elementos y un nro entero x calcule cuántos elementos hay que sean mayores y cuántos menores o iguales.
+SubAlgoritmo contarElementosMatriz
+
+	// Pedir n y m
+	Escribir "n: "
+	Leer n
+	Escribir "m: "
+	Leer m
+
+	// Definir matriz
+	Dimension matriz(n, m)
+
+	// Ingreso de datos
+	i <- 1
+	Mientras i <= n
+		j <- 1
+		Mientras j <= m
+			Escribir "Ingrese el elemento " i "," j " de la matriz: "
+			Leer matriz(i, j)
+			j <- j + 1
+		FinMientras
+		i <- i + 1
+	FinMientras
+
+	// Buscar multiplos y sumar
+	Escribir "Ingrese el nro a buscar: "
+	Leer nro
+	mayores <- 0
+	menores <- 0
+	i <- 1
+	Mientras i <= n
+		j <- 1
+		Mientras j <= m
+			Si matriz(i, j) > nro
+				mayores <- mayores + 1
+			FinSi
+			Si matriz(i, j) <= nro
+				menores <- menores + 1
+			FinSi
+			j <- j + 1
+		FinMientras
+		i <- i + 1
+	FinMientras
+
+	Escribir "La cantidad de elementos mayores a " nro " es " mayores
+	Escribir "La cantidad de elementos menores o iguales a " nro " es " menores
+
+FinSubAlgoritmo
+
+//  Desarrolle un algoritmo tal que dada una matriz de nxm elementos y un nro entero x muestre en otra matriz los cuadrados de los nros menores a éste y la raíz cuadrada de los nros mayores o iguales.
+SubAlgoritmo calcularCuadradosMatriz
+
+	// Pedir n y m
+	Escribir "n: "
+	Leer n
+	Escribir "m: "
+	Leer m
+
+	// Definir matriz
+	Dimension matriz(n, m)
+	Dimension matriz2(n, m)
+
+	// Ingreso de datos
+	i <- 1
+	Mientras i <= n
+		j <- 1
+		Mientras j <= m
+			Escribir "Ingrese el elemento " i "," j " de la matriz: "
+			Leer matriz(i, j)
+			j <- j + 1
+		FinMientras
+		i <- i + 1
+	FinMientras
+
+	// Buscar multiplos y sumar
+	Escribir "Ingrese el nro a buscar: "
+	Leer nro
+	i <- 1
+	Mientras i <= n
+		j <- 1
+		Mientras j <= m
+			Si matriz(i, j) < nro
+				matriz2(i, j) <- matriz(i, j) ^ 2
+			SiNo
+				matriz2(i, j) <- matriz(i, j) ^ (1/2)
+			FinSi
+			j <- j + 1
+		FinMientras
+		i <- i + 1
+	FinMientras
+
+	Escribir "La matriz resultante es: "
+	i <- 1
+	Mientras i <= n
+		j <- 1
+		Mientras j <= m
+			Escribir Sin Saltar matriz2(i, j) " "
+			j <- j + 1
+		FinMientras
+		Escribir ""
+		i <- i + 1
+	FinMientras
+
+FinSubAlgoritmo
+
+//Desarrolle un algoritmo tal que dada una matriz de nxm elementos y un nro entero x reemplace los números mayores o iguales a éste por su doble y los menores por su triple.
+SubAlgoritmo reemplazarNrosMatriz
+
+	// Pedir n y m
+	Escribir "n: "
+	Leer n
+	Escribir "m: "
+	Leer m
+
+	// Definir matriz
+	Dimension matriz(n, m)
+	Dimension matriz2(n, m)
+
+	// Ingreso de datos
+	i <- 1
+	Mientras i <= n
+		j <- 1
+		Mientras j <= m
+			Escribir "Ingrese el elemento " i "," j " de la matriz: "
+			Leer matriz(i, j)
+			j <- j + 1
+		FinMientras
+		i <- i + 1
+	FinMientras
+
+	// Buscar multiplos y sumar
+	Escribir "Ingrese el nro a buscar: "
+	Leer nro
+	i <- 1
+	Mientras i <= n
+		j <- 1
+		Mientras j <= m
+			Si matriz(i, j) >= nro
+				matriz2(i, j) <- matriz(i, j) * 2
+			SiNo
+				matriz2(i, j) <- matriz(i, j) * 3
+			FinSi
+			j <- j + 1
+		FinMientras
+		i <- i + 1
+	FinMientras
+
+	Escribir "La matriz resultante es: "
+	i <- 1
+	Mientras i <= n
+		j <- 1
+		Mientras j <= m
+			Escribir Sin Saltar matriz2(i, j) " "
+			j <- j + 1
+		FinMientras
+		Escribir ""
+		i <- i + 1
+	FinMientras
+
+FinSubAlgoritmo
+
+// Desarrolle un algoritmo tal que dada una matriz de nxm elementos muestre la suma de cada una de sus columnas y la suma de cada una de sus filas.
+SubAlgoritmo sumarColumnasFilasMatriz
+
+	// Pedir n y m
+	Escribir "n: "
+	Leer n
+	Escribir "m: "
+	Leer m
+
+	// Definir matriz
+	Dimension matriz(n, m)
+	Dimension matriz2(n, m)
+
+	// Ingreso de datos
+	i <- 1
+	Mientras i <= n
+		j <- 1
+		Mientras j <= m
+			Escribir "Ingrese el elemento " i "," j " de la matriz: "
+			Leer matriz(i, j)
+			j <- j + 1
+		FinMientras
+		i <- i + 1
+	FinMientras
+
+	Dimension sumaColumna(m)
+	Dimension sumaFila(n)
+
+	// Sumar
+	i <- 1
+	Mientras i <= n
+		j <- 1
+		Mientras j <= m
+			sumaFila(i) <- sumaFila(i) + matriz(i, j)
+			sumaColumna(j) <- sumaColumna(j) + matriz(i, j)
+			j <- j + 1
+		FinMientras
+		i <- i + 1
+	FinMientras
+
+	// Mostrar
+	i <- 1
+	Mientras i <= n
+		Escribir "Los elementos de la fila " (i-1) " suman " sumaFila(i)
+		i <- i + 1
+	FinMientras
+
+	i <- 1
+	Mientras i <= m
+		Escribir "Los elementos de la columna " (i-1) " suman " sumaColumna(i)
+		i <- i + 1
+	FinMientras
+
+FinSubAlgoritmo
+
+
+// Desarrolle un algoritmo tal que represente mediante una matriz el siguiente problema: Se tienen los precios de 10 artículos y las cantidades vendidas por un almacén en sus 5 sedes. El algoritmo debe responder las siguientes preguntas:
+//• Las cantidades totales de cada artículo.
+//• La cantidad de artículos en la sede x.
+//• La cantidad del articulo a en la sede x.
+//• Las ventas totales de cada sede.
+//• Las ventas totales del almacén.
+SubAlgoritmo problemaDeAlmacen
+
+	// Pedir numero de articulos
+	Escribir "Ingrese el numero de articulos: "
+	Leer n
+
+	// Pedir cantidad de articulos vendidos por cada sede
+	Escribir "Ingrese la cantidad de articulos vendidos por cada sede: "
+	Leer m
+
+	// Arreglo de nombre de articulos
+	Dimension nombreArticulo(n)
+
+	// Arreglo de sedes
+	Dimension sede(m)
+
+	// Nombrar articulos
+	i <- 1
+	Mientras i <= n
+		Escribir "Ingrese el nombre del articulo " i ": "
+		Leer nombreArticulo(i)
+		i <- i + 1
+	FinMientras
+
+	// Nombrar sedes
+	i <- 1
+	Mientras i <= m
+		Escribir "Ingrese el nombre de la sede " i ": "
+		Leer sede(i)
+		i <- i + 1
+	FinMientras
+
+	// Definir matriz de precios
+	Dimension matriz(n, m)
+
+	// Ingreso de datos
+	i <- 1
+	Mientras i <= n
+		j <- 1
+		Mientras j <= m
+			Escribir "Ingrese el precio del articulo " nombreArticulo(i) " en la sede " sede(j) ": "
+			Leer matriz(i, j)
+			j <- j + 1
+		FinMientras
+		i <- i + 1
+	FinMientras
+
+	// Definir matriz de cantidades
+	Dimension cantidad(n, m)
+
+
+
 Algoritmo main
 	Escribir "Punto 1: Buscar numero en matriz"
 	buscarNroEnMatriz
 	Escribir "Punto 2: Sumar multiplos de un numero en una matriz"
 	sumarMultiplosMatriz
+	Escribir "Punto 3: Contar elementos de una matriz"
+	contarElementosMatriz
+	Escribir "Punto 4: Calcular cuadrados de una matriz"
+	calcularCuadradosMatriz
+	Escribir "Punto 5: Reemplazar nros mayores o iguales a un numero en una matriz"
+	reemplazarNrosMatriz
+	Escribir "Punto 6: Sumar columnas y filas de una matriz"
+	sumarColumnasFilasMatriz
 FinAlgoritmo
