@@ -910,6 +910,76 @@ SubAlgoritmo problemaDeAlmacen
 	// Definir matriz de cantidades
 	Dimension cantidad(n, m)
 
+	// Ingreso de datos
+	i <- 1
+	Mientras i <= n
+		j <- 1
+		Mientras j <= m
+			Escribir "Ingrese la cantidad vendida del articulo " nombreArticulo(i) " en la sede " sede(j) ": "
+			Leer cantidad(i, j)
+			j <- j + 1
+		FinMientras
+		i <- i + 1
+	FinMientras
+
+	// Resultados
+	Escribir "Las cantidades totales de cada articulo son: "
+	i <- 1
+	Mientras i <= n
+		j <- 1
+		Mientras j <= m
+			Escribir "El articulo " nombreArticulo(i) " en la sede " sede(j) " tiene " cantidad(i, j) " unidades vendidas"
+			j <- j + 1
+		FinMientras
+		i <- i + 1
+	FinMientras
+
+	Escribir "Ingrese la sede x a consultar: "
+	Leer x
+
+	Escribir "Las cantidad de articulos en la sede " x " son: "
+	i <- 1
+	total <- 0
+	Mientras i <= n
+		total <- total + cantidad(i, x)
+		i <- i + 1
+	FinMientras
+	Escribir total
+
+	Escribir "Ingrese el articulo a consultar: "
+	Leer a
+
+	Escribir "La cantidad del articulo " a " en la sede " x " es: " cantidad(a, x)
+
+	Escribir "Las ventas totales de cada sede son: "
+	i <- 1
+	Mientras i <= m
+		j <- 1
+		total <- 0
+		Mientras j <= n
+			total <- total + cantidad(j, i)
+			j <- j + 1
+		FinMientras
+		Escribir "La sede " sede(i) " tiene " total " unidades vendidas"
+		i <- i + 1
+	FinMientras
+
+	Escribir "Las ventas totales del almacen son: "
+	i <- 1
+	total <- 0
+	Mientras i <= n
+		j <- 1
+		Mientras j <= m
+			total <- total + cantidad(i, j)
+			j <- j + 1
+		FinMientras
+		i <- i + 1
+	FinMientras
+	Escribir total
+
+FinSubAlgoritmo
+
+
 
 
 Algoritmo main
@@ -925,4 +995,6 @@ Algoritmo main
 	reemplazarNrosMatriz
 	Escribir "Punto 6: Sumar columnas y filas de una matriz"
 	sumarColumnasFilasMatriz
+	Escribir "Punto 7: Almacen"
+	problemaDeAlmacen
 FinAlgoritmo

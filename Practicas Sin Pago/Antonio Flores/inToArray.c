@@ -1,14 +1,13 @@
-// Convertir un numero a un arreglo de digitos
-#include <iostream>
-using namespace std;
+// En C
+#include <stdio.h>
 int main()
 {
     int numero;
     int arreglo[10];
     int arreglo2[10];
     int i = 0;
-    cout << "Ingrese un numero: ";
-    cin >> numero;
+    printf("Ingrese un numero: ");
+    scanf("%d", &numero);
     while (numero > 0)
     {
         arreglo[i] = numero % 10;
@@ -19,13 +18,11 @@ int main()
     {
         arreglo2[j] = arreglo[i - j - 1];
     }
-    cout << "El numero en arreglo es: [ ";
+    printf("El numero en arreglo es: [ ");
     for (int j = 0; j < i - 1; j++)
     {
-        cout << arreglo2[j] << ", ";
+        printf("%d, ", arreglo2[j]);
     }
-    cout << arreglo2[i - 1] << " ]" << endl;
-    cout << endl;
+    printf("%d ]\n", arreglo2[i - 1]);
     return 0;
 }
-
