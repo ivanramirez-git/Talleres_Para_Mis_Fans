@@ -979,22 +979,188 @@ SubAlgoritmo problemaDeAlmacen
 
 FinSubAlgoritmo
 
+//Desarrolle un algoritmo tal que dada una matriz de nxm elementos calcule su promedio y sume los valores que se encuentren en la matriz y que sean mayores a éste además sumar los cuadrados de los números que sean menores o iguales a éste.
+SubAlgoritmo promedioMatriz
 
+	// Pedir n
+	Escribir "Ingrese el numero de filas: "
+	Leer n
+
+	// Pedir m
+	Escribir "Ingrese el numero de columnas: "
+	Leer m
+
+	// Definir matriz
+	Dimension matriz(n, m)
+
+	// Ingreso de datos
+	i <- 1
+	Mientras i <= n
+		j <- 1
+		Mientras j <= m
+			Escribir "Ingrese el valor de la posicion " i "," j ": "
+			Leer matriz(i, j)
+			j <- j + 1
+		FinMientras
+		i <- i + 1
+	FinMientras
+
+	// Promedio
+	promedio <- 0
+	i <- 1
+	Mientras i <= n
+		j <- 1
+		Mientras j <= m
+			promedio <- promedio + matriz(i, j)
+			j <- j + 1
+		FinMientras
+		i <- i + 1
+	FinMientras
+	promedio <- promedio / (n * m)
+
+	// Suma de valores mayores al promedio
+	suma <- 0
+	i <- 1
+	Mientras i <= n
+		j <- 1
+		Mientras j <= m
+			Si matriz(i, j) > promedio
+				suma <- suma + matriz(i, j)
+			FinSi
+			j <- j + 1
+		FinMientras
+		i <- i + 1
+	FinMientras
+
+	Escribir "La suma de los valores mayores al promedio es: " suma
+
+	// Suma de cuadrados de valores menores o iguales al promedio
+	suma <- 0
+	i <- 1
+	Mientras i <= n
+		j <- 1
+		Mientras j <= m
+			Si matriz(i, j) <= promedio
+				suma <- suma + matriz(i, j) ^ 2
+			FinSi
+			j <- j + 1
+		FinMientras
+		i <- i + 1
+	FinMientras
+
+	Escribir "La suma de los cuadrados de los valores menores o iguales al promedio es: " suma
+
+
+FinSubAlgoritmo
+
+//Desarrolle un algoritmo tal que dada una matriz de nxm elementos que corresponden a los nombres de unos estudiantes de Algoritmos muestre aquellos cuyo nombres tenga una longitud mayor o igual de 10 letras y cuente cuántos tienen menos de 10 letras.
+SubAlgoritmo nombres
+
+	// Pedir n
+	Escribir "Ingrese el numero de filas: "
+	Leer n
+
+	// Pedir m
+	Escribir "Ingrese el numero de columnas: "
+	Leer m
+
+	// Definir matriz
+	Dimension matriz(n, m)
+
+	// Ingreso de datos
+	i <- 1
+	Mientras i <= n
+		j <- 1
+		Mientras j <= m
+			Escribir "Ingrese el nombre del estudiante " i ": "
+			Leer matriz(i, j)
+			j <- j + 1
+		FinMientras
+		i <- i + 1
+	FinMientras
+
+	// Resultados
+	Escribir "Los nombres de los estudiantes con mas de 10 letras son: "
+	i <- 1
+	Mientras i <= n
+		j <- 1
+		Mientras j <= m
+			Si longitud(matriz(i, j)) >= 10
+				Escribir matriz(i, j)
+			FinSi
+			j <- j + 1
+		FinMientras
+		i <- i + 1
+	FinMientras
+
+	Escribir "Los nombres de los estudiantes con menos de 10 letras son: "
+	i <- 1
+	Mientras i <= n
+		j <- 1
+		Mientras j <= m
+			Si longitud(matriz(i, j)) < 10
+				Escribir matriz(i, j)
+			FinSi
+			j <- j + 1
+		FinMientras
+		i <- i + 1
+	FinMientras
+
+
+FinSubAlgoritmo
 
 
 Algoritmo main
-	Escribir "Punto 1: Buscar numero en matriz"
-	buscarNroEnMatriz
-	Escribir "Punto 2: Sumar multiplos de un numero en una matriz"
-	sumarMultiplosMatriz
-	Escribir "Punto 3: Contar elementos de una matriz"
-	contarElementosMatriz
-	Escribir "Punto 4: Calcular cuadrados de una matriz"
-	calcularCuadradosMatriz
-	Escribir "Punto 5: Reemplazar nros mayores o iguales a un numero en una matriz"
-	reemplazarNrosMatriz
-	Escribir "Punto 6: Sumar columnas y filas de una matriz"
-	sumarColumnasFilasMatriz
-	Escribir "Punto 7: Almacen"
-	problemaDeAlmacen
+	opcion <- -1
+	Mientras opcion <> 0
+		Escribir "1. Buscar numero en matriz"
+		Escribir "2. Sumar multiplos de un numero en una matriz"
+		Escribir "3. Contar elementos de una matriz"
+		Escribir "4. Calcular cuadrados de una matriz"
+		Escribir "5. Reemplazar nros mayores o iguales a un numero en una matriz"
+		Escribir "6. Sumar columnas y filas de una matriz"
+		Escribir "7. Almacen"
+		Escribir "8. Promedio"
+		Escribir "9. Nombres"
+		Escribir "0. Salir"
+		Escribir "Ingrese una opcion: "
+		Leer opcion
+		Si opcion = 1
+			Escribir "Punto 1: Buscar numero en matriz"
+			buscarNroEnMatriz
+		FinSi
+		Si opcion = 2
+			Escribir "Punto 2: Sumar multiplos de un numero en una matriz"
+			sumarMultiplosMatriz
+		FinSi
+		Si opcion = 3
+			Escribir "Punto 3: Contar elementos de una matriz"
+			contarElementosMatriz
+		FinSi
+		Si opcion = 4
+			Escribir "Punto 4: Calcular cuadrados de una matriz"
+			calcularCuadradosMatriz
+		FinSi
+		Si opcion = 5
+			Escribir "Punto 5: Reemplazar nros mayores o iguales a un numero en una matriz"
+			reemplazarNrosMatriz
+		FinSi
+		Si opcion = 6
+			Escribir "Punto 6: Sumar columnas y filas de una matriz"
+			sumarColumnasFilasMatriz
+		FinSi
+		Si opcion = 7
+			Escribir "Punto 7: Almacen"
+			problemaDeAlmacen
+		FinSi
+		Si opcion = 8
+			Escribir "Punto 8: Promedio"
+			promedioMatriz
+		FinSi
+		Si opcion = 9
+			Escribir "Punto 9: Nombres"
+			nombres
+		FinSi
+	FinMientras
+
 FinAlgoritmo

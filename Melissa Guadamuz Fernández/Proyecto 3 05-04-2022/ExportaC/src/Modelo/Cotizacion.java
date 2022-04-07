@@ -17,13 +17,14 @@ import java.time.LocalDate;
  * @author melig
  */
 public class Cotizacion {
+    
    
     // Identificador de cotización: Debe ser un número aletorio entre 0 y 1000.
-    private int id;
+    protected int id;
     // Fecha de la cotización: Valor que almacena la fecha del día en que se realizó la cotización, debe ser igual a la fecha de ejecución del programa.
-    private String fecha;
+    protected String fecha;
     // Kilogramos a exportar: Corresponde un valor en kilogramos que puede contener decimales. El valor mínimo permitido es 1 Kilogramo.
-    private double kg;
+    protected double kg;
     /*
     Zona de la Exportación (9 Zonas):
         - Nueva Inglaterra (Maine, Nuevo Hampshire, Vermont, Massachusetts, Connecticut, Rhode Island).
@@ -35,12 +36,12 @@ public class Cotizacion {
         - Montaña (Montana, Idaho, Wyoming, Colorado, Utah, Nevada, Arizona, Nuevo México).
         - Pacífico (Alaska, Washington, Oregón, California, Hawái).
     */
-    private String zona;
+    protected String zona;
     // Dirección de Entrega: Corresponde a una dirección física dentro de los EEUU para donde se entregara la carga. La misma debe al menos tener 20 Caracteres alfanuméricos, con la finalidad de ser lo más específico.
-    private String direccion;
+    protected String direccion;
     
     // Tipo de Servicio Barco o Avion
-    private boolean tipoServicio;
+    protected boolean tipoServicio;
 
     // Constructor de la clase Cotización.
     public Cotizacion() {
@@ -168,6 +169,6 @@ public class Cotizacion {
         System.out.print(exedente);
         
         // Calculo de la cantidad de toneladas.
-        return "Precio: Precio ("+this.kg+" kg): "+(this.kg*75)+" dolares. Toneladas: "+ton+", Libras: "+lib+", Gramos: "+gra+".";
+        return "Calculo de exportacion: Toneladas: "+ton+", Libras: "+lib+", Gramos: "+gra+".";
     } 
 }

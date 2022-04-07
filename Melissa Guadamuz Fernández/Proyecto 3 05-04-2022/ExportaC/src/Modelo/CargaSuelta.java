@@ -16,18 +16,26 @@ package Modelo;
  */
 public class CargaSuelta extends Cotizacion {
     
-    private boolean piesCarga;
+    private double piesCarga;
     
     // Constructor
     public CargaSuelta() {
         super();
     }
+
+    public CargaSuelta(Cotizacion c) {
+        this.id=c.id;
+        this.fecha=c.fecha;
+        this.kg=c.kg;
+        this.direccion=c.direccion;
+        this.tipoServicio=c.tipoServicio;
+    }
     
-    public boolean getPiesCarga() {
+    public double getPiesCarga() {
         return piesCarga;
     }
 
-    public void setPiesCarga(boolean piesCarga) {
+    public void setPiesCarga(double piesCarga) {
         this.piesCarga = piesCarga;
     }    
     
@@ -45,13 +53,19 @@ public class CargaSuelta extends Cotizacion {
 
     @Override
     public String calcularExportacion() {
-        String mensaje = "";
-        if (this.getPiesCarga() == true) {
-            mensaje = "El costo de la carga suelta es de $" + (this.getKg() * 100) + " + $15 por pie";
+        if(this.getPiesCarga() > 18) {
+            if("Avion".equals(this.getTipoServicio())) {
+                return super.calcularExportacion() + " Costo: "+ "El costo de su envío es de $" + (100 + 15) * this.getKg() + " dólares.";
+            } else {
+                return super.calcularExportacion() + " Costo: "+ "El costo de su envío es de $" + (50 + 15) * this.getKg() + " dólares.";
+            }
         } else {
-            mensaje = "El costo de la carga suelta es de $" + (this.getKg() * 100);
+            if("Avion".equals(this.getTipoServicio())) {
+                return super.calcularExportacion() + " Costo: "+ "El costo de su envío es de $" + 100 * this.getKg() + " dólares.";
+            } else {
+                return super.calcularExportacion() + " Costo: "+ "El costo de su envío es de $" + 50 * this.getKg() + " dólares.";
+            }
         }
-        return mensaje;
     }
-    
+
 }
