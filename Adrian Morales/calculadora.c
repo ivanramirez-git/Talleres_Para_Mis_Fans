@@ -1,17 +1,5 @@
 // Calculadora para calcular la suma, resta y multiplicacion de numeros binarios, decimal y morse.
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <ctype.h>
-#include <math.h>
-// Funcion para convertir un numero binario a decimal
-void btod(char binario[], int decimal[1]);
-// Funcion para convertir un numeros decimal a binario
-void dtob(int decimal[1], char binario[]);
-// Funcion para convertir un numero morse a decimal
-void mtod(char morse[], int decimal[1]);
-// Funcion para convertir un numero decimal a morse
-void dtom(int decimal[1], char morse[]);
+#include "biblioteca.h"
 
 // Pruebas
 void prueba1()
@@ -40,12 +28,12 @@ void prueba1()
 
     // decimal a binario
     dec1[0] = 10;
-    dec2[0] = 23;
-    dec3[0] = 1;
+    dec2[0] = 255;
+    dec3[0] = 13157;
 
-    char bin4[8];
-    char bin5[8];
-    char bin6[8];
+    char bin4[8] = "";
+    char bin5[8] = "";
+    char bin6[8] = "";
 
     dtob(dec1, bin4);
     printf("dec1: %d a binario: %s\n", dec1[0], bin4);
@@ -57,9 +45,9 @@ void prueba1()
     printf("dec3: %d a binario: %s\n", dec3[0], bin6);
 
     // morse a decimal
-    char morse1[] = "-----";
-    char morse2[] = "..---";
-    char morse3[] = "....-...--";
+    char morse1[] = ".____.....";
+    char morse2[] = "..___.....";
+    char morse3[] = "..___...__....._____.____";
 
     int morse1dec[1];
     int morse2dec[1];
@@ -78,7 +66,7 @@ void prueba1()
     // decimal a morse
     morse1dec[0] = 10;
     morse2dec[0] = 23;
-    morse3dec[0] = 1;
+    morse3dec[0] = 23501;
 
     char morse4[30];
     char morse5[30];
@@ -92,209 +80,200 @@ void prueba1()
 
     dtom(morse3dec, morse6);
     printf("dec3: %d a morse: %s\n", morse3dec[0], morse6);
+}
 
+// Recibe un comando de operacion y lo ejecuta, retorna el resultado en decimal
+int operacion(char comando[])
+{
+    /*
+        Ejemplo:
+        B101+M.....-D2
+    */
+
+    int resultado = 0;
+    int operandos[10];
+    int numeroOperandos = 0;
+    char operadores[10];
+    int numeroOperadores = 0;
+
+    int i = 0;
+    for (i = 0; i < strlen(comando); i++)
+    {
+
+        if (toupper(comando[i]) == 'B')
+        {
+            
+            // Copiar hasta que encuentre un operador +, -, *, /
+            int j = i;
+            while (comando[j] != '+' && comando[j] != '-' && comando[j] != '*' && comando[j] != '/')
+            {
+                j++;
+            }
+            j--;
+            // Copiar el valor del binario
+            char binario[j - i + 1];
+            strncpy(binario, &comando[i + 1], j - i);
+            binario[j - i] = '\0';
+            // Convertir el binario a decimal
+            int decimal[1];
+            btod(binario, decimal);
+            // Guardar el resultado en el arreglo de operandos
+            operandos[numeroOperandos] = decimal[0];
+            numeroOperandos++;
+            i = j;
+        }
+        else if (toupper(comando[i]) == 'M')
+        {
+            // Copiar hasta que encuentre un operador +, -, *, /
+            int j = i;
+            while (comando[j] != '+' && comando[j] != '-' && comando[j] != '*' && comando[j] != '/')
+            {
+                j++;
+            }
+            j--;
+            // Copiar el valor del morse
+            char morse[j - i + 1];
+            strncpy(morse, &comando[i + 1], j - i);
+            morse[j - i] = '\0';
+            // Convertir el morse a decimal
+            int decimal[1];
+            mtod(morse, decimal);
+            // Guardar el resultado en el arreglo de operandos
+            operandos[numeroOperandos] = decimal[0];
+            numeroOperandos++;
+            i = j;
+        }
+        else if (toupper(comando[i]) == 'D')
+        {
+            // Copiar hasta que encuentre un operador +, -, *, /
+            int j = i;
+            while (comando[j] != '+' && comando[j] != '-' && comando[j] != '*' && comando[j] != '/')
+            {
+                j++;
+            }
+            j--;
+            // Copiar el valor del decimal
+            char decimal[j - i + 1];
+            strncpy(decimal, &comando[i + 1], j - i);
+            decimal[j - i] = '\0';
+            // Convertir el decimal a decimal
+            int decimal2[1];
+            dtod(decimal, decimal2);
+            // Guardar el resultado en el arreglo de operandos
+            operandos[numeroOperandos] = decimal2[0];
+            numeroOperandos++;
+            i = j;
+        }
+        else if (comando[i] == '+' || comando[i] == '-' || comando[i] == '*' || comando[i] == '/')
+        {
+            // Guardar el operador en el arreglo de operadores
+            operadores[numeroOperadores] = comando[i];
+            numeroOperadores++;
+        }
+
+        // Si llegamos al final del comando, terminamos
+        if (i == strlen(comando) - 1)
+        {
+            break;
+        }
+    }
+
+    // Ejecutar operaciones
+    int j = 0;
+    for (j = 0; j < numeroOperadores; j++)
+    {
+        if (operadores[j] == '+')
+        {
+            resultado = operandos[j] + operandos[j + 1];
+        }
+        else if (operadores[j] == '-')
+        {
+            resultado = operandos[j] - operandos[j + 1];
+        }
+        else if (operadores[j] == '*')
+        {
+            resultado = operandos[j] * operandos[j + 1];
+        }
+        else if (operadores[j] == '/')
+        {
+            resultado = operandos[j] / operandos[j + 1];
+        }
+    }
+
+    return resultado;
+}
+
+// interprete de comandos
+/*
+    B: Binario
+    M: Morse
+    D: Decimal
+    RES: Resultado
+    Q: Salir
+    +,_,*,/: Operaciones
+
+    Ejemplo:
+    B101+M.....
+    RESD
+    10
+*/
+void interprete()
+{
+    char comando[30];
+    int decimal[1];
+    char binario[8];
+    char morse[30];
+
+    do
+    {
+        printf("\n> ");
+        scanf("%s", comando);
+        switch (comando[0])
+        {
+        case 'B':
+        case 'M':
+        case 'D':
+            // Operaciones
+            decimal[0] = operacion(comando);
+            break;
+        case 'R':
+            // mostrar resultado
+            // Ejemplo:
+            // RESD
+            // 10
+            switch (toupper(comando[3]))
+            {
+            case 'B':
+                // Convertir el resultado a binario
+                dtob(decimal, binario);
+                printf("%s\n", binario);
+                break;
+            case 'M':
+                // Convertir el resultado a morse
+                dtom(decimal, morse);
+                printf("%s\n", morse);
+                break;
+            case 'D':
+                // Convertir el resultado a decimal
+                printf("%d\n", decimal[0]);
+                break;
+            }
+            break;
+        case 'Q':
+            // salir
+            return;
+            break;
+        default:
+            // comando invalido
+            break;
+        }
+    } while (1 == 1);
 }
 
 // Funcion principal
 int main()
 {
     prueba1();
+    interprete();
     return 0;
-}
-
-// Funcion para convertir un numero binario a decimal
-void btod(char binario[], int decimal[1])
-{
-    int i;
-    int longitud = strlen(binario);
-    int potencia = longitud - 1;
-    int suma = 0;
-    int numero;
-
-    for (i = 0; i < longitud; i++)
-    {
-        numero = binario[i] - '0';
-        suma += numero * pow(2, potencia);
-        potencia--;
-    }
-    decimal[0] = suma;
-}
-
-// Funcion para convertir un numeros decimal a binario
-void dtob(int decimal[1], char binario[])
-{
-    int i;
-    int numero;
-    int longitud = 0;
-    int potencia = 0;
-    int suma = 0;
-    int decimalAux[1];
-
-    decimalAux[0] = decimal[0];
-
-    while (decimalAux[0] != 0)
-    {
-        numero = decimalAux[0] % 2;
-        suma += numero * pow(10, potencia);
-        potencia++;
-        decimalAux[0] = decimalAux[0] / 2;
-    }
-    longitud = potencia;
-    potencia = longitud - 1;
-
-    for (i = 0; i < longitud; i++)
-    {
-        binario[i] = suma % 10 + '0';
-        suma = suma / 10;
-        potencia--;
-    }
-    binario[longitud] = '\0';
-
-    // invertir el orden del numero binario
-    int j = 0;
-    int k = longitud - 1;
-    char aux;
-
-    while (j < k)
-    {
-        aux = binario[j];
-        binario[j] = binario[k];
-        binario[k] = aux;
-        j++;
-        k--;
-    }
-}
-
-// Funcion auxiliar para convertir un numero decimal a morse
-void mdtod(char morse[], int decimal[1])
-{
-    
-    if (strcmp(morse, "-----") == 0)
-    {
-        decimal[0] = 0;
-    }
-    else if (strcmp(morse, ".----") == 0)
-    {
-        decimal[0] = 1;
-    }
-    else if (strcmp(morse, "..---") == 0)
-    {
-        decimal[0] = 2;
-    }
-    else if (strcmp(morse, "...--") == 0)
-    {
-        decimal[0] = 3;
-    }
-    else if (strcmp(morse, "....-") == 0)
-    {
-        decimal[0] = 4;
-    }
-    else if (strcmp(morse, ".....") == 0)
-    {
-        decimal[0] = 5;
-    }
-    else if (strcmp(morse, "-....") == 0)
-    {
-        decimal[0] = 6;
-    }
-    else if (strcmp(morse, "--...") == 0)
-    {
-        decimal[0] = 7;
-    }
-    else if (strcmp(morse, "---..") == 0)
-    {
-        decimal[0] = 8;
-    }
-    else if (strcmp(morse, "----.") == 0)
-    {
-        decimal[0] = 9;
-    }
-}
-
-// Funcion para convertir un numero morse a decimal
-void mtod(char morse[], int decimal[1])
-{
-    int longitud = strlen(morse);
-    char digito[5];
-    int digitoDec[1];
-    int i = 0;
-    decimal[0] = 0;
-    while (longitud > 0)
-    {
-        strncpy(digito, &morse[i], 5+i);
-        mdtod(digito, digitoDec);
-        decimal[0] = (decimal[0] * 10) + digitoDec[0];
-        i += 5;
-        longitud -= 5;      
-    }
-}
-
-// Funcion auxiliar para convertir un numero decimal a morse
-void ddtom(int decimal[1], char morse[])
-{
-    if (decimal[0] == 0)
-    {
-        strcpy(morse, "-----");
-    }
-    else if (decimal[0] == 1)
-    {
-        strcpy(morse, ".----");
-    }
-    else if (decimal[0] == 2)
-    {
-        strcpy(morse, "..---");
-    }
-    else if (decimal[0] == 3)
-    {
-        strcpy(morse, "...--");
-    }
-    else if (decimal[0] == 4)
-    {
-        strcpy(morse, "....-");
-    }
-    else if (decimal[0] == 5)
-    {
-        strcpy(morse, ".....");
-    }
-    else if (decimal[0] == 6)
-    {
-        strcpy(morse, "-....");
-    }
-    else if (decimal[0] == 7)
-    {
-        strcpy(morse, "--...");
-    }
-    else if (decimal[0] == 8)
-    {
-        strcpy(morse, "---..");
-    }
-    else if (decimal[0] == 9)
-    {
-        strcpy(morse, "----.");
-    }
-}
-
-// Funcion para convertir un numero decimal a morse
-void dtom(int d[1], char morse[])
-{
-    int longitud = 0;
-    int i = 0;
-    int digitoDec[1];    
-    char digito[5];
-    int decimal[1];
-    decimal[0] = d[0];
-    char aux[30];
-
-    while (decimal[0] != 0)
-    {
-        digitoDec[0] = decimal[0] % 10;
-        ddtom(digitoDec, digito);
-        // concatenar el digito a la cadena al principio
-        strcpy(aux, digito);
-        strcpy(&aux[5], morse);
-        strcpy(morse, aux);
-        decimal[0] = decimal[0] / 10;
-        i+=5;
-    }
-    morse[i] = '\0';
 }

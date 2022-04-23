@@ -1164,3 +1164,86 @@ Algoritmo main
 	FinMientras
 
 FinAlgoritmo
+
+
+// Algoritmo que permita mostrar los n primeros multiplos de M
+SubAlgoritmo multiplos
+	// Pedir n
+	Escribir "Ingrese el numero de multiplos a mostrar: "
+	Leer n
+
+	// Pedir M
+	Escribir "Ingrese el numero de multiplos: "
+	Leer M
+
+	// Definir matriz
+	Dimension matriz(n)
+
+	// Ingreso de datos
+	i <- 1
+	Mientras i <= n
+		matriz(i) <- i * M
+		i <- i + 1
+	FinMientras
+
+	// Resultados
+	Escribir "Los multiplos de " M " son: "
+	i <- 1
+	Mientras i <= n
+		Escribir matriz(i)
+		i <- i + 1
+	FinMientras
+
+FinSubAlgoritmo
+
+// Algoritmo que permita generar la secuencia de Fibonacci hasta el n-esimo numero
+SubAlgoritmo fibonacci
+	// Pedir n
+	Escribir "Ingrese el numero de Fibonacci a mostrar: "
+	Leer n
+
+	// Definir matriz
+	Dimension matriz(n)
+
+	// Ingreso de datos
+	matriz(1) <- 1
+	matriz(2) <- 1
+	i <- 3
+	Mientras i <= n
+		matriz(i) <- matriz(i - 1) + matriz(i - 2)
+		i <- i + 1
+	FinMientras
+
+	// Resultados
+	Escribir "La secuencia de Fibonacci hasta el " n " es: "
+	i <- 1
+	Mientras i <= n
+		Escribir matriz(i)
+		i <- i + 1
+	FinMientras
+
+
+FinSubAlgoritmo
+
+// principal
+Algoritmo principal
+	// Menu
+	opcion <- -1
+	Mientras opcion <> 0
+		Escribir "1. Multiplos"
+		Escribir "2. Fibonacci"
+		Escribir "0. Salir"
+		Escribir "Ingrese una opcion: "
+		Leer opcion
+		Si opcion = 1
+			Escribir "Punto 1: Multiplos"
+			multiplos
+		FinSi
+		Si opcion = 2
+			Escribir "Punto 2: Fibonacci"
+			fibonacci
+		FinSi
+	FinMientras
+
+
+FinAlgoritmo
