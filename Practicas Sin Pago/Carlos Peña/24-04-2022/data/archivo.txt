@@ -1,0 +1,22 @@
+Lorem
+imsup
+imsupset
+imsupseteq
+imtext
+imtextbf
+imtextit
+imtextrm
+imtime
+dolor
+imtimes
+amet
+imtoctave
+imtoctavebox
+imtoctaveboxoptions
+imtoctaveoptions
+
+18: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+19: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+20: Lorem.
+
+Fin

@@ -1,5 +1,11 @@
+import java.util.Scanner;
+
 public class App {
     public static void main(String[] args) throws Exception {
+
+        // Scanner
+        Scanner sc = new Scanner(System.in);
+        
         // Nombre, Materia, Calificaciones1, Calificaciones2, Calificaciones3
         String nombres[];
         String materias[];
@@ -10,7 +16,7 @@ public class App {
 
         // Lectura de datos
         System.out.println("Ingrese el numero de alumnos: ");
-        numAlumnos = Integer.parseInt(System.console().readLine());
+        numAlumnos = sc.nextInt();
         nombres = new String[numAlumnos];
         materias = new String[numAlumnos];
         calificaciones1 = new float[numAlumnos];
@@ -19,21 +25,21 @@ public class App {
 
         for (int i = 0; i < numAlumnos; i++) {
             System.out.println("Ingrese el nombre del alumno: ");
-            nombres[i] = System.console().readLine();
+            nombres[i] = sc.next();
             System.out.println("Ingrese la materia del alumno: ");
-            materias[i] = System.console().readLine();
+            materias[i] = sc.next();
             do{
                 
                 System.out.println("Ingrese la calificacion 1 del alumno: ");
-                calificaciones1[i] = Float.parseFloat(System.console().readLine());
+                calificaciones1[i] = sc.nextFloat();
             }while(calificaciones1[i] < 0 || calificaciones1[i] > 10);
             do{
                 System.out.println("Ingrese la calificacion 2 del alumno: ");
-                calificaciones2[i] = Float.parseFloat(System.console().readLine());
+                calificaciones2[i] = sc.nextFloat();
             }while(calificaciones2[i] < 0 || calificaciones2[i] > 10);
             do{
                 System.out.println("Ingrese la calificacion 3 del alumno: ");
-                calificaciones3[i] = Float.parseFloat(System.console().readLine());
+                calificaciones3[i] = sc.nextFloat();
             }while(calificaciones3[i] < 0 || calificaciones3[i] > 10);
 
         }

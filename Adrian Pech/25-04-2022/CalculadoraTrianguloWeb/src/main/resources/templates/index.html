@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+
+<body>
+    <!-- div -->
+    <div class="container mt-4">
+        <!-- Boton agregar -->
+        <a th:href="@{/new}" class="btn btn-primary">Nuevo</a>
+        <table class="table">
+            <thead>
+                <tr>
+                    <!-- id -->
+                    <th>
+                        ID
+                    </th>
+                    <!-- lado1 -->
+                    <th>
+                        LADO 1
+                    </th>
+                    <!-- lado2 -->
+                    <th>
+                        LADO 2
+                    </th>
+                    <!-- lado3 -->
+                    <th>
+                        LADO 3
+                    </th>
+                    <!-- perimetro -->
+                    <th>
+                        PERIMETRO
+                    </th>
+                    <!-- area -->
+                    <th>
+                        AREA
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="triangulo:${triangulos}">
+                    <!-- id -->
+                    <td th:text="${triangulo.id}"></td>
+                    <!-- lado1 -->
+                    <td th:text="${triangulo.lado1}"></td>
+                    <!-- lado2 -->
+                    <td th:text="${triangulo.lado2}"></td>
+                    <!-- lado3 -->
+                    <td th:text="${triangulo.lado3}"></td>
+                    <!-- perimetro -->
+                    <td th:text="${triangulo.perimetro}"></td>
+                    <!-- area -->
+                    <td th:text="${triangulo.area}"></td>
+                    <!-- Botones Editar, Eliminar -->
+                    <td>
+                        <a th:href="@{/editar/}+${triangulo.id}" class="btn btn-warning">Editar</a>
+                        <a th:href="@{/eliminar/}+${triangulo.id}" class="btn btn-danger">Eliminar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+
+</html>
