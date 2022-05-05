@@ -1,0 +1,37 @@
+#N canvas -7 0 1028 671 12;
+#X obj 150 110 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 110 320 print contenidos del archivo;
+#X obj 150 170 leer_archivo;
+#X text 70 50 Ejemplo de cómo leer el archivo de entrada e imprimirlo
+por consola, f 25;
+#X text 420 150 print: list Patito_de_hule 120000;
+#X text 420 180 print: list Telefono_Garfield 125000;
+#X text 420 209 print: list Disco_duro 240000;
+#X text 780 140 print: 485000;
+#X text 420 260 El archivo datos.txt tiene 4 columnas:;
+#X text 420 290 Nombre del producto \, precio unitario \, cantidad
+y país de origen, f 38;
+#X text 420 340 subtotal = precio unitario * cantidad;
+#X text 70 390 El nodo leer_archivo \, recibe un "bang" como entrada
+y genera como salida una lista con todos los campos del archivo datos.txt
+, f 40;
+#X text 70 470 Dicha salida no tiene en cuenta los saltos de línea
+del archivo. Todos los datos se entregan en una sola gran lista, f
+40;
+#X text 420 40 a. Construya un programa que imprima en la consola el
+listado con los subtotales de cada item. Para el archivo datos.txt
+\, debería entregar lo siguiente:, f 40;
+#X text 780 40 b. Construya un programa que imprima en la consola la
+suma de todos los subtotales. Para el archivo datos.txt \, debería
+entregar lo siguiente:, f 42;
+#X obj 420 400 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 780 200 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 420 470 punto_a;
+#X obj 790 280 punto_b;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X connect 15 0 17 0;
+#X connect 16 0 18 0;

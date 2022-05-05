@@ -1,0 +1,3 @@
+Patito_de_hule 1200  100 China
+Telefono_Garfield   500  250 China
+Disco_duro  6000 40 Japon

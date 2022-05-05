@@ -1,0 +1,6 @@
+[0614/194236.991:ERROR:registration_protocol_win.cc(56)] CreateFile: El sistema no puede encontrar el archivo especificado. (0x2)
+[0615/031402.383:ERROR:registration_protocol_win.cc(56)] CreateFile: El sistema no puede encontrar el archivo especificado. (0x2)
+[0615/031446.792:ERROR:registration_protocol_win.cc(56)] CreateFile: El sistema no puede encontrar el archivo especificado. (0x2)
+[0615/061525.836:ERROR:registration_protocol_win.cc(56)] CreateFile: El sistema no puede encontrar el archivo especificado. (0x2)
+[0503/185531.698:WARNING:chrome_main_delegate.cc(590)] final extension: 
+[0503/185607.864:WARNING:chrome_main_delegate.cc(590)] final extension: 
