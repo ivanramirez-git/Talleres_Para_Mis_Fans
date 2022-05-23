@@ -13,18 +13,20 @@ numero_obstaculos = 9
 tamano_obstaculos = min(x,y) // numero_obstaculos
 
 # lista de posiciones de los obstaculos
-posiciones_obstaculos = funciones.generar_posiciones(x, y, tamano_obstaculos, numero_obstaculos)
+posiciones_obstaculos = funciones.generar_posiciones(x, y, tamano_obstaculos, numero_obstaculos) # Lista de posiciones de los obstaculos
 
 # Ventana principal
-ventana = ventana.Ventana(x, y)
-
+v = ventana.Ventana(x, y)
 
 # 9 obstaculos de 50x50 aleatorios
 for posicion in posiciones_obstaculos:
-    ventana.agregar_obstaculo(posicion[0], posicion[1], tamano_obstaculos)
+    v.agregar_obstaculo(posicion[0], posicion[1], tamano_obstaculos)
 
 # agente
-ventana.agregar_agente(x, y, tamano_obstaculos)
+v.agregar_agente(x, y, tamano_obstaculos)
 
+# mover agente
+v.iniciar()
 
-ventana.mainloop()
+# mostrar ventana
+v.mainloop()

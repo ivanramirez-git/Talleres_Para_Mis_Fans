@@ -1,0 +1,111 @@
+.486
+.model flat, stdcall
+option casemap :none
+
+include \masm32\include\windows.inc
+include \masm32\macros\macros.asm
+include \masm32\include\masm32rt.inc
+
+include \masm32\include\masm32.inc
+include \masm32\include\gdi32.inc
+include \masm32\include\user32.inc
+include \masm32\include\kernel32.inc
+
+includelib \masm32\lib\masm32.lib
+includelib \masm32\lib\gdi32.lib
+includelib \masm32\lib\user32.lib
+includelib \masm32\lib\kernel32.lib
+
+.code
+start:
+call main
+exit
+
+main proc
+LOCAL operaciones ;DWORD
+LOCAL res
+LOCAL SUMA ;DWORD
+LOCAL SUMA1 ;DWORD
+LOCAL RESTA ;DWORD
+LOCAL RESTA1 ;DWORD
+LOCAL MULTIPLICACION ;DWORD
+LOCAL MULTIPLICACION1 ;DWORD
+LOCAL DIVISION ;DWORD
+LOCAL DIVISION1 ;DWORD
+LOCAL prom
+LOCAL prom1
+LOCAL prom2
+
+print chr$("Promedio")
+print chr$(13, 10)
+print chr$("Ingresa 7 numeros")
+print chr$(13, 10)
+mov prom, sval(input("Ingrersa el primer numero: "))
+print chr$(13, 10)
+mov prom1, sval(input("Ingrersa el segundo numero: "))
+mov eax, prom 
+mov ebx, prom1
+add eax, ebx
+mov prom2, eax
+mov eax, 0
+mov ebx, 0
+print str$(prom2)
+print chr$(13, 10)
+mov prom1, sval(input("Ingresa el tercer numero: "))
+mov ebx, prom1
+mov eax, prom2
+add eax, ebx
+mov prom2, eax
+mov eax, 0
+mov ebx, 0
+print str$(prom2)
+print chr$(13,10)
+mov prom1, sval(input("Ingresa el cuarto numero: "))
+mov ebx, prom1
+mov eax, prom2
+add eax, ebx
+mov prom2, eax
+mov eax, 0
+mov ebx, 0
+print str$(prom2)
+print chr$(13,10)
+mov prom1, sval(input("Ingresa el quinto numero: "))
+mov ebx, prom1
+mov eax, prom2
+add eax, ebx
+mov prom2, eax
+mov eax, 0
+mov ebx, 0
+print str$(prom2)
+print chr$(13,10)
+mov prom1, sval(input("Ingresa el sexto numero: "))
+mov ebx, prom1
+mov eax, prom2
+add eax, ebx
+mov prom2, eax
+mov eax, 0
+mov ebx, 0
+print str$(prom2)
+print chr$(13,10)
+mov prom1, sval(input("Ingresa el septimo numero: "))
+mov ebx, prom1
+mov eax, prom2
+add eax,ebx
+mov prom2, eax
+mov eax, 0
+mov ebx, 0
+print str$(prom2)
+print chr$(13, 10)
+mov ebx, 7
+mov eax, prom2
+Invoke IntDiv, eax, ebx
+mov prom2,eax
+mov eax, 0
+mov ebx, 0
+print chr$(13, 10, "El promedio es: ")
+print str$(prom2)
+print chr$(13, 10)
+mov operaciones, input("Programa terminado")
+ret
+main endp
+end start

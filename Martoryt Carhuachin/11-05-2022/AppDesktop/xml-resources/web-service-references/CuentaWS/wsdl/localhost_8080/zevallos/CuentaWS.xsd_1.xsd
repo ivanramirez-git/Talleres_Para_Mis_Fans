@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2-hudson-740-. --><xs:schema xmlns:tns="http://WS/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://WS/">
+
+<xs:element name="Welcome" type="tns:Welcome" />
+
+<xs:element name="WelcomeResponse" type="tns:WelcomeResponse" />
+
+<xs:element name="borrar" type="tns:borrar" />
+
+<xs:element name="borrarResponse" type="tns:borrarResponse" />
+
+<xs:element name="buscar" type="tns:buscar" />
+
+<xs:element name="buscarResponse" type="tns:buscarResponse" />
+
+<xs:element name="editar" type="tns:editar" />
+
+<xs:element name="editarResponse" type="tns:editarResponse" />
+
+<xs:element name="listar" type="tns:listar" />
+
+<xs:element name="listarResponse" type="tns:listarResponse" />
+
+<xs:element name="registrar" type="tns:registrar" />
+
+<xs:element name="registrarResponse" type="tns:registrarResponse" />
+
+<xs:complexType name="listar">
+<xs:sequence />
+</xs:complexType>
+
+<xs:complexType name="listarResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:cuentaVO" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cuentaVO">
+<xs:sequence>
+<xs:element name="cuentaId" type="xs:int" minOccurs="0" />
+<xs:element name="cuentasdisponibles" type="xs:int" minOccurs="0" />
+<xs:element name="fvencimiento" type="xs:dateTime" minOccurs="0" />
+<xs:element name="pelicula" type="xs:string" minOccurs="0" />
+<xs:element name="plataforma" type="xs:string" minOccurs="0" />
+<xs:element name="precio" type="xs:double" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Welcome">
+<xs:sequence />
+</xs:complexType>
+
+<xs:complexType name="WelcomeResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="editar">
+<xs:sequence>
+<xs:element name="arg0" type="tns:cuentaVO" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="editarResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscar">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:cuentaVO" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="registrar">
+<xs:sequence>
+<xs:element name="arg0" type="tns:cuentaVO" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="registrarResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="borrar">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="borrarResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

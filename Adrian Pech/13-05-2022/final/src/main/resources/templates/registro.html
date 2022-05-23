@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head th:replace="layouts/base-layout::head"></head>
+
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Registro</h4>
+                    </div>
+                    <div class="card-body">
+                        <form th:action="@{/auth/registro}" th:object="${usuario}" method="POST">
+                            <!-- Nombre -->
+                            <div class="row form-group">
+                                <label class="col-md-3">Nombre</label>
+                                <input type="text" class="form-control col-md-7" th:field="*{nombre}" />
+                                <small th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}"></small>
+                            </div>
+                            <!-- Email -->
+                            <div class="row form-group">
+                                <label class="col-md-3">Email</label>
+                                <input type="email" class="form-control col-md-7" th:field="*{email}" />
+                                <small th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></small>
+                            </div>
+                            <!-- Username -->
+                            <div class="row form-group">
+                                <label class="col-md-3">Username</label>
+                                <input type="text" class="form-control col-md-7" th:field="*{username}" />
+                                <small th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></small>
+                            </div>
+                            <!-- Password -->
+                            <div class="row form-group">
+                                <label class="col-md-3">Password</label>
+                                <input type="password" class="form-control col-md-7" th:field="*{password}" />
+                                <small th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></small>
+                            </div>
+                            <!-- Fecha de nacimiento -->
+                            <div class="row form-group">
+                                <label class="col-md-3">Fecha de nacimiento</label>
+                                <input type="date" class="form-control col-md-7" th:field="*{fechanacimiento}" />
+                                <small th:if="${#fields.hasErrors('fechanacimiento')}" th:errors="*{fechanacimiento}"></small>
+                            </div>
+                            <!-- Sexo -->
+                            <div class="row form-group">
+                                <label class="col-md-3">Sexo</label>
+                                <select class="form-control col-md-7" th:field="*{sexo}">
+                                    <option value="">Seleccione una opción</option>
+                                    <option value="Hombre">Hombre</option>
+                                    <option value="Mujer">Mujer</option>
+                                </select>
+                                <small th:if="${#fields.hasErrors('sexo')}" th:errors="*{sexo}"></small>
+                            </div>
+                            <!-- Botón -->
+                            <div class="row form-group">
+                                <input type="submit" class="btn btn-primary col-md-5 mx-auto" value="Continuar"/>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
