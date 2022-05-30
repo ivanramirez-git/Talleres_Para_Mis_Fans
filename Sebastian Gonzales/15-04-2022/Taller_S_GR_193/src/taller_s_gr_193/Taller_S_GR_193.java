@@ -20,5 +20,5 @@ public class Taller_S_GR_193 {
         Ventana v = new Ventana();
         v.setVisible(true);
     }
-    
+    // Vamos
 }
