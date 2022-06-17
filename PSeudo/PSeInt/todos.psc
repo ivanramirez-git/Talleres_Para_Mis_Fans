@@ -1,3 +1,272 @@
+
+
+/*
+realizar un algoritmo que lea cuando el cliente inserte la moneda, que esta le de 3 generos musicales, de cada genero musical 3 artistas, y por cada artista 20 canciones de las  cuales el usuario podra elegir la cancion a reproducir
+*/
+Algoritmo rockola
+
+	moneda = -1
+	Mientras moneda <> 0
+
+		// Definir matriz
+		Dimension generos(3)
+		Dimension artistas(3, 3)
+		Dimension canciones(3, 3, 20)
+
+		// Datos		
+		// Llenar datos
+		generos(1) <- "Reggueton"
+		generos(2) <- "Pop"
+		generos(3) <- "Electronica"
+		artistas(1,1) <- "Bad Bunny"
+		artistas(1,2) <- "J Balvin"
+		artistas(1,3) <- "Karol G"
+		artistas(2,1) <- "Justin Bieber"
+		artistas(2,2) <- "Bruno Mars"
+		artistas(2,3) <- "Shakira"
+		artistas(3,1) <- "Coldplay"
+		artistas(3,2) <- "Imagine Dragons"
+		artistas(3,3) <- "The Chainsmokers"
+
+		canciones(1,1,1) <- "DAKITI"
+		canciones(1,1,2) <- "MIA"
+		canciones(1,1,3) <- "Yonaguni"
+		canciones(1,1,4) <- "La Noche de Anoche"
+		canciones(1,1,5) <- "Yo Perreo sola"
+		canciones(1,1,6) <- "Callaita"
+		canciones(1,1,7) <- "Vete"
+		canciones(1,1,8) <- "Safaera"
+		canciones(1,1,9) <- "La Dificil"
+		canciones(1,1,10) <- "Si Veo a Tu Mama"
+		canciones(1,1,11) <- "La Santa"
+		canciones(1,1,12) <- "Ignorantes"
+		canciones(1,1,13) <- "Si Estuvieramos Juntos"
+		canciones(1,1,14) <- "Pero Ya No"
+		canciones(1,1,15) <- "Solo de Mi"
+		canciones(1,1,16) <- "Bichiyal"
+		canciones(1,1,17) <- "Ni Bien Ni Mal"
+		canciones(1,1,18) <- "Solia"
+		canciones(1,1,19) <- "Amorfoda"
+		canciones(1,1,20) <- "La Romana"
+
+		canciones(1,2,1) <- "Medusa"
+		canciones(1,2,2) <- "Morado"
+		canciones(1,2,3) <- "Blanco"
+		canciones(1,2,4) <- "Ritmo"
+		canciones(1,2,5) <- "Que Pena"
+		canciones(1,2,6) <- "La Cancion"
+		canciones(1,2,7) <- "Reggueton"
+		canciones(1,2,8) <- "Que Pretendes"
+		canciones(1,2,9) <- "Loco contigo"
+		canciones(1,2,10) <- "Ven y hazlo tú"
+		canciones(1,2,11) <- "Con altura"
+		canciones(1,2,12) <- "Contra la pared"
+		canciones(1,2,13) <- "Bola rebola"
+		canciones(1,2,14) <- "Say My Name"
+		canciones(1,2,15) <- "No Es Justo"
+		canciones(1,2,16) <- "I Like It"
+		canciones(1,2,17) <- "Machika"
+		canciones(1,2,18) <- "Downtown"
+		canciones(1,2,19) <- "Bum Bum Tam Tam"
+		canciones(1,2,20) <- "Mi Gente"
+
+		canciones(1,3,1) <- "Pineapple"
+		canciones(1,3,2) <- "Tu Pum Pum"
+		canciones(1,3,3) <- "Princesa"
+		canciones(1,3,4) <- "Dicen"
+		canciones(1,3,5) <- "Punto G"
+		canciones(1,3,6) <- "Mi cama"
+		canciones(1,3,7) <- "Dices que te vas"
+		canciones(1,3,8) <- "Follow"
+		canciones(1,3,9) <- "Bichota"
+		canciones(1,3,10) <- "El Makinon"
+		canciones(1,3,11) <- "Tusa"
+		canciones(1,3,12) <- "Location"
+		canciones(1,3,13) <- "Ocean"
+		canciones(1,3,14) <- "Culpables"
+		canciones(1,3,15) <- "Creeme"
+		canciones(1,3,16) <- "Princesa"
+		canciones(1,3,17) <- "Mi Mala"
+		canciones(1,3,18) <- "A Ella"
+		canciones(1,3,19) <- "Si te confieso"
+		canciones(1,3,20) <- "China"
+		
+		canciones(2,1,1) <- "One Time"
+		canciones(2,1,2) <- "One Less Lonely
+		canciones(2,1,3) <- "Baby"
+		canciones(2,1,4) <- "Eenie Meenie"
+		canciones(2,1,5) <- "Somebody to Love"
+		canciones(2,1,6) <- "U Smile"
+		canciones(2,1,7) <- "Never Say Never"
+		canciones(2,1,8) <- "Pray"
+		canciones(2,1,9) <- "Mistletoe"
+		canciones(2,1,10) <- "Boyfriend"
+		canciones(2,1,11) <- "As Long as You Love Me"
+		canciones(2,1,12) <- "Beauty and a Beat"
+		canciones(2,1,13) <- "Attention"
+		canciones(2,1,14) <- "Ghost"
+		canciones(2,1,15) <- "Wandered to LA"
+		canciones(2,1,16) <- "Don't Go"
+		canciones(2,1,17) <- "Stay"
+		canciones(2,1,18) <- "Peaches"
+		canciones(2,1,19) <- "Anyone"
+		canciones(2,1,20) <- "Hold On"
+
+		canciones(2,2,1) <- "Just the Way You Are"
+		canciones(2,2,2) <- "Grenade"
+		canciones(2,2,3) <- "The Lazy Song"
+		canciones(2,2,4) <- "Marry You"
+		canciones(2,2,5) <- "It Will Rain"
+		canciones(2,2,6) <- "Count on Me"
+		canciones(2,2,7) <- "Locked Out of Heaven"
+		canciones(2,2,8) <- "When I Was Your"
+		canciones(2,2,9) <- "Treasure"
+		canciones(2,2,10) <- "Young Girls"
+		canciones(2,2,11) <- "Gorilla"
+		canciones(2,2,12) <- "24K Magic"
+		canciones(2,2,13) <- "That's What I Like"
+		canciones(2,2,14) <- "Versace on the Floor"
+		canciones(2,2,15) <- "Chunky"
+		canciones(2,2,16) <- "Please Me"
+		canciones(2,2,17) <- "Blow"
+		canciones(2,2,18) <- "Leave the Door Open"
+		canciones(2,2,19) <- "Nothin' on You"
+		canciones(2,2,20) <- "Billionaire"
+
+		canciones(2,3,1) <- "The One"
+		canciones(2,3,2) <- "Te dejo Madrid"
+		canciones(2,3,3) <- "Que me quedes tú"
+		canciones(2,3,4) <- "No"
+		canciones(2,3,5) <- "Don't Bother"
+		canciones(2,3,6) <- "Día de enero"
+		canciones(2,3,7) <- "Gypsy / Gitana"
+		canciones(2,3,8) <- "She Wolf / Loba"
+		canciones(2,3,9) <- "Sale el sol"
+		canciones(2,3,10) <- "Rabiosa"
+		canciones(2,3,11) <- "Antes de las seis"
+		canciones(2,3,12) <- "Je L'aime A Mourir"
+		canciones(2,3,13) <- "Addicted to You"
+		canciones(2,3,14) <- "Empire"
+		canciones(2,3,15) <- "Try Everything"
+		canciones(2,3,16) <- "Chantaje"
+		canciones(2,3,17) <- "Me enamoré"
+		canciones(2,3,18) <- "Perro fiel"
+		canciones(2,3,19) <- "Trap"
+		canciones(2,3,20) <- "Clandestino"
+
+		canciones(3,1,1) <- "Fix You"
+		canciones(3,1,2) <- "Talk"	
+		canciones(3,1,3) <- "The Hardest Part"
+		canciones(3,1,4) <- "What If"
+		canciones(3,1,5) <- "White Shadows"
+		canciones(3,1,6) <- "Violet Hill"
+		canciones(3,1,7) <- "Viva la Vida"
+		canciones(3,1,8) <- "Christmas Lights"
+		canciones(3,1,9) <- "Paradise"
+		canciones(3,1,10) <- "Charlie Brown"
+		canciones(3,1,11) <- "Princess of China"
+		canciones(3,1,12) <- "Atlas"
+		canciones(3,1,13) <- "Hurts Like Heaven"
+		canciones(3,1,14) <- "Let Somebody Go"
+		canciones(3,1,15) <- "Higher Power"
+		canciones(3,1,16) <- "Champion of the World"
+		canciones(3,1,17) <- "Daddy"
+		canciones(3,1,18) <- "Arabesque"
+		canciones(3,1,19) <- "Something Just Like This"
+		canciones(3,1,20) <- "Orphans"
+
+		canciones(3,2,1) <- "Enemy (feat. J.I.D)"
+		canciones(3,2,2) <- "Believer"
+		canciones(3,2,3) <- "Demons"
+		canciones(3,2,4) <- "Enemy (Solo Mix)"
+		canciones(3,2,5) <- "Bones"
+		canciones(3,2,6) <- "Next To Me"
+		canciones(3,2,7) <- "Wrecked"
+		canciones(3,2,8) <- "Bad Liar"
+		canciones(3,2,9) <- "Natural"
+		canciones(3,2,10) <- "Follow You"
+		canciones(3,2,11) <- "Thunder"
+		canciones(3,2,12) <- "Birds"
+		canciones(3,2,13) <- "Radioactive"
+		canciones(3,2,14) <- "It's Time"
+		canciones(3,2,15) <- "Not Today"
+		canciones(3,2,16) <- "Whatever It Takes"
+		canciones(3,2,17) <- "One Day"
+		canciones(3,2,18) <- "Radioactive"
+		canciones(3,2,19) <- "Dream"
+		canciones(3,2,20) <- "Monday"
+
+		canciones(3,3,1) <- "Something Just Like This"
+		canciones(3,3,2) <- "Closer"
+		canciones(3,3,3) <- "Don't Let Me Down"
+		canciones(3,3,4) <- "Paris"
+		canciones(3,3,5) <- "Who Do You Love"
+		canciones(3,3,6) <- "Takeaway"
+		canciones(3,3,7) <- "Roses"
+		canciones(3,3,8) <- "Sick
+		canciones(3,3,9) <- "Call You Mine"
+		canciones(3,3,10) <- "Family"
+		canciones(3,3,11) <- "All We Know"
+		canciones(3,3,12) <- "This Feeling"
+		canciones(3,3,13) <- "Hope"
+		canciones(3,3,14) <- "Beach House"
+		canciones(3,3,15) <- "Honest"
+		canciones(3,3,16) <- "Young"
+		canciones(3,3,17) <- "iPad"
+		canciones(3,3,18) <- "The One"
+		canciones(3,3,19) <- "You Owe Me"
+		canciones(3,3,20) <- "#SELFIE"
+
+		// rockola
+		Escribir "Inserte una moneda (0 para salir): "
+		Leer moneda
+
+		// Mostrar los Generos
+		Escribir "Generos: "
+		i <- 1
+		Mientras i <= 3
+			Escribir generos(i)
+			i <- i + 1
+		FinMientras
+		// Pedir genero
+		Escribir "Ingrese el genero: "
+		Leer genero
+
+		// Mostrar los Artistas
+		Escribir "Artistas: "
+		i <- 1
+		Mientras i <= 3
+			Escribir artistas(genero, i)
+			i <- i + 1
+		FinMientras
+		// Pedir artista
+		Escribir "Ingrese el artista: "
+		Leer artista
+
+		// Mostrar las canciones
+		Escribir "Canciones: "
+		i <- 1
+		Mientras i <= 20
+			Escribir canciones(genero, artista, i)
+			i <- i + 1
+		FinMientras
+		// Pedir cancion
+		Escribir "Ingrese la cancion: "
+		Leer cancion
+
+		// Reproducir cancion
+		Escribir "Reproduciendo cancion..."
+		Escribir canciones(genero, artista, cancion)
+
+		Leer tecla
+
+		// Fin
+		Escribir "Canción finalizada"
+
+	FinMientras
+
+Fin
+
 // este es el ejemplo más simple de esta ayuda, 
 // toma dos numeros, los suma y muestra el resultado
 
@@ -1250,268 +1519,186 @@ FinAlgoritmo
 
 
 /*
-realizar un algoritmo que lea cuando el cliente inserte la moneda, que esta le de 3 generos musicales, de cada genero musical 3 artistas, y por cada artista 20 canciones de las  cuales el usuario podra elegir la cancion a reproducir
+Un supermercado ha puesto en oferta la venta de postres a los precios dados en la siguiente tabla:
+
+Postre			Precio
+Flan Royal		$2.80
+Pudin Royal		$3.70
+Gelatina Royal	$4.80
+
+Como oferta especial la tienda aplica un porcentaje de descuento sobre el importe de la compra de acuerdo a la siguiente tabla:
+
+Cantidad de postres			Descuento
+>= 12							13%
+>= 8 y < 12						11%
+>= 4 y < 8						9%
+< 4								7%
+
+Diseñe un programa que permita efectuar ventas y muestre luego de cada una de ellas la siguiente informacion:
+El importe de la compra
+El importe del descuento
+El importe a pagar
+La cantidad de postres vendidos de cada tipo entre todas las ventas
+La cantidad de ventas efectuadas de cada tipo de postre entre todas las ventas
+El importe total acumulado de cada tipo de postre entre todas las ventas
+
+
 */
-Algoritmo rockola
+Algoritmo Principal
+	// variables
+	importeDeCompra = 0.0
+	importeDeDescuento = 0.0
+	importeAPagar = 0.0
+	cantidadDePostres = 0
+	cantidadDeVentas = 0
+	importeTotal = 0.0
 
-	moneda = -1
-	Mientras moneda <> 0
+	Dimension cantPostres(3)
 
-		// Definir matriz
-		Dimension generos(3)
-		Dimension artistas(3, 3)
-		Dimension canciones(3, 3, 20)
+	opcion = -1
 
-		// Datos		
-		// Llenar datos
-		generos(1) <- "Reggueton"
-		generos(2) <- "Pop"
-		generos(3) <- "Electronica"
-		artistas(1,1) <- "Bad Bunny"
-		artistas(1,2) <- "J Balvin"
-		artistas(1,3) <- "Karol G"
-		artistas(2,1) <- "Justin Bieber"
-		artistas(2,2) <- "Bruno Mars"
-		artistas(2,3) <- "Shakira"
-		artistas(3,1) <- "Coldplay"
-		artistas(3,2) <- "Imagine Dragons"
-		artistas(3,3) <- "The Chainsmokers"
-
-		canciones(1,1,1) <- "DAKITI"
-		canciones(1,1,2) <- "MIA"
-		canciones(1,1,3) <- "Yonaguni"
-		canciones(1,1,4) <- "La Noche de Anoche"
-		canciones(1,1,5) <- "Yo Perreo sola"
-		canciones(1,1,6) <- "Callaita"
-		canciones(1,1,7) <- "Vete"
-		canciones(1,1,8) <- "Safaera"
-		canciones(1,1,9) <- "La Dificil"
-		canciones(1,1,10) <- "Si Veo a Tu Mama"
-		canciones(1,1,11) <- "La Santa"
-		canciones(1,1,12) <- "Ignorantes"
-		canciones(1,1,13) <- "Si Estuvieramos Juntos"
-		canciones(1,1,14) <- "Pero Ya No"
-		canciones(1,1,15) <- "Solo de Mi"
-		canciones(1,1,16) <- "Bichiyal"
-		canciones(1,1,17) <- "Ni Bien Ni Mal"
-		canciones(1,1,18) <- "Solia"
-		canciones(1,1,19) <- "Amorfoda"
-		canciones(1,1,20) <- "La Romana"
-
-		canciones(1,2,1) <- "Medusa"
-		canciones(1,2,2) <- "Morado"
-		canciones(1,2,3) <- "Blanco"
-		canciones(1,2,4) <- "Ritmo"
-		canciones(1,2,5) <- "Que Pena"
-		canciones(1,2,6) <- "La Cancion"
-		canciones(1,2,7) <- "Reggueton"
-		canciones(1,2,8) <- "Que Pretendes"
-		canciones(1,2,9) <- "Loco contigo"
-		canciones(1,2,10) <- "Ven y hazlo tú"
-		canciones(1,2,11) <- "Con altura"
-		canciones(1,2,12) <- "Contra la pared"
-		canciones(1,2,13) <- "Bola rebola"
-		canciones(1,2,14) <- "Say My Name"
-		canciones(1,2,15) <- "No Es Justo"
-		canciones(1,2,16) <- "I Like It"
-		canciones(1,2,17) <- "Machika"
-		canciones(1,2,18) <- "Downtown"
-		canciones(1,2,19) <- "Bum Bum Tam Tam"
-		canciones(1,2,20) <- "Mi Gente"
-
-		canciones(1,3,1) <- "Pineapple"
-		canciones(1,3,2) <- "Tu Pum Pum"
-		canciones(1,3,3) <- "Princesa"
-		canciones(1,3,4) <- "Dicen"
-		canciones(1,3,5) <- "Punto G"
-		canciones(1,3,6) <- "Mi cama"
-		canciones(1,3,7) <- "Dices que te vas"
-		canciones(1,3,8) <- "Follow"
-		canciones(1,3,9) <- "Bichota"
-		canciones(1,3,10) <- "El Makinon"
-		canciones(1,3,11) <- "Tusa"
-		canciones(1,3,12) <- "Location"
-		canciones(1,3,13) <- "Ocean"
-		canciones(1,3,14) <- "Culpables"
-		canciones(1,3,15) <- "Creeme"
-		canciones(1,3,16) <- "Princesa"
-		canciones(1,3,17) <- "Mi Mala"
-		canciones(1,3,18) <- "A Ella"
-		canciones(1,3,19) <- "Si te confieso"
-		canciones(1,3,20) <- "China"
-		
-		canciones(2,1,1) <- "One Time"
-		canciones(2,1,2) <- "One Less Lonely
-		canciones(2,1,3) <- "Baby"
-		canciones(2,1,4) <- "Eenie Meenie"
-		canciones(2,1,5) <- "Somebody to Love"
-		canciones(2,1,6) <- "U Smile"
-		canciones(2,1,7) <- "Never Say Never"
-		canciones(2,1,8) <- "Pray"
-		canciones(2,1,9) <- "Mistletoe"
-		canciones(2,1,10) <- "Boyfriend"
-		canciones(2,1,11) <- "As Long as You Love Me"
-		canciones(2,1,12) <- "Beauty and a Beat"
-		canciones(2,1,13) <- "Attention"
-		canciones(2,1,14) <- "Ghost"
-		canciones(2,1,15) <- "Wandered to LA"
-		canciones(2,1,16) <- "Don't Go"
-		canciones(2,1,17) <- "Stay"
-		canciones(2,1,18) <- "Peaches"
-		canciones(2,1,19) <- "Anyone"
-		canciones(2,1,20) <- "Hold On"
-
-		canciones(2,2,1) <- "Just the Way You Are"
-		canciones(2,2,2) <- "Grenade"
-		canciones(2,2,3) <- "The Lazy Song"
-		canciones(2,2,4) <- "Marry You"
-		canciones(2,2,5) <- "It Will Rain"
-		canciones(2,2,6) <- "Count on Me"
-		canciones(2,2,7) <- "Locked Out of Heaven"
-		canciones(2,2,8) <- "When I Was Your"
-		canciones(2,2,9) <- "Treasure"
-		canciones(2,2,10) <- "Young Girls"
-		canciones(2,2,11) <- "Gorilla"
-		canciones(2,2,12) <- "24K Magic"
-		canciones(2,2,13) <- "That's What I Like"
-		canciones(2,2,14) <- "Versace on the Floor"
-		canciones(2,2,15) <- "Chunky"
-		canciones(2,2,16) <- "Please Me"
-		canciones(2,2,17) <- "Blow"
-		canciones(2,2,18) <- "Leave the Door Open"
-		canciones(2,2,19) <- "Nothin' on You"
-		canciones(2,2,20) <- "Billionaire"
-
-		canciones(2,3,1) <- "The One"
-		canciones(2,3,2) <- "Te dejo Madrid"
-		canciones(2,3,3) <- "Que me quedes tú"
-		canciones(2,3,4) <- "No"
-		canciones(2,3,5) <- "Don't Bother"
-		canciones(2,3,6) <- "Día de enero"
-		canciones(2,3,7) <- "Gypsy / Gitana"
-		canciones(2,3,8) <- "She Wolf / Loba"
-		canciones(2,3,9) <- "Sale el sol"
-		canciones(2,3,10) <- "Rabiosa"
-		canciones(2,3,11) <- "Antes de las seis"
-		canciones(2,3,12) <- "Je L'aime A Mourir"
-		canciones(2,3,13) <- "Addicted to You"
-		canciones(2,3,14) <- "Empire"
-		canciones(2,3,15) <- "Try Everything"
-		canciones(2,3,16) <- "Chantaje"
-		canciones(2,3,17) <- "Me enamoré"
-		canciones(2,3,18) <- "Perro fiel"
-		canciones(2,3,19) <- "Trap"
-		canciones(2,3,20) <- "Clandestino"
-
-		canciones(3,1,1) <- "Fix You"
-		canciones(3,1,2) <- "Talk"	
-		canciones(3,1,3) <- "The Hardest Part"
-		canciones(3,1,4) <- "What If"
-		canciones(3,1,5) <- "White Shadows"
-		canciones(3,1,6) <- "Violet Hill"
-		canciones(3,1,7) <- "Viva la Vida"
-		canciones(3,1,8) <- "Christmas Lights"
-		canciones(3,1,9) <- "Paradise"
-		canciones(3,1,10) <- "Charlie Brown"
-		canciones(3,1,11) <- "Princess of China"
-		canciones(3,1,12) <- "Atlas"
-		canciones(3,1,13) <- "Hurts Like Heaven"
-		canciones(3,1,14) <- "Let Somebody Go"
-		canciones(3,1,15) <- "Higher Power"
-		canciones(3,1,16) <- "Champion of the World"
-		canciones(3,1,17) <- "Daddy"
-		canciones(3,1,18) <- "Arabesque"
-		canciones(3,1,19) <- "Something Just Like This"
-		canciones(3,1,20) <- "Orphans"
-
-		canciones(3,2,1) <- "Enemy (feat. J.I.D)"
-		canciones(3,2,2) <- "Believer"
-		canciones(3,2,3) <- "Demons"
-		canciones(3,2,4) <- "Enemy (Solo Mix)"
-		canciones(3,2,5) <- "Bones"
-		canciones(3,2,6) <- "Next To Me"
-		canciones(3,2,7) <- "Wrecked"
-		canciones(3,2,8) <- "Bad Liar"
-		canciones(3,2,9) <- "Natural"
-		canciones(3,2,10) <- "Follow You"
-		canciones(3,2,11) <- "Thunder"
-		canciones(3,2,12) <- "Birds"
-		canciones(3,2,13) <- "Radioactive"
-		canciones(3,2,14) <- "It's Time"
-		canciones(3,2,15) <- "Not Today"
-		canciones(3,2,16) <- "Whatever It Takes"
-		canciones(3,2,17) <- "One Day"
-		canciones(3,2,18) <- "Radioactive"
-		canciones(3,2,19) <- "Dream"
-		canciones(3,2,20) <- "Monday"
-
-		canciones(3,3,1) <- "Something Just Like This"
-		canciones(3,3,2) <- "Closer"
-		canciones(3,3,3) <- "Don't Let Me Down"
-		canciones(3,3,4) <- "Paris"
-		canciones(3,3,5) <- "Who Do You Love"
-		canciones(3,3,6) <- "Takeaway"
-		canciones(3,3,7) <- "Roses"
-		canciones(3,3,8) <- "Sick
-		canciones(3,3,9) <- "Call You Mine"
-		canciones(3,3,10) <- "Family"
-		canciones(3,3,11) <- "All We Know"
-		canciones(3,3,12) <- "This Feeling"
-		canciones(3,3,13) <- "Hope"
-		canciones(3,3,14) <- "Beach House"
-		canciones(3,3,15) <- "Honest"
-		canciones(3,3,16) <- "Young"
-		canciones(3,3,17) <- "iPad"
-		canciones(3,3,18) <- "The One"
-		canciones(3,3,19) <- "You Owe Me"
-		canciones(3,3,20) <- "#SELFIE"
-
-		// rockola
-		Escribir "Inserte una moneda (0 para salir): "
-		Leer moneda
-
-		// Mostrar los Generos
-		Escribir "Generos: "
-		i <- 1
-		Mientras i <= 3
-			Escribir generos(i)
-			i <- i + 1
+	// Ingreso de datos
+	Mientras opcion <> 0
+		Escribir "Compra Actual: "
+		Escribir "Flan Royal => " cantPostres(1)
+		Escribir "Pudin Royal => " cantPostres(2)
+		Escribir "Gelatina Royal => " cantPostres(3)
+		Escribir ""
+		Escribir "1. Flan Royal"
+		Escribir "2. Pudin Royal"
+		Escribir "3. Gelatina Royal"
+		Escribir "0. Salir"
+		Escribir "Ingrese el tipo de postre: "
+		opcion = -1
+		Mientras opcion <> 1 && opcion <> 2 && opcion <> 3 && opcion <> 0
+			Leer opcion
 		FinMientras
-		// Pedir genero
-		Escribir "Ingrese el genero: "
-		Leer genero
 
-		// Mostrar los Artistas
-		Escribir "Artistas: "
-		i <- 1
-		Mientras i <= 3
-			Escribir artistas(genero, i)
-			i <- i + 1
-		FinMientras
-		// Pedir artista
-		Escribir "Ingrese el artista: "
-		Leer artista
-
-		// Mostrar las canciones
-		Escribir "Canciones: "
-		i <- 1
-		Mientras i <= 20
-			Escribir canciones(genero, artista, i)
-			i <- i + 1
-		FinMientras
-		// Pedir cancion
-		Escribir "Ingrese la cancion: "
-		Leer cancion
-
-		// Reproducir cancion
-		Escribir "Reproduciendo cancion..."
-		Escribir canciones(genero, artista, cancion)
-
-		Leer tecla
-
-		// Fin
-		Escribir "Canción finalizada"
-
+		Si opcion <> 0
+			Escribir "Ingrese la cantidad de postres: "
+			cantidadDePostres = 0
+			Mientras cantidadDePostres < 1
+				Leer cantidadDePostres
+			FinMientras
+			cantPostres(opcion) <- cantPostres(opcion) + cantidadDePostres
+			cantidadDeVentas <- cantidadDeVentas + 1
+		FinSi
 	FinMientras
+
+	// Calculos
+	importeDeCompra = (cantPostres(1) * 2.8) + (cantPostres(2) * 3.7) + (cantPostres(3) * 4.8)
+
+	Si cantPostres(1) + cantPostres(2) + cantPostres(3) >= 12
+		importeDeDescuento = importeDeCompra * 0.13
+	FinSi
+
+	Si cantPostres(1) + cantPostres(2) + cantPostres(3) >= 8 && cantPostres(1) + cantPostres(2) + cantPostres(3) < 12
+		importeDeDescuento = importeDeCompra * 0.11
+	FinSi
+
+	Si cantPostres(1) + cantPostres(2) + cantPostres(3) >= 4 && cantPostres(1) + cantPostres(2) + cantPostres(3) < 8
+		importeDeDescuento = importeDeCompra * 0.09
+	FinSi
+
+	Si cantPostres(1) + cantPostres(2) + cantPostres(3) < 4
+		importeDeDescuento = importeDeCompra * 0.07
+	FinSi
+
+	importeAPagar = importeDeCompra - importeDeDescuento
+
+	cantidadDePostres <- cantPostres(1) + cantPostres(2) + cantPostres(3)
+
+	// Resultados
+	Escribir "Importe de la compra: " importeDeCompra
+	Escribir "Importe del descuento: " importeDeDescuento
+	Escribir "Importe a pagar: " importeAPagar
+	Escribir "Cantidad de postres vendidos: "
+	Escribir "Flan Royal => " cantPostres(1) " con un total de " cantPostres(1) * 2.8
+	Escribir "Pudin Royal => " cantPostres(2) " con un total de " cantPostres(2) * 3.7
+	Escribir "Gelatina Royal => " cantPostres(3) " con un total de " cantPostres(3) * 4.8
+	Escribir "Cantidad de ventas: " cantidadDeVentas
+
+FinAlgoritmo
+	
+
+
+/*
+-Programa que, al recibir un arreglo unidimensional de tipo entero de tamaño N, que contiene números aleatorios en un rango de 1 a 100, calcule lo siguiente:
+-La media aritmética. Ésta se calcula como la suma de los elementos entre el número de elementos.
+-La varianza. Ésta se calcula como la suma de los cuadrados de las desviaciones de la media, entre el número de elementos.
+-La desviación estándar. Se calcula como la raíz cuadrada de la varianza.
+-La moda. Se calcula obteniendo el número con mayor frecuencia.
+*/
+
+Algoritmo Principal
+
+	// Variables
+	N = 0
+	Escribir "Ingrese el tamaño del arreglo: "
+	Leer N
+	Dimension arreglo(N)
+	
+	// Ingreso de datos
+	Para i = 1 hasta N
+		arreglo(i) = Aleatorio(1, 100)
+	FinPara
+
+	// Calculos
+	Calcula(arreglo, N)
+
+FinAlgoritmo
+
+SubAlgoritmo Calcula(arreglo, N)
+	media = 0.0
+	varianza = 0.0
+	desviacion = 0.0
+	moda = arreglo(1)
+	Dimension frecuencias(100)
+
+	// frecuencias en 0
+	Para i = 1 hasta 100
+		frecuencias(i) = 0
+	FinPara
+
+	// frecuencias en 1
+	Para i = 1 hasta N
+		frecuencias(arreglo(i)) = frecuencias(arreglo(i)) + 1
+	FinPara
+
+	// media
+	Para i = 1 hasta N
+		media = media + arreglo(i)
+	FinPara
+	media = media / N
+
+	// varianza
+	Para i = 1 hasta N
+		varianza = varianza + ( (arreglo(i) - media) * (arreglo(i) - media) )
+	FinPara
+	varianza = varianza / N
+
+	// desviacion
+	desviacion = Raiz(varianza)
+
+	// moda
+	Escribir sin saltar "["
+	Para i = 1 hasta N
+		Escribir sin saltar arreglo(i) ", "
+		Si frecuencias(arreglo(i)) > frecuencias(moda)
+			moda = arreglo(i)
+		FinSi
+	FinPara
+	Escribir "]"
+
+	// Resultados
+	Escribir "Media: " media
+	Escribir "Varianza: " varianza
+	Escribir "Desviacion: " desviacion
+	Escribir "Moda: " moda
+
+FinSubAlgoritmo
+		
+
+
 
 

@@ -59,6 +59,11 @@
         "tuple": "cpp",
         "fstream": "cpp",
         "iomanip": "cpp",
-        "sstream": "cpp"
-    }
+        "sstream": "cpp",
+        "stdlib.h": "c"
+    },
+    "java.project.sourcePaths": [
+        "Isaac Altafuya/07-03-2022/Prueba/src",
+        "Karen Vargas/20151578099/src"
+    ]
 }
