@@ -1,0 +1,17 @@
+<div class="col-md-12 mt-4">
+  <div class="alert alert-danger" *ngIf="status==0">
+    <p>Usuario y/o contraseña incorrecta!</p>
+  </div>
+  <form class="col-md-4 mr-auto ml-auto" #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+    <h3 class="text-center">Inicio de sesión</h3>
+    <div class="form-group">
+      <label>Email</label>
+      <input class="form-control" name="email" type="email" required #email="ngModel" [(ngModel)]="user.email"/>
+    </div>
+    <div class="form-group">
+      <label>Contraseña</label>
+      <input class="form-control" name="password" type="password" required #password="ngModel" [(ngModel)]="user.password"/>
+    </div>
+    <input class="bnt btn-success" type="submit" value="Iniciar sesión" [disabled]="loginForm.invalid"/>
+  </form>
+</div>

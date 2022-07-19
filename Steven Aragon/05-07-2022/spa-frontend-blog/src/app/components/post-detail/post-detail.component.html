@@ -1,0 +1,15 @@
+<div class="col-md-12" *ngIf="!post">
+  <p>Cargando los datos...</p>
+</div>
+<div class="col-md-10 ml-auto mr-auto" *ngIf="post">
+  <h4 class="mt-5 text-center">{{post.title}}</h4>
+  <div *ngIf="post.category">
+    <h6>Categoria: {{post.category.name}}</h6>
+  </div>
+  <hr>
+  <div *ngIf="post.user">
+    <p><em>Creado por: {{post.user.name+' '+ post.user.last_name}}</em></p>
+  </div>
+  <img *ngIf="post.image" src="{{url+'post/image/'+post.image}}" class="img-fluid img-thumnail d-block float-left mr-4 w-50">
+  <p [innerHTML]="post.content" class="d-right text-justify"></p>
+</div>

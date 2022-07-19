@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "polinomioscomplejos.h": "c",
+        "complejos.h": "c"
+    }
+}

@@ -1,0 +1,17 @@
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Giss\Examen 05-07-2022\Recursividad\bin\Debug\net6.0-windows\Primos.exe
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Giss\Examen 05-07-2022\Recursividad\bin\Debug\net6.0-windows\Primos.deps.json
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Giss\Examen 05-07-2022\Recursividad\bin\Debug\net6.0-windows\Primos.runtimeconfig.json
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Giss\Examen 05-07-2022\Recursividad\bin\Debug\net6.0-windows\Primos.dll
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Giss\Examen 05-07-2022\Recursividad\bin\Debug\net6.0-windows\Primos.pdb
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Giss\Examen 05-07-2022\Recursividad\obj\Debug\net6.0-windows\Primos.csproj.AssemblyReference.cache
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Giss\Examen 05-07-2022\Recursividad\obj\Debug\net6.0-windows\Recursividad.Form1.resources
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Giss\Examen 05-07-2022\Recursividad\obj\Debug\net6.0-windows\Primos.csproj.GenerateResource.cache
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Giss\Examen 05-07-2022\Recursividad\obj\Debug\net6.0-windows\Primos.GeneratedMSBuildEditorConfig.editorconfig
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Giss\Examen 05-07-2022\Recursividad\obj\Debug\net6.0-windows\Primos.AssemblyInfoInputs.cache
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Giss\Examen 05-07-2022\Recursividad\obj\Debug\net6.0-windows\Primos.AssemblyInfo.cs
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Giss\Examen 05-07-2022\Recursividad\obj\Debug\net6.0-windows\Primos.csproj.CoreCompileInputs.cache
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Giss\Examen 05-07-2022\Recursividad\obj\Debug\net6.0-windows\Primos.dll
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Giss\Examen 05-07-2022\Recursividad\obj\Debug\net6.0-windows\refint\Primos.dll
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Giss\Examen 05-07-2022\Recursividad\obj\Debug\net6.0-windows\Primos.pdb
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Giss\Examen 05-07-2022\Recursividad\obj\Debug\net6.0-windows\Primos.genruntimeconfig.cache
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Giss\Examen 05-07-2022\Recursividad\obj\Debug\net6.0-windows\ref\Primos.dll

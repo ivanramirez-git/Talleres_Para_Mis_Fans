@@ -1,0 +1,39 @@
+<div class="col-md-12 mt-4">
+  <h3>Registro de Usuario</h3>
+  <h6>Registrate como usuario para poder participar del blog UNA</h6>
+  <div [ngSwitch]="status"> <!--Manejo de los mensajes al usuario-->
+    <div *ngSwitchCase="0" class="alert alert-success">
+      <p>Registro exitoso!!</p>
+    </div>
+    <div *ngSwitchCase="1" class="alert alert-danger">
+      <p>Error al agregar!!</p>
+    </div>
+    <div *ngSwitchCase="2" class="alert alert-warning">
+      <p>Correo electronico del usuario ya fue registrado previamente!!</p>
+    </div>
+  </div>
+  <form class="col-md-6 mr-auto ml-auto" #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)">
+    <div class="form-group">
+      <label>Nombre</label>
+      <input type="text" name="name" class="form-control" required pattern="[a-zA-Z]+" #name="ngModel" [(ngModel)]="user.name"/>
+      <small *ngIf="!name.valid&&name.touched" class="invalid-feedback d-block">El nombre no cumple con las reglas de entrada</small>
+    </div>
+    <div class="form-group">
+      <label>Apellidos</label>
+      <input type="text" name="last_name" class="form-control" required pattern="[a-zA-Z ]+" #last_name="ngModel" [(ngModel)]="user.last_name"/>
+      <small *ngIf="!last_name.valid&&last_name.touched" class="invalid-feedback d-block">El apellido no cumple con las reglas de entrada</small>
+    </div>
+    <div class="form-group">
+      <label>Correo electrónico</label>
+      <input type="email" name="email" class="form-control" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})" #email="ngModel" [(ngModel)]="user.email"/>
+      <small *ngIf="!email.valid&&email.touched" class="invalid-feedback d-block">El correo electrónico no cumple con las reglas de entrada</small>
+    </div>
+    <div class="form-group">
+      <label>Contraseña</label>
+      <input type="password" name="password" min="6" max="8" class="form-control" required  #password="ngModel" [(ngModel)]="user.password"/>
+      <small *ngIf="!password.valid&&password.touched" class="invalid-feedback d-block">La contraseña no cumple con las reglas de entrada</small>
+    </div>
+    <input type="submit" class="btn btn-success" value="Registrarse" [disabled]="registerForm.invalid">
+  </form>
+</div>
+

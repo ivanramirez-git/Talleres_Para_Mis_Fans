@@ -1,22 +1,30 @@
+import 'package:clase63/themes/app_theme.dart';
 import 'package:flutter/material.dart';
 
 class Listview1Screen extends StatelessWidget {
   const Listview1Screen({Key? key}) : super(key: key);
 
   final options = const [
-    'Valencia FC',
-    'Sevilla FC',
-    'Atletic Club Bilbao',
-    'FC Barcelona',
-    'Real Madrid',
-    'Real Sociedad',
-    'Villarreal CF',
-    'Athletico Madrid',
-    'Real Betis',
-    'Real Valladolid',
-    'Espanyol',
-    'Girona FC',
-    'SD Eibar'
+    'Bogota',
+    'Medellin',
+    'Cali',
+    'Barranquilla',
+    'Cartagena',
+    'Bucaramanga',
+    'Cucuta',
+    'Pereira',
+    'Armenia',
+    'Manizales',
+    'Valledupar',
+    'Monteria',
+    'Pasto',
+    'Villavicencio',
+    'Tunja',
+    'Neiva',
+    'Popayán',
+    'Arauca',
+    'Ibague',
+    'Tame',
   ];
 
   @override
@@ -25,15 +33,21 @@ class Listview1Screen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Listview 1 Screen'),
       ),
-      body: ListView(
-        children: [
-          ...options.map((option) {
-            return ListTile(
-              title: Text(option),
-              trailing: const Icon(Icons.arrow_forward_ios),
-            );
-          }).toList()
-        ],
+      body: ListView.separated(
+        itemCount: options.length,
+        itemBuilder: (context, index) => ListTile(
+          title: Text(options[index]),
+          trailing:
+              const Icon(Icons.arrow_forward_ios, color: AppTheme.primaryColor),
+          onTap: () {
+            final team = options[index];
+            debugPrint('$team tapped');
+          },
+        ),
+        separatorBuilder: (_, __) => const Divider(
+          height: 1.4,
+          color: AppTheme.primaryColor,
+        ),
       ),
     );
   }

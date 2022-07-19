@@ -1,0 +1,55 @@
+<div class="container">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="none-decorate" [routerLink]="['']">Blog de la UNA</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div id="navbarContent" class="collapse navbar-collapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['']">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <div class="subnav">
+            <!--Submenu de listado por categoria-->
+            <button class="subnavbtn">Categorias <i class="fa fa-caret-down" *ngIf="categories"></i></button>
+            <div class="subnav-content">
+              <span *ngFor="let cat of categories">
+                <a [routerLink]="['/categoria/'+cat.id]">{{cat.name}}</a>
+              </span>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <ul class="navbar-nav navbar-right" *ngIf="!identity">
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/login']">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/registro']">Registro</a>
+      </li>
+      </ul>
+      <ul class="navbar-nav navbar-right" *ngIf="identity">
+        <li *ngIf="identity && identity.image" class="m-1">
+          <!--Cargar la imagen del usuario registrado-->
+          <img src={{url+identity.image}} width="30px" class="mt-2">
+        </li>
+        <li class="navbar-item dropdown">
+          <a class="navbar-link dropdown-toggle none-decorate" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
+            {{identity.name}}
+          </a>
+          <div aria-labelledby="navbarDropdown" class="dropdown-menu">
+           <a class="dropdown-item" [routerLink]="['/crear-post']">Crear post</a>
+           <a class="dropdown-item" [routerLink]="['/crear-categoria']">Agregar categoria</a>
+           <div class="dropdown-divider"></div>
+           <a *ngIf="identity && identity.role=='admin_role'" class="dropdown-item" [routerLink]="['/config']">Configuración de Usuarios</a>
+           <a class="dropdown-item" [routerLink]="['/editar-usuario']">Editar mi perfil</a>
+           <a class="dropdown-item" [routerLink]="['/logout/1']">Cerrar sesión</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+  </nav>
+  <router-outlet></router-outlet>
+</div>

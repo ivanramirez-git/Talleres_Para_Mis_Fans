@@ -1,0 +1,15 @@
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Practicas Sin Pago\Jorge Vega\Program\bin\Debug\net6.0\Jorge Vega.exe
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Practicas Sin Pago\Jorge Vega\Program\bin\Debug\net6.0\Jorge Vega.deps.json
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Practicas Sin Pago\Jorge Vega\Program\bin\Debug\net6.0\Jorge Vega.runtimeconfig.json
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Practicas Sin Pago\Jorge Vega\Program\bin\Debug\net6.0\Jorge Vega.dll
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Practicas Sin Pago\Jorge Vega\Program\bin\Debug\net6.0\Jorge Vega.pdb
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Practicas Sin Pago\Jorge Vega\Program\obj\Debug\net6.0\Jorge Vega.csproj.AssemblyReference.cache
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Practicas Sin Pago\Jorge Vega\Program\obj\Debug\net6.0\Jorge Vega.GeneratedMSBuildEditorConfig.editorconfig
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Practicas Sin Pago\Jorge Vega\Program\obj\Debug\net6.0\Jorge Vega.AssemblyInfoInputs.cache
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Practicas Sin Pago\Jorge Vega\Program\obj\Debug\net6.0\Jorge Vega.AssemblyInfo.cs
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Practicas Sin Pago\Jorge Vega\Program\obj\Debug\net6.0\Jorge Vega.csproj.CoreCompileInputs.cache
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Practicas Sin Pago\Jorge Vega\Program\obj\Debug\net6.0\Jorge Vega.dll
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Practicas Sin Pago\Jorge Vega\Program\obj\Debug\net6.0\refint\Jorge Vega.dll
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Practicas Sin Pago\Jorge Vega\Program\obj\Debug\net6.0\Jorge Vega.pdb
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Practicas Sin Pago\Jorge Vega\Program\obj\Debug\net6.0\Jorge Vega.genruntimeconfig.cache
+D:\Usuario\Documentos\GitHub\Talleres_Para_Mis_Fans\Practicas Sin Pago\Jorge Vega\Program\obj\Debug\net6.0\ref\Jorge Vega.dll

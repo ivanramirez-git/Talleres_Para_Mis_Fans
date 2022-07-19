@@ -32,6 +32,41 @@ INSERT INTO EstadoCivil (Nombre) VALUES ('Casado');
 INSERT INTO EstadoCivil (Nombre) VALUES ('Divorciado');
 INSERT INTO EstadoCivil (Nombre) VALUES ('Viudo');
 
+-- Tabla telefonos
+DROP TABLE IF EXISTS Telefonos;
+CREATE TABLE Telefonos (
+    IdTelefono int NOT NULL IDENTITY(1,1),
+    Numero varchar(10) NOT NULL,
+    PRIMARY KEY (IdTelefono)
+);
+
+-- Datos de telefonos
+INSERT INTO Telefonos (Numero) VALUES ('70496185');
+INSERT INTO Telefonos (Numero) VALUES ('70496186');
+INSERT INTO Telefonos (Numero) VALUES ('70496187');
+INSERT INTO Telefonos (Numero) VALUES ('70496188');
+INSERT INTO Telefonos (Numero) VALUES ('70496189');
+INSERT INTO Telefonos (Numero) VALUES ('70496190');
+INSERT INTO Telefonos (Numero) VALUES ('70496191');
+INSERT INTO Telefonos (Numero) VALUES ('70496192');
+INSERT INTO Telefonos (Numero) VALUES ('70496193');
+INSERT INTO Telefonos (Numero) VALUES ('70496194');
+INSERT INTO Telefonos (Numero) VALUES ('70496195');
+INSERT INTO Telefonos (Numero) VALUES ('70496196');
+INSERT INTO Telefonos (Numero) VALUES ('70496197');
+INSERT INTO Telefonos (Numero) VALUES ('70496198');
+INSERT INTO Telefonos (Numero) VALUES ('70496199');
+INSERT INTO Telefonos (Numero) VALUES ('70496200');
+INSERT INTO Telefonos (Numero) VALUES ('70496201');
+INSERT INTO Telefonos (Numero) VALUES ('70496202');
+INSERT INTO Telefonos (Numero) VALUES ('70496203');
+INSERT INTO Telefonos (Numero) VALUES ('70496204');
+INSERT INTO Telefonos (Numero) VALUES ('70496205');
+INSERT INTO Telefonos (Numero) VALUES ('70496206');
+INSERT INTO Telefonos (Numero) VALUES ('70496207');
+INSERT INTO Telefonos (Numero) VALUES ('70496208');
+INSERT INTO Telefonos (Numero) VALUES ('70496209');
+INSERT INTO Telefonos (Numero) VALUES ('70496210');
 
 -- Los socios son los dueños de taxis de ellos se registra un IdSocio, identificación, Nombre (Nombre Completo, Apellido1, Apellido2), Sexo, FechaNacimiento EstadoCivil, Número Cuenta Bancaria, teléfonos, email. 
 DROP TABLE IF EXISTS Socios;
@@ -45,20 +80,22 @@ CREATE TABLE dbo.Socios (
     FechaNacimiento date NOT NULL, -- Fecha de nacimiento del socio
     EstadoCivil int NOT NULL, -- Id del estado civil del socio
     NumeroCuentaBancaria varchar(20) NOT NULL, -- Número de cuenta bancaria del socio
-    Telefono1 varchar(20) NOT NULL, -- Teléfono1 del socio
-    Telefono2 varchar(20) NOT NULL, -- Teléfono2 del socio
+    IdTelefono int NOT NULL, -- Id del teléfono del socio
+    IdTelefono2 int NOT NULL, -- Id del teléfono 2 del socio
     Email varchar(50) NOT NULL, -- Email del socio
     CONSTRAINT PK_Socios PRIMARY KEY (IdSocio),
-    CONSTRAINT FK_Socios_EstadoCivil FOREIGN KEY (EstadoCivil) REFERENCES EstadoCivil(IdEstadoCivil)
+    CONSTRAINT FK_Socios_EstadoCivil FOREIGN KEY (EstadoCivil) REFERENCES EstadoCivil(IdEstadoCivil),
+    CONSTRAINT FK_Socios_Telefonos FOREIGN KEY (IdTelefono) REFERENCES Telefonos(IdTelefono),
+    CONSTRAINT FK_Socios_Telefonos2 FOREIGN KEY (IdTelefono2) REFERENCES Telefonos(IdTelefono)
 );
 
 -- Datos de los socios
-INSERT INTO dbo.Socios (Identificacion, Nombre, Apellido1, Apellido2, Sexo, FechaNacimiento, EstadoCivil, NumeroCuentaBancaria, Telefono1, Telefono2, Email)
-VALUES ('12345678', 'Juan', 'Pérez', 'Pérez', 'M', '01/01/2000', 1, '123456789', '12345678', '12345678', 'juan@mail.com');
-INSERT INTO dbo.Socios (Identificacion, Nombre, Apellido1, Apellido2, Sexo, FechaNacimiento, EstadoCivil, NumeroCuentaBancaria, Telefono1, Telefono2, Email)
-VALUES ('22345678', 'Pedro', 'Pablo', 'Emilio', 'M', '02/02/1998', 2, '223456789', '22345678', '22345678', 'pedro@mail.com');
-INSERT INTO dbo.Socios (Identificacion, Nombre, Apellido1, Apellido2, Sexo, FechaNacimiento, EstadoCivil, NumeroCuentaBancaria, Telefono1, Telefono2, Email)
-VALUES ('32345678', 'Alejandra', 'Gonzales', 'Gonzales', 'F', '03/03/1997', 3, '323456789', '32345678', '32345678', 'alejandra@mail.com');
+INSERT INTO dbo.Socios (Identificacion, Nombre, Apellido1, Apellido2, Sexo, FechaNacimiento, EstadoCivil, NumeroCuentaBancaria, IdTelefono, IdTelefono2, Email)
+VALUES ('12345678', 'Juan', 'Pérez', 'Pérez', 'M', '01/01/2000', 1, '123456789', 1, 2, 'juan@mail.com');
+INSERT INTO dbo.Socios (Identificacion, Nombre, Apellido1, Apellido2, Sexo, FechaNacimiento, EstadoCivil, NumeroCuentaBancaria, IdTelefono, IdTelefono2, Email)
+VALUES ('22345678', 'Pedro', 'Pablo', 'Emilio', 'M', '02/02/1998', 2, '223456789', 3, 4, 'pedro@mail.com');
+INSERT INTO dbo.Socios (Identificacion, Nombre, Apellido1, Apellido2, Sexo, FechaNacimiento, EstadoCivil, NumeroCuentaBancaria, IdTelefono, IdTelefono2, Email)
+VALUES ('32345678', 'Alejandra', 'Gonzales', 'Gonzales', 'F', '03/03/1997', 3, '323456789', 5, 6, 'alejandra@mail.com');
 
 
 -- Los socios inscriben sus automóviles de los cuales se registra, la placa, el modelo, la marca, el año de fabricación, el color, cantidad pasajeros, marchamoActual y poliza de seguros que son indicadores de si/no.
@@ -111,22 +148,23 @@ CREATE TABLE dbo.Choferes (
     NumeroLicencia varchar(20) NOT NULL, -- Número de licencia del chofer
     FechaVencimientoLicencia datetime NOT NULL, -- Fecha de vencimiento de la licencia del chofer
     Foto varchar(50) NOT NULL, -- Foto del chofer
-    Telefono varchar(20) NOT NULL, -- Teléfono del chofer
+    IdTelefono int NOT NULL, -- Id del teléfono del chofer
     Email varchar(50) NOT NULL, -- Email del chofer
     CONSTRAINT PK_Choferes PRIMARY KEY (IdChofer),
-    CONSTRAINT FK_Choferes_Automoviles FOREIGN KEY (IdAutomovil) REFERENCES dbo.Automoviles (IdAutomovil)
+    CONSTRAINT FK_Choferes_Automoviles FOREIGN KEY (IdAutomovil) REFERENCES dbo.Automoviles (IdAutomovil),
+    CONSTRAINT FK_Choferes_Telefonos FOREIGN KEY (IdTelefono) REFERENCES dbo.Telefonos (IdTelefono)
 );
 
 
 -- Datos de los choferes
-INSERT INTO dbo.Choferes (IdAutomovil, Identificacion, Nombre, Apellido1, Apellido2, Sexo, FechaNacimiento, EstadoCivil, TipoLicencia, NumeroLicencia, FechaVencimientoLicencia, Foto, Telefono, Email)
-VALUES (1, '12345670', 'Lida', 'Perez', 'Bella', 'F', '01/01/2000', 1, 'A', '11345678', '01/01/2000', 'foto1.jpg', '12345678', 'lida@mail.com');
-INSERT INTO dbo.Choferes (IdAutomovil, Identificacion, Nombre, Apellido1, Apellido2, Sexo, FechaNacimiento, EstadoCivil, TipoLicencia, NumeroLicencia, FechaVencimientoLicencia, Foto, Telefono, Email)
-VALUES (1, '23456780', 'Ivan', 'Ramirez', 'Sabio', 'M', '12/21/1998', 2, 'A', '12345678', '01/01/2000', 'foto2.jpg', '12345679', 'ivan@mail.com');
-INSERT INTO dbo.Choferes (IdAutomovil, Identificacion, Nombre, Apellido1, Apellido2, Sexo, FechaNacimiento, EstadoCivil, TipoLicencia, NumeroLicencia, FechaVencimientoLicencia, Foto, Telefono, Email)
-VALUES (2, '34567890', 'Emiliano', 'Rodriguez', 'Falso', 'M', '01/01/2001', 3, 'A', '12345678', '01/01/2000', 'foto3.jpg', '12345678', 'emiliano@mail.com');
-INSERT INTO dbo.Choferes (IdAutomovil, Identificacion, Nombre, Apellido1, Apellido2, Sexo, FechaNacimiento, EstadoCivil, TipoLicencia, NumeroLicencia, FechaVencimientoLicencia, Foto, Telefono, Email)
-VALUES (3, '45678901', 'Miguel', 'Alejando', 'Hurtado', 'M', '01/01/2002', 4, 'A', '12345678', '01/01/2000', 'foto4.jpg', '12345678', 'miguel@mail.com');
+INSERT INTO dbo.Choferes (IdAutomovil, Identificacion, Nombre, Apellido1, Apellido2, Sexo, FechaNacimiento, EstadoCivil, TipoLicencia, NumeroLicencia, FechaVencimientoLicencia, Foto, IdTelefono, Email)
+VALUES (1, '12345670', 'Lida', 'Perez', 'Bella', 'F', '01/01/2000', 1, 'A', '11345678', '01/01/2000', 'foto1.jpg', 7, 'lida@mail.com');
+INSERT INTO dbo.Choferes (IdAutomovil, Identificacion, Nombre, Apellido1, Apellido2, Sexo, FechaNacimiento, EstadoCivil, TipoLicencia, NumeroLicencia, FechaVencimientoLicencia, Foto, IdTelefono, Email)
+VALUES (1, '23456780', 'Ivan', 'Ramirez', 'Sabio', 'M', '12/21/1998', 2, 'A', '12345678', '01/01/2000', 'foto2.jpg', 8, 'ivan@mail.com');
+INSERT INTO dbo.Choferes (IdAutomovil, Identificacion, Nombre, Apellido1, Apellido2, Sexo, FechaNacimiento, EstadoCivil, TipoLicencia, NumeroLicencia, FechaVencimientoLicencia, Foto, IdTelefono, Email)
+VALUES (2, '34567890', 'Emiliano', 'Rodriguez', 'Falso', 'M', '01/01/2001', 3, 'A', '12345678', '01/01/2000', 'foto3.jpg', 9, 'emiliano@mail.com');
+INSERT INTO dbo.Choferes (IdAutomovil, Identificacion, Nombre, Apellido1, Apellido2, Sexo, FechaNacimiento, EstadoCivil, TipoLicencia, NumeroLicencia, FechaVencimientoLicencia, Foto, IdTelefono, Email)
+VALUES (3, '45678901', 'Miguel', 'Alejando', 'Hurtado', 'M', '01/01/2002', 4, 'A', '12345678', '01/01/2000', 'foto4.jpg', 10, 'miguel@mail.com');
 
 
 -- Para poder solicitar un servicio los clientes deben registrarse brindando sus datos personales, identificación, Nombre (Nombre Completo, Apellido1, Apellido2), Sexo, Fecha Nacimiento, teléfono. 
@@ -139,26 +177,27 @@ CREATE TABLE dbo.Clientes (
     Apellido2 varchar(20) NOT NULL, -- Segundo apellido del cliente
     Sexo varchar(1) NOT NULL, -- Sexo del cliente
     FechaNacimiento datetime NOT NULL, -- Fecha de nacimiento del cliente
-    Telefono varchar(20) NOT NULL, -- Teléfono del cliente
-    CONSTRAINT PK_Clientes PRIMARY KEY (IdCliente)
+    IdTelefono int NOT NULL, -- Id del teléfono del cliente
+    CONSTRAINT PK_Clientes PRIMARY KEY (IdCliente),
+    CONSTRAINT FK_Clientes_Telefonos FOREIGN KEY (IdTelefono) REFERENCES dbo.Telefonos (IdTelefono)
 );
 
 
 -- Datos de los clientes
-INSERT INTO dbo.Clientes (Identificacion, Nombre, Apellido1, Apellido2, Sexo, FechaNacimiento, Telefono)
-VALUES ('56789012', 'Brandon', 'Perez', 'Sandoval', 'M', '04/04/2004', '888123456');
-INSERT INTO dbo.Clientes (Identificacion, Nombre, Apellido1, Apellido2, Sexo, FechaNacimiento, Telefono)
-VALUES ('67890123', 'Alexandra', 'Martinez', 'Gonzalez', 'F', '12/27/1997', '888123457');
-INSERT INTO dbo.Clientes (Identificacion, Nombre, Apellido1, Apellido2, Sexo, FechaNacimiento, Telefono)
-VALUES ('78901234', 'Javer', 'Gonzalez', 'Gonzalez', 'M', '01/01/2001', '888123458');
-INSERT INTO dbo.Clientes (Identificacion, Nombre, Apellido1, Apellido2, Sexo, FechaNacimiento, Telefono)
-VALUES ('89012345', 'Kimberly', 'Muñoz', 'Muñoz', 'F', '01/01/2004', '888123459');
-INSERT INTO dbo.Clientes (Identificacion, Nombre, Apellido1, Apellido2, Sexo, FechaNacimiento, Telefono)
-VALUES ('90123456', 'Maricela', 'Gonzalez', 'Ramirez', 'F', '01/01/2002', '888123460');
-INSERT INTO dbo.Clientes (Identificacion, Nombre, Apellido1, Apellido2, Sexo, FechaNacimiento, Telefono)
-VALUES ('01234567', 'Fabiola', 'Ramirez', 'Gonzalez', 'F', '01/01/2001', '888123461');
-INSERT INTO dbo.Clientes (Identificacion, Nombre, Apellido1, Apellido2, Sexo, FechaNacimiento, Telefono)
-VALUES ('12345678', 'Fabiana', 'Gonzalez', 'Martinez', 'F', '01/01/2001', '888123462');
+INSERT INTO dbo.Clientes (Identificacion, Nombre, Apellido1, Apellido2, Sexo, FechaNacimiento, IdTelefono)
+VALUES ('56789012', 'Brandon', 'Perez', 'Sandoval', 'M', '04/04/2004', 11);
+INSERT INTO dbo.Clientes (Identificacion, Nombre, Apellido1, Apellido2, Sexo, FechaNacimiento, IdTelefono)
+VALUES ('67890123', 'Alexandra', 'Martinez', 'Gonzalez', 'F', '12/27/1997', 12);
+INSERT INTO dbo.Clientes (Identificacion, Nombre, Apellido1, Apellido2, Sexo, FechaNacimiento, IdTelefono)
+VALUES ('78901234', 'Javer', 'Gonzalez', 'Gonzalez', 'M', '01/01/2001', 13);
+INSERT INTO dbo.Clientes (Identificacion, Nombre, Apellido1, Apellido2, Sexo, FechaNacimiento, IdTelefono)
+VALUES ('89012345', 'Kimberly', 'Muñoz', 'Muñoz', 'F', '01/01/2004', 14);
+INSERT INTO dbo.Clientes (Identificacion, Nombre, Apellido1, Apellido2, Sexo, FechaNacimiento, IdTelefono)
+VALUES ('90123456', 'Maricela', 'Gonzalez', 'Ramirez', 'F', '01/01/2002', 15);
+INSERT INTO dbo.Clientes (Identificacion, Nombre, Apellido1, Apellido2, Sexo, FechaNacimiento, IdTelefono)
+VALUES ('01234567', 'Fabiola', 'Ramirez', 'Gonzalez', 'F', '01/01/2001', 16);
+INSERT INTO dbo.Clientes (Identificacion, Nombre, Apellido1, Apellido2, Sexo, FechaNacimiento, IdTelefono)
+VALUES ('12345678', 'Fabiana', 'Gonzalez', 'Martinez', 'F', '01/01/2001', 17);
 
 
 -- Datos de las provincias
@@ -194,14 +233,10 @@ DROP TABLE IF EXISTS Direcciones;
 CREATE TABLE dbo.Direcciones (
     IdDireccion int NOT NULL IDENTITY(1,1), -- Id de la dirección (autoincremental)
     IdCliente int NOT NULL, -- Id del cliente al que pertenece
-    IdProvincia int NOT NULL, -- Id de la provincia a la que pertenece
-    IdCanton int NOT NULL, -- Id del cantón a la que pertenece
     IdDistrito int NOT NULL, -- Id del distrito a la que pertenece
     DireccionExacta varchar(50) NOT NULL, -- Dirección exacta
     CONSTRAINT PK_Direcciones PRIMARY KEY (IdDireccion),
     CONSTRAINT FK_Direcciones_Cliente FOREIGN KEY (IdCliente) REFERENCES dbo.Clientes (IdCliente),
-    CONSTRAINT FK_Direcciones_Provincia FOREIGN KEY (IdProvincia) REFERENCES dbo.Provincia (IdProvincia),
-    CONSTRAINT FK_Direcciones_Canton FOREIGN KEY (IdCanton) REFERENCES dbo.Canton (IdCanton),
     CONSTRAINT FK_Direcciones_Distrito FOREIGN KEY (IdDistrito) REFERENCES dbo.Distrito (IdDistrito)
 );
 
@@ -354,24 +389,24 @@ INSERT INTO dbo.Provincia (Nombre)
 VALUES ('San Jose');
 
 -- Datos de las direcciones
-INSERT INTO dbo.Direcciones (IdCliente, IdProvincia, IdCanton, IdDistrito, DireccionExacta)
-VALUES (1, 1, 1, 1, 'Calle 1');
-INSERT INTO dbo.Direcciones (IdCliente, IdProvincia, IdCanton, IdDistrito, DireccionExacta)
-VALUES (1, 1, 1, 2, 'Calle 2');
-INSERT INTO dbo.Direcciones (IdCliente, IdProvincia, IdCanton, IdDistrito, DireccionExacta)
-VALUES (2, 1, 1, 3, 'Calle 3');
-INSERT INTO dbo.Direcciones (IdCliente, IdProvincia, IdCanton, IdDistrito, DireccionExacta)
-VALUES (3, 1, 2, 1, 'Calle 4');
-INSERT INTO dbo.Direcciones (IdCliente, IdProvincia, IdCanton, IdDistrito, DireccionExacta)
-VALUES (4, 1, 2, 2, 'Calle 5');
-INSERT INTO dbo.Direcciones (IdCliente, IdProvincia, IdCanton, IdDistrito, DireccionExacta)
-VALUES (5, 1, 2, 3, 'Calle 6');
-INSERT INTO dbo.Direcciones (IdCliente, IdProvincia, IdCanton, IdDistrito, DireccionExacta)
-VALUES (6, 1, 3, 1, 'Calle 7');
-INSERT INTO dbo.Direcciones (IdCliente, IdProvincia, IdCanton, IdDistrito, DireccionExacta)
-VALUES (7, 1, 3, 2, 'Calle 8');
-INSERT INTO dbo.Direcciones (IdCliente, IdProvincia, IdCanton, IdDistrito, DireccionExacta)
-VALUES (7, 1, 3, 3, 'Calle 9');
+INSERT INTO dbo.Direcciones (IdCliente, IdDistrito, DireccionExacta)
+VALUES (1, 1, 'Calle 1');
+INSERT INTO dbo.Direcciones (IdCliente, IdDistrito, DireccionExacta)
+VALUES (1, 2, 'Calle 2');
+INSERT INTO dbo.Direcciones (IdCliente, IdDistrito, DireccionExacta)
+VALUES (2, 3, 'Calle 3');
+INSERT INTO dbo.Direcciones (IdCliente, IdDistrito, DireccionExacta)
+VALUES (3, 4, 'Calle 4');
+INSERT INTO dbo.Direcciones (IdCliente, IdDistrito, DireccionExacta)
+VALUES (4, 7, 'Calle 5');
+INSERT INTO dbo.Direcciones (IdCliente, IdDistrito, DireccionExacta)
+VALUES (5, 9, 'Calle 6');
+INSERT INTO dbo.Direcciones (IdCliente, IdDistrito, DireccionExacta)
+VALUES (6, 15, 'Calle 7');
+INSERT INTO dbo.Direcciones (IdCliente, IdDistrito, DireccionExacta)
+VALUES (7, 17, 'Calle 8');
+INSERT INTO dbo.Direcciones (IdCliente, IdDistrito, DireccionExacta)
+VALUES (7, 21, 'Calle 9');
 
 
 
@@ -416,6 +451,8 @@ INSERT INTO dbo.Viajes (Fecha, IdCliente, HoraInicio, Kilometraje, HoraFin, IdAu
 VALUES ('01/08/2021', 7, '08:00:00', 8, '10:00:00', 2, 3, 9);
 
 
+
+
 -- Se le solicita al cliente que califique el servicio con cantidad de estrellas (1 – 5), y escriba alguna observación sea positiva o negativa.
 DROP TABLE IF EXISTS Calificaciones;
 CREATE TABLE dbo.Calificaciones (
@@ -426,7 +463,6 @@ CREATE TABLE dbo.Calificaciones (
     CONSTRAINT PK_Calificaciones PRIMARY KEY (IdCalificacion),
     CONSTRAINT FK_Calificaciones_Viajes FOREIGN KEY (IdViaje) REFERENCES dbo.Viajes (IdViaje)
 );
-
 
 -- Datos de las calificaciones
 INSERT INTO dbo.Calificaciones (IdViaje, Estrellas, Observaciones)
@@ -441,40 +477,14 @@ INSERT INTO dbo.Calificaciones (IdViaje, Estrellas, Observaciones)
 VALUES (5, 1, 'Malo servicio');
 INSERT INTO dbo.Calificaciones (IdViaje, Estrellas, Observaciones)
 VALUES (6, 5, 'Excelente servicio');
+INSERT INTO dbo.Calificaciones (IdViaje, Estrellas, Observaciones)
+VALUES (7, 4, 'Muy buen servicio');
+INSERT INTO dbo.Calificaciones (IdViaje, Estrellas, Observaciones)
+VALUES (8, 3, 'Buen servicio');
 
-
-
-
--- -- Datos de las provincias
--- DROP TABLE IF EXISTS Provincia;
--- CREATE TABLE dbo.Provincia (
---     IdProvincia int NOT NULL IDENTITY(1,1), -- Id de la provincia (autoincremental)
---     Nombre varchar(50) NOT NULL, -- Nombre de la provincia
---     CONSTRAINT PK_Provincia PRIMARY KEY (IdProvincia)
--- );
-
--- -- Datos de las cantones
--- DROP TABLE IF EXISTS Canton;
--- CREATE TABLE dbo.Canton (
---     IdCanton int NOT NULL IDENTITY(1,1), -- Id del cantón (autoincremental)
---     Nombre varchar(50) NOT NULL, -- Nombre del cantón
---     IdProvincia int NOT NULL, -- Id de la provincia a la que pertenece
---     CONSTRAINT PK_Canton PRIMARY KEY (IdCanton),
---     CONSTRAINT FK_Canton_Provincia FOREIGN KEY (IdProvincia) REFERENCES dbo.Provincia (IdProvincia)
--- );
-
--- -- Datos de los distritos
--- DROP TABLE IF EXISTS Distrito;
--- CREATE TABLE dbo.Distrito (
---     IdDistrito int NOT NULL IDENTITY(1,1), -- Id del distrito (autoincremental)
---     Nombre varchar(50) NOT NULL, -- Nombre del distrito
---     IdCanton int NOT NULL, -- Id del cantón al que pertenece
---     CONSTRAINT PK_Distrito PRIMARY KEY (IdDistrito),
---     CONSTRAINT FK_Distrito_Canton FOREIGN KEY (IdCanton) REFERENCES dbo.Canton (IdCanton)
--- );
 
 -- Se requiere un informe por servicio y un informe de viajes para el chofer y los socios.
--- Informe por servicio: Id Viaje, Fecha, Nombre Cliente, Hora Inicio, Kilometraje, Hora Fin, Id Automovil, Nombre Chofer, Estrellas, Observaciones, Calle, Número, Ciudad, Provincia
+-- Informe por servicio: Id Viaje, Fecha, Nombre Cliente, Hora Inicio, Kilometraje, Hora Fin, Id Automovil, Nombre Chofer, Estrellas, Observaciones, Calle, Número, Distrito, Canton, Provincia
 SELECT dbo.Viajes.IdViaje, dbo.Viajes.Fecha, dbo.Clientes.Nombre AS NombreCliente, dbo.Viajes.HoraInicio, dbo.Viajes.Kilometraje, dbo.Viajes.HoraFin, dbo.Automoviles.IdAutomovil, dbo.Choferes.Nombre AS NombreChofer, dbo.Calificaciones.Estrellas, dbo.Calificaciones.Observaciones, dbo.Direcciones.DireccionExacta, dbo.Distrito.Nombre AS NombreDistrito, dbo.Canton.Nombre AS NombreCanton, dbo.Provincia.Nombre AS NombreProvincia
 FROM dbo.Viajes
 INNER JOIN dbo.Clientes ON dbo.Viajes.IdCliente = dbo.Clientes.IdCliente
@@ -482,12 +492,11 @@ INNER JOIN dbo.Automoviles ON dbo.Viajes.IdAutomovil = dbo.Automoviles.IdAutomov
 INNER JOIN dbo.Choferes ON dbo.Viajes.IdChofer = dbo.Choferes.IdChofer
 INNER JOIN dbo.Calificaciones ON dbo.Viajes.IdViaje = dbo.Calificaciones.IdViaje
 INNER JOIN dbo.Direcciones ON dbo.Viajes.IdDireccion = dbo.Direcciones.IdDireccion
-INNER JOIN dbo.Provincia ON dbo.Provincia.IdProvincia = dbo.Direcciones.IdProvincia
-INNER JOIN dbo.Canton ON dbo.Direcciones.IdProvincia = dbo.Canton.IdCanton
 INNER JOIN dbo.Distrito ON dbo.Direcciones.IdDistrito = dbo.Distrito.IdDistrito
-
-
+INNER JOIN dbo.Canton ON dbo.Distrito.IdCanton = dbo.Canton.IdCanton
+INNER JOIN dbo.Provincia ON dbo.Canton.IdProvincia = dbo.Provincia.IdProvincia
 ORDER BY dbo.Viajes.IdViaje;
+
 
 -- Informe de viajes: Nombre Chofer, Cantidad de viajes, Total de kilometros
 SELECT dbo.Choferes.Nombre, COUNT(dbo.Viajes.IdViaje) AS CantidadViajes, SUM(dbo.Viajes.Kilometraje) AS TotalKilometros
