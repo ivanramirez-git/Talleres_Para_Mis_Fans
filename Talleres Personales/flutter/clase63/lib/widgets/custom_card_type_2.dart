@@ -30,10 +30,11 @@ class CustomCardType2 extends StatelessWidget {
             fit: BoxFit.scaleDown,
             fadeInDuration: const Duration(milliseconds: 500),
           ),
-          Container(
-              alignment: AlignmentDirectional.centerEnd,
-              padding: const EdgeInsets.only(top: 10, right: 20, bottom: 10),
-              child: Text(title))
+          if (title.isNotEmpty)
+            Container(
+                alignment: AlignmentDirectional.centerEnd,
+                padding: const EdgeInsets.only(top: 10, right: 20, bottom: 10),
+                child: Text(title))
         ]));
   }
 }

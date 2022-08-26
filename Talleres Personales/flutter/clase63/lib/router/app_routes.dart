@@ -38,14 +38,6 @@ class AppRoutes {
     ),
   ];
 
-  // static Map<String, Widget Function(BuildContext)> routes = {
-  //   'home': (context) => const HomeScreen(),
-  //   'listview1': (context) => const Listview1Screen(),
-  //   'listview2': (context) => const Listview2Screen(),
-  //   'alert': (context) => const AlertScreen(),
-  //   'card': (context) => const CardScreen(),
-  // };
-
   // get app rouutes
   static Map<String, Widget Function(BuildContext)> getAppRoutes() {
     Map<String, Widget Function(BuildContext)> appRoutes = {};
