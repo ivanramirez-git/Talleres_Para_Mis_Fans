@@ -5,11 +5,11 @@ let jsieee754 = require('./index.js');
 // Integrantes: Ivan Rene Ramirez, Alejandro
 
 value = '01000001111110100000011010010101';
-options = 'double';
+options = 'single';
 
 test1 = jsieee754.getDecimal(value, options);
 
-value2 = '1.66666666666666';
+value2 = '347.5';
 
 test2 = jsieee754.getPrecision(value2, options)
 console.log();
@@ -19,10 +19,10 @@ test3 = jsieee754.getM(2, 3, -1, 2);
 test4 = jsieee754.getM(2, 2, -2, 2);
 
 // Result:
-console.log('Prueba1: \n' + test1 + '\n');
+// console.log('Prueba1: \n' + test1 + '\n');
 console.log('Prueba2: \n' + test2 + '\n');
-console.log('Prueba3: \n' + test3 + '\n');
-console.log('Prueba4: \n' + test4 + '\n');
+// console.log('Prueba3: \n' + test3 + '\n');
+// console.log('Prueba4: \n' + test4 + '\n');
 
 // Utilizando un sistema de computo algebraico, realizar un programa que genere todos los números de máquina, dados los valores iniciales M(β, t, L, U)
 /*
@@ -40,3 +40,8 @@ console.log('Prueba4: \n' + test4 + '\n');
             6
     ]    
 */
+
+
+JS: 01000011101011011100000000000000
+
+QUZI: 01000011101011011100000000000000

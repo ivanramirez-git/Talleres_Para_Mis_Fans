@@ -1697,8 +1697,85 @@ SubAlgoritmo Calcula(arreglo, N)
 	Escribir "Moda: " moda
 
 FinSubAlgoritmo
+
+
+/*
+Una libreria de temporada escolar a los clientes que realicen compras, les otrorgara regalos y descuentos de acuerdo al importe total de la compra. Los dias viernes o sabados se aplicara un descuento del 25% del importe total, para otros dias no se aplica descuentos. Los importes menores a 100 soles se otorgara una caja de colores, para importes de 100 a 300 soles el obsequio sera una caja de plumones y montos mayores a 300 el obsequio sera una mochila. Considerar como datos de ingreso el nombre del cliente, el importe total y dia de la semana.
+
+//1. ingreso de los datos
+//2. el importe a pagar
+//3. visualizar nombre, importe a pagar y descripcion del premio
+Algoritmo Principal
+	// Variables
+	Nombre = ""
+	Importe = 0.0
+	Dia = ""
+	
+	// Ingreso de datos
+	Escribir "Ingrese el nombre del cliente: "
+	Leer Nombre
+	Escribir "Ingrese el importe total: "
+	Leer Importe
+	Escribir "Ingrese el dia de la semana: "
+	Leer Dia
+	
+	// Calculos
+	Si Dia = "Viernes" o Dia = "Sabado"
+		Importe = Importe * 0.75
+	FinSi
+	Si Importe < 100
+		Escribir "El cliente " Nombre " debe pagar " Importe " soles, con una caja de colores."
+	FinSi
+	Si Importe >= 100 y Importe <= 300
+		Escribir "El cliente " Nombre " debe pagar " Importe " soles, con una caja de plumones."
+	FinSi
+	Si Importe > 300
+		Escribir "El cliente " Nombre " debe pagar " Importe " soles, con una mochila."
+	FinSi
+
+FinAlgoritmo
 		
 
+// Datos de ingreso: Nombre, Horas Trabajadas a la Semana, Precio de la Hora
+// Una semana de trabajo normal es de 40 horas, las horas adicionales se consideras horas extra y se pagan a una tarifa 20% adicional.
+// Muestre el pago de horas normales, horas extra y el pago total.
+Algoritmo Principal
+	// Variables
+	Nombre = ""
+	HorasTrabajadasTotal = 0.0
+	PrecioHora = 0.0
+	HorasExtra = 0.0
+	HorasNormales = 0.0
+	PagoHorasNormales = 0.0
+	PagoHorasExtra = 0.0
+	PagoTotal = 0.0
+	
+	// Ingreso de datos
+	Escribir "Ingrese el nombre del cliente: "
+	Leer Nombre
+	Escribir "Ingrese las horas trabajadas: "
+	Leer HorasTrabajadas
+	Escribir "Ingrese el precio de la hora: "
+	Leer PrecioHora
+	
+	// Calculos
+	Si HorasTrabajadas > 40
+		HorasExtra = HorasTrabajadas - 40
+		HorasNormales = 40
+		PagoHorasNormales = HorasNormales * PrecioHora
+		PagoHorasExtra = HorasExtra * (PrecioHora * 1.2)
+		PagoTotal = PagoHorasNormales + PagoHorasExtra
 
+		// Resultados
+		Escribir "El trabajador " Nombre " debe recibir " PagoHorasNormales " soles por las 40 horas normales y " PagoHorasExtra " soles por las " HorasExtra " horas extra. En Total debe recibir " PagoTotal " soles."
+	FinSi
+	Si HorasTrabajadas <= 40
+		HorasNormales = HorasTrabajadas
+		PagoHorasNormales = HorasNormales * PrecioHora
+		PagoTotal = PagoHorasNormales
 
+		// Resultados
+		Escribir "El trabajador " Nombre " debe recibir " PagoHorasNormales " soles por las " HorasNormales " horas normales. En Total debe recibir " PagoTotal " soles."
+	FinSi
 
+FinAlgoritmo

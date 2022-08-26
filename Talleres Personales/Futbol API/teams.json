@@ -1,0 +1,890 @@
+{
+    "count": 20,
+    "filters": {
+        "season": "2022"
+    },
+    "competition": {
+        "id": 2014,
+        "name": "Primera Division",
+        "code": "PD",
+        "type": "LEAGUE",
+        "emblem": "https://crests.football-data.org/PD.png"
+    },
+    "season": {
+        "id": 1504,
+        "startDate": "2022-08-14",
+        "endDate": "2023-06-04",
+        "currentMatchday": 1,
+        "winner": null
+    },
+    "teams": [
+        {
+            "area": {
+                "id": 2224,
+                "name": "Spain",
+                "code": "ESP",
+                "flag": "https://crests.football-data.org/760.svg"
+            },
+            "id": 77,
+            "name": "Athletic Club",
+            "shortName": "Athletic",
+            "tla": "ATH",
+            "crest": "https://crests.football-data.org/77.png",
+            "address": "Ibaigane, Alameda Mazarredo, 23 Bilbao 48009",
+            "website": "http://www.athletic-club.eus",
+            "founded": 1898,
+            "clubColors": "Red / White / Black",
+            "venue": "San Mam\u00e9s",
+            "runningCompetitions": [
+                {
+                    "id": 2014,
+                    "name": "Primera Division",
+                    "code": "PD",
+                    "type": "LEAGUE",
+                    "emblem": "https://crests.football-data.org/PD.png"
+                }
+            ],
+            "coach": {
+                "id": null,
+                "firstName": null,
+                "lastName": null,
+                "name": null,
+                "dateOfBirth": null,
+                "nationality": null,
+                "contract": {
+                    "start": null,
+                    "until": null
+                }
+            },
+            "squad": [],
+            "staff": [],
+            "lastUpdated": "2022-03-06T09:31:27Z"
+        },
+        {
+            "area": {
+                "id": 2224,
+                "name": "Spain",
+                "code": "ESP",
+                "flag": "https://crests.football-data.org/760.svg"
+            },
+            "id": 78,
+            "name": "Club Atl\u00e9tico de Madrid",
+            "shortName": "Atleti",
+            "tla": "ATL",
+            "crest": "https://crests.football-data.org/78.svg",
+            "address": "Paseo Virgen del Puerto, 67 Madrid 28005",
+            "website": "http://www.clubatleticodemadrid.com",
+            "founded": 1903,
+            "clubColors": "Red / White / Blue",
+            "venue": "Estadio Wanda Metropolitano",
+            "runningCompetitions": [
+                {
+                    "id": 2014,
+                    "name": "Primera Division",
+                    "code": "PD",
+                    "type": "LEAGUE",
+                    "emblem": "https://crests.football-data.org/PD.png"
+                }
+            ],
+            "coach": {
+                "id": null,
+                "firstName": null,
+                "lastName": null,
+                "name": null,
+                "dateOfBirth": null,
+                "nationality": null,
+                "contract": {
+                    "start": null,
+                    "until": null
+                }
+            },
+            "squad": [],
+            "staff": [],
+            "lastUpdated": "2022-02-19T08:20:10Z"
+        },
+        {
+            "area": {
+                "id": 2224,
+                "name": "Spain",
+                "code": "ESP",
+                "flag": "https://crests.football-data.org/760.svg"
+            },
+            "id": 79,
+            "name": "CA Osasuna",
+            "shortName": "Osasuna",
+            "tla": "OSA",
+            "crest": "https://crests.football-data.org/79.svg",
+            "address": "Calle del Sadar, s/n Pamplona 31006",
+            "website": "http://www.osasuna.es",
+            "founded": 1920,
+            "clubColors": "Red / Navy Blue",
+            "venue": "Estadio El Sadar",
+            "runningCompetitions": [
+                {
+                    "id": 2014,
+                    "name": "Primera Division",
+                    "code": "PD",
+                    "type": "LEAGUE",
+                    "emblem": "https://crests.football-data.org/PD.png"
+                }
+            ],
+            "coach": {
+                "id": null,
+                "firstName": null,
+                "lastName": null,
+                "name": null,
+                "dateOfBirth": null,
+                "nationality": null,
+                "contract": {
+                    "start": null,
+                    "until": null
+                }
+            },
+            "squad": [],
+            "staff": [],
+            "lastUpdated": "2021-02-08T10:09:19Z"
+        },
+        {
+            "area": {
+                "id": 2224,
+                "name": "Spain",
+                "code": "ESP",
+                "flag": "https://crests.football-data.org/760.svg"
+            },
+            "id": 80,
+            "name": "RCD Espanyol de Barcelona",
+            "shortName": "Espanyol",
+            "tla": "ESP",
+            "crest": "https://crests.football-data.org/80.svg",
+            "address": "Avenida Baix Llobregat, 100 Cornell\u00e0 de Llobregat 08940",
+            "website": "http://www.rcdespanyol.com",
+            "founded": 1900,
+            "clubColors": "Blue / White",
+            "venue": "RCDE Stadium",
+            "runningCompetitions": [
+                {
+                    "id": 2014,
+                    "name": "Primera Division",
+                    "code": "PD",
+                    "type": "LEAGUE",
+                    "emblem": "https://crests.football-data.org/PD.png"
+                }
+            ],
+            "coach": {
+                "id": null,
+                "firstName": null,
+                "lastName": null,
+                "name": null,
+                "dateOfBirth": null,
+                "nationality": null,
+                "contract": {
+                    "start": null,
+                    "until": null
+                }
+            },
+            "squad": [],
+            "staff": [],
+            "lastUpdated": "2022-02-11T14:13:16Z"
+        },
+        {
+            "area": {
+                "id": 2224,
+                "name": "Spain",
+                "code": "ESP",
+                "flag": "https://crests.football-data.org/760.svg"
+            },
+            "id": 81,
+            "name": "FC Barcelona",
+            "shortName": "Bar\u00e7a",
+            "tla": "FCB",
+            "crest": "https://crests.football-data.org/81.svg",
+            "address": "Avenida Ar\u00edstides Maillol s/n Barcelona 08028",
+            "website": "http://www.fcbarcelona.com",
+            "founded": 1899,
+            "clubColors": "Red / Navy Blue / Orange",
+            "venue": "Camp Nou",
+            "runningCompetitions": [
+                {
+                    "id": 2146,
+                    "name": "UEFA Europa League",
+                    "code": "EL",
+                    "type": "CUP",
+                    "emblem": "https://crests.football-data.org/EL.png"
+                },
+                {
+                    "id": 2014,
+                    "name": "Primera Division",
+                    "code": "PD",
+                    "type": "LEAGUE",
+                    "emblem": "https://crests.football-data.org/PD.png"
+                }
+            ],
+            "coach": {
+                "id": null,
+                "firstName": null,
+                "lastName": null,
+                "name": null,
+                "dateOfBirth": null,
+                "nationality": null,
+                "contract": {
+                    "start": null,
+                    "until": null
+                }
+            },
+            "squad": [],
+            "staff": [],
+            "lastUpdated": "2021-09-16T20:17:51Z"
+        },
+        {
+            "area": {
+                "id": 2224,
+                "name": "Spain",
+                "code": "ESP",
+                "flag": "https://crests.football-data.org/760.svg"
+            },
+            "id": 82,
+            "name": "Getafe CF",
+            "shortName": "Getafe",
+            "tla": "GET",
+            "crest": "https://crests.football-data.org/82.png",
+            "address": "Avenida Teresa de Calcuta, s/n Getafe 28903",
+            "website": "http://www.getafecf.com",
+            "founded": 1946,
+            "clubColors": "Blue / White",
+            "venue": "Coliseum Alfonso P\u00e9rez",
+            "runningCompetitions": [
+                {
+                    "id": 2014,
+                    "name": "Primera Division",
+                    "code": "PD",
+                    "type": "LEAGUE",
+                    "emblem": "https://crests.football-data.org/PD.png"
+                }
+            ],
+            "coach": {
+                "id": null,
+                "firstName": null,
+                "lastName": null,
+                "name": null,
+                "dateOfBirth": null,
+                "nationality": null,
+                "contract": {
+                    "start": null,
+                    "until": null
+                }
+            },
+            "squad": [],
+            "staff": [],
+            "lastUpdated": "2022-02-25T16:43:35Z"
+        },
+        {
+            "area": {
+                "id": 2224,
+                "name": "Spain",
+                "code": "ESP",
+                "flag": "https://crests.football-data.org/760.svg"
+            },
+            "id": 86,
+            "name": "Real Madrid CF",
+            "shortName": "Real Madrid",
+            "tla": "RMA",
+            "crest": "https://crests.football-data.org/86.png",
+            "address": "Avenida Concha Espina, 1 Madrid 28036",
+            "website": "http://www.realmadrid.com",
+            "founded": 1902,
+            "clubColors": "White / Purple",
+            "venue": "Estadio Santiago Bernab\u00e9u",
+            "runningCompetitions": [
+                {
+                    "id": 2014,
+                    "name": "Primera Division",
+                    "code": "PD",
+                    "type": "LEAGUE",
+                    "emblem": "https://crests.football-data.org/PD.png"
+                }
+            ],
+            "coach": {
+                "id": null,
+                "firstName": null,
+                "lastName": null,
+                "name": null,
+                "dateOfBirth": null,
+                "nationality": null,
+                "contract": {
+                    "start": null,
+                    "until": null
+                }
+            },
+            "squad": [],
+            "staff": [],
+            "lastUpdated": "2022-02-19T08:59:31Z"
+        },
+        {
+            "area": {
+                "id": 2224,
+                "name": "Spain",
+                "code": "ESP",
+                "flag": "https://crests.football-data.org/760.svg"
+            },
+            "id": 87,
+            "name": "Rayo Vallecano de Madrid",
+            "shortName": "Rayo Vallecano",
+            "tla": "RAY",
+            "crest": "https://crests.football-data.org/87.svg",
+            "address": "Calle del Payaso Fof\u00f3, s/n Madrid 28018",
+            "website": "http://www.rayovallecano.es",
+            "founded": 1924,
+            "clubColors": "White / Red",
+            "venue": "Estadio del Rayo Vallecano",
+            "runningCompetitions": [
+                {
+                    "id": 2014,
+                    "name": "Primera Division",
+                    "code": "PD",
+                    "type": "LEAGUE",
+                    "emblem": "https://crests.football-data.org/PD.png"
+                }
+            ],
+            "coach": {
+                "id": null,
+                "firstName": null,
+                "lastName": null,
+                "name": null,
+                "dateOfBirth": null,
+                "nationality": null,
+                "contract": {
+                    "start": null,
+                    "until": null
+                }
+            },
+            "squad": [],
+            "staff": [],
+            "lastUpdated": "2021-04-14T07:46:05Z"
+        },
+        {
+            "area": {
+                "id": 2224,
+                "name": "Spain",
+                "code": "ESP",
+                "flag": "https://crests.football-data.org/760.svg"
+            },
+            "id": 89,
+            "name": "RCD Mallorca",
+            "shortName": "Mallorca",
+            "tla": "MAL",
+            "crest": "https://crests.football-data.org/89.png",
+            "address": "Son Moix, Calle Cam\u00ed dels Reis, s/n Palma de Mallorca 07011",
+            "website": "http://www.rcdmallorca.es",
+            "founded": 1916,
+            "clubColors": "Red / Black",
+            "venue": "Iberostar Estadi",
+            "runningCompetitions": [
+                {
+                    "id": 2014,
+                    "name": "Primera Division",
+                    "code": "PD",
+                    "type": "LEAGUE",
+                    "emblem": "https://crests.football-data.org/PD.png"
+                }
+            ],
+            "coach": {
+                "id": null,
+                "firstName": null,
+                "lastName": null,
+                "name": null,
+                "dateOfBirth": null,
+                "nationality": null,
+                "contract": {
+                    "start": null,
+                    "until": null
+                }
+            },
+            "squad": [],
+            "staff": [],
+            "lastUpdated": "2022-02-19T08:44:00Z"
+        },
+        {
+            "area": {
+                "id": 2224,
+                "name": "Spain",
+                "code": "ESP",
+                "flag": "https://crests.football-data.org/760.svg"
+            },
+            "id": 90,
+            "name": "Real Betis Balompi\u00e9",
+            "shortName": "Real Betis",
+            "tla": "BET",
+            "crest": "https://crests.football-data.org/90.png",
+            "address": "Avenida de Heli\u00f3polis, s/n Sevilla 41012",
+            "website": "http://www.realbetisbalompie.es",
+            "founded": 1907,
+            "clubColors": "Green / White",
+            "venue": "Estadio Benito Villamar\u00edn",
+            "runningCompetitions": [
+                {
+                    "id": 2146,
+                    "name": "UEFA Europa League",
+                    "code": "EL",
+                    "type": "CUP",
+                    "emblem": "https://crests.football-data.org/EL.png"
+                },
+                {
+                    "id": 2014,
+                    "name": "Primera Division",
+                    "code": "PD",
+                    "type": "LEAGUE",
+                    "emblem": "https://crests.football-data.org/PD.png"
+                }
+            ],
+            "coach": {
+                "id": null,
+                "firstName": null,
+                "lastName": null,
+                "name": null,
+                "dateOfBirth": null,
+                "nationality": null,
+                "contract": {
+                    "start": null,
+                    "until": null
+                }
+            },
+            "squad": [],
+            "staff": [],
+            "lastUpdated": "2022-05-03T08:22:26Z"
+        },
+        {
+            "area": {
+                "id": 2224,
+                "name": "Spain",
+                "code": "ESP",
+                "flag": "https://crests.football-data.org/760.svg"
+            },
+            "id": 92,
+            "name": "Real Sociedad de F\u00fatbol",
+            "shortName": "Real Sociedad",
+            "tla": "RSO",
+            "crest": "https://crests.football-data.org/92.svg",
+            "address": "Anoeta Pasalekua, 1 San Sebasti\u00e1n 20014",
+            "website": "http://www.realsociedad.com",
+            "founded": 1903,
+            "clubColors": "Blue / White",
+            "venue": "Estadio Municipal de Anoeta",
+            "runningCompetitions": [
+                {
+                    "id": 2146,
+                    "name": "UEFA Europa League",
+                    "code": "EL",
+                    "type": "CUP",
+                    "emblem": "https://crests.football-data.org/EL.png"
+                },
+                {
+                    "id": 2014,
+                    "name": "Primera Division",
+                    "code": "PD",
+                    "type": "LEAGUE",
+                    "emblem": "https://crests.football-data.org/PD.png"
+                }
+            ],
+            "coach": {
+                "id": null,
+                "firstName": null,
+                "lastName": null,
+                "name": null,
+                "dateOfBirth": null,
+                "nationality": null,
+                "contract": {
+                    "start": null,
+                    "until": null
+                }
+            },
+            "squad": [],
+            "staff": [],
+            "lastUpdated": "2021-02-08T10:15:46Z"
+        },
+        {
+            "area": {
+                "id": 2224,
+                "name": "Spain",
+                "code": "ESP",
+                "flag": "https://crests.football-data.org/760.svg"
+            },
+            "id": 94,
+            "name": "Villarreal CF",
+            "shortName": "Villarreal",
+            "tla": "VIL",
+            "crest": "https://crests.football-data.org/94.png",
+            "address": "Camino Miralcamp, s/n Villarreal 12540",
+            "website": "http://www.villarrealcf.es",
+            "founded": 1923,
+            "clubColors": "Yellow / Blue",
+            "venue": "Estadio de la Cer\u00e1mica",
+            "runningCompetitions": [
+                {
+                    "id": 2014,
+                    "name": "Primera Division",
+                    "code": "PD",
+                    "type": "LEAGUE",
+                    "emblem": "https://crests.football-data.org/PD.png"
+                }
+            ],
+            "coach": {
+                "id": null,
+                "firstName": null,
+                "lastName": null,
+                "name": null,
+                "dateOfBirth": null,
+                "nationality": null,
+                "contract": {
+                    "start": null,
+                    "until": null
+                }
+            },
+            "squad": [],
+            "staff": [],
+            "lastUpdated": "2022-02-22T18:26:04Z"
+        },
+        {
+            "area": {
+                "id": 2224,
+                "name": "Spain",
+                "code": "ESP",
+                "flag": "https://crests.football-data.org/760.svg"
+            },
+            "id": 95,
+            "name": "Valencia CF",
+            "shortName": "Valencia",
+            "tla": "VAL",
+            "crest": "https://crests.football-data.org/95.svg",
+            "address": "Plaza del Valencia Club de F\u00fatbol, 2 Valencia 46010",
+            "website": "http://www.valenciacf.com",
+            "founded": 1919,
+            "clubColors": "White / Orange / Black",
+            "venue": "Estadio de Mestalla",
+            "runningCompetitions": [
+                {
+                    "id": 2014,
+                    "name": "Primera Division",
+                    "code": "PD",
+                    "type": "LEAGUE",
+                    "emblem": "https://crests.football-data.org/PD.png"
+                }
+            ],
+            "coach": {
+                "id": null,
+                "firstName": null,
+                "lastName": null,
+                "name": null,
+                "dateOfBirth": null,
+                "nationality": null,
+                "contract": {
+                    "start": null,
+                    "until": null
+                }
+            },
+            "squad": [],
+            "staff": [],
+            "lastUpdated": "2021-04-11T18:19:52Z"
+        },
+        {
+            "area": {
+                "id": 2224,
+                "name": "Spain",
+                "code": "ESP",
+                "flag": "https://crests.football-data.org/760.svg"
+            },
+            "id": 250,
+            "name": "Real Valladolid CF",
+            "shortName": "Valladolid",
+            "tla": "VDD",
+            "crest": "https://crests.football-data.org/250.png",
+            "address": "Avenida del Mundial, 82 Valladolid 47014",
+            "website": "http://www.realvalladolid.es",
+            "founded": 1928,
+            "clubColors": "Violet / White",
+            "venue": "Estadio Municipal Jos\u00e9 Zorrilla",
+            "runningCompetitions": [
+                {
+                    "id": 2014,
+                    "name": "Primera Division",
+                    "code": "PD",
+                    "type": "LEAGUE",
+                    "emblem": "https://crests.football-data.org/PD.png"
+                }
+            ],
+            "coach": {
+                "id": null,
+                "firstName": null,
+                "lastName": null,
+                "name": null,
+                "dateOfBirth": null,
+                "nationality": null,
+                "contract": {
+                    "start": null,
+                    "until": null
+                }
+            },
+            "squad": [],
+            "staff": [],
+            "lastUpdated": "2022-02-19T09:12:57Z"
+        },
+        {
+            "area": {
+                "id": 2224,
+                "name": "Spain",
+                "code": "ESP",
+                "flag": "https://crests.football-data.org/760.svg"
+            },
+            "id": 264,
+            "name": "C\u00e1diz CF",
+            "shortName": "C\u00e1diz CF",
+            "tla": "CAD",
+            "crest": "https://crests.football-data.org/264.png",
+            "address": "Plaza de Madrid, s/n C\u00e1diz 11010",
+            "website": "http://www.cadizcf.com",
+            "founded": 1910,
+            "clubColors": "Yellow / Blue",
+            "venue": "Estadio Ram\u00f3n de Carranza",
+            "runningCompetitions": [
+                {
+                    "id": 2014,
+                    "name": "Primera Division",
+                    "code": "PD",
+                    "type": "LEAGUE",
+                    "emblem": "https://crests.football-data.org/PD.png"
+                }
+            ],
+            "coach": {
+                "id": null,
+                "firstName": null,
+                "lastName": null,
+                "name": null,
+                "dateOfBirth": null,
+                "nationality": null,
+                "contract": {
+                    "start": null,
+                    "until": null
+                }
+            },
+            "squad": [],
+            "staff": [],
+            "lastUpdated": "2022-02-19T08:55:59Z"
+        },
+        {
+            "area": {
+                "id": 2224,
+                "name": "Spain",
+                "code": "ESP",
+                "flag": "https://crests.football-data.org/760.svg"
+            },
+            "id": 267,
+            "name": "UD Almer\u00eda",
+            "shortName": "Almer\u00eda",
+            "tla": "ALM",
+            "crest": "https://crests.football-data.org/267.svg",
+            "address": "Calle Alcalde Santiago Mart\u00ednez Cabrejas, 5 Almer\u00eda 04007",
+            "website": "http://www.udalmeriasad.com",
+            "founded": 1989,
+            "clubColors": "Red / White",
+            "venue": "Estadio de los Juegos Mediterr\u00e1neos",
+            "runningCompetitions": [
+                {
+                    "id": 2014,
+                    "name": "Primera Division",
+                    "code": "PD",
+                    "type": "LEAGUE",
+                    "emblem": "https://crests.football-data.org/PD.png"
+                }
+            ],
+            "coach": {
+                "id": null,
+                "firstName": null,
+                "lastName": null,
+                "name": null,
+                "dateOfBirth": null,
+                "nationality": null,
+                "contract": {
+                    "start": null,
+                    "until": null
+                }
+            },
+            "squad": [],
+            "staff": [],
+            "lastUpdated": "2021-02-08T10:10:05Z"
+        },
+        {
+            "area": {
+                "id": 2224,
+                "name": "Spain",
+                "code": "ESP",
+                "flag": "https://crests.football-data.org/760.svg"
+            },
+            "id": 285,
+            "name": "Elche CF",
+            "shortName": "Elche",
+            "tla": "ELC",
+            "crest": "https://crests.football-data.org/285.png",
+            "address": "Avenida Manuel Mart\u00ednez Valero, 3 Elche 03208",
+            "website": "http://www.elchecf.es",
+            "founded": 1923,
+            "clubColors": "White / Green",
+            "venue": "Estadio Manuel Mart\u00ednez Valero",
+            "runningCompetitions": [
+                {
+                    "id": 2014,
+                    "name": "Primera Division",
+                    "code": "PD",
+                    "type": "LEAGUE",
+                    "emblem": "https://crests.football-data.org/PD.png"
+                }
+            ],
+            "coach": {
+                "id": null,
+                "firstName": null,
+                "lastName": null,
+                "name": null,
+                "dateOfBirth": null,
+                "nationality": null,
+                "contract": {
+                    "start": null,
+                    "until": null
+                }
+            },
+            "squad": [],
+            "staff": [],
+            "lastUpdated": "2022-02-24T07:42:28Z"
+        },
+        {
+            "area": {
+                "id": 2224,
+                "name": "Spain",
+                "code": "ESP",
+                "flag": "https://crests.football-data.org/760.svg"
+            },
+            "id": 298,
+            "name": "Girona FC",
+            "shortName": "Girona",
+            "tla": "GIR",
+            "crest": "https://crests.football-data.org/298.svg",
+            "address": "Avinguda de Montilivi, 141 Girona 17003",
+            "website": "http://www.gironafc.cat",
+            "founded": 1930,
+            "clubColors": "Red / White / Blue",
+            "venue": "Estadi Municipal de Montilivi",
+            "runningCompetitions": [
+                {
+                    "id": 2014,
+                    "name": "Primera Division",
+                    "code": "PD",
+                    "type": "LEAGUE",
+                    "emblem": "https://crests.football-data.org/PD.png"
+                }
+            ],
+            "coach": {
+                "id": null,
+                "firstName": null,
+                "lastName": null,
+                "name": null,
+                "dateOfBirth": null,
+                "nationality": null,
+                "contract": {
+                    "start": null,
+                    "until": null
+                }
+            },
+            "squad": [],
+            "staff": [],
+            "lastUpdated": "2021-02-08T10:10:24Z"
+        },
+        {
+            "area": {
+                "id": 2224,
+                "name": "Spain",
+                "code": "ESP",
+                "flag": "https://crests.football-data.org/760.svg"
+            },
+            "id": 558,
+            "name": "RC Celta de Vigo",
+            "shortName": "Celta",
+            "tla": "CEL",
+            "crest": "https://crests.football-data.org/558.svg",
+            "address": "Calle del Conde de Gondomar, 1 Vigo 36203",
+            "website": "http://www.celtavigo.net",
+            "founded": 1923,
+            "clubColors": "Sky Blue / White",
+            "venue": "Estadio de Bala\u00eddos",
+            "runningCompetitions": [
+                {
+                    "id": 2014,
+                    "name": "Primera Division",
+                    "code": "PD",
+                    "type": "LEAGUE",
+                    "emblem": "https://crests.football-data.org/PD.png"
+                }
+            ],
+            "coach": {
+                "id": null,
+                "firstName": null,
+                "lastName": null,
+                "name": null,
+                "dateOfBirth": null,
+                "nationality": null,
+                "contract": {
+                    "start": null,
+                    "until": null
+                }
+            },
+            "squad": [],
+            "staff": [],
+            "lastUpdated": "2021-04-12T13:13:01Z"
+        },
+        {
+            "area": {
+                "id": 2224,
+                "name": "Spain",
+                "code": "ESP",
+                "flag": "https://crests.football-data.org/760.svg"
+            },
+            "id": 559,
+            "name": "Sevilla FC",
+            "shortName": "Sevilla FC",
+            "tla": "SEV",
+            "crest": "https://crests.football-data.org/559.svg",
+            "address": "Calle Sevilla F\u00fatbol Club, s/n Sevilla 41005",
+            "website": "http://www.sevillafc.es",
+            "founded": 1905,
+            "clubColors": "White / Red",
+            "venue": "Estadio Ram\u00f3n S\u00e1nchez Pizju\u00e1n",
+            "runningCompetitions": [
+                {
+                    "id": 2146,
+                    "name": "UEFA Europa League",
+                    "code": "EL",
+                    "type": "CUP",
+                    "emblem": "https://crests.football-data.org/EL.png"
+                },
+                {
+                    "id": 2014,
+                    "name": "Primera Division",
+                    "code": "PD",
+                    "type": "LEAGUE",
+                    "emblem": "https://crests.football-data.org/PD.png"
+                }
+            ],
+            "coach": {
+                "id": null,
+                "firstName": null,
+                "lastName": null,
+                "name": null,
+                "dateOfBirth": null,
+                "nationality": null,
+                "contract": {
+                    "start": null,
+                    "until": null
+                }
+            },
+            "squad": [],
+            "staff": [],
+            "lastUpdated": "2021-04-12T13:09:55Z"
+        }
+    ]
+}

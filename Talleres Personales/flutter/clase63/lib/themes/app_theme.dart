@@ -6,7 +6,7 @@ class AppTheme {
   static const String fontNameBold = 'Roboto-Bold'; // App Bar
 
   // Color Primario
-  static const Color primaryColor = Colors.red;
+  static const Color primaryColor = Colors.blue;
 
   // Theme Light
   static final ThemeData lightTheme = ThemeData.light().copyWith(
