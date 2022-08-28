@@ -15,6 +15,11 @@
             "type": "dart"
         },
         {
+            "name": "clase63 Phone",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
             "name": "clase63 (profile mode)",
             "request": "launch",
             "type": "dart",

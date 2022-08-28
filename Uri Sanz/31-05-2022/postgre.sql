@@ -133,15 +133,15 @@ INSERT INTO proveedor(nombre, direccion, telefono) VALUES ('natalia', 'carrera',
 -- 4           | pan de pollo | pan de pollo | 25      | 1           | 2
 -- 5           | pan de carne | pan de carne | 30      | 1           | 3
 -- 6           | cocacola     | cocacola     | 10      | 2           | 1
--- 7           | fanta       | fanta       | 15      | 2           | 2
--- 8           | sprite      | sprite      | 20      | 2           | 2
--- 9           | agua        | agua        | 10      | 2           | 3
--- 10          | jugo        | jugo        | 15      | 2           | 3
--- 11          | flan        | flan        | 20      | 3           | 1
--- 12          | galletas    | galletas    | 10      | 3           | 2
--- 13          | chocolates  | chocolates  | 15      | 3           | 3
--- 14          | mermelada   | mermelada   | 20      | 3           | 1
--- 15          | merengue    | merengue    | 10      | 3           | 2
+-- 7           | fanta        | fanta        | 15      | 2           | 2
+-- 8           | sprite       | sprite       | 20      | 2           | 2
+-- 9           | agua         | agua         | 10      | 2           | 3
+-- 10          | jugo         | jugo         | 15      | 2           | 3
+-- 11          | flan         | flan         | 20      | 3           | 1
+-- 12          | galletas     | galletas     | 10      | 3           | 2
+-- 13          | chocolates   | chocolates   | 15      | 3           | 3
+-- 14          | mermelada    | mermelada    | 20      | 3           | 1
+-- 15          | merengue     | merengue     | 10      | 3           | 2
 INSERT INTO producto(nombre, descripcion, precio, id_categoria, id_proveedor) VALUES ('pan de leche', 'pan de leche', 10, 1, 1);
 INSERT INTO producto(nombre, descripcion, precio, id_categoria, id_proveedor) VALUES ('pan de queso', 'pan de queso', 15, 1, 1);
 INSERT INTO producto(nombre, descripcion, precio, id_categoria, id_proveedor) VALUES ('pan de arroz', 'pan de arroz', 20, 1, 2);

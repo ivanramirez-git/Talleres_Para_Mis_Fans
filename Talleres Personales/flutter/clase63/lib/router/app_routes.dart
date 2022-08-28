@@ -36,6 +36,24 @@ class AppRoutes {
       icon: Icons.card_giftcard,
       screen: const CardScreen(),
     ),
+    MenuOption(
+      route: 'avatar',
+      name: 'Circle Avatar',
+      icon: Icons.account_circle,
+      screen: const AvatarScreen(),
+    ),
+    MenuOption(
+      route: 'animated',
+      name: 'Animated',
+      icon: Icons.animation,
+      screen: const AnimatedScreen(),
+    ),
+    MenuOption(
+      route: 'inputs',
+      name: 'Inputs',
+      icon: Icons.input,
+      screen: const InputsScreen(),
+    ),
   ];
 
   // get app rouutes
