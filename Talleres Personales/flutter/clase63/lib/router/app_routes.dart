@@ -36,15 +36,25 @@ class AppRoutes {
       icon: Icons.card_giftcard,
       screen: const CardScreen(),
     ),
+    MenuOption(
+      route: 'avatar',
+      name: 'Circle Avatar',
+      icon: Icons.account_circle,
+      screen: const AvatarScreen(),
+    ),
+    MenuOption(
+      route: 'animated',
+      name: 'Animated',
+      icon: Icons.animation,
+      screen: const AnimatedScreen(),
+    ),
+    MenuOption(
+      route: 'inputs',
+      name: 'Inputs',
+      icon: Icons.input,
+      screen: const InputsScreen(),
+    ),
   ];
-
-  // static Map<String, Widget Function(BuildContext)> routes = {
-  //   'home': (context) => const HomeScreen(),
-  //   'listview1': (context) => const Listview1Screen(),
-  //   'listview2': (context) => const Listview2Screen(),
-  //   'alert': (context) => const AlertScreen(),
-  //   'card': (context) => const CardScreen(),
-  // };
 
   // get app rouutes
   static Map<String, Widget Function(BuildContext)> getAppRoutes() {

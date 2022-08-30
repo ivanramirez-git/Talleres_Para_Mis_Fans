@@ -1,4 +1,3 @@
-import 'package:clase63/themes/app_theme.dart';
 import 'package:flutter/material.dart';
 
 class Listview1Screen extends StatelessWidget {
@@ -37,8 +36,7 @@ class Listview1Screen extends StatelessWidget {
         itemCount: options.length,
         itemBuilder: (context, index) => ListTile(
           title: Text(options[index]),
-          trailing:
-              const Icon(Icons.arrow_forward_ios, color: AppTheme.primaryColor),
+          trailing: const Icon(Icons.arrow_forward_ios),
           onTap: () {
             final team = options[index];
             debugPrint('$team tapped');
@@ -46,7 +44,6 @@ class Listview1Screen extends StatelessWidget {
         ),
         separatorBuilder: (_, __) => const Divider(
           height: 1.4,
-          color: AppTheme.primaryColor,
         ),
       ),
     );

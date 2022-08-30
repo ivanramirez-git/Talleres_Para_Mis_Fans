@@ -24,16 +24,17 @@ class CustomCardType2 extends StatelessWidget {
         child: Column(children: [
           FadeInImage(
             image: NetworkImage(imageUrl),
-            placeholder: const AssetImage('assets/jar-loading.gif'),
+            placeholder: const AssetImage('assets/circle-loading.gif'),
             width: double.infinity,
             height: 230,
             fit: BoxFit.scaleDown,
             fadeInDuration: const Duration(milliseconds: 500),
           ),
-          Container(
-              alignment: AlignmentDirectional.centerEnd,
-              padding: const EdgeInsets.only(top: 10, right: 20, bottom: 10),
-              child: Text(title))
+          if (title.isNotEmpty)
+            Container(
+                alignment: AlignmentDirectional.centerEnd,
+                padding: const EdgeInsets.only(top: 10, right: 20, bottom: 10),
+                child: Text(title))
         ]));
   }
 }
