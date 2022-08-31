@@ -58,17 +58,7 @@ class CardsNotifications extends StatelessWidget {
                     child: Center(child: Text('Community Events')),
                   ),
                   for (var evento in eventosNotificaciones['communityEvents'])
-                    for (var eventoEvento in evento['events'])
-                      CustomCardEvents(
-                        dateTimeFrom: eventoEvento['dateTimeFrom'],
-                        dateTimeUntil: eventoEvento['dateTimeUntil'],
-                        title: eventoEvento['title'],
-                        isUserEvents: eventoEvento['isUserEvents'],
-                        icon: eventoEvento['icon'],
-                        link: eventoEvento['link'],
-                        notification: eventoEvento['notification'],
-                        description: eventoEvento['description'],
-                      ),
+                    ListCardEvents(evento),
                   TextButton(
                     onPressed: () {},
                     child: const Text('Ver todas'),
@@ -92,13 +82,22 @@ class ListCardEvents extends StatefulWidget {
 }
 
 class _ListCardEventsState extends State<ListCardEvents> {
+  double getSizeHeight() {
+    return 0.0 + (30 + (widget.event['events'].length * 75.0 + varSize));
+  }
+
+  void setVarSize(double value) {
+    setState(() {
+      varSize += value;
+    });
+  }
+
+  double varSize = 0;
+
   @override
   Widget build(BuildContext context) {
-
-
-
     return Container(
-      height: widget.event['events'].length * 100.0, // Eri es aqui el problema
+      height: getSizeHeight(), // Eri es aqui el problema
       width: double.infinity,
       color: Colors.amber,
       child: Column(
@@ -106,15 +105,15 @@ class _ListCardEventsState extends State<ListCardEvents> {
           Text(widget.event['label']),
           for (var eventoEvento in widget.event['events'])
             CustomCardEvents(
-              dateTimeFrom: eventoEvento['dateTimeFrom'],
-              dateTimeUntil: eventoEvento['dateTimeUntil'],
-              title: eventoEvento['title'],
-              isUserEvents: eventoEvento['isUserEvents'],
-              icon: eventoEvento['icon'],
-              link: eventoEvento['link'],
-              notification: eventoEvento['notification'],
-              description: eventoEvento['description'],
-            ),
+                dateTimeFrom: eventoEvento['dateTimeFrom'],
+                dateTimeUntil: eventoEvento['dateTimeUntil'],
+                title: eventoEvento['title'],
+                isUserEvents: eventoEvento['isUserEvents'],
+                icon: eventoEvento['icon'],
+                link: eventoEvento['link'],
+                notification: eventoEvento['notification'],
+                description: eventoEvento['description'],
+                onTap: setVarSize),
         ],
       ),
     );

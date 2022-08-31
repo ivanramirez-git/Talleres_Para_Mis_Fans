@@ -9,6 +9,9 @@ class CustomCardEvents extends StatefulWidget {
   final Map<String, String> link;
   final String notification;
   final String description;
+  // Function onTap;
+  final Function onTap;
+
   // final Map<String, dynamic> options;
 
   const CustomCardEvents({
@@ -21,6 +24,7 @@ class CustomCardEvents extends StatefulWidget {
     required this.link,
     required this.notification,
     required this.description,
+    required this.onTap,
     // required this.options,
   }) : super(key: key);
 
@@ -33,6 +37,7 @@ class _CustomCardEventsState extends State<CustomCardEvents> {
   void _toggleDetails() {
     setState(() {
       _showDetails = !_showDetails;
+      widget.onTap(_showDetails ? 75.0 : -75.0);
     });
   }
 
