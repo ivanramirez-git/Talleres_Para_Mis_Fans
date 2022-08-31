@@ -166,6 +166,7 @@ Map<String, dynamic> getEventos() {
   events = {
     'dateTimeUntil': ramdomDateTime,
     'dateTimeFrom': ramdomDateTime.subtract(const Duration(hours: 2)),
+    'title': 'Evento 5',
     'isUserEvents': false,
     'icon': const IconData(0xe500, fontFamily: 'MaterialIcons'),
     'link': {
@@ -179,6 +180,7 @@ Map<String, dynamic> getEventos() {
   events = {
     'dateTimeUntil': ramdomDateTime,
     'dateTimeFrom': ramdomDateTime.subtract(const Duration(hours: 3)),
+    'title': 'Evento 6',
     'isUserEvents': false,
     'icon': const IconData(0xe300, fontFamily: 'MaterialIcons'),
     'link': {

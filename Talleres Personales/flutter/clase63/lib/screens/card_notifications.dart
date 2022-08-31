@@ -63,55 +63,7 @@ class CardNotifications extends StatelessWidget {
                     padding: EdgeInsets.all(8.0),
                     child: Center(child: Text('User Events')),
                   ),
-                  /*
-                  userEvents:
-                    [
-                      {
-                        date: 2022-08-30 12:47:56.601727,
-                        label: August 30, 2022,
-                        events:
-                          [
-                            {
-                              dateTimeUntil: 2022-08-30 14:47:56.601727,
-                              dateTimeFrom: 2022-08-30 12:47:56.601727,
-                              title: Evento 1,
-                              isUserEvents: true,
-                              icon: Icono de evento 1,
-                              link: { url: https://www.google.com, text: Ir a Google },
-                              notification: Notificación de evento 1,
-                              description: Descripción de evento 1,
-                            },
-                          ],
-                      },
-                      {
-                        date: 2022-08-27 22:47:56.601727,
-                        label: August 27, 2022,
-                        events:
-                          [
-                            {
-                              dateTimeUntil: 2022-08-27 23:47:56.601727,
-                              dateTimeFrom: 2022-08-27 22:47:56.601727,
-                              title: Evento 3,
-                              isUserEvents: true,
-                              icon: Icono de evento 3,
-                              link: { url: https://www.instagram.com, text: Ir a Instagram },
-                              notification: Notificación de evento 3,
-                              description: Descripción de evento 3,
-                            },
-                            {
-                              dateTimeUntil: 2022-08-27 09:17:56.601727,
-                              dateTimeFrom: 2022-08-27 07:17:56.601727,
-                              title: Evento 4,
-                              isUserEvents: true,
-                              icon: Icono de evento 4,
-                              link: { url: https://www.twitter.com, text: Ir a Twitter },
-                              notification: Notificación de evento 4,
-                              description: Descripción de evento 4,
-                            },
-                          ],
-                      },
-                    ],
-                  */
+
                   for (var evento in eventosNotificaciones['userEvents'])
                     for (var eventoEvento in evento['events'])
                       CustonCardEvents(
@@ -125,6 +77,72 @@ class CardNotifications extends StatelessWidget {
                         description: eventoEvento['description'],
                       ),
 
+                  const Divider(),
+                  /*
+                  communityEvents:
+                    [
+                      {
+                        date: 2022-08-30 11:17:56.601727,
+                        label: August 30, 2022,
+                        events:
+                          [
+                            {
+                              dateTimeUntil: 2022-08-30 13:17:56.601727,
+                              dateTimeFrom: 2022-08-30 11:17:56.601727,
+                              isUserEvents: false,
+                              icon: Icono de evento 5,
+                              link: { url: https://www.youtube.com, text: Ir a Youtube },
+                              notification: Notificación de evento 5,
+                              description: Descripción de evento 5,
+                            },
+                            {
+                              dateTimeUntil: 2022-08-30 13:17:56.601727,
+                              dateTimeFrom: 2022-08-30 10:17:56.601727,
+                              isUserEvents: false,
+                              icon: Icono de evento 6,
+                              link: { url: https://www.espn.com, text: Ir a Espn },
+                              notification: Notificación de evento 5,
+                              description: Descripción de evento 5,
+                            },
+                          ],
+                      },
+                      {
+                        date: 2022-08-29 13:47:56.601727,
+                        label: August 29, 2022,
+                        events:
+                          [
+                            {
+                              dateTimeUntil: 2022-08-29 14:47:56.601727,
+                              dateTimeFrom: 2022-08-29 13:47:56.601727,
+                              title: Evento 2,
+                              isUserEvents: false,
+                              icon: Icono de evento 2,
+                              link: { url: https://www.facebook.com, text: Ir a Facebook },
+                              notification: Notificación de evento 2,
+                              description: Descripción de evento 2,
+                            },
+                          ],
+                      },
+                    ],
+
+                  */
+
+                  const Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Center(child: Text('Community Events')),
+                  ),
+                  for (var evento in eventosNotificaciones['communityEvents'])
+                    for (var eventoEvento in evento['events'])
+                      CustonCardEvents(
+                        dateTimeFrom: eventoEvento['dateTimeFrom'],
+                        dateTimeUntil: eventoEvento['dateTimeUntil'],
+                        title: eventoEvento['title'],
+                        isUserEvents: eventoEvento['isUserEvents'],
+                        icon: eventoEvento['icon'],
+                        link: eventoEvento['link'],
+                        notification: eventoEvento['notification'],
+                        description: eventoEvento['description'],
+                      ),
                   TextButton(
                     onPressed: () {},
                     child: const Text('Ver todas'),
