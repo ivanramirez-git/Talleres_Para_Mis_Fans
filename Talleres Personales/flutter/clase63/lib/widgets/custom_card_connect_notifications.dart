@@ -1,13 +1,13 @@
 import 'package:clase63/data/datos_notifications.dart';
 import 'package:flutter/material.dart';
 
-class CustonCardConnectNotifications extends StatelessWidget {
+class CustomCardConnectNotifications extends StatelessWidget {
   final DateTime dateTime;
   final String title;
   final bool isRead;
   final IconData icon;
 
-  const CustonCardConnectNotifications({
+  const CustomCardConnectNotifications({
     Key? key,
     required this.dateTime,
     required this.title,

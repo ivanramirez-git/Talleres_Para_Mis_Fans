@@ -37,10 +37,10 @@ class AppRoutes {
       screen: const CardScreen(),
     ),
     MenuOption(
-      route: 'card_notifications',
+      route: 'cards_notifications',
       name: 'Card Notifications',
       icon: Icons.notifications,
-      screen: const CardNotifications(),
+      screen: const CardsNotifications(),
     ),
     MenuOption(
       route: 'avatar',
