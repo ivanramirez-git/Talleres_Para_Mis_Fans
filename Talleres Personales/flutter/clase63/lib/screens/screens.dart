@@ -7,3 +7,4 @@ export 'package:clase63/screens/listview1_screen.dart';
 export 'package:clase63/screens/avatar_screen.dart';
 export 'package:clase63/screens/animated_screen.dart';
 export 'package:clase63/screens/inputs_screen.dart';
+export 'package:clase63/screens/card_notifications.dart';
