@@ -1,11 +1,13 @@
-void main() {
+import 'package:flutter/material.dart';
+
+Map<String, dynamic> getEventos() {
   Map datesNotifications = {};
   // until = DateTime.now()
   // from = until - 1 year
   // skipDate = until
   datesNotifications['until'] = DateTime.now();
   datesNotifications['from'] =
-      datesNotifications['until']!.subtract(Duration(days: 365));
+      datesNotifications['until']!.subtract(const Duration(days: 365));
   datesNotifications['skipDate'] = datesNotifications['until']!;
   print('{\n'
       '  "until": ${datesNotifications['until']!.toIso8601String()},\n'
@@ -40,55 +42,71 @@ void main() {
     'dateTime': DateTime.now(),
     'title': 'Notificación 1',
     'isRead': true,
-    'icon': 'Icono de notificación 1',
+    'icon': const IconData(0xe900, fontFamily: 'MaterialIcons'),
   };
   notificationsList.add(notifications);
   notifications = {
-    'dateTime': DateTime.now().subtract(Duration(days: 1)),
+    'dateTime': DateTime.now().subtract(const Duration(days: 1)),
     'title': 'Notificación 2',
     'isRead': false,
-    'icon': 'Icono de notificación 2',
+    'icon': const IconData(0xe800, fontFamily: 'MaterialIcons'),
   };
   notificationsList.add(notifications);
   notifications = {
-    'dateTime': DateTime.now().subtract(Duration(days: 2, hours: 15)),
+    'dateTime': DateTime.now().subtract(const Duration(days: 2, hours: 15)),
     'title': 'Notificación 3',
     'isRead': true,
-    'icon': 'Icono de notificación 3',
+    'icon': const IconData(0xe700, fontFamily: 'MaterialIcons'),
   };
   notificationsList.add(notifications);
   notifications = {
     'dateTime':
-        DateTime.now().subtract(Duration(days: 3, hours: 5, minutes: 30)),
+        DateTime.now().subtract(const Duration(days: 3, hours: 5, minutes: 30)),
     'title': 'Notificación 4',
     'isRead': false,
-    'icon': 'Icono de notificación 4',
+    'icon': const IconData(0xe600, fontFamily: 'MaterialIcons'),
   };
   notificationsList.add(notifications);
   notifications = {
     'dateTime':
-        DateTime.now().subtract(Duration(days: 4, hours: 1, minutes: 30)),
+        DateTime.now().subtract(const Duration(days: 4, hours: 1, minutes: 30)),
     'title': 'Notificación 5',
     'isRead': true,
-    'icon': 'Icono de notificación 5',
+    'icon': const IconData(0xe500, fontFamily: 'MaterialIcons'),
   };
   notificationsList.add(notifications);
   notifications = {
     'dateTime':
-        DateTime.now().subtract(Duration(days: 5, hours: 1, minutes: 30)),
+        DateTime.now().subtract(const Duration(days: 5, hours: 1, minutes: 30)),
     'title': 'Notificación 6',
     'isRead': false,
-    'icon': 'Icono de notificación 6',
+    'icon': const IconData(0xe300, fontFamily: 'MaterialIcons'),
+  };
+  notificationsList.add(notifications);
+  notifications = {
+    'dateTime':
+        DateTime.now().subtract(const Duration(days: 6, hours: 1, minutes: 30)),
+    'title': 'Notificación 7',
+    'isRead': true,
+    'icon': const IconData(0xe200, fontFamily: 'MaterialIcons'),
+  };
+  notificationsList.add(notifications);
+  notifications = {
+    'dateTime':
+        DateTime.now().subtract(const Duration(days: 7, hours: 1, minutes: 30)),
+    'title': 'Notificación 8',
+    'isRead': false,
+    'icon': const IconData(0xe100, fontFamily: 'MaterialIcons'),
   };
   notificationsList.add(notifications);
 
   DateTime ramdomDateTime = DateTime.now();
   events = {
     'dateTimeUntil': ramdomDateTime,
-    'dateTimeFrom': ramdomDateTime.subtract(Duration(hours: 2)),
+    'dateTimeFrom': ramdomDateTime.subtract(const Duration(hours: 2)),
     'title': 'Evento 1',
     'isUserEvents': true,
-    'icon': 'Icono de evento 1',
+    'icon': const IconData(0xe900, fontFamily: 'MaterialIcons'),
     'link': {
       'url': 'https://www.google.com',
       'text': 'Ir a Google',
@@ -97,13 +115,13 @@ void main() {
     'description': 'Descripción de evento 1',
   };
   eventsList.add(events);
-  ramdomDateTime = DateTime.now().subtract(Duration(days: 1));
+  ramdomDateTime = DateTime.now().subtract(const Duration(days: 1));
   events = {
     'dateTimeUntil': ramdomDateTime,
-    'dateTimeFrom': ramdomDateTime.subtract(Duration(hours: 1)),
+    'dateTimeFrom': ramdomDateTime.subtract(const Duration(hours: 1)),
     'title': 'Evento 2',
     'isUserEvents': false,
-    'icon': 'Icono de evento 2',
+    'icon': const IconData(0xe800, fontFamily: 'MaterialIcons'),
     'link': {
       'url': 'https://www.facebook.com',
       'text': 'Ir a Facebook',
@@ -112,13 +130,13 @@ void main() {
     'description': 'Descripción de evento 2',
   };
   eventsList.add(events);
-  ramdomDateTime = DateTime.now().subtract(Duration(days: 2, hours: 15));
+  ramdomDateTime = DateTime.now().subtract(const Duration(days: 2, hours: 15));
   events = {
     'dateTimeUntil': ramdomDateTime,
-    'dateTimeFrom': ramdomDateTime.subtract(Duration(hours: 1)),
+    'dateTimeFrom': ramdomDateTime.subtract(const Duration(hours: 1)),
     'title': 'Evento 3',
     'isUserEvents': true,
-    'icon': 'Icono de evento 3',
+    'icon': const IconData(0xe700, fontFamily: 'MaterialIcons'),
     'link': {
       'url': 'https://www.instagram.com',
       'text': 'Ir a Instagram',
@@ -128,13 +146,13 @@ void main() {
   };
   eventsList.add(events);
   ramdomDateTime =
-      DateTime.now().subtract(Duration(days: 3, hours: 5, minutes: 30));
+      DateTime.now().subtract(const Duration(days: 3, hours: 5, minutes: 30));
   events = {
     'dateTimeUntil': ramdomDateTime,
-    'dateTimeFrom': ramdomDateTime.subtract(Duration(hours: 2)),
+    'dateTimeFrom': ramdomDateTime.subtract(const Duration(hours: 2)),
     'title': 'Evento 4',
     'isUserEvents': true,
-    'icon': 'Icono de evento 4',
+    'icon': const IconData(0xe600, fontFamily: 'MaterialIcons'),
     'link': {
       'url': 'https://www.twitter.com',
       'text': 'Ir a Twitter',
@@ -143,12 +161,13 @@ void main() {
     'description': 'Descripción de evento 4',
   };
   eventsList.add(events);
-  ramdomDateTime = DateTime.now().subtract(Duration(hours: 1, minutes: 30));
+  ramdomDateTime =
+      DateTime.now().subtract(const Duration(hours: 1, minutes: 30));
   events = {
     'dateTimeUntil': ramdomDateTime,
-    'dateTimeFrom': ramdomDateTime.subtract(Duration(hours: 2)),
+    'dateTimeFrom': ramdomDateTime.subtract(const Duration(hours: 2)),
     'isUserEvents': false,
-    'icon': 'Icono de evento 5',
+    'icon': const IconData(0xe500, fontFamily: 'MaterialIcons'),
     'link': {
       'url': 'https://www.youtube.com',
       'text': 'Ir a Youtube',
@@ -159,9 +178,9 @@ void main() {
   eventsList.add(events);
   events = {
     'dateTimeUntil': ramdomDateTime,
-    'dateTimeFrom': ramdomDateTime.subtract(Duration(hours: 3)),
+    'dateTimeFrom': ramdomDateTime.subtract(const Duration(hours: 3)),
     'isUserEvents': false,
-    'icon': 'Icono de evento 6',
+    'icon': const IconData(0xe300, fontFamily: 'MaterialIcons'),
     'link': {
       'url': 'https://www.espn.com',
       'text': 'Ir a Espn',
@@ -171,19 +190,18 @@ void main() {
   };
   eventsList.add(events);
 
-// agrupar e imprimir las listas
+  // agrupar e imprimir las listas
   var eventos = getUserEvents(eventsList);
   // ordenar notificaciones por fecha decendente
   notificationsList.sort((a, b) => b['dateTime'].compareTo(a['dateTime']));
 
   eventos['notifications'] = (notificationsList);
 
-  print('Eventos: \n$eventos\n');
+  return eventos;
 }
 
-// funcion que recibe una lista de eventos y devuelve dos listas, una de eventos de usuario y una de eventos de la comunidad
-Map<String, dynamic> getUserEvents(List events) {
-  var months = [
+getMonths() {
+  return [
     'January',
     'February',
     'March',
@@ -195,8 +213,12 @@ Map<String, dynamic> getUserEvents(List events) {
     'September',
     'October',
     'November',
-    'December'
+    'December',
   ];
+}
+
+// funcion que recibe una lista de eventos y devuelve dos listas, una de eventos de usuario y una de eventos de la comunidad
+Map<String, dynamic> getUserEvents(List events) {
   List communityEventsDays = [];
   List userEventsDays = [];
   // agrupar los eventos por dia
@@ -206,7 +228,7 @@ Map<String, dynamic> getUserEvents(List events) {
     var day = date.day;
     var month = date.month;
     var year = date.year;
-    var label = '${months[month - 1]} ${day}, ${year}';
+    var label = '${getMonths()[month - 1]} ${day}, ${year}';
     var eventsAux = [];
 
     if (event['isUserEvents']) {
@@ -265,7 +287,7 @@ Map<String, dynamic> getUserEvents(List events) {
   });
   // devolver las listas
   return {
-    'communityEventsDays': communityEventsDays,
-    'userEventsDays': userEventsDays,
+    'communityEvents': communityEventsDays,
+    'userEvents': userEventsDays,
   };
 }

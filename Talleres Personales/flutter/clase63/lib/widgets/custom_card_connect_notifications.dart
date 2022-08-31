@@ -1,3 +1,4 @@
+import 'package:clase63/data/datos_notifications.dart';
 import 'package:flutter/material.dart';
 
 class CustonCardConnectNotifications extends StatelessWidget {
@@ -16,26 +17,13 @@ class CustonCardConnectNotifications extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var months = getMonths();
     return Card(
       child: ListTile(
         leading: Icon(icon),
         title: Text(title),
         subtitle: Text(() {
           final DateTime now = dateTime;
-          List<String> months = [
-            'January',
-            'February',
-            'March',
-            'April',
-            'May',
-            'June',
-            'July',
-            'August',
-            'September',
-            'October',
-            'November',
-            'December',
-          ];
           String month = months[now.month - 1];
           String day = now.day.toString();
           String year = now.year.toString();
