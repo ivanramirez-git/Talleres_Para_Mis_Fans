@@ -1,41 +1,16 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 
 Map<String, dynamic> getEventos() {
   Map datesNotifications = {};
-  // until = DateTime.now()
-  // from = until - 1 year
-  // skipDate = until
   datesNotifications['until'] = DateTime.now();
   datesNotifications['from'] =
       datesNotifications['until']!.subtract(const Duration(days: 365));
   datesNotifications['skipDate'] = datesNotifications['until']!;
-  print('{\n'
-      '  "until": ${datesNotifications['until']!.toIso8601String()},\n'
-      '  "from": ${datesNotifications['from']!.toIso8601String()},\n'
-      '  "skipDate": ${datesNotifications['skipDate']!.toIso8601String()}\n'
-      '}');
-  /*
-  Event:
-    final DateTime dateTimeFrom;
-    final DateTime dateTimeUntil;
-    final String title;
-    final bool isUserEvents;
-    final IconData icon;
-    final Map<String, String> link;
-    final String notification;
-    final String description;
-  Notification: 
-    final DateTime dateTime;
-    final String title;
-    final bool isRead;
-    final IconData icon;
-  */
-  // Mapa de notificaciones
   Map notifications = {};
   Map events = {};
-  // Lista de notificaciones
   List notificationsList = [];
-  // Lista de eventos
   List eventsList = [];
 
   notifications = {
@@ -192,12 +167,12 @@ Map<String, dynamic> getEventos() {
   };
   eventsList.add(events);
 
-  // agrupar e imprimir las listas
   var eventos = getUserEvents(eventsList);
-  // ordenar notificaciones por fecha decendente
   notificationsList.sort((a, b) => b['dateTime'].compareTo(a['dateTime']));
 
-  eventos['notifications'] = (notificationsList);
+  eventos['notifications'] = notificationsList;
+
+  inspect(eventos);
 
   return eventos;
 }
@@ -230,7 +205,7 @@ Map<String, dynamic> getUserEvents(List events) {
     var day = date.day;
     var month = date.month;
     var year = date.year;
-    var label = '${getMonths()[month - 1]} ${day}, ${year}';
+    var label = '${getMonths()[month - 1]} $day, $year';
     var eventsAux = [];
 
     if (event['isUserEvents']) {
@@ -242,11 +217,11 @@ Map<String, dynamic> getUserEvents(List events) {
         }
       }
       if (isSameDay) {
-        userEventsDays.forEach((element) {
+        for (var element in userEventsDays) {
           if (element['label'] == label) {
             element['events'].add(event);
           }
-        });
+        }
       } else {
         eventsAux.add(event);
         userEventsDays.add({
@@ -264,11 +239,11 @@ Map<String, dynamic> getUserEvents(List events) {
         }
       }
       if (isSameDay) {
-        communityEventsDays.forEach((element) {
+        for (var element in communityEventsDays) {
           if (element['label'] == label) {
             element['events'].add(event);
           }
-        });
+        }
       } else {
         eventsAux.add(event);
         communityEventsDays.add({

@@ -56,7 +56,6 @@ class _CustomCardEventsState extends State<CustomCardEvents> {
   }
 
   void _navigateLink() {
-    // TODO: implement navigate Link
     debugPrint('navigateLink');
   }
 
@@ -65,7 +64,7 @@ class _CustomCardEventsState extends State<CustomCardEvents> {
     return SizedBox(
       height: 75 + (!_showDetails ? 0 : 75),
       child: AnimatedContainer(
-        duration: Duration(milliseconds: 400),
+        duration: const Duration(milliseconds: 400),
         curve: Curves.easeInOut,
         child: Card(
           child: Column(
