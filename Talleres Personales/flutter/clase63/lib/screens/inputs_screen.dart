@@ -15,6 +15,10 @@ class InputsScreen extends StatelessWidget {
       'lastName': 'Ramirez Castro',
       'role': 'admin',
     };
+    void setRole(String? value) {
+      formValues['role'] = value ?? 'user';
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Inputs y Forms'),
@@ -77,9 +81,9 @@ class InputsScreen extends StatelessWidget {
                       value: 'guest',
                     ),
                   ],
-                  value: formValues['role'],
+                  value: 'admin',
                   onChanged: (value) {
-                    formValues['role'] = value ?? 'User';
+                    setRole(value);
                   },
                 ),
                 const SizedBox(height: 30),
@@ -87,7 +91,7 @@ class InputsScreen extends StatelessWidget {
                     width: double.infinity,
                     child: ElevatedButton(
                         onPressed: () {
-                          FocusScope.of(context).requestFocus(FocusNode());
+                          // FocusScope.of(context).requestFocus(FocusNode());
                           if (!myFormKey.currentState!.validate()) {
                             debugPrint('Formulario no válido');
                             return;

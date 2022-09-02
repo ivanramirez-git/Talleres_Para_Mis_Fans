@@ -8,3 +8,5 @@ export 'package:clase63/screens/avatar_screen.dart';
 export 'package:clase63/screens/animated_screen.dart';
 export 'package:clase63/screens/inputs_screen.dart';
 export 'package:clase63/screens/cards_notifications.dart';
+export 'package:clase63/screens/slider_screen.dart';
+export 'package:clase63/screens/listview_builder_screen.dart';
