@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "*.psudo": "cpp",
+        "set": "cpp",
+        "utility": "cpp",
+        "xtree": "cpp"
+    }
+}

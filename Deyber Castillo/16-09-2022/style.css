@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    /* Margin es el espacio que hay entre los bordes de un elemento y el borde de su contenedor. */
+    padding: 0;
+    /* Padding es el espacio que hay entre el contenido de un elemento y su borde. */
+    box-sizing: border-box;
+    /* Para que no se salga de la pantalla */
+}
+
+h1 {
+    text-align: center;
+    /* Para que se centre */
+}
+
+main {
+    display: grid;
+    /* Para que se muestre en forma de cuadricula */
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    /* Para que se muestre en 4 columnas */
+    gap: 58px;
+    /* Gap es el espacio entre las columnas */
+}
+
+.image-container {
+    display: flex;
+    /* Flex es para que se acomoden en una sola fila */
+}
+
+.image-container img {
+    width: 100%;
+    /* Para que se ajuste al tamaño de la pantalla */
+}
+
+article {
+    padding: 10px;
+    /* Es un espacio entre el contenido y el borde */
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    /* Para que se vea la sombra */
+}
+
+/* Hover del article */
+article:hover {
+    transform: scale(1.1);
+    /* Para que se agrande al pasar el mouse */
+    transition: all 0.5s;
+    /* Para que se haga el efecto de transición */
+}
+
+
+main {
+    margin: 50px 250px;
+    /* Para que haya un espacio entre el main y el borde */
+}
+
+li {
+    margin-left: 30px;
+    /* Para que haya un espacio entre el li y el borde */
+}
+
+#controllers-header {
+    display: flex;
+    /* Para que se acomoden en una sola fila */
+    justify-content: center;
+    /* Para que se centre */
+}
+
+#controllers-footer {
+    display: flex;
+    /* Para que se acomoden en una sola fila */
+    justify-content: center;
+    /* Para que se centre */
+}

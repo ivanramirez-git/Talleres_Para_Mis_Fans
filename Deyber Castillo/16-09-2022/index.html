@@ -1,0 +1,50 @@
+<!-- script.js -->
+<!-- App de clasificacion de peliculas por categorias con un dropdwon -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Titulo de la pagina -->
+    <title>App peliculas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Filtro</h1>
+    <!-- Div que contiene el check box -->
+    <div id="controllers-header">
+        <!-- Check box -->
+        <select name="categorias" id="categorias"></select>
+        <!-- Boton de filtrar, llama a la funcion que actualiza la lista de peliculas, con el filtro aplicado desde el check box -->
+        <button onclick="filtrar()">Filtrar</button>
+    </div>
+
+    <!-- Titulo de peliculas -->
+    <h1>Peliculas</h1>
+    <!-- Div que contiene la lista de peliculas -->
+    <main id="movies">
+    </main>
+
+    <!-- Titulo de series populares de TV -->
+    <h1>Series de TV Populares</h1>
+    <!-- Div que contiene la lista de series populares de TV -->
+    <main id="series">
+    </main>
+
+    <!-- Controles de anterior y siguiente pagina de peliculas y series -->
+    <div id="controllers-footer">
+        <!-- Buttons Anterior Siguiente Page -->
+        <button onclick="anterior()">Anterior</button>
+        <!-- numero de pagina -->
+        <span id="page"></span>
+        <button onclick="siguiente()">Siguiente</button>
+    </div>
+
+    <!-- importar script -->
+    <script src="script.js"></script>
+</body>
+
+</html>
