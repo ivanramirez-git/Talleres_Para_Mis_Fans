@@ -5,6 +5,7 @@
 import time
 import json
 import requests
+
 print("Api Football Data is running...")
 
 # Importar librerias
@@ -12,7 +13,7 @@ print("Api Football Data is running...")
 # Declarar variables
 url = "http://api.football-data.org/v4"
 token = "9b3189caec1a43398d2ad432a825a0a5"
-headers = {'X-Auth-Token': token}
+headers = {"X-Auth-Token": token}
 
 # Peticiones http
 
@@ -24,7 +25,6 @@ def get_teams():
 
 print("Teams... ")
 # guardar datos en un archivo "teams.json"
-with open("teams.json", "w") as file:
-    json.dump(get_teams(), file, indent=4)
-    print("Teams saved in teams.json")
-    time.sleep(1)
+with open("teams.json", "w") as outfile:
+    json.dump(get_teams(), outfile)
+    print("Teams saved!")
