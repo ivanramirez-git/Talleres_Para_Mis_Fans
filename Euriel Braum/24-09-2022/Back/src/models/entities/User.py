@@ -8,7 +8,7 @@ from config import Config
 
 
 class User(UserMixin):
-    def __init__(self, id, username, password, email, fullname, role, auth_token=None):
+    def __init__(self, id, username, password, email, fullname, role='user', auth_token=None):
         self.id = id
         self.username = username
         self.password = password
@@ -29,7 +29,8 @@ class User(UserMixin):
     def generate_jwt_token(self, id, username, role):
         payload = {
             'id': id,
-            'exp': datetime.datetime.now() + datetime.timedelta(minutes=1),
+            # Duración de la sesión
+            'exp': datetime.datetime.now() + datetime.timedelta(days=1),
             'iat': datetime.datetime.now(),
             'sub': username,
             'role': role
@@ -55,8 +56,8 @@ class User(UserMixin):
             return False
 
     def logout(self, db):
-        print(self)
         cursor = db.connection.cursor()
+        # llamar el procedimiento almacenado change_status_expired_session
         cursor.callproc('change_status_expired_session')
         cursor.fetchall()
         sql_session = """SELECT id FROM sessions WHERE user_id = {} AND token = '{}' AND status = 'logged'""".format(
@@ -72,23 +73,31 @@ class User(UserMixin):
         else:
             return {'status': 'session not found', 'message': 'No se ha encontrado la sesión activa'}
 
-    # Comprueba si el usuario está logueado
-    def is_logged(self, db):
+    # Da el estado de la sesion
+    def status_sesion(self, db):
         cursor = db.connection.cursor()
         # llamar el procedimiento almacenado change_status_expired_session
         cursor.callproc('change_status_expired_session')
-        db.connection.commit()
-        sql_session = """SELECT id FROM sessions WHERE token = '{}'""".format(
-            self.auth_token)
+        cursor.fetchall()
+        sql_session = """SELECT * FROM sessions WHERE token = '{}'""".format(
+            self.auth_token['token'])
         cursor.execute(sql_session)
         row = cursor.fetchone()
         if row != None:
             # Comprobar si la sesión está activa
-            if row[6] == 'logged':
-                return {'status': 'logged'}
-            elif row[6] == 'expired':
-                return {'status': 'expired'}
+            if row[5] == 'logged':
+                return {'status': 'logged', 'message': 'Sesión activa'}
+            elif row[5] == 'expired':
+                return {'status': 'expired', 'message': 'Sesión caducada'}
             else:
-                return {'status': 'logout'}
+                return {'status': 'logout', 'message': 'Sesión cerrada'}
         else:
-            return {'status': 'session not found'}
+            return {'status': 'session not found', 'message': 'No se ha encontrado la sesión, inicie sesión'}
+
+    # Comprueba si el usuario está logueado
+
+    def is_logged(self, db):
+        if self.status_sesion(db)['status'] == 'logged':
+            return True
+        else:
+            return False

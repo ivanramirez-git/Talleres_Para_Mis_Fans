@@ -47,3 +47,28 @@ class ModelUser():
             return user.logout(db)
         except Exception as ex:
             raise Exception(ex)
+
+    # Traer usuario por id
+
+    @classmethod
+    def get_user_by_id(self, db, user):
+        if user.is_logged(db):
+            try:
+                cursor = db.connection.cursor()
+                # Consulta que segun el token del usuario, traiga el id del usuario y segun el id del usuario, traiga el resto de los datos de la tabla users
+                sql = """SELECT users.id, users.username, users.password, users.email, users.fullname, users.role FROM users
+                        INNER JOIN sessions ON users.id = sessions.user_id
+                        WHERE sessions.token = '{}' AND sessions.status = 'logged'""".format(user.auth_token['token'])
+                cursor.execute(sql)
+                row = cursor.fetchone()
+                if row != None:
+                    # Creamos el objeto usuario
+                    current_user = User(
+                        row[0], row[1], row[2], row[3], row[4], row[5], user.auth_token)
+                    return current_user
+                else:
+                    return None
+            except Exception as ex:
+                raise Exception(ex)
+        else:
+            return None

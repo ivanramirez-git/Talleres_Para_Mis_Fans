@@ -39,7 +39,7 @@ def register():
     # Obtenemos los datos del usuario
     print(request.json)
     user = User(0, request.json['username'], request.json['password'],
-                request.json['email'], request.json['fullname'], request.json['role'])
+                request.json['email'], request.json['fullname'])
     if ModelUser.register(db, user):
         return jsonify({"success": "Usuario registrado correctamente"})
     else:
@@ -56,7 +56,30 @@ def logout():
                 None, None, None, request.json['auth_token'])
     return ModelUser.logout(db, user)
 
-# Ruta para obtener los datos del usuario
+
+# Ruta de error
+@app.route('/error')
+def error(message):
+    return jsonify({"error": "Error en la petición", "message": message})
+
+# Ruta para obtener los datos del usuario, sesión activa requerida
+
+
+@app.route('/user', methods=['GET'])
+def get_user():
+    # Obtenemos el token del header
+    token = request.headers.get('token')
+
+    if token is not None:
+        user = ModelUser.get_user_by_id(
+            db, User(None, None, None, None, None, None, {'token': token}))
+        if user is not None:
+            return jsonify(user.__dict__)
+        else:
+            return error("No se ha encontrado una sesión activa")
+
+    else:
+        return error("El token no ha sido enviado")
 
 
 # Inicio del programa
