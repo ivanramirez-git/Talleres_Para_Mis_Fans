@@ -74,6 +74,7 @@ class User(UserMixin):
             return {'status': 'session not found', 'message': 'No se ha encontrado la sesión activa'}
 
     # Da el estado de la sesion
+    @classmethod
     def status_sesion(self, db):
         cursor = db.connection.cursor()
         # llamar el procedimiento almacenado change_status_expired_session
@@ -94,10 +95,42 @@ class User(UserMixin):
         else:
             return {'status': 'session not found', 'message': 'No se ha encontrado la sesión, inicie sesión'}
 
-    # Comprueba si el usuario está logueado
+    # is_admin
+    @classmethod
+    def is_admin(self, db):
+        cursor = db.connection.cursor()
+        # llamar el procedimiento almacenado change_status_expired_session
+        cursor.callproc('change_status_expired_session')
+        cursor.fetchall()
+        # sql_session = """SELECT * FROM sessions WHERE token = '{}'""".format(
+        #     self.auth_token['token'])
+            
+        # sql_user = """SELECT * FROM users WHERE id = {}""".format(
+        #     user_id)
 
+        sql_one_query = """SELECT * FROM sessions INNER JOIN users ON sessions.user_id = users.id WHERE sessions.token = '{}'""".format(
+            self.auth_token['token'])
+        cursor.execute(sql_one_query)
+        row = cursor.fetchone()
+        if row != None:
+            # Comprobar si la sesión está activa
+            if row[5] == 'logged' and row[9] == 'admin':
+                return True
+            else:
+                return False
+        else:
+            return False
+
+    # Comprueba si el usuario está logueado
     def is_logged(self, db):
         if self.status_sesion(db)['status'] == 'logged':
+            return True
+        else:
+            return False
+
+    # Comprueba si el usuario está logueado y es administrador
+    def is_admin(self, db):
+        if self.is_logged(db) and self.is_admin(db):
             return True
         else:
             return False

@@ -99,161 +99,26 @@ CREATE TABLE IF NOT EXISTS `orders_detail` (
 -- INSERTAR DATOS
 -- Insertar categorias
 INSERT INTO categories (name, description)
-VALUES (
-    'Bebidas',
-    'Articulos de supermercado para beber'
-  );
+VALUES (  'Bebidas',  'Articulos de supermercado para beber');
 INSERT INTO categories (name, description)
-VALUES (
-    'Comida',
-    'Articulos de supermercado para comer'
-  );
+VALUES (  'Comida',  'Articulos de supermercado para comer');
 INSERT INTO categories (name, description)
-VALUES (
-    'Limpieza',
-    'Articulos de supermercado para limpiar'
-  );
-INSERT INTO products (
-    name,
-    description,
-    price,
-    stock,
-    category_id,
-    image
-  )
-VALUES (
-    'LIMPIAVIDRIOS BRILLAKING 500 ML',
-    'LIMPIAVIDRIOS BRILLAKING 500 ML',
-    2250,
-    328,
-    3,
-    'https://stockimages.tiendasd1.com/stockimages.tiendasd1.com/kobastockimages/IMAGENES/12000232.png'
-  );
-INSERT INTO products (
-    name,
-    description,
-    price,
-    stock,
-    category_id,
-    image
-  )
-VALUES (
-    'JUGO DEL VALLE FRUTAS CITRICAS 1500ML',
-    'JUGO DEL VALLE FRUTAS CITRICAS 1500ML',
-    2490,
-    35,
-    1,
-    'https://stockimages.tiendasd1.com/stockimages.tiendasd1.com/kobastockimages/IMAGENES/12004550.png'
-  );
-INSERT INTO products (
-    name,
-    description,
-    price,
-    stock,
-    category_id,
-    image
-  )
-VALUES (
-    'GASEOSA COCA COLA PET 250ML',
-    'GASEOSA COCA COLA PET 250ML',
-    1290,
-    54,
-    1,
-    'https://stockimages.tiendasd1.com/stockimages.tiendasd1.com/kobastockimages/IMAGENES/12004548.png'
-  );
-INSERT INTO products (
-    name,
-    description,
-    price,
-    stock,
-    category_id,
-    image
-  )
-VALUES (
-    'GASEOSA COCA COLA SIN AZUCAR PET 250ML',
-    'GASEOSA COCA COLA SIN AZUCAR PET 250ML',
-    990,
-    143,
-    1,
-    'https://stockimages.tiendasd1.com/stockimages.tiendasd1.com/kobastockimages/IMAGENES/12004549.png'
-  );
-INSERT INTO products (
-    name,
-    description,
-    price,
-    stock,
-    category_id,
-    image
-  )
-VALUES (
-    'VARSOL BRILLA KING 800 ML',
-    'VARSOL BRILLA KING 800 ML',
-    6590,
-    29,
-    3,
-    'https://stockimages.tiendasd1.com/stockimages.tiendasd1.com/kobastockimages/IMAGENES/12000721.png'
-  );
-INSERT INTO products (
-    name,
-    description,
-    price,
-    stock,
-    category_id,
-    image
-  )
-VALUES (
-    'BLANQUEADOR EN GEL BRILLA KING 1000 ML',
-    'BLANQUEADOR EN GEL BRILLA KING 1000 ML',
-    5290,
-    251,
-    3,
-    'https://stockimages.tiendasd1.com/stockimages.tiendasd1.com/kobastockimages/IMAGENES/12002695.png'
-  );
-INSERT INTO products (
-    name,
-    description,
-    price,
-    stock,
-    category_id,
-    image
-  )
-VALUES (
-    'TRIDENT MORAZUL 5S 8,5G',
-    'TRIDENT MORAZUL 5S 8,5G',
-    1150,
-    31,
-    2,
-    'https://stockimages.tiendasd1.com/stockimages.tiendasd1.com/kobastockimages/IMAGENES/12004705.png'
-  );
-INSERT INTO products (
-    name,
-    description,
-    price,
-    stock,
-    category_id,
-    image
-  )
-VALUES (
-    'ACEITE VEGETAL GOTA DE ORO 900 ML',
-    'ACEITE VEGETAL GOTA DE ORO 900 ML',
-    9690,
-    319,
-    2,
-    'https://stockimages.tiendasd1.com/stockimages.tiendasd1.com/kobastockimages/IMAGENES/12004740.png'
-  );
-INSERT INTO products (
-    name,
-    description,
-    price,
-    stock,
-    category_id,
-    image
-  )
-VALUES (
-    'SALSA MAYONESA CON CHIPOTLE 350G',
-    'SALSA MAYONESA CON CHIPOTLE 350G',
-    3990,
-    40,
-    2,
-    'https://stockimages.tiendasd1.com/stockimages.tiendasd1.com/kobastockimages/IMAGENES/12004647.png'
-  );
+VALUES (  'Limpieza',  'Articulos de supermercado para limpiar');
+INSERT INTO products (  name,  description,  price,  stock,  category_id,  image)
+VALUES (  'LIMPIAVIDRIOS BRILLAKING 500 ML',  'LIMPIAVIDRIOS BRILLAKING 500 ML',  2250,  328,  3,  'https://stockimages.tiendasd1.com/stockimages.tiendasd1.com/kobastockimages/IMAGENES/12000232.png');
+INSERT INTO products (  name,  description,  price,  stock,  category_id,  image)
+VALUES (  'JUGO DEL VALLE FRUTAS CITRICAS 1500ML',  'JUGO DEL VALLE FRUTAS CITRICAS 1500ML',  2490,  35,  1,  'https://stockimages.tiendasd1.com/stockimages.tiendasd1.com/kobastockimages/IMAGENES/12004550.png');
+INSERT INTO products (  name,  description,  price,  stock,  category_id,  image)
+VALUES (  'GASEOSA COCA COLA PET 250ML',  'GASEOSA COCA COLA PET 250ML',  1290,  54,  1,  'https://stockimages.tiendasd1.com/stockimages.tiendasd1.com/kobastockimages/IMAGENES/12004548.png');
+INSERT INTO products (  name,  description,  price,  stock,  category_id,  image)
+VALUES (  'GASEOSA COCA COLA SIN AZUCAR PET 250ML',  'GASEOSA COCA COLA SIN AZUCAR PET 250ML',  990,  143,  1,  'https://stockimages.tiendasd1.com/stockimages.tiendasd1.com/kobastockimages/IMAGENES/12004549.png');
+INSERT INTO products (  name,  description,  price,  stock,  category_id,  image)
+VALUES (  'VARSOL BRILLA KING 800 ML',  'VARSOL BRILLA KING 800 ML',  6590,  29,  3,  'https://stockimages.tiendasd1.com/stockimages.tiendasd1.com/kobastockimages/IMAGENES/12000721.png');
+INSERT INTO products (  name,  description,  price,  stock,  category_id,  image)
+VALUES (  'BLANQUEADOR EN GEL BRILLA KING 1000 ML',  'BLANQUEADOR EN GEL BRILLA KING 1000 ML',  5290,  251,  3,  'https://stockimages.tiendasd1.com/stockimages.tiendasd1.com/kobastockimages/IMAGENES/12002695.png');
+INSERT INTO products (  name,  description,  price,  stock,  category_id,  image)
+VALUES (  'TRIDENT MORAZUL 5S 8,5G',  'TRIDENT MORAZUL 5S 8,5G',  1150,  31,  2,  'https://stockimages.tiendasd1.com/stockimages.tiendasd1.com/kobastockimages/IMAGENES/12004705.png');
+INSERT INTO products (  name,  description,  price,  stock,  category_id,  image)
+VALUES (  'ACEITE VEGETAL GOTA DE ORO 900 ML',  'ACEITE VEGETAL GOTA DE ORO 900 ML',  9690,  319,  2,  'https://stockimages.tiendasd1.com/stockimages.tiendasd1.com/kobastockimages/IMAGENES/12004740.png');
+INSERT INTO products (name,description,price,stock,category_id,image)
+VALUES (    'SALSA MAYONESA CON CHIPOTLE 350G',    'SALSA MAYONESA CON CHIPOTLE 350G',    3990,    40,    2,    'https://stockimages.tiendasd1.com/stockimages.tiendasd1.com/kobastockimages/IMAGENES/12004647.png');
