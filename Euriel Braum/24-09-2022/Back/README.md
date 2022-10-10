@@ -13,7 +13,7 @@ python -m venv carrito-env
 <!-- Activar entorno virtual -->
 
 ```bash
-carrito-env\Scripts\activate
+carrito-env/Scripts/activate
 ```
 
 <!-- Instalar paquetes -->
@@ -25,5 +25,5 @@ pip install -r requerimientos.txt
 <!-- Registrar usuarios de prueba -->
 
 ```bash
-python src\datausers.py
+python src/datausers.py
 ```
