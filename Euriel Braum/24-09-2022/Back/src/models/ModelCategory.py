@@ -23,6 +23,43 @@ class ModelCategory:
     @classmethod
     def save(self, db, category: Category, user: User):
         if user.is_admin(db):
-            return category.save(db)
+            if category.save(db):
+                return 200
+            else:
+                return 409
         else:
-            return False
+            return 401
+
+    # Update, only admins can do this
+
+    @classmethod
+    def update(self, db, category: Category, user: User):
+        if user.is_admin(db):
+            if category.update(db):
+                return 200
+            else:
+                return 409
+        else:
+            return 401
+
+    # Delete, only admins can do this
+
+    @classmethod
+    def delete(self, db, category: Category, user: User):
+        if user.is_admin(db):
+            if category.delete(db):
+                return 200
+            else:
+                return 409
+        else:
+            return 401
+
+    # Get all categories
+
+    @classmethod
+    def get_all(self, db):
+        try:
+
+            return Category.get_all(db)
+        except Exception as ex:
+            raise Exception(ex)

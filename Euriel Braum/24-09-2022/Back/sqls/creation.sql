@@ -52,10 +52,10 @@ DELIMITER ;
 CALL change_status_expired_session();
 -- CARRITO DE COMPRAS
 -- TABLAS: productos, categorias, ordenes, ordenes_detalle
--- TABLA categories: id, name, description
+-- TABLA categories: id, name (unico), description
 CREATE TABLE IF NOT EXISTS `categories` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(50) NOT NULL,
+  `name` varchar(50) NOT NULL UNIQUE,
   `description` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8;

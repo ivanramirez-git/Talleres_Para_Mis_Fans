@@ -1,4 +1,4 @@
 {
     // format code
-    "editor.formatOnSave": false,
+    "editor.formatOnSave": true,
 }

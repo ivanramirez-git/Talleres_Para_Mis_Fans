@@ -83,7 +83,7 @@ def get_user():
 # Ruta para guardar una categoría, sesión activa requerida y rol admin
 
 
-@app.route('/saveCategory', methods=['POST'])
+@app.route('/category/save', methods=['POST'])
 def saveCategory():
     # Obtenemos el token del header
     token = request.headers.get('token')
@@ -94,16 +94,77 @@ def saveCategory():
         if user is not None:
             category = Category(
                 0, request.json['name'], request.json['description'])
-            if ModelCategory.save(db, category, user):
+            intent = ModelCategory.save(db, category, user)
+            if intent == 200:
                 return jsonify({"success": "Categoria guardada correctamente"})
-            else:
-                return error("No tienes permisos para realizar esta acción")
+            elif (intent == 409):
+                return jsonify({"error": "La categoria ya existe"})
+            elif (intent == 401):
+                return jsonify({"error": "No tienes permisos para realizar esta acción"})
+        else:
+            return error("No se ha encontrado una sesión activa")
+    else:
+        return error("El token no ha sido enviado")
+
+# Ruta para actualizar una categoría, sesión activa requerida y rol admin
+
+
+@app.route('/category/update', methods=['POST'])
+def updateCategory():
+    # Obtenemos el token del header
+    token = request.headers.get('token')
+
+    if token is not None:
+        user = ModelUser.get_user_by_id(
+            db, User(None, None, None, None, None, None, {'token': token}))
+        if user is not None:
+            category = Category(
+                request.json['id'], request.json['name'], request.json['description'])
+            intent = ModelCategory.update(db, category, user)
+            if intent == 200:
+                return jsonify({"success": "Categoria actualizada correctamente"})
+            elif (intent == 409):
+                return jsonify({"error": "La categoria ya existe"})
+            elif (intent == 401):
+                return jsonify({"error": "No tienes permisos para realizar esta acción"})
         else:
             return error("No se ha encontrado una sesión activa")
     else:
         return error("El token no ha sido enviado")
 
 
-# Inicio del programa
+# Ruta para eliminar una categoría, sesión activa requerida y rol admin
+
+
+@app.route('/category/delete', methods=['POST'])
+def deleteCategory():
+    # Obtenemos el token del header
+    token = request.headers.get('token')
+
+    if token is not None:
+        user = ModelUser.get_user_by_id(
+            db, User(None, None, None, None, None, None, {'token': token}))
+        if user is not None:
+            category = Category(request.json['id'])
+            intent = ModelCategory.delete(db, category, user)
+            if intent == 200:
+                return jsonify({"success": "Categoria eliminada correctamente"})
+            elif (intent == 401):
+                return jsonify({"error": "No tienes permisos para realizar esta acción"})
+        else:
+            return error("No se ha encontrado una sesión activa")
+    else:
+        return error("El token no ha sido enviado")
+
+# Ruta para obtener todas las categorías
+
+
+@app.route('/category', methods=['GET'])
+def getCategories():
+    categories = ModelCategory.get_all(db)
+    return jsonify(categories)
+
+
+    # Inicio del programa
 if __name__ == '__main__':
     app.run()

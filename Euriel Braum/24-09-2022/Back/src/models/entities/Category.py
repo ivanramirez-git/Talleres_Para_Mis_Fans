@@ -8,7 +8,7 @@
 # ) ENGINE = InnoDB DEFAULT CHARSET = utf8;
 
 class Category:
-    def __init__(self, id, name, description):
+    def __init__(self, id, name='', description=''):
         self.id = id
         self.name = name
         self.description = description
@@ -17,15 +17,19 @@ class Category:
         return f'Category: {self.id}, {self.name}, {self.description}'
 
     def save(self, db):
-        try:
-            cursor = db.connection.cursor()
-            sql = """INSERT INTO categories (name, description) VALUES ('{}', '{}')""".format(
-                self.name, self.description)
-            cursor.execute(sql)
-            db.connection.commit()
-            return True
-        except Exception as ex:
-            raise Exception(ex)
+        # Consultamos si existe una categoría con el mismo nombre
+        if self.get_by_name(db, self.name) is None:
+            try:
+                cursor = db.connection.cursor()
+                sql = """INSERT INTO categories (name, description) VALUES ('{}', '{}')""".format(
+                    self.name, self.description)
+                cursor.execute(sql)
+                db.connection.commit()
+                return True
+            except Exception as ex:
+                raise Exception(ex)
+        else:
+            return False
 
     def update(self, db):
         try:
@@ -55,7 +59,16 @@ class Category:
             sql = """SELECT * FROM categories"""
             cursor.execute(sql)
             data = cursor.fetchall()
-            return data
+            categories = []
+            category_aux = {}
+            for category in data:
+                category_aux['id'] = category[0]
+                category_aux['name'] = category[1]
+                category_aux['description'] = category[2]
+                categories.append(category_aux)
+                category_aux = {}
+
+            return categories
         except Exception as ex:
             raise Exception(ex)
 
@@ -87,4 +100,3 @@ class Category:
 # Description: Category entity
 # Atributes: id, name, description
 # Methods: __init__, __str__, save, update, delete, get_all, get_by_id, get_by_name
-
