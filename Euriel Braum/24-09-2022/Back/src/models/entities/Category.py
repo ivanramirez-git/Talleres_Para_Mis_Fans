@@ -79,7 +79,14 @@ class Category:
             sql = """SELECT * FROM categories WHERE id = {}""".format(id)
             cursor.execute(sql)
             data = cursor.fetchone()
-            return data
+            category = {}
+            if data is not None:
+                category['id'] = data[0]
+                category['name'] = data[1]
+                category['description'] = data[2]
+            else:
+                category = None
+            return category
         except Exception as ex:
             raise Exception(ex)
 
@@ -90,7 +97,14 @@ class Category:
             sql = """SELECT * FROM categories WHERE name = '{}'""".format(name)
             cursor.execute(sql)
             data = cursor.fetchone()
-            return data
+            category = {}
+            if data is not None:
+                category['id'] = data[0]
+                category['name'] = data[1]
+                category['description'] = data[2]
+            else:
+                category = None
+            return category
         except Exception as ex:
             raise Exception(ex)
 

@@ -63,3 +63,23 @@ class ModelCategory:
             return Category.get_all(db)
         except Exception as ex:
             raise Exception(ex)
+
+    # Get category by id
+
+    @classmethod
+    def get_by_id(self, db, id):
+        try:
+            return Category.get_by_id(db, id)
+        except Exception as ex:
+            raise Exception(ex)
+
+    # Get category by name
+
+    @classmethod
+    def get_by_name(self, db, name):
+        try:
+            return Category.get_by_name(db, name)
+        except Exception as ex:
+            raise Exception(ex)
+
+# Path: src\models\ModelUser.py

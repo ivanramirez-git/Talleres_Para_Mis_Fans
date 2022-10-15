@@ -164,6 +164,22 @@ def getCategories():
     categories = ModelCategory.get_all(db)
     return jsonify(categories)
 
+# Ruta para obtener una categoría by id
+
+
+@app.route('/category/<id>', methods=['GET'])
+def getCategory(id):
+    category = ModelCategory.get_by_id(db, id)
+    return jsonify(category)
+
+# Ruta para obtener todas las categorías by name
+
+
+@app.route('/category/name/<name>', methods=['GET'])
+def getCategoriesByName(name):
+    categories = ModelCategory.get_by_name(db, name)
+    return jsonify(categories)
+
 
     # Inicio del programa
 if __name__ == '__main__':
