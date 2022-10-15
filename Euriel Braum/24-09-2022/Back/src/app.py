@@ -1,20 +1,19 @@
-# importamos flask
-from models.entities.User import User
-from models.ModelUser import ModelUser
+# Packages
 from flask import Flask, jsonify, request
 from flask_mysqldb import MySQL
 from config import config
 
+# Entities
+from models.entities.User import User
+from models.entities.Category import Category
+
+# Models
+from models.ModelUser import ModelUser
+from models.ModelCategory import ModelCategory
+
 app = Flask(__name__)
 app.config.from_object(config['development'])
 db = MySQL(app)
-# ma = Marshmallow(app)
-
-# Models:
-
-# Entities:
-
-# Creación de tablas
 
 # Ruta login
 
@@ -69,15 +68,38 @@ def error(message):
 def get_user():
     # Obtenemos el token del header
     token = request.headers.get('token')
+    u = User(None, None, None, None, None, None, {'token': token})
+
+    if token is not None:
+        user = ModelUser.get_user_by_id(
+            db, u)
+        if user is not None:
+            return jsonify(user.__dict__)
+        else:
+            return error("No se ha encontrado una sesión activa")
+    else:
+        return error("El token no ha sido enviado")
+
+# Ruta para guardar una categoría, sesión activa requerida y rol admin
+
+
+@app.route('/saveCategory', methods=['POST'])
+def saveCategory():
+    # Obtenemos el token del header
+    token = request.headers.get('token')
 
     if token is not None:
         user = ModelUser.get_user_by_id(
             db, User(None, None, None, None, None, None, {'token': token}))
         if user is not None:
-            return jsonify(user.__dict__)
+            category = Category(
+                0, request.json['name'], request.json['description'])
+            if ModelCategory.save(db, category, user):
+                return jsonify({"success": "Categoria guardada correctamente"})
+            else:
+                return error("No tienes permisos para realizar esta acción")
         else:
             return error("No se ha encontrado una sesión activa")
-
     else:
         return error("El token no ha sido enviado")
 

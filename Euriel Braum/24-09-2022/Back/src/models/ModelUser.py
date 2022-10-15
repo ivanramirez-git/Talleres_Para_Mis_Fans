@@ -1,5 +1,6 @@
 from .entities.User import User
 
+
 class ModelUser():
 
     @classmethod
@@ -50,7 +51,7 @@ class ModelUser():
     # Traer usuario por id
 
     @classmethod
-    def get_user_by_id(self, db, user):
+    def get_user_by_id(self, db, user: User):
         if user.is_logged(db):
             try:
                 cursor = db.connection.cursor()

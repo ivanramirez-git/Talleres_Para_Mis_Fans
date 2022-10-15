@@ -17,6 +17,11 @@ class User(UserMixin):
         self.role = role
         self.auth_token = auth_token
 
+    # toStr
+
+    def __str__(self):
+        return str(self.__dict__)
+
     @classmethod
     def check_password(self, hashed_password, password):
         return check_password_hash(hashed_password, password)
@@ -75,13 +80,13 @@ class User(UserMixin):
 
     # Da el estado de la sesion
     @classmethod
-    def status_sesion(self, db):
+    def status_sesion(self, db, token):
         cursor = db.connection.cursor()
         # llamar el procedimiento almacenado change_status_expired_session
         cursor.callproc('change_status_expired_session')
         cursor.fetchall()
         sql_session = """SELECT * FROM sessions WHERE token = '{}'""".format(
-            self.auth_token['token'])
+            token)
         cursor.execute(sql_session)
         row = cursor.fetchone()
         if row != None:
@@ -97,24 +102,22 @@ class User(UserMixin):
 
     # is_admin
     @classmethod
-    def is_admin(self, db):
+    def is_admin_service(self, db, token):
         cursor = db.connection.cursor()
         # llamar el procedimiento almacenado change_status_expired_session
         cursor.callproc('change_status_expired_session')
         cursor.fetchall()
-        # sql_session = """SELECT * FROM sessions WHERE token = '{}'""".format(
-        #     self.auth_token['token'])
-            
-        # sql_user = """SELECT * FROM users WHERE id = {}""".format(
-        #     user_id)
 
         sql_one_query = """SELECT * FROM sessions INNER JOIN users ON sessions.user_id = users.id WHERE sessions.token = '{}'""".format(
-            self.auth_token['token'])
+            token)
         cursor.execute(sql_one_query)
         row = cursor.fetchone()
+        # Imprimir toda la fila
+        print(row)
         if row != None:
             # Comprobar si la sesión está activa
-            if row[5] == 'logged' and row[9] == 'admin':
+            if row[5] == 'logged' and row[7] == 'admin':
+
                 return True
             else:
                 return False
@@ -123,14 +126,16 @@ class User(UserMixin):
 
     # Comprueba si el usuario está logueado
     def is_logged(self, db):
-        if self.status_sesion(db)['status'] == 'logged':
+        if self.status_sesion(db, self.auth_token['token'])['status'] == 'logged':
+            # Print de prueba
+            print('Sesión activa')
             return True
         else:
             return False
 
     # Comprueba si el usuario está logueado y es administrador
     def is_admin(self, db):
-        if self.is_logged(db) and self.is_admin(db):
+        if self.is_logged(db) and self.is_admin_service(db, self.auth_token['token']):
             return True
         else:
             return False
