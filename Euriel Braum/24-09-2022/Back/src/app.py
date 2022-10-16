@@ -25,7 +25,7 @@ db = MySQL(app)
 @app.route('/login', methods=['POST'])
 def login():
     # Obtenemos los datos del usuario
-    print(request.json)
+    # print(request.json)
     user = User(None, request.json['username'],
                 request.json['password'], None, None, None)
     logger_user = ModelUser.login(db, user)
@@ -40,7 +40,7 @@ def login():
 @app.route('/register', methods=['POST'])
 def register():
     # Obtenemos los datos del usuario
-    print(request.json)
+    # print(request.json)
     user = User(0, request.json['username'], request.json['password'],
                 request.json['email'], request.json['fullname'])
     if ModelUser.register(db, user):
@@ -54,7 +54,7 @@ def register():
 @app.route('/logout', methods=['POST'])
 def logout():
     # Obtenemos los datos del usuario
-    print(request.json)
+    # print(request.json)
     user = User(request.json['id'], None, None,
                 None, None, None, request.json['auth_token'])
     return ModelUser.logout(db, user)
@@ -362,6 +362,30 @@ def getOrders():
         if user is not None:
             orders = ModelOrder.get_all(db, user)
             return jsonify(orders)
+        else:
+            return error("No se ha encontrado una sesión activa")
+    else:
+        return error("El token no ha sido enviado")
+
+# close_order(self, db, user: User):
+
+
+@app.route('/order/close', methods=['GET'])
+def closeOrder():
+    # Obtenemos el token del header
+    token = request.headers.get('token')
+
+    if token is not None:
+        user = ModelUser.get_user_by_id(
+            db, User(None, None, None, None, None, None, {'token': token}))
+        if user is not None:
+            intent = ModelOrder.close_order(db, user)
+            if intent == 200:
+                return jsonify({"success": "Orden cerrada correctamente"})
+            elif (intent == 401):
+                return jsonify({"error": "No tienes permisos para realizar esta acción"})
+            else:
+                return error("Error en la petición")
         else:
             return error("No se ha encontrado una sesión activa")
     else:

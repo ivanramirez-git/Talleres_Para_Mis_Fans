@@ -37,9 +37,9 @@ class ModelOrder:
         else:
             return 401
 
-
     # get_all(db, user)
     # only users logged can do this
+
     @classmethod
     def get_all(self, db, user: User):
         if user.is_logged(db):
@@ -47,4 +47,16 @@ class ModelOrder:
         else:
             return 401
 
-            
+    # .close_order(db, user)
+    # only users logged can do this
+
+    @classmethod
+    def close_order(self, db, user: User):
+        if user.is_logged(db):
+            order = Order(None, user.id)
+            if order.close_order(db, user):
+                return 200
+            else:
+                return 409
+        else:
+            return 401

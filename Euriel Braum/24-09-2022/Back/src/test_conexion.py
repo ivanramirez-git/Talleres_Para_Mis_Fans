@@ -14,7 +14,7 @@ def mysqlconnect():
     cur = conn.cursor()
     cur.execute("select @@version")
     output = cur.fetchall()
-    print(output)
+    # print(output)
 
     # To close the connection
     conn.close()

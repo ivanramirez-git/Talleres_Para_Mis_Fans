@@ -2,9 +2,13 @@
     // format code
     "editor.formatOnSave": true,
     "cSpell.words": [
+        "Develoment",
         "ibfk",
         "jsonify",
         "lastrowid",
-        "mysqldb"
+        "MYSQL",
+        "mysqlconnect",
+        "mysqldb",
+        "pymysql"
     ],
 }
