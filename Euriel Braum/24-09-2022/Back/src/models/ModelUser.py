@@ -55,7 +55,7 @@ class ModelUser():
         if user.is_logged(db):
             try:
                 cursor = db.connection.cursor()
-                # Consulta que segun el token del usuario, traiga el id del usuario y segun el id del usuario, traiga el resto de los datos de la tabla users
+                # Consulta que según el token del usuario, traiga el id del usuario y según el id del usuario, traiga el resto de los datos de la tabla users
                 sql = """SELECT users.id, users.username, users.password, users.email, users.fullname, users.role FROM users
                         INNER JOIN sessions ON users.id = sessions.user_id
                         WHERE sessions.token = '{}' AND sessions.status = 'logged'""".format(user.auth_token['token'])

@@ -10,7 +10,7 @@
 # Abstract class
 # Name: Category
 # Description: Category entity
-# Atributes: id, name, description
+# Attributes: id, name, description
 # Methods: __init__, __str__, save, update, delete, get_all, get_by_id, get_by_name
 
 from .entities.Category import Category
@@ -82,4 +82,4 @@ class ModelCategory:
         except Exception as ex:
             raise Exception(ex)
 
-# Path: src\models\ModelUser.py
+

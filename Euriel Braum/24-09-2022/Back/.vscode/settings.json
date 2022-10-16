@@ -1,4 +1,10 @@
 {
     // format code
     "editor.formatOnSave": true,
+    "cSpell.words": [
+        "ibfk",
+        "jsonify",
+        "lastrowid",
+        "mysqldb"
+    ],
 }
