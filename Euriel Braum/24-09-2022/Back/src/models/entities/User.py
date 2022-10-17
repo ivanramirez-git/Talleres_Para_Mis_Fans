@@ -139,3 +139,26 @@ class User(UserMixin):
             return True
         else:
             return False
+
+
+# Abstract User class
+# Name: User
+# Attributes:
+"""
++ id: int
++ username: str
++ password: str
++ fullname: str
++ email: str
++ role: str
++ auth_token: str
+"""
+# Methods:
+"""
++ login(self, db)
++ logout(self, db)
++ status_sesion(self, db, token)
++ is_admin_service(self, db, token)
++ is_logged(self, db)
++ is_admin(self, db)
+"""

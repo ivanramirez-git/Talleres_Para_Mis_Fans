@@ -60,3 +60,14 @@ class ModelOrder:
                 return 409
         else:
             return 401
+
+
+# Abstract
+# Name: ModelOrder
+# Attributes: None
+# Methods:
+"""
++ add_product_to_order(self, db, user: User, product: Product, quantity: int)
++ get_all(db, user)
++ close_order(db, user)
+"""

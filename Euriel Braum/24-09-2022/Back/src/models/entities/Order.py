@@ -196,7 +196,6 @@ class Order:
                             "DELETE FROM orders_detail WHERE id = %s", (od[0],))
                         db.connection.commit()
                         self.calculate_total(db)
-
                     else:
                         # update quantity in products
                         cursor.execute(
@@ -226,3 +225,24 @@ class Order:
         db.connection.commit()
         self.total = total
         return True
+
+
+# Abstract Order class
+# Name: Order
+# Attributes:
+"""
++ id: int
++ user_id: int
++ total: float
++ created_at: datetime
++ status: str
++ order_detail: list
+"""
+# Methods:
+"""
++ get(self, db, user: User)
++ add_product(self, db, user: User, product: Product, quantity: int)
++ get_all(db, user: User)
++ close_order(self, db, user: User)
++ calculate_total(self, db)
+"""

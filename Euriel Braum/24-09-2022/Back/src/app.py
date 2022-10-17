@@ -239,7 +239,7 @@ def updateProduct():
         return error("El token no ha sido enviado")
 
 
-@app.route('/product/delete', methods=['POST'])
+@app.route('/product/delete', methods=['DELETE'])
 def deleteProduct():
     # Obtenemos el token del header
     token = request.headers.get('token')
@@ -248,7 +248,7 @@ def deleteProduct():
         user = ModelUser.get_user_by_id(
             db, User(None, None, None, None, None, None, {'token': token}))
         if user is not None:
-            product = Product(request.json['id'])
+            product = Product(request.json['product_id'])
             intent = ModelProduct.delete(db, product, user)
             if intent == 200:
                 return jsonify({"success": "Producto eliminado correctamente"})
@@ -312,7 +312,7 @@ def decreaseStock():
             db, User(None, None, None, None, None, None, {'token': token}))
         if user is not None:
             product = Product(
-                request.json['id'], None, None, None, request.json['stock'], None)
+                request.json['product_id'], None, None, None, request.json['stock'], None)
             intent = ModelProduct.decrease_stock(db, product, user)
             if intent == 200:
                 return jsonify({"success": "Stock actualizado correctamente"})

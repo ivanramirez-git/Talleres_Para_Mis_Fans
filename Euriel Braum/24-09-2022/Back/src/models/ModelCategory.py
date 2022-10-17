@@ -59,7 +59,6 @@ class ModelCategory:
     @classmethod
     def get_all(self, db):
         try:
-
             return Category.get_all(db)
         except Exception as ex:
             raise Exception(ex)
@@ -83,3 +82,16 @@ class ModelCategory:
             raise Exception(ex)
 
 
+# Abstract class
+# Name: ModelCategory
+# Description: Category model
+# Attributes: None
+# Methods:
+"""
++ save(self, db, category, user)
++ update(self, db, category, user)
++ delete(self, db, category, user)
++ get_all(self, db)
++ get_by_id(self, db, id)
++ get_by_name(self, db, name)
+"""

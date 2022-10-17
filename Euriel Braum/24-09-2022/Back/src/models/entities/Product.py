@@ -242,9 +242,26 @@ class Product:
         except Exception as ex:
             raise Exception(ex)
 
-# Abstract class
+
+# Abstract Product class
 # Name: Product
-# Description: Product entity
-# Attributes: id, name, description, price, stock, category_id, image
-# Methods: save, delete, update
-# Class methods: get_all, get_by_id, get_by_name, get_by_category, get_by_pagination, get_by_search, get_by_search_and_category, decrease_stock
+# Attributes:
+"""
++ id: int
++ name: str
++ description: str
++ price: float
++ stock: int
++ category_id: int
++ image: str
+"""
+# Methods:
+"""
++ get_by_id(self, db, id)
++ get_by_name(self, db, name)
++ get_by_category(self, db, category_id)
++ get_by_pagination(self, db, page, per_page)
++ get_by_search(self, db, search)
++ get_by_search_and_category(self, db, search, category_id)
++ decrease_stock(self, db, id, quantity)
+"""

@@ -72,3 +72,15 @@ class ModelUser():
                 raise Exception(ex)
         else:
             return None
+
+
+# Abstract class
+# Name: ModelUser
+# Attributes: None
+# Methods:
+"""
++ login(self, db, user)
++ register(self, db, user)
++ logout(self, db, user)
++ get_user_by_id(self, db, user)
+"""

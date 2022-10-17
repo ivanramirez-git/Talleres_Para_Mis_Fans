@@ -141,3 +141,22 @@ class ModelProduct:
 # Name: ModelProduct
 # Description: Product model
 # Class methods: save, delete, update, get_all, get_by_id, get_by_name, get_by_category, get_by_pagination, get_by_search, get_by_search_and_category, decrease_stock
+
+
+# Abstract Model Product
+# Name: ModelProduct
+# Description: Product model
+# Class methods:
+"""
++ save(self, db, product: Product, user: User)
++ update(self, db, product: Product, user: User)
++ delete(self, db, product: Product, user: User)
++ get_all(self, db)
++ get_by_id(self, db, id)
++ get_by_name(self, db, name)
++ get_by_category(self, db, category_id)
++ get_by_pagination(self, db, offset, limit)
++ get_by_search(self, db, search)
++ get_by_search_and_category(self, db, search, category_id)
++ decrease_stock(self, db, product: Product, quantity)
+"""
