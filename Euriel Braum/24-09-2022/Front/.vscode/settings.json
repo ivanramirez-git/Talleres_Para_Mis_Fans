@@ -2,5 +2,6 @@
     // format code
     "editor.formatOnSave": true,
     // Color theme for the editor is Green
-    "workbench.colorTheme": "Red"
+    "workbench.colorTheme": "Tomorrow Night Blue"
+}
 }

@@ -17,49 +17,48 @@
 # Methods: save, update, delete
 # Class methods: get_all, get_by_id, get_by_user, get_by_status, get_by_date
 
-from .entities.Order import Order
-from .entities.User import User
-from .entities.Product import Product
+from .entities.Order import Order # Importamos la clase Order
+from .entities.User import User # Importamos la clase User
+from .entities.Product import Product # Importamos la clase Product
 
 
-class ModelOrder:
-
+class ModelOrder: # Creamos la clase ModelOrder
     # add_product_to_order(self, db, user: User, product: Product, quantity: int):
     # only users logged can do this
-    @classmethod
-    def add_product_to_order(self, db, user: User, product: Product, quantity: int):
-        if user.is_logged(db):
-            order = Order(None, user.id)
-            if order.add_product_to_order(db, user, product, quantity):
-                return 200
-            else:
-                return 409
-        else:
-            return 401
+    @classmethod # Creamos el método add_product_to_order
+    def add_product_to_order(self, db, user: User, product: Product, quantity: int): # Creamos el método add_product_to_order
+        if user.is_logged(db): # Si el usuario está logueado
+            order = Order(None, user.id) # Creamos un objeto de la clase Order
+            if order.add_product_to_order(db, user, product, quantity): # Si el método add_product_to_order de la clase Order devuelve True
+                return 200 # Devolvemos 200
+            else: # Si no
+                return 409 # Devolvemos 409
+        else: # Si no
+            return 401 # Devolvemos 401
 
     # get_all(db, user)
     # only users logged can do this
 
-    @classmethod
-    def get_all(self, db, user: User):
-        if user.is_logged(db):
-            return Order.get_all(db, user)
-        else:
-            return 401
+    @classmethod # Creamos el método get_all
+    def get_all(self, db, user: User): # Creamos el método get_all
+        if user.is_logged(db): # Si el usuario está logueado
+            return Order.get_all(db, user) # Devolvemos el método get_all de la clase Order
+        else: # Si no
+            return 401 # Devolvemos 401
 
     # .close_order(db, user)
     # only users logged can do this
 
-    @classmethod
-    def close_order(self, db, user: User):
-        if user.is_logged(db):
-            order = Order(None, user.id)
-            if order.close_order(db, user):
-                return 200
-            else:
-                return 409
-        else:
-            return 401
+    @classmethod # Creamos el método close_order
+    def close_order(self, db, user: User): # Creamos el método close_order
+        if user.is_logged(db): # Si el usuario está logueado 
+            order = Order(None, user.id) # Creamos un objeto de la clase Order
+            if order.close_order(db, user): # Si el método close_order de la clase Order devuelve True
+                return 200 # Devolvemos 200
+            else: # Si no
+                return 409 # Devolvemos 409
+        else: # Si no
+            return 401 # Devolvemos 401
 
 
 # Abstract

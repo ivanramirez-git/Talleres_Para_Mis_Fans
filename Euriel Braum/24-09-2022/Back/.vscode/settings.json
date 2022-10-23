@@ -1,6 +1,6 @@
 {
     // format code
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": false,
     "cSpell.words": [
         "Develoment",
         "ibfk",

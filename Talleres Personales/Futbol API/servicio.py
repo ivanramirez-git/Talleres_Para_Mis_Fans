@@ -28,3 +28,4 @@ print("Teams... ")
 with open("teams.json", "w") as outfile:
     json.dump(get_teams(), outfile)
     print("Teams saved!")
+# APIW

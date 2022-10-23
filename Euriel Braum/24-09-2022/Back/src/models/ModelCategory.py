@@ -13,73 +13,68 @@
 # Attributes: id, name, description
 # Methods: __init__, __str__, save, update, delete, get_all, get_by_id, get_by_name
 
-from .entities.Category import Category
-from .entities.User import User
+from .entities.Category import Category # Importa la clase Category del módulo entities
+from .entities.User import User # Importa la clase User del módulo entities
 
 
-class ModelCategory:
+class ModelCategory: # Clase ModelCategory
 
     # Save, only admins can do this
-    @classmethod
-    def save(self, db, category: Category, user: User):
-        if user.is_admin(db):
-            if category.save(db):
-                return 200
-            else:
-                return 409
-        else:
-            return 401
+    @classmethod # Metodo estatico
+    def save(self, db, category: Category, user: User): # Método para guardar una categoria
+        if user.is_admin(db): # Si el usuario es administrador
+            if category.save(db): # Si la categoria se guarda
+                return 200 # Retorna 200
+            else: # Si no
+                return 409  # Retorna 409
+        else: # Si no
+            return 401  # Retorna 401
 
     # Update, only admins can do this
-
-    @classmethod
-    def update(self, db, category: Category, user: User):
-        if user.is_admin(db):
-            if category.update(db):
-                return 200
-            else:
-                return 409
-        else:
-            return 401
+    @classmethod # Metodo estatico
+    def update(self, db, category: Category, user: User): # Método para actualizar una categoria
+        if user.is_admin(db): # Si el usuario es administrador
+            if category.update(db): # Si la categoria se actualiza
+                return 200 # Retorna 200
+            else: # Si no
+                return 409 # Retorna 409
+        else: # Si no
+            return 401 # Retorna 401
 
     # Delete, only admins can do this
-
-    @classmethod
-    def delete(self, db, category: Category, user: User):
-        if user.is_admin(db):
-            if category.delete(db):
-                return 200
-            else:
-                return 409
-        else:
-            return 401
+    @classmethod # Metodo estatico
+    def delete(self, db, category: Category, user: User): # Método para eliminar una categoria
+        if user.is_admin(db): # Si el usuario es administrador
+            if category.delete(db): # Si la categoria se elimina
+                return 200 # Retorna 200
+            else: # Si no
+                return 409 # Retorna 409
+        else: # Si no
+            return 401 # Retorna 401
 
     # Get all categories
-
-    @classmethod
-    def get_all(self, db):
-        try:
-            return Category.get_all(db)
-        except Exception as ex:
-            raise Exception(ex)
+    @classmethod  # Metodo estatico
+    def get_all(self, db): # Método para obtener todas las categorias
+        try: # Intenta
+            return Category.get_all(db) # Retorna todas las categorias
+        except Exception as ex: # Si no
+            raise Exception(ex) # Lanza una excepción
 
     # Get category by id
-
-    @classmethod
-    def get_by_id(self, db, id):
-        try:
-            return Category.get_by_id(db, id)
-        except Exception as ex:
-            raise Exception(ex)
+    @classmethod # Metodo estatico
+    def get_by_id(self, db, id): # Método para obtener una categoria por id
+        try: # Intenta
+            return Category.get_by_id(db, id) # Retorna la categoria por id
+        except Exception as ex: # Si no
+            raise Exception(ex) # Lanza una excepción
 
     # Get category by name
-
-    @classmethod
-    def get_by_name(self, db, name):
-        try:
-            return Category.get_by_name(db, name)
-        except Exception as ex:
-            raise Exception(ex)
+    @classmethod # Metodo estatico
+    def get_by_name(self, db, name): # Método para obtener una categoria por nombre
+        try: # Intenta
+            return Category.get_by_name(db, name)  # Retorna la categoria por nombre
+        except Exception as ex: # Si no
+            raise Exception(ex) # Lanza una excepción
 
 
 # Abstract class

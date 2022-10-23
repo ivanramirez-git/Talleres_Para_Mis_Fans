@@ -20,120 +20,120 @@
 # Methods: save, delete, update
 # Class methods: get_all, get_by_id, get_by_name, get_by_category, get_by_pagination, get_by_search, get_by_search_and_category, decrease_stock
 
-from .entities.Product import Product
-from .entities.User import User
+from .entities.Product import Product # Importamos la clase Product
+from .entities.User import User # Importamos la clase User
 
 
-class ModelProduct:
+class ModelProduct: # Creamos la clase ModelProduct
 
     # Save, only admins can do this
 
-    @classmethod
-    def save(self, db, product: Product, user: User):
-        if user.is_admin(db):
-            if product.save(db):
-                return 200
-            else:
-                return 409
-        else:
-            return 401
+    @classmethod # Creamos el método save
+    def save(self, db, product: Product, user: User): # Creamos el método save
+        if user.is_admin(db): # Si el usuario es administrador
+            if product.save(db): # Si el método save de la clase Product devuelve True
+                return 200  # Devolvemos 200
+            else: # Si no
+                return 409  # Devolvemos 409
+        else: # Si no
+            return 401 # Devolvemos 401
 
     # Update, only admins can do this
 
-    @classmethod
-    def update(self, db, product: Product, user: User):
-        if user.is_admin(db):
-            if product.update(db):
-                return 200
-            else:
-                return 409
-        else:
-            return 401
+    @classmethod # Creamos el método update
+    def update(self, db, product: Product, user: User): # Creamos el método update
+        if user.is_admin(db): # Si el usuario es administrador
+            if product.update(db): # Si el método update de la clase Product devuelve True
+                return 200 # Devolvemos 200
+            else: # Si no
+                return 409 # Devolvemos 409
+        else: # Si no
+            return 401 # Devolvemos 401
 
     # Delete, only admins can do this
 
-    @classmethod
-    def delete(self, db, product: Product, user: User):
-        if user.is_admin(db):
-            if product.delete(db):
-                return 200
-            else:
-                return 409
-        else:
-            return 401
+    @classmethod # Creamos el método delete
+    def delete(self, db, product: Product, user: User): # Creamos el método delete
+        if user.is_admin(db): # Si el usuario es administrador
+            if product.delete(db): # Si el método delete de la clase Product devuelve True
+                return 200  # Devolvemos 200
+            else:   # Si no
+                return 409 # Devolvemos 409
+        else: # Si no
+            return 401 # Devolvemos 401
 
     # Get all products
 
-    @classmethod
-    def get_all(self, db):
-        try:
-            return Product.get_all(db)
-        except Exception as ex:
-            raise Exception(ex)
+    @classmethod    # Creamos el método get_all
+    def get_all(self, db): # Creamos el método get_all
+        try: # Intentamos
+            return Product.get_all(db) # Devolvemos el método get_all de la clase Product
+        except Exception as ex: # Si no
+            raise Exception(ex) # Devolvemos el error
 
     # Get product by id
 
-    @classmethod
-    def get_by_id(self, db, id):
-        try:
-            return Product.get_by_id(db, id)
-        except Exception as ex:
-            raise Exception(ex)
+    @classmethod # Creamos el método get_by_id
+    def get_by_id(self, db, id):  # Creamos el método get_by_id
+        try:     # Intentamos
+            return Product.get_by_id(db, id) # Devolvemos el método get_by_id de la clase Product
+        except Exception as ex: # Si no
+            raise Exception(ex) # Devolvemos el error
 
     # Get product by name
 
-    @classmethod
-    def get_by_name(self, db, name):
-        try:
-            return Product.get_by_name(db, name)
-        except Exception as ex:
-            raise Exception(ex)
+    @classmethod # Creamos el método get_by_name
+    def get_by_name(self, db, name): # Creamos el método get_by_name
+        try: # Intentamos
+            return Product.get_by_name(db, name) # Devolvemos el método get_by_name de la clase Product
+        except Exception as ex: # Si no
+            raise Exception(ex) # Devolvemos el error
 
     # Get products by category
 
-    @classmethod
-    def get_by_category(self, db, category_id):
-        try:
-            return Product.get_by_category(db, category_id)
-        except Exception as ex:
-            raise Exception(ex)
+    @classmethod # Creamos el método get_by_category
+    def get_by_category(self, db, category_id): # Creamos el método get_by_category
+        try: # Intentamos
+            return Product.get_by_category(db, category_id) # Devolvemos el método get_by_category de la clase Product
+        except Exception as ex: # Si no
+            raise Exception(ex) # Devolvemos el error
 
     # Get products by pagination
 
-    @classmethod
-    def get_by_pagination(self, db, offset, limit):
-        try:
-            return Product.get_by_pagination(db, offset, limit)
-        except Exception as ex:
-            raise Exception(ex)
+    @classmethod # Creamos el método get_by_pagination
+    def get_by_pagination(self, db, offset, limit): # Creamos el método get_by_pagination
+        try: # Intentamos
+            return Product.get_by_pagination(db, offset, limit) # Devolvemos el método get_by_pagination de la clase Product
+        except Exception as ex: # Si no
+            raise Exception(ex) # Devolvemos el error
 
     # Get products by search
 
-    @classmethod
-    def get_by_search(self, db, search):
-        try:
-            return Product.get_by_search(db, search)
-        except Exception as ex:
-            raise Exception(ex)
+    @classmethod # Creamos el método get_by_search
+    def get_by_search(self, db, search): # Creamos el método get_by_search
+        try: # Intentamos
+            return Product.get_by_search(db, search) # Devolvemos el método get_by_search de la clase Product
+        except Exception as ex: # Si no
+            raise Exception(ex) # Devolvemos el error
 
     # Get products by search and category
 
-    @classmethod
-    def get_by_search_and_category(self, db, search, category_id):
-        try:
-            return Product.get_by_search_and_category(db, search, category_id)
+    @classmethod # Creamos el método get_by_search_and_category
+    def get_by_search_and_category(self, db, search, category_id): # Creamos el método get_by_search_and_category
+        try: # Intentamos
+            return Product.get_by_search_and_category(db, search, category_id) # Devolvemos el método get_by_search_and_category de la clase Product
 
-        except Exception as ex:
-            raise Exception(ex)
+        except Exception as ex: # Si no
+            raise Exception(ex) # Devolvemos el error
 
     # Decrease stock
 
-    @classmethod
-    def decrease_stock(self, db, product: Product, quantity):
-        try:
-            return product.decrease_stock(db, quantity)
-        except Exception as ex:
-            raise Exception(ex)
+    @classmethod # Creamos el método decrease_stock
+    def decrease_stock(self, db, product: Product, quantity): # Creamos el método decrease_stock
+        try:  # Intentamos
+            return product.decrease_stock(db, quantity) # Devolvemos el método decrease_stock de la clase Product
+        except Exception as ex: # Si no
+            raise Exception(ex) # Devolvemos el error
 
 
 # Path: src\models\ModelProduct.py
