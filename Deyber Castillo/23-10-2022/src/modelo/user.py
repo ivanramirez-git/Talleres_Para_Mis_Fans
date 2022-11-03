@@ -65,7 +65,7 @@ class User(UserMixin): # Heredar de UserMixin para poder usar las funciones de l
         cursor.execute(sql_session) # Ejecutar la sentencia SQL
         row = cursor.fetchone() # Obtener el resultado
         if row != None: # Si la sesión existe
-            sql_session = """UPDATE sessions SET expired_at = '{}', status = '{}' WHERE id = {}""".format(datetime.datetime.now(), 'logout', row[0]) # Sentencia SQL para actualizar la sesión
+            sql_session = """UPDATE sessions SET status = '{}' WHERE id = {}""".format('logout', row[0]) # Sentencia SQL para actualizar la sesión
             cursor.execute(sql_session) # Ejecutar la sentencia SQL
             db.connection.commit() # Hacer commit de la transacción
             return {'status': 'logout', 'message': 'Sesión cerrada correctamente'} # Devolver el objeto que contiene el estado de la sesión y el mensaje

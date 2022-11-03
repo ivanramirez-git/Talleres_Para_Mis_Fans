@@ -1,0 +1,37 @@
+<!-- banner -->
+<!-- Header de perfil para la siguiente informacion -->
+<!-- Vista de Profile -->
+<!-- Usar jija2 -->
+<!-- user = {'id': 1, 'username': 'admin', 'password': True, 'email': 'admin@carrito.com', 'fullname': 'Administrador', 'role': 'admin', 'auth_token': {'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNjY3MDczOTQ0LCJpYXQiOjE2NjY5ODc1NDQsInN1YiI6ImFkbWluIiwicm9sZSI6ImFkbWluIn0.k34Gf2SVe1LPAOsmDakK79pHCyWU3_hbG7z105Ibaug', 'created_at': datetime.datetime(2022, 10, 28, 20, 5, 44, 43279), 'expires_at': datetime.datetime(2022, 10, 29, 20, 5, 44, 43279)}} -->
+{% if user %}
+<div class="profile">
+    <div class="profile__header">
+        <div class="profile__header__info">
+            <h1>{{user['fullname']}}</h1>
+            <p>{{user.email}}</p>
+        </div>
+    </div>
+    <div class="profile__body">
+        <div class="profile__body__info">
+            <h2>Información</h2>
+            <p>Nombre: {{user.fullname}}</p>
+            <p>Correo: {{user.email}}</p>
+            <p>Username: {{user.username}}</p>
+            <p>Role: {{user.role}}</p>
+        </div>
+        <div class="profile__body__actions">
+            <h2>Acciones</h2>
+            <a href="{{url_for('logout_get', token=user.auth_token.token, id=user.id)}}">Cerrar sesión</a>
+        </div>
+    </div>
+</div>
+{% else %}
+<div class="profile">
+    <div class="profile__header">
+        <div class="profile__header__info">
+            <h1>Usuario no encontrado</h1>
+            <p>El usuario no existe</p>
+        </div>
+    </div>
+</div>
+{% endif %}

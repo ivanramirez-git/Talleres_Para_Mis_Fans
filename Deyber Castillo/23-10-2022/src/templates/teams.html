@@ -1,0 +1,238 @@
+<h1>Equipos</h1>
+<!-- render_template('home.html', user=jsonObjUser, titulo='Home', save_team_form_message=save_team_form_message, teams_count=teams_count, teams=teams) -->
+<!-- si es distinto de 32 incluir no mostrar el formulario de inscripcion -->
+{% if teams_count != 32 %}
+<h3>Inscribir equipos</h3>
+<p>{{save_team_form_message}}</p>
+<!-- 
+        Formulario para registrar un equipo, usar el metodo post con la ruta /save_team_form
+        user_id =request.args.get('id')
+        auth_token =request.args.get('token')
+        name = request.form['name'] # Se obtiene el valor del campo name del formulario html
+    -->
+<form action="{{url_for('save_team_form', id=user.id, token=user.auth_token.token)}}" method="POST">
+    <div class="form-group">
+        <label for="name">Nombre</label>
+        <input type="text" name="name" id="name" class="form-control">
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Guardar" class="btn btn-primary">
+    </div>
+</form>
+
+{% endif %}
+
+
+<!-- Tabla de equpos con botones de eliminar y modificar-->
+<!-- teams = [{'id': 1, 'name': 'España'}, {'id': 2, 'name': 'Portugal'}, ...] -->
+<h3>Tabla de Equipos inscritos</h3>
+<p>{{delete_team_form_message}}</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Nombre</th>
+            <th>ID</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for team in teams %}
+        <tr>
+            <td>{{loop.index}}</td>
+            <td>{{team.name}}</td>
+            <td>{{team.id}}</td>
+            <td>
+                <a href="{{url_for('delete_team_form', id=team.id, token=user.auth_token.token)}}">Eliminar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+
+<!-- {'objUser': [{'auth_token': {'created_at': datetime.datetime(2022, 10, 29, 4, 49, 41, tzinfo=datetime.timezone.utc), 'expires_at': datetime.datetime(2022, 10, 30, 4, 49, 41, tzinfo=datetime.timezone.utc), 'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNjY3MTA1MzgxLCJpYXQiOjE2NjcwMTg5ODEsInN1YiI6ImFkbWluIiwicm9sZSI6ImFkbWluIn0.Ku9s0nVTEBq0Y0jxKc_acyCZLeF4AMtyWenK_NliiUk'}, 'email': 'admin@carrito.com', 'fullname': 'Administrador', 'id': 1, 'password': True, 'role': 'admin', 'username': 'admin'}], 'save_team_form_message': None, 'teams_count': 32, 'teams': [{'id': 34, 'name': 'Alemania'}, {'id': 27, 'name': 'Arabia Saudí'}, {'id': 5, 'name': 'Argentina'}, {'id': 10, 'name': 'Australia'}, {'id': 16, 'name': 'Belgica'}, {'id': 4, 'name': 'Brasil'}, {'id': 32, 'name': 'Camerún'}, {'id': 19, 'name': 'Canada'}, {'id': 20, 'name': 'Catar'}, {'id': 21, 'name': 'Corea del Sur'}, {'id': 18, 'name': 'Costa Rica'}, {'id': 29, 'name': 'Croacia'}, {'id': 12, 'name': 'Dinamarca'}, {'id': 9, 'name': 'Ecuador'}, {'id': 3, 'name': 'España'}, {'id': 26, 'name': 'Estados Unidos'}, {'id': 13, 'name': 'Francia'}, {'id': 24, 'name': 'Gales'}, {'id': 33, 'name': 'Ghana'}, {'id': 14, 'name': 'Inglaterra'}, {'id': 23, 'name': 'Iran'}, {'id': 17, 'name': 'Japon'}, {'id': 28, 'name': 'Marruecos'}, {'id': 7, 'name': 'Mexico'}, {'id': 25, 'name': 'Países Bajos'}, {'id': 8, 'name': 'Polonia'}, {'id': 2, 'name': 'Portugal'}, {'id': 22, 'name': 'Senegal'}, {'id': 30, 'name': 'Serbia'}, {'id': 31, 'name': 'Suiza'}, {'id': 11, 'name': 'Tunez'}, {'id': 6, 'name': 'Uruguay'}], 'groups': (), 'teams_without_group': ((34, 'Alemania'), (27, 'Arabia Saudí'), (5, 'Argentina'), (10, 'Australia'), (16, 'Belgica'), (4, 'Brasil'), (32, 'Camerún'), (19, 'Canada'), (20, 'Catar'), (21, 'Corea del Sur'), (18, 'Costa Rica'), (29, 'Croacia'), (12, 'Dinamarca'), (9, 'Ecuador'), (3, 'España'), (26, 'Estados Unidos'), (13, 'Francia'), (24, 'Gales'), (33, 'Ghana'), (14, 'Inglaterra'), (23, 'Iran'), (17, 'Japon'), (28, 'Marruecos'), (7, 'Mexico'), (25, 'Países Bajos'), (8, 'Polonia'), (2, 'Portugal'), (22, 'Senegal'), (30, 'Serbia'), (31, 'Suiza'), (11, 'Tunez'), (6, 'Uruguay')), 'groups_count': 0} -->
+<!-- Grupos -->
+<h1>Grupos</h1>
+<!-- Si tiene 8 grupos no mostrar el form para crear grupos -->
+{% if groups_count != 8 %}
+<h3>Inscribir grupos</h3>
+<form action="{{url_for('save_group_form', id=user.id, token=user.auth_token.token)}}" method="POST">
+    <div class="form-group">
+        <label for="name">Nombre</label>
+        <input type="text" name="name" id="name" class="form-control">
+    </div>
+    <!-- 4 selectores dropdown con la lista de los equipos sin grupo -->
+    <div class="form-group">
+        <label for="team1">Equipo 1</label>
+        <select name="team1" id="team1" class="form-control">
+            {% for team in teams_without_group %}
+            <option value="{{team[0]}}">{{team[1]}}</option>
+            {% endfor %}
+        </select>
+
+        <label for="team2">Equipo 2</label>
+        <select name="team2" id="team2" class="form-control">
+            {% for team in teams_without_group %}
+            <option value="{{team[0]}}">{{team[1]}}</option>
+            {% endfor %}
+        </select>
+
+        <label for="team3">Equipo 3</label>
+        <select name="team3" id="team3" class="form-control">
+            {% for team in teams_without_group %}
+            <option value="{{team[0]}}">{{team[1]}}</option>
+            {% endfor %}
+        </select>
+
+        <label for="team4">Equipo 4</label>
+        <select name="team4" id="team4" class="form-control">
+            {% for team in teams_without_group %}
+            <option value="{{team[0]}}">{{team[1]}}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Crear grupo</button>
+</form>
+{% endif %}
+<!-- Lista de grupos -->
+<h3>Lista de grupos</h3>
+{% if groups %}
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Equipo 1</th>
+            <th scope="col">Equipo 2</th>
+            <th scope="col">Equipo 3</th>
+            <th scope="col">Equipo 4</th>
+            <th scope="col">ID</th>
+            <th scope="col">Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for group in groups %}
+        <tr>
+            <th scope="row">{{loop.index}}</th>
+            <td>{{group[1]}}</td>
+            <td>
+                {% for team in teams %}
+                {% if team.id == group[2] %}
+                {{team.name}}
+                {% endif %}
+                {% endfor %}
+            </td>
+            <td>
+                {% for team in teams %}
+                {% if team.id == group[3] %}
+                {{team.name}}
+                {% endif %}
+                {% endfor %}
+            </td>
+            <td>
+                {% for team in teams %}
+                {% if team.id == group[4] %}
+                {{team.name}}
+                {% endif %}
+                {% endfor %}
+            </td>
+            <td>
+                {% for team in teams %}
+                {% if team.id == group[5] %}
+                {{team.name}}
+                {% endif %}
+                {% endfor %}
+            </td>
+            <td>{{group[0]}}</td>
+            <td>
+                <a href="{{url_for('delete_group_form', id=group[0], token=user.auth_token.token, user_id=user.id)}}">Eliminar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>No hay grupos</p>
+{% endif %}
+
+
+<!-- {'
+    objUser': [
+    {
+        'auth_token': {
+            'created_at': datetime.datetime(2022, 10, 29, 19, 22, 21, tzinfo=datetime.timezone.utc),
+            'expires_at': datetime.datetime(2022, 10, 30, 19, 22, 21, tzinfo=datetime.timezone.utc),
+            'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNjY3MTU3NzQxLCJpYXQiOjE2NjcwNzEzNDEsInN1YiI6ImFkbWluIiwicm9sZSI6ImFkbWluIn0.iUz8zvhfxGjWNAkR9HN8obyaV4RuTd5Xu3uwNThBEhk'
+        }, 
+        'email': 'admin@carrito.com', 
+        'fullname': 'Administrador', 
+        'id': 1, 
+        'password': True, 
+        'role': 'admin', 
+        'username': 'admin'
+    }
+    ], 
+    'save_team_form_message': None, 
+    'teams_count': 32, 
+    'teams': [
+    {'id': 34, 'name': 'Alemania'},{ 'id': 27,'name': 'Arabia Saudí'}, {'id': 5, 'name': 'Argentina'}, {'id': 10, 'name': 'Australia'}, {'id': 16, 'name': 'Belgica'}, {'id': 4, 'name': 'Brasil'}, {'id': 32, 'name': 'Camerún'}, {'id': 19, 'name': 'Canada'}, {'id': 20, 'name': 'Catar'}, {'id': 21, 'name': 'Corea del Sur'}, {'id': 18, 'name': 'Costa Rica'}, {'id': 29, 'name': 'Croacia'}, {'id': 12, 'name': 'Dinamarca'}, {'id': 9, 'name': 'Ecuador'}, {'id': 3, 'name': 'España'}, {'id': 26, 'name': 'Estados Unidos'}, {'id': 13, 'name': 'Francia'}, {'id': 24, 'name': 'Gales'}, {'id': 33, 'name': 'Ghana'}, {'id': 14, 'name': 'Inglaterra'}, {'id': 23, 'name': 'Iran'}, {'id': 17, 'name': 'Japon'}, {'id': 28, 'name': 'Marruecos'}, {'id': 7, 'name': 'Mexico'}, {'id': 25, 'name': 'Países Bajos'}, {'id': 8, 'name': 'Polonia'}, {'id': 2, 'name': 'Portugal'}, {'id': 22, 'name': 'Senegal'}, {'id': 30, 'name': 'Serbia'}, {'id': 31, 'name': 'Suiza'}, {'id': 11, 'name': 'Tunez'}, {'id': 42, 'name': 'Uruguay'}
+    ], 
+    'groups': ((1, 'A', 20, 9, 22, 25), (2, 'B', 14, 23, 26, 24), (3, 'C', 5, 27, 7, 8), (4, 'D', 13, 10, 12, 11), (5, 'E', 3, 18, 34, 17), (6, 'F', 16, 19, 28, 29), (7, 'G', 4, 30, 31, 32), (17, 'H', 2, 42, 33, 21)), 
+    'teams_without_group': (), 
+    'groups_count': 8, 
+    'match_groups': ((1, 1, 20, 9, None, None, None, 'Pendiente'), (2, 1, 20, 22, None, None, None, 'Pendiente'), (3, 1, 20, 25, None, None, None, 'Pendiente'), (4, 1, 9, 22, None, None, None, 'Pendiente'), (5, 1, 9, 25, None, None, None, 'Pendiente'), (6, 1, 22, 25, None, None, None, 'Pendiente'), (7, 2, 14, 23, None, None, None, 'Pendiente'), (8, 2, 14, 26, None, None, None, 'Pendiente'), (9, 2, 14, 24, None, None, None, 'Pendiente'), (10, 2, 23, 26, None, None, None, 'Pendiente'), (11, 2, 23, 24, None, None, None, 'Pendiente'), (12, 2, 26, 24, None, None, None, 'Pendiente'), (13, 3, 5, 27, None, None, None, 'Pendiente'), (14, 3, 5, 7, None, None, None, 'Pendiente'), (15, 3, 5, 8, None, None, None, 'Pendiente'), (16, 3, 27, 7, None, None, None, 'Pendiente'), (17, 3, 27, 8, None, None, None, 'Pendiente'), (18, 3, 7, 8, None, None, None, 'Pendiente'), (19, 4, 13, 10, None, None, None, 'Pendiente'), (20, 4, 13, 12, None, None, None, 'Pendiente'), (21, 4, 13, 11, None, None, None, 'Pendiente'), (22, 4, 10, 12, None, None, None, 'Pendiente'), (23, 4, 10, 11, None, None, None, 'Pendiente'), (24, 4, 12, 11, None, None, None, 'Pendiente'), (25, 5, 3, 18, None, None, None, 'Pendiente'), (26, 5, 3, 34, None, None, None, 'Pendiente'), (27, 5, 3, 17, None, None, None, 'Pendiente'), (28, 5, 18, 34, None, None, None, 'Pendiente'), (29, 5, 18, 17, None, None, None, 'Pendiente'), (30, 5, 34, 17, None, None, None, 'Pendiente'), (31, 6, 16, 19, None, None, None, 'Pendiente'), (32, 6, 16, 28, None, None, None, 'Pendiente'), (33, 6, 16, 29, None, None, None, 'Pendiente'), (34, 6, 19, 28, None, None, None, 'Pendiente'), (35, 6, 19, 29, None, None, None, 'Pendiente'), (36, 6, 28, 29, None, None, None, 'Pendiente'), (37, 7, 4, 30, None, None, None, 'Pendiente'), (38, 7, 4, 31, None, None, None, 'Pendiente'), (39, 7, 4, 32, None, None, None, 'Pendiente'), (40, 7, 30, 31, None, None, None, 'Pendiente'), (41, 7, 30, 32, None, None, None, 'Pendiente'), (42, 7, 31, 32, None, None, None, 'Pendiente'), (43, 17, 2, 42, None, None, None, 'Pendiente'), (44, 17, 2, 33, None, None, None, 'Pendiente'), (45, 17, 2, 21, None, None, None, 'Pendiente'), (46, 17, 42, 33, None, None, None, 'Pendiente'), (47, 17, 42, 21, None, None, None, 'Pendiente'), (48, 17, 33, 21, None, None, None, 'Pendiente'))
+} -->
+
+<!-- match_groups: id, group_id, team_1, team_2, score_1, score_2, date, status-->
+
+<!-- Si existen 48 partidos -->
+<!-- {# if match_groups_count == 48 #} -->
+<h3>
+    Partidos de la fase de grupos
+</h3>
+
+<!-- Mostrar la tabla de partidos de la fase de grupos -->
+<table class="table table-striped table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Grupo</th>
+            <th>Equipo 1</th>
+            <th>Equipo 2</th>
+            <th>Estado</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for match in match_groups %}
+        <tr>
+            <td>{{ loop.index }}</td>
+            <td> 
+                {% for group in groups %}
+                    {% if group.0 == match.1 %}
+                        {{ group.1 }}
+                    {% endif %}
+                {% endfor %}
+            </td>
+            <td>
+                {% for team in teams %}
+                    {% if team.id == match.2 %}
+                        {{ team.name }}
+                    {% endif %}
+                {% endfor %}
+            </td>
+            <td>
+                {% for team in teams %}
+                    {% if team.id == match.3 %}
+                        {{ team.name }}
+                    {% endif %}
+                {% endfor %}
+            </td>
+            <td>{{ match.7 }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<!-- {# endif #} -->

@@ -4,7 +4,7 @@ from modelo.user import User # Importar la clase User
 class UserController(): # Clase para el modelo de usuario
 
     @classmethod # Método de clase
-    def login(cls, db, user: User): # Iniciar sesión
+    def login(self, db, user: User): # Iniciar sesión
         try: # Intentar
             cursor = db.connection.cursor() # Crear el cursor
             sql = """SELECT id, username, password, email, fullname, role FROM users WHERE username = '{}'""".format(user.username) # Query para obtener los datos del usuario con el nombre de username ingresado
