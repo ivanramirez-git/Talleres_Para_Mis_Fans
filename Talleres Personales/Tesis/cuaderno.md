@@ -1,4 +1,4 @@
-<!-- 
+<!--
 2.2 Funciones del producto
 2.3 Características del usuario
 2.4 Restricciones
@@ -43,7 +43,7 @@ Las funciones principales del sistema son las siguientes:
     - Funciones de creacion de multas o batidas
     - Funciones de asignacion de multas
     - Funciones de aprobacion de multas
-    - Funciones de publicacion de multas 
+    - Funciones de publicacion de multas
     - Funciones de documentacion de multas, preavisos, llamados de atencion, memorandos y demas sancciones
     - Funciones de pago de multas
 
@@ -67,7 +67,7 @@ Las funciones principales del sistema son las siguientes:
     - Funciones de publicacion de cuentas de cobro
     - Funciones de funciones de recibo de pagos
     - Funciones de notificacion de saldos pendientes
-    
+
 - El sistema debe garantizar el acceso a toda la informacion relevante para cada individuo de la organizacion.
     - Funciones de consulta de informacion de usuarios
     - Funciones de consulta de informacion de tareas
@@ -187,9 +187,9 @@ a fallos, los idiomas -->
 
 # 2.5 Modelo de dominio
 
-Definiciones mas importantes del modelo de domino: 
+Definiciones mas importantes del modelo de domino:
 
-# Suposiciones y dependencias
+# 2.6 Suposiciones y dependencias
 
 <!-- Lista de factores que afectan los requerimientos:
 Suposiciones:
@@ -198,3 +198,6 @@ requerimientos indicados en la sección 3. Estos pueden incluir componentes come
 o de terceras personas que usted planea utilizar. Tenga en cuenta que el proyecto
 podría afectarse si estas suposiciones son incorrectas, no se comparten, o se cambian
 [1] -->
+
+
+# 2.7 Distribución de Requerimientos
