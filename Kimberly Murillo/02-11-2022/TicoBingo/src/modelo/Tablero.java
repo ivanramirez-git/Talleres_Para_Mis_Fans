@@ -1,6 +1,7 @@
 package modelo;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 // aleatorio
 import java.util.Random;
 
@@ -14,11 +15,122 @@ public class Tablero extends Thread implements Serializable {
 
     private int[][] tablero;
     private int[] numeros;
+    private int indexNumeros;
     private int id;
     private Estado estado;
+    private JPanel panel;
+    JTable tabla;
 
-    public JPanel getPanel() {
-        JTable tabla = new JTable();
+    // Si este tablero es ganador, agregar a la lista de ganadores del estado el id
+    // de este tablero
+    public void verificarGanador() {
+
+        // Un jugador puede ganar llenando cualquier fila, columna, diagonales o cuatro
+        // esquinas solamente, los numeros que se encuentran en el centro no cuentan
+        // los numeros que han salido estan en la lista de numeros
+        boolean ganador = false;
+        // verificar filas
+        for (int i = 0; i < 5; i++) {
+            boolean[] numerosEncontradosFila = new boolean[5];
+            for (int j = 0; j < 5; j++) {
+                for (int k = 0; k < indexNumeros; k++) {
+                    if (tablero[i][j] == numeros[k]) {
+                        numerosEncontradosFila[j] = true;
+                    }
+                }
+            }
+            if (numerosEncontradosFila[0] && numerosEncontradosFila[1] && numerosEncontradosFila[2]
+                    && numerosEncontradosFila[3] && numerosEncontradosFila[4]) {
+                ganador = true;
+                break;
+            }
+        }
+        // verificar columnas
+        if (!ganador) {
+
+            for (int i = 0; i < 5; i++) {
+                boolean[] numerosEncontradosColumna = new boolean[5];
+                for (int j = 0; j < 5; j++) {
+                    for (int k = 0; k < indexNumeros; k++) {
+                        if (tablero[j][i] == numeros[k]) {
+                            numerosEncontradosColumna[j] = true;
+                        }
+                    }
+                }
+                if (numerosEncontradosColumna[0] && numerosEncontradosColumna[1] && numerosEncontradosColumna[2]
+                        && numerosEncontradosColumna[3] && numerosEncontradosColumna[4]) {
+                    ganador = true;
+                    break;
+                }
+            }
+        }
+        // verificar diagonales
+        if (!ganador) {
+            boolean[] numerosEncontradosDiagonal1 = new boolean[5];
+            boolean[] numerosEncontradosDiagonal2 = new boolean[5];
+            for (int i = 0; i < 5; i++) {
+                for (int k = 0; k < indexNumeros; k++) {
+                    if (tablero[i][i] == numeros[k]) {
+                        numerosEncontradosDiagonal1[i] = true;
+                    }
+                    if (tablero[i][4 - i] == numeros[k]) {
+                        numerosEncontradosDiagonal2[i] = true;
+                    }
+                }
+            }
+            if (numerosEncontradosDiagonal1[0] && numerosEncontradosDiagonal1[1] && numerosEncontradosDiagonal1[2]
+                    && numerosEncontradosDiagonal1[3] && numerosEncontradosDiagonal1[4]) {
+                ganador = true;
+            }
+            if (numerosEncontradosDiagonal2[0] && numerosEncontradosDiagonal2[1] && numerosEncontradosDiagonal2[2]
+                    && numerosEncontradosDiagonal2[3] && numerosEncontradosDiagonal2[4]) {
+                ganador = true;
+            }
+        }
+        // verificar esquinas
+        if (!ganador) {
+            boolean[] numerosEncontradosEsquinas = new boolean[4];
+            for (int i = 0; i < 4; i++) {
+                for (int k = 0; k < indexNumeros; k++) {
+                    if (tablero[0][0] == numeros[k]) {
+                        numerosEncontradosEsquinas[0] = true;
+                    }
+                    if (tablero[0][4] == numeros[k]) {
+                        numerosEncontradosEsquinas[1] = true;
+                    }
+                    if (tablero[4][0] == numeros[k]) {
+                        numerosEncontradosEsquinas[2] = true;
+                    }
+                    if (tablero[4][4] == numeros[k]) {
+                        numerosEncontradosEsquinas[3] = true;
+                    }
+                }
+            }
+            if (numerosEncontradosEsquinas[0] && numerosEncontradosEsquinas[1] && numerosEncontradosEsquinas[2]
+                    && numerosEncontradosEsquinas[3]) {
+                ganador = true;
+            }
+        }
+
+        if (ganador) {
+            if (estado.get("ganadores") != null) {
+                // Agregar a la lista de ganadores
+                ArrayList<Integer> ganadores = (ArrayList<Integer>) estado.get("ganadores");
+                // verificar que este tablero no este en la lista de ganadores
+                if (!ganadores.contains(this.id)) {
+                    ganadores.add(this.id);
+                }
+                estado.set("ganadores", ganadores);
+            } else {
+                // Crear la lista de ganadores
+                ArrayList<Integer> ganadores = new ArrayList<Integer>();
+                ganadores.add(id);
+                estado.set("ganadores", ganadores);
+            }
+        }
+    }
+
+    public void refreshPanel() {
         tabla.setModel(new javax.swing.table.DefaultTableModel(
                 new Object[][] {
                         { tablero[0][0], tablero[0][1], tablero[0][2], tablero[0][3], tablero[0][4] },
@@ -30,37 +142,75 @@ public class Tablero extends Thread implements Serializable {
                 new String[] {
                         "B", "I", "N", "G", "O"
                 }));
-        // imprimir lista de numeros
-        System.out.print("[");
-        for (int i = 0; i < numeros.length - 1; i++) {
-            System.out.print(numeros[i] + ", ");
-        }
-        System.out.println(numeros[numeros.length - 1] + "]");
-
-        // si un numero esta en la lista de numeros, cambiarlo a rojo
+        // si un numero esta en la lista de numeros, cambiar el color de la celda a
+        // rojo con bold
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 5; j++) {
                 for (int k = 0; k < numeros.length; k++) {
                     if (tablero[i][j] == numeros[k]) {
-                        tabla.setValueAt("<html><font color='red'>" + tablero[i][j] + "</font></html>", i, j);
+                        // Cuadrado verde
+                        tabla.setValueAt("<html><font color='red'><b>" + tablero[i][j] + "</b></font></html>", i, j);
                     }
                 }
             }
         }
+    }
 
-        JPanel panel = new JPanel();
-        panel.add(tabla);
-        panel.setVisible(true);
-
-        return panel;
+    public JPanel getPanel() {
+        return this.panel;
     }
 
     public Tablero(int id, Estado estado) {
         tablero = new int[5][5];
-        numeros = new int[25];
+        numeros = new int[26];
         this.id = id;
         this.estado = estado;
+        this.indexNumeros = 1;
+        this.tabla = new JTable();
+        this.panel = new JPanel();
+        this.panel.add(tabla);
+        this.panel.setVisible(true);
         generarTableroAleatorio();
+        this.start();
+    }
+
+    @Override
+    public void run() {
+        // si en el estado el numero currentNumber es igual a un numero del tablero,
+        // agregar a la lista de numeros
+        while (true) {
+            if (estado.get("currentNumber") != null) {
+                int numero = (int) estado.get("currentNumber");
+                for (int i = 0; i < 5; i++) {
+                    for (int j = 0; j < 5; j++) {
+                        // validar que no este en la lista de numeros
+                        if (tablero[i][j] == numero) {
+                            boolean existe = false;
+                            for (int k = 0; k < numeros.length; k++) {
+                                if (numeros[k] == numero) {
+                                    existe = true;
+                                    break;
+                                }
+                            }
+                            if (!existe) {
+                                numeros[indexNumeros] = numero;
+                                indexNumeros++;
+                                // actualizar panel
+                                refreshPanel();
+                                // verificar si es ganador
+                                verificarGanador();
+                            }
+                        }
+                    }
+                }
+            }
+            try {
+
+                Thread.sleep(150);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     // Metodo privado para generar un numero aleatorio
@@ -136,7 +286,8 @@ public class Tablero extends Thread implements Serializable {
 
         // Asigna el numero 0 a la casilla central
         tablero[2][2] = 0;
-        this.imprimirTablero();
+        // this.imprimirTablero();
+        refreshPanel();
     }
 
     // Metodo privado para verificar si un numero esta repetido en el tablero
