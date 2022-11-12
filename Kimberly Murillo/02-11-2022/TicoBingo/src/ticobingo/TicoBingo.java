@@ -11,6 +11,7 @@ import java.util.List;
 import javax.swing.JFrame;
 
 import modelo.Tablero;
+import vista.Home;
 
 /**
  *
@@ -25,21 +26,17 @@ public class TicoBingo {
         // Estado global
         Estado estado = new Estado();
         int numero;
-        JFrame frame = new JFrame();
+        Home frame = new Home();
         // Ciclo para enviar numeros a el estado
 
         List<Tablero> tableros = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
             tableros.add(new Tablero(i, estado));
-            tableros.get(i).getPanel().setBounds(10, i * 105 + 10, 400, 100);
-            frame.add(tableros.get(i).getPanel());
+            tableros.get(i).getPanel().setBounds(10, (i+1) * 105 + 10, 400, 100);
+            // frame.add(tableros.get(i).getPanel());
             System.out.println("Tablero " + i + " agregado");
         }
-        frame.pack();
-        // frame maximizado
-        frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
-        // si se cierra matar el proceso
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
         frame.setVisible(true);
         do {
             // imprimir estado

@@ -26,17 +26,16 @@ public class Home extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        java.awt.GridBagConstraints gridBagConstraints;
 
         panelHeader = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        txtBolita = new javax.swing.JTextField();
         panelBody = new javax.swing.JPanel();
         menuBar = new javax.swing.JMenuBar();
         menuArchivo = new javax.swing.JMenu();
@@ -51,53 +50,57 @@ public class Home extends javax.swing.JFrame {
         menuItemAcercaDe = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new java.awt.GridBagLayout());
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        panelHeader.setLayout(new java.awt.GridBagLayout());
+        panelHeader.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setText("TicoBingo");
-        panelHeader.add(jLabel2, new java.awt.GridBagConstraints());
-
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Iconos/Nuevo Juego.png"))); // NOI18N
         jButton4.setText("Nuevo Juego");
-        panelHeader.add(jButton4, new java.awt.GridBagConstraints());
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        panelHeader.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(105, 5, -1, 70));
 
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Iconos/Generar Cartones.png"))); // NOI18N
         jButton3.setText("Generar Cartones");
-        panelHeader.add(jButton3, new java.awt.GridBagConstraints());
+        panelHeader.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 5, -1, -1));
 
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Iconos/Vender Cartones.png"))); // NOI18N
         jButton2.setText("Vender Cartones");
-        panelHeader.add(jButton2, new java.awt.GridBagConstraints());
+        panelHeader.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 5, -1, -1));
 
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Iconos/Comenzar Bingo.jpg"))); // NOI18N
         jButton1.setText("Comenzar Bingo");
-        panelHeader.add(jButton1, new java.awt.GridBagConstraints());
+        panelHeader.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(645, 5, -1, -1));
 
-        jLabel1.setText("Bolita No");
-        panelHeader.add(jLabel1, new java.awt.GridBagConstraints());
-
-        jLabel3.setText("11");
-        panelHeader.add(jLabel3, new java.awt.GridBagConstraints());
-
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Iconos/Nueva Bolita.png"))); // NOI18N
         jButton5.setText("Nueva Bolita");
-        panelHeader.add(jButton5, new java.awt.GridBagConstraints());
+        panelHeader.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1025, 5, -1, -1));
 
-        getContentPane().add(panelHeader, new java.awt.GridBagConstraints());
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Iconos/ticobingo.PNG"))); // NOI18N
+        jLabel2.setAlignmentY(0.0F);
+        panelHeader.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, -1, -1));
 
+        jLabel24.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(204, 51, 255));
+        jLabel24.setText("BOLITA N°");
+        panelHeader.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 30, -1, -1));
+
+        txtBolita.setEditable(false);
+        txtBolita.setFont(new java.awt.Font("Tahoma", 1, 28)); // NOI18N
+        txtBolita.setForeground(new java.awt.Color(255, 0, 102));
+        txtBolita.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        panelHeader.add(txtBolita, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 10, 71, 48));
+
+        getContentPane().add(panelHeader, new org.netbeans.lib.awtextra.AbsoluteConstraints(4, 1, 1200, 80));
+
+        panelBody.setAlignmentX(0.0F);
+        panelBody.setAlignmentY(0.0F);
         panelBody.setPreferredSize(new java.awt.Dimension(1000, 450));
-
-        javax.swing.GroupLayout panelBodyLayout = new javax.swing.GroupLayout(panelBody);
-        panelBody.setLayout(panelBodyLayout);
-        panelBodyLayout.setHorizontalGroup(
-            panelBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1000, Short.MAX_VALUE)
-        );
-        panelBodyLayout.setVerticalGroup(
-            panelBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 450, Short.MAX_VALUE)
-        );
-
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        getContentPane().add(panelBody, gridBagConstraints);
+        panelBody.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().add(panelBody, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 1200, -1));
 
         menuArchivo.setText("Archivo");
 
@@ -143,6 +146,10 @@ public class Home extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
@@ -150,9 +157,8 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel24;
     private javax.swing.JMenu menuArchivo;
     private javax.swing.JMenu menuAyuda;
     private javax.swing.JMenuBar menuBar;
@@ -166,5 +172,11 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JMenu menuTicobingo;
     private javax.swing.JPanel panelBody;
     private javax.swing.JPanel panelHeader;
+    private javax.swing.JTextField txtBolita;
     // End of variables declaration//GEN-END:variables
+
+    // get panel body
+    public javax.swing.JPanel getPanelBody() {
+        return panelBody;
+    }
 }
