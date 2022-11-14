@@ -21,7 +21,7 @@ referenciados. -->
 
 Las funciones principales del sistema son las siguientes:
 
-- El sistema debe permitir gestionar cuentas de usuario con distintos roles.
+- El sistema debe permitir gestionar cuentas de usuario con distintos roles. (Caso de uso)
     - Funciones de registro
     - Funciones de login
     - Funciones de logout
@@ -83,7 +83,38 @@ Las funciones principales del sistema son las siguientes:
     - Funciones de edición de roles
     - Funciones de eliminación de roles
     - Funciones para asignar permisos a los roles autorizaciones y restricciones, todos deben funcionar con el mismo usuario
+    <!-- 
+    
+casos_de_uso = {
+    'registro': {
+        'descripcion': 'Permite a un usuario registrarse en el sistema',
+        'precondiciones': 'El usuario no debe estar registrado en el sistema',
+        'postcondiciones': 'El usuario debe estar registrado en el sistema',
+        'flujo_principal': [
+            'El usuario ingresa su nombre de usuario',
+            'El usuario ingresa su contraseña',
+            'El usuario ingresa su correo electrónico',
+            'El sistema valida los datos ingresados',
+            'El sistema registra al usuario en el sistema',
+            'El sistema envía un correo de confirmación al usuario',
+        ],
+        'flujo_alternativo': [
+            'El usuario ingresa un nombre de usuario ya registrado',
+            'El sistema muestra un mensaje de error',
+            'El sistema no registra al usuario en el sistema',
+        ],
+        'excepciones': [
+            'El sistema no puede enviar el correo de confirmación',
+            'El sistema muestra un mensaje de error',
+            'El sistema no registra al usuario en el sistema',
+        ],
+    },
+    'login': {
+        'descripcion': 'Permite a un usuario ingresar al sistema',
+        'precondiciones': 'El usuario debe estar registrado en el sistema',
+        'postcondiciones': 'El usuario debe ser un asociado activo',
 
+     -->
 ## Quien lo va leer?
 
 - Cliente: Miembros de la organización que serán el cliente y nos darán una retroalimentación de como se sienten con las funcionalidades  propuestas y si se sienten satisfechos con el producto final.
