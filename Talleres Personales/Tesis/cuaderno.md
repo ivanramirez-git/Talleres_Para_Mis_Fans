@@ -88,7 +88,7 @@ Las funciones principales del sistema son las siguientes:
 
 - Cliente: Miembros de la organización que serán el cliente y nos darán una retroalimentación de como se sienten con las funcionalidades  propuestas y si se sienten satisfechos con el producto final.
 - Desarrolladores: Ingenieros de software que están encargados de desarrollar el producto y que se encargaran de la implementación de las funcionalidades propuestas.
-- Stakeholders: Director del proyecto, empleados ded la organización, ex asociados, etc.
+- Stakeholders: Director del proyecto, empleados de la organización, ex asociados, etc.
 
 ## Medios gráficos
 
@@ -124,31 +124,36 @@ A continuación se detallan las características de los usuarios del sistema a t
 
 - Asociado:
 
-|Características del Usuario|Descripción|
-|-|-|
-|Nivel de Seguridad o de Privilegios|Los asociados pueden ver las tareas asignadas, los extras de alimentación y lavado de ropa, las multas y las actas de reuniones.|
-|Roles|El rol de los asociados es el mas menos funcionalidades activas tendrá, solo tienen oportunidad de gestionar datos que a personales que le correspondan, todo miembro de la organización es asociado.|
-|Nivel de Estudios o Experiencia Técnica|Los asociados deben ser admitidos para poder hacer uso del aplicativo por medio de entrevista, estarán en un periodo de ratificación por 3 meses y una vez ratificados su perfil pasara a ser el de un asociado ratificado, que tendrá los mismos privilegios que un asociado en via de ratificación en el sistema.|
-|Frecuencia de Uso|Los asociados serán los que mas usen el aplicativo, casi a diario, para consultar el calendario, recibir notificaciones de tareas pendientes, revisar su saldo actual, pedir extras, entre otros.|
+| Características del Usuario             | Descripción                                                                                                                                                                                                                                                                                                         |
+| --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Nivel de Seguridad o de Privilegios     | Los asociados pueden ver las tareas asignadas, los extras de alimentación y lavado de ropa, las multas y las actas de reuniones.                                                                                                                                                                                    |
+| Roles                                   | El rol de los asociados es el mas menos funcionalidades activas tendrá, solo tienen oportunidad de gestionar datos que a personales que le correspondan, todo miembro de la organización es asociado.                                                                                                               |
+| Nivel de Estudios o Experiencia Técnica | Los asociados deben ser admitidos para poder hacer uso del aplicativo por medio de entrevista, estarán en un periodo de ratificación por 3 meses y una vez ratificados su perfil pasara a ser el de un asociado ratificado, que tendrá los mismos privilegios que un asociado en via de ratificación en el sistema. |
+| Frecuencia de Uso                       | Los asociados serán los que mas usen el aplicativo, casi a diario, para consultar el calendario, recibir notificaciones de tareas pendientes, revisar su saldo actual, pedir extras, entre otros.                                                                                                                   |
+
+Tabla #: Características de los asociados
 
 - Miembro de junta directiva:
 
-|Características del Usuario|Descripción|
-|-|-|
-|Nivel de Seguridad o de Privilegios|Los miembros de la junta directiva asignar tareas, aprobar extras, aprobar multas, realizar actas de reuniones, actualizar tabla de cobro, entre otros.|
-|Roles|El rol de los miembros de la junta directiva es el mas funcionalidades activas tendrá, tienen oportunidad de gestionar datos de toda la organización.|
-|Nivel de Estudios o Experiencia Técnica|Los miembros de la junta directiva deben ser admitidos elegidos en asamblea seccional, una vez son miembros de la junta se les activara las funciones adicionales a su perfil de junta directiva.|
-|Frecuencia de Uso|Los miembros de la junta directiva usaran el aplicativo como cualquier asociado, pero las funcionalidades adicionales serán menos frecuentes, una vez por semana o cada 15 días.|
+| Características del Usuario             | Descripción                                                                                                                                                                                       |
+| --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Nivel de Seguridad o de Privilegios     | Los miembros de la junta directiva asignar tareas, aprobar extras, aprobar multas, realizar actas de reuniones, actualizar tabla de cobro, entre otros.                                           |
+| Roles                                   | El rol de los miembros de la junta directiva es el mas funcionalidades activas tendrá, tienen oportunidad de gestionar datos de toda la organización.                                             |
+| Nivel de Estudios o Experiencia Técnica | Los miembros de la junta directiva deben ser admitidos elegidos en asamblea seccional, una vez son miembros de la junta se les activara las funciones adicionales a su perfil de junta directiva. |
+| Frecuencia de Uso                       | Los miembros de la junta directiva usaran el aplicativo como cualquier asociado, pero las funcionalidades adicionales serán menos frecuentes, una vez por semana o cada 15 días.                  |
+
+Tabla #: Características de los miembros de la junta directiva
 
 - Administrador:
 
-|Características del Usuario|Descripción|
-|-|-|
-|Nivel de Seguridad o de Privilegios|El administrador tendrá control total del sistema, podrá crear, editar y eliminar cualquier tipo de información.|
-|Roles|El rol de los administradores es exclusivo para controlar data en casos de emergencia.|
-|Nivel de Estudios o Experiencia Técnica|Los administradores ya están previamente definidos por el equipo de desarrollo, solo ellos tendrán acceso a las funcionalidades y datos del sistema.|
-|Frecuencia de Uso|Los administradores usaran el aplicativo solo en caso de emergencia, para corregir errores o para actualizar datos, una vez por trimestre.|
+| Características del Usuario             | Descripción                                                                                                                                          |
+| --------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Nivel de Seguridad o de Privilegios     | El administrador tendrá control total del sistema, podrá crear, editar y eliminar cualquier tipo de información.                                     |
+| Roles                                   | El rol de los administradores es exclusivo para controlar data en casos de emergencia.                                                               |
+| Nivel de Estudios o Experiencia Técnica | Los administradores ya están previamente definidos por el equipo de desarrollo, solo ellos tendrán acceso a las funcionalidades y datos del sistema. |
+| Frecuencia de Uso                       | Los administradores usaran el aplicativo solo en caso de emergencia, para corregir errores o para actualizar datos, una vez por trimestre.           |
 
+Tabla #: Características de los administradores
 # 2.4 Restricciones
 
 <!-- Las restricciones son las limitaciones que se deben tener en cuenta para el desarrollo del sistema, estas pueden ser de tipo tecnológico, de tiempo, de personal, de recursos, etc. -->
@@ -159,15 +164,15 @@ A continuación se detallan las características de los usuarios del sistema a t
 a fallos, los idiomas -->
 - El aplicativo estará restringido a los reglamentos y estatutos de la organización.
 - El idioma del aplicativo sera el español ya que esta bastante claro los usuarios que lo usaran.
+- La tolerancia a fallos será de 0.1% de los datos ingresados, y estara disponible en el aplicativo el 99% del tiempo, tambien se tendra en cuenta el tiempo de respuesta del aplicativo, que sera de maximo 5 segundos, aunque se espera que sea menor.
 
 ## Restricciones de software
 
-- Una restricción sera el nivel de parametrization que le podamos dar al ERP.
+- Una restricción a nivel de software sera el nivel de parametrization que le podamos dar al ERP.
 
 ## Restricciones de hardware
 
-- En dispositivos con una api de Android menor a la 28 no podrá ser instalado el aplicativo.
-
+- En dispositivos con iOS debemos esperar respuesta por parte de apple para poder publicar la aplicación en la tienda de aplicaciones, ya que depende de ellos la aprobación de la aplicación.
 ## Otras restricciones
 
 - Requisitos de confiabilidad:
@@ -199,13 +204,103 @@ o de terceras personas que usted planea utilizar. Tenga en cuenta que el proyect
 podría afectarse si estas suposiciones son incorrectas, no se comparten, o se cambian
 [1] -->
 
+## Suposiciones
+
+- Una conexión a internet es necesaria para el funcionamiento del aplicativo.
+- El aplicativo solo funcionara en dispositivos con iOS, Android y Web.
+- Una suposicion es que la organizacion retrase las entregas de informacion, lo que tardaria el desarrollo del aplicativo y por ende algunos requerimientos no se podrian cumplir.
+
+## Dependencias
+
+- Dependemos de la organizacion, cuando le llevemos una propuesta de automatizacion o cambio de algun requerimiento, la estructura de la organizacion esta sujeta a aprobar todo desde juntas que se desarrollan 1 vez por semana, si un requerimiento requiere de un cambio en la estructura de la organizacion, este requerimiento no se podria cumplir hasta que la organizacion apruebe el cambio.
+- Dependencia de provedores de servicio como Google Firebase, que es el servicio que usaremos para el almacenamiento de datos, si este servicio deja de funcionar, el aplicativo no podria funcionar.
+
+
 
 # 2.7 Distribución de Requerimientos
 
 
+<!-- 
+Esta sección permite realizar un mapeo de los requerimientos con respecto a las funciones del producto y a los componentes, módulos o subsistemas que se definan inicialmente. Esta distribución es muy importante porque permite localizar los requerimientos, conociendo en que módulo o parte del sistema se puede encontrar ya sea para validar, verificar o actualizar. Esto debe ser consistente con la estrutura propuesta en la seccion 3 de este documento. 
+
+En la ilustración 14 se propone un formato sencillo para el mapeo y la distribución de los requerimientos, es un ejemplo de la realización de un proyecto de Póker en donde se manejaron diferentes módulos y se utilizaron casos de uso para identificar los requerimientos. 
+
+Es  importante tener en cuenta que cuando se realizan diagramas con imágenes, manejo de colores y demás herramientas gráficas se debe dejar explícito el significado de cada uno para que el lector se familiarice y comprenda con facilidad todo lo que se quiere expresar. 
+
+Por último, en esta sección se deben listar los requerimientos planeados para futuras versiones del sistema con una breve descripción de cada uno.  -->
 
 
+<!--  
+ 
+Las funciones principales del sistema son las siguientes:
 
+- El sistema debe permitir gestionar cuentas de usuario con distintos roles. (Caso de uso)
+    - Funciones de registro
+    - Funciones de login
+    - Funciones de logout
 
+- El sistema debe permitir gestionar todo el ciclo de vida de los oficios y tareas asignadas a los asociados.
+    - Funciones de asignación de tareas
+    - Funciones de mostrar tareas a traves de calendario y notificaciones
+    - Funciones de revision de tareas asignadas
+    - Funciones de documentación de tareas asignadas
+    - Funciones para consultar las instrucciones de las tareas
+    - Funciones para calificación y sugerencias a cerca de las tareas realizadas
 
+- El sistema debe permitir gestionar todo el ciclo de vida de los extras de alimentación o lavado de ropa.
+    - Funciones de asignación de extras
+    - Funciones de aprobación de extras
+    - Funciones de documentación de extras
 
+- El sistema debe permitir gestionar todo el ciclo de vida de las multas o batidas.
+    - Funciones de creación de multas o batidas
+    - Funciones de asignación de multas
+    - Funciones de aprobación de multas
+    - Funciones de publicación de multas
+    - Funciones de documentación de multas, preavisos, llamados de atención, memorandos y demás sanciones
+    - Funciones de pago de multas
+
+- El sistema debe permitir gestionar todo el ciclo de vida de las actas de reuniones.
+    - Funciones de construcción de actas, (editor de texto dentro del sistema con formatos de actas predefinidos)
+    - Funciones de publicación de actas
+
+- El sistema debe permitir gestionar todo el ciclo de vida de los informes por cargos.
+    - Funciones de creación de informes (manejo de facturas, editor especializado para informes)
+    - Funciones de revision de informes
+    - Funciones de publicación de informes
+
+- El sistema debe permitir gestionar todo el ciclo de vida de los reglamentos por sedes y estatutos de la organización.
+    - Funciones de creación y edición de reglamentos
+    - Funciones de revision de reglamentos
+    - Funciones de publicación de reglamentos
+    - Funciones de búsqueda de artículos de reglamentos
+
+- El sistema debe permitir gestionar todo el ciclo de vida de cuotas y cuentas de cobro a los asociados.
+    - Funciones de creación de cuotas
+    - Funciones de publicación de cuentas de cobro
+    - Funciones de funciones de recibo de pagos
+    - Funciones de notificación de saldos pendientes
+
+- El sistema debe garantizar el acceso a toda la información relevante para cada individuo de la organización.
+    - Funciones de consulta de información de usuarios
+    - Funciones de consulta de información de tareas
+    - Funciones de consulta de información de extras
+    - Funciones de consulta de información de multas
+    - Funciones de consulta de información de actas
+    - Funciones de consulta de información de informes
+    - Funciones de consulta de información de reglamentos
+    - Funciones de consulta de información de cuotas
+
+- El sistema debe permitir gestionar todos los roles de la organización
+    - Funciones de creación de roles
+    - Funciones de edición de roles
+    - Funciones de eliminación de roles
+    - Funciones para asignar permisos a los roles autorizaciones y restricciones, todos deben funcionar con el mismo usuario -->
+    
+<!-- ✅ : Pertenece al modulo
+    ❌: No pertenece al modulo
+    🚧: No esta definido
+     -->
+| **Modulos** <hr> **Funcionalidades**             | Servidor | App Movil | App Web | Casos de uso<hr>Nombre | ID  |
+| ------------------------------------------------ | -------- | --------- | ------- | ---------------------- | --- |
+| Gestionar cuentas de usuario con distintos roles | ✅        | ✅         | ✅       | Registrar usuario      | 1   |
