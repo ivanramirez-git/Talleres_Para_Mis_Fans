@@ -7,3 +7,5 @@
 |*Postcondiciones*| - El sistema agregará la tarea a la lista de tareas realizadas
 |*Flujo principal*|0.  El administrador ingresa a la lista de tareas, donde se muestran las tareas pendientes organizadas por fecha ascendente<br>1.  El administrador selecciona una tarea<br>2.  El administrador puede ver los detalles de la tarea<br>3.  El administrador puede aprueba la tarea<br>4.  El sistema muestra un mensaje de éxito
 |*Flujos alternos*|0. <br> 0. El administrador rechaza la tarea<br>1. El sistema muestra un mensaje de éxito
+
+Tabla #. Caso de uso "Revisar tarea realizada"

@@ -7,3 +7,5 @@
 |*Postcondiciones*| - El sistema muestra un calendario y en el se muestran las tareas asignadas al asociado
 |*Flujo principal*|0.  El asociado ingresa a la pantalla de calendario<br>1.  El sistema muestra un calendario<br>2.  En el calendario se muestran las tareas asignadas al asociado
 |*Flujos alternos*|0. <br> 0. El asociado no tiene tareas asignadas<br>1. El sistema muestra un calendario vacío
+
+Tabla #. Caso de uso "Mostrar tareas en calendario"

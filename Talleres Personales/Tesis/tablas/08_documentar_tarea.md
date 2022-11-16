@@ -7,3 +7,5 @@
 |*Postcondiciones*| - El sistema guarda la documentación de la tarea asignada<br> - Las prioridades de las asignaciones siguientes se actualizan
 |*Flujo principal*|0.  El sistema asigna una tarea a un asociado<br>1.  El sistema guarda la documentación de la tarea asignada<br>2.  El sistema actualiza las prioridades de las asignaciones siguientes
 |*Flujos alternos*|0. <br> 0. No hay tareas asignadas<br>1. El sistema duerme
+
+Tabla #. Caso de uso "Documentar tarea realizada"

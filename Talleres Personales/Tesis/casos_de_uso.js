@@ -49,6 +49,7 @@ const casos_uso = {
                 "El sistema muestra un mensaje de error en el formulario"
             ]
         ],
+        pie_de_tabla: 'Tabla #. Caso de uso "Registro de usuario"'
     },
     login: {
         titulo: "Login de usuario",
@@ -87,6 +88,7 @@ const casos_uso = {
                 "El sistema muestra un mensaje de error"
             ]
         ],
+        pie_de_tabla: 'Tabla #. Caso de uso "Login de usuario"'
     },
     logout: {
         titulo: "Logout de usuario",
@@ -113,6 +115,7 @@ const casos_uso = {
                 "El sistema muestra un mensaje de error"
             ]
         ],
+        pie_de_tabla: 'Tabla #. Caso de uso "Logout de usuario"'
     },
     asignar_tarea: {
         titulo: "Asignar tarea",
@@ -155,7 +158,8 @@ const casos_uso = {
                 "El sistema crea la tarea",
                 "Continuar con el flujo principal, paso 2"
             ]
-        ]
+        ],
+        pie_de_tabla: 'Tabla #. Caso de uso "Asignar tarea"'
     },
     mostrar_tareas: {
         titulo: "Mostrar lista de tareas",
@@ -179,7 +183,8 @@ const casos_uso = {
                 "El asociado no tiene tareas asignadas",
                 "El sistema muestra un mensaje que indica que no tiene tareas asignadas",
             ],
-        ]
+        ],
+        pie_de_tabla: 'Tabla #. Caso de uso "Mostrar lista de tareas"'
     },
     mostrar_tareas_calendario: {
         titulo: "Mostrar tareas en calendario",
@@ -204,7 +209,8 @@ const casos_uso = {
                 "El asociado no tiene tareas asignadas",
                 "El sistema muestra un calendario vacío",
             ],
-        ]
+        ],
+        pie_de_tabla: 'Tabla #. Caso de uso "Mostrar tareas en calendario"'
     },
     mostrar_tareas_notificaciones: {
         titulo: "Notificar tareas",
@@ -230,7 +236,8 @@ const casos_uso = {
                 "El asociado no tiene una sesión activa",
                 "El sistema no envía notificaciones",
             ],
-        ]
+        ],
+        pie_de_tabla: 'Tabla #. Caso de uso "Notificar tareas"'
     },
     revisar_tarea: {
         titulo: "Revisar tarea realizada",
@@ -258,7 +265,8 @@ const casos_uso = {
                 "El administrador rechaza la tarea",
                 "El sistema muestra un mensaje de éxito",
             ],
-        ]
+        ],
+        pie_de_tabla: 'Tabla #. Caso de uso "Revisar tarea realizada"'
     },
     // - El sistema debe permitir gestionar todo el ciclo de vida de los oficios y tareas asignadas a los asociados.
     //     - Funciones de asignación de tareas
@@ -292,7 +300,8 @@ const casos_uso = {
                 "No hay tareas asignadas",
                 "El sistema duerme",
             ],
-        ]
+        ],
+        pie_de_tabla: 'Tabla #. Caso de uso "Documentar tarea realizada"'
     },
     consultar_instrucciones_tarea: {
         titulo: "Consultar instrucciones de tarea",
@@ -319,7 +328,8 @@ const casos_uso = {
                 "El asociado no tiene tareas asignadas",
                 "El sistema muestra un mensaje de que no hay tareas asignadas",
             ],
-        ]
+        ],
+        pie_de_tabla: 'Tabla #. Caso de uso "Consultar instrucciones de tarea"'
     },
     calificar_tarea: {
         titulo: "Calificar tarea realizada",
@@ -354,7 +364,8 @@ const casos_uso = {
                 "El sistema guarda la sugerencia",
                 "El sistema notifica al administrador acerca de la sugerencia",
             ]
-        ]
+        ],
+        pie_de_tabla: 'Tabla #. Caso de uso "Calificar tarea realizada"'
     },
     // - El sistema debe permitir gestionar todo el ciclo de vida de los extras de alimentación o lavado de ropa.
     //     - Funciones de asignación de extras
@@ -393,7 +404,8 @@ const casos_uso = {
                 "El administrador no responde a la solicitud de extra",
                 "El sistema notifica al asociado que su solicitud ha no ha sido verificada por lo tanto no ha sido aprobada",
             ],
-        ]
+        ],
+        pie_de_tabla: 'Tabla #. Caso de uso "Pedir un extra de alimentación o lavado de ropa"'
     },
     aprobar_extra: {
         titulo: "Aprobar extra de alimentación o lavado de ropa",
@@ -422,7 +434,8 @@ const casos_uso = {
                 "El administrador no aprueba o rechaza la solicitud de extra",
                 "El sistema notifica al asociado que su solicitud ha no ha sido verificada por lo tanto no ha sido aprobada",
             ],
-        ]
+        ],
+        pie_de_tabla: 'Tabla #. Caso de uso "Aprobar extra de alimentación o lavado de ropa"'
     },
     crear_multa: {
         titulo: "Crear multa o batida",
@@ -461,7 +474,8 @@ const casos_uso = {
                 "La junta no aprueba la multa",
                 "El sistema notifica al los asociados involucrados que la multa no ha sido aprobada",
             ],
-        ]
+        ],
+        pie_de_tabla: 'Tabla #. Caso de uso "Crear multa o batida"'
     },
     aprobar_multa: {
         titulo: "Aprobar multa o batida",
@@ -489,7 +503,8 @@ const casos_uso = {
                 "El asociado respaldante no aprueba la multa",
                 "El sistema notifica al asociado principal que su multa no ha sido aprobada",
             ],
-        ]
+        ],
+        pie_de_tabla: 'Tabla #. Caso de uso "Aprobar multa o batida"'
     },
     // - El sistema debe permitir gestionar todo el ciclo de vida de las multas o batidas.
     //     - Funciones de creación de multas o batidas
@@ -522,7 +537,8 @@ const casos_uso = {
                 "La junta no aprueba la multa",
                 "El sistema notifica al los asociados involucrados, asociado principal y respaldantes de la multa, que la multa no ha sido aprobada",
             ],
-        ]
+        ],
+        pie_de_tabla: 'Tabla #. Caso de uso "Publicar multa o batida"'
     },
     eliminar_multa: {
         titulo: "Eliminar multa o batida",
@@ -551,7 +567,8 @@ const casos_uso = {
                 "No hay multas o batidas pendientes",
                 "El sistema muestra un mensaje de que no hay multas o batidas pendientes",
             ],
-        ]
+        ],
+        pie_de_tabla: 'Tabla #. Caso de uso "Eliminar multa o batida"'
     },
     pagar_multa: {
         titulo: "Pagar multa o batida",
@@ -581,7 +598,8 @@ const casos_uso = {
                 "No hay multas o batidas pendientes",
                 "El sistema muestra un mensaje de que no hay multas o batidas pendientes",
             ],
-        ]
+        ],
+        pie_de_tabla: 'Tabla #. Caso de uso "Pagar multa o batida"'
     },
     // - El sistema debe permitir gestionar todo el ciclo de vida de las actas de reuniones.
     //     - Funciones de construcción de actas, (editor de texto dentro del sistema con formatos de actas predefinidos)
@@ -618,7 +636,8 @@ const casos_uso = {
                 "No hay actas pendientes",
                 "El sistema muestra un mensaje de que no hay actas pendientes",
             ],
-        ]
+        ],
+        pie_de_tabla: 'Tabla #. Caso de uso "Crear acta"'
     },
     // - El sistema debe permitir gestionar todo el ciclo de vida de los informes por cargos.
     //     - Funciones de creación de informes (manejo de facturas, editor especializado para informes)
@@ -653,7 +672,8 @@ const casos_uso = {
                 "No hay informes pendientes",
                 "El sistema muestra un mensaje de que no hay informes pendientes",
             ],
-        ]
+        ],
+        pie_de_tabla: 'Tabla #. Caso de uso "Crear informe"'
     },
     revisar_informe: {
         titulo: "Revisar informe",
@@ -684,7 +704,8 @@ const casos_uso = {
                 "El fiscal no aprueba el informe",
                 "El sistema notifica al administrador con el informe rechazado",
             ],
-        ]
+        ],
+        pie_de_tabla: 'Tabla #. Caso de uso "Revisar informe"'
     },
     publicar_informe: {
         titulo: "Publicar informe",
@@ -710,7 +731,8 @@ const casos_uso = {
                 "No hay informes pendientes",
                 "El sistema muestra un mensaje de que no hay informes pendientes",
             ],
-        ]
+        ],
+        pie_de_tabla: 'Tabla #. Caso de uso "Publicar informe"'
     },
     // - El sistema debe permitir gestionar todo el ciclo de vida de los reglamentos por sedes y estatutos de la organización.
     //     - Funciones de creación y edición de reglamentos
@@ -747,7 +769,8 @@ const casos_uso = {
                 "No hay reglamentos pendientes aprobados en asamblea",
                 "El sistema muestra un mensaje de que no hay reglamentos pendientes",
             ],
-        ]
+        ],
+        pie_de_tabla: 'Tabla #. Caso de uso "Crear reglamento"'
     },
     revisar_reglamento: {
         titulo: "Revisar reglamento",
@@ -779,7 +802,8 @@ const casos_uso = {
                 "El fiscal no aprueba el reglamento",
                 "El sistema notifica al delegatario con el reglamento rechazado",
             ],
-        ]
+        ],
+        pie_de_tabla: 'Tabla #. Caso de uso "Revisar reglamento"'
     },
     buscar_articulo: {
         titulo: "Buscar artículo",
@@ -807,7 +831,8 @@ const casos_uso = {
                 "No hay artículos que coincidan con la búsqueda",
                 "El sistema muestra un mensaje de que no hay artículos que coincidan con la búsqueda",
             ],
-        ]
+        ],
+        pie_de_tabla: 'Tabla #. Caso de uso "Buscar artículo"'
     },
 
 
@@ -852,7 +877,8 @@ const casos_uso = {
                 "No hay una sede",
                 "El sistema muestra un mensaje de que no hay una sede",
             ],
-        ]
+        ],
+        pie_de_tabla: 'Tabla #. Caso de uso "Crear tabla de cobros de cuotas a los asociados"'
     },
     recibo_pago: {
         titulo: "Recibo de pago de cuota",
@@ -884,7 +910,8 @@ const casos_uso = {
                 "No hay asociados con cuotas pendientes",
                 "El sistema muestra un mensaje de que no hay asociados con cuotas pendientes",
             ],
-        ]
+        ],
+        pie_de_tabla: 'Tabla #. Caso de uso "Recibo de pago de cuota"'
     },
     notificacion_saldo_pendiente: {
         titulo: "Notificación de saldo pendiente",
@@ -912,7 +939,8 @@ const casos_uso = {
                 "No hay asociados con cuotas pendientes",
                 "El sistema muestra un mensaje de que no hay asociados con cuotas pendientes",
             ],
-        ]
+        ],
+        pie_de_tabla: 'Tabla #. Caso de uso "Notificación de saldo pendiente"'
     },
     informacion_usuarios: {
         titulo: "Información de usuarios",
@@ -938,7 +966,8 @@ const casos_uso = {
                 "No hay usuarios",
                 "El sistema muestra un mensaje de que no hay usuarios",
             ],
-        ]
+        ],
+        pie_de_tabla: 'Tabla #. Caso de uso "Información de usuarios"'
     },
     informacion_tareas: {
         titulo: "Información de tareas",
@@ -964,7 +993,8 @@ const casos_uso = {
                 "No hay tareas",
                 "El sistema muestra un mensaje de que no hay tareas",
             ],
-        ]
+        ],
+        pie_de_tabla: 'Tabla #. Caso de uso "Información de tareas"'
     },
     informacion_extras: {
         titulo: "Información de extras",
@@ -990,7 +1020,8 @@ const casos_uso = {
                 "No hay extras",
                 "El sistema muestra un mensaje de que no hay extras",
             ],
-        ]
+        ],
+        pie_de_tabla: 'Tabla #. Caso de uso "Información de extras"'
     },
     informacion_multas: {
         titulo: "Información de multas",
@@ -1016,7 +1047,8 @@ const casos_uso = {
                 "No hay multas",
                 "El sistema muestra un mensaje de que no hay multas",
             ],
-        ]
+        ],
+        pie_de_tabla: 'Tabla #. Caso de uso "Información de multas"'
     },
     informacion_actas: {
         titulo: "Información de actas",
@@ -1042,7 +1074,8 @@ const casos_uso = {
                 "No hay actas",
                 "El sistema muestra un mensaje de que no hay actas",
             ],
-        ]
+        ],
+        pie_de_tabla: 'Tabla #. Caso de uso "Información de actas"'
     },
     informacion_informes: {
         titulo: "Información de informes",
@@ -1068,7 +1101,8 @@ const casos_uso = {
                 "No hay informes",
                 "El sistema muestra un mensaje de que no hay informes",
             ],
-        ]
+        ],
+        pie_de_tabla: 'Tabla #. Caso de uso "Información de informes"'
     },
     // - El sistema debe garantizar el acceso a toda la información relevante para cada individuo de la organización.
     //     - Funciones de consulta de información de usuarios
@@ -1104,7 +1138,8 @@ const casos_uso = {
                 "No hay reglamentos",
                 "El sistema muestra un mensaje de que no hay reglamentos",
             ],
-        ]
+        ],
+        pie_de_tabla: 'Tabla #. Caso de uso "Información de reglamentos"'
     },
     informacion_cuotas: {
         titulo: "Información de cuotas",
@@ -1130,7 +1165,8 @@ const casos_uso = {
                 "No hay cuotas",
                 "El sistema muestra un mensaje de que no hay cuotas",
             ],
-        ]
+        ],
+        pie_de_tabla: 'Tabla #. Caso de uso "Información de cuotas"'
     },
     informacion_asociados: {
         titulo: "Información de asociados",
@@ -1156,7 +1192,8 @@ const casos_uso = {
                 "No hay asociados",
                 "El sistema muestra un mensaje de que no hay asociados",
             ],
-        ]
+        ],
+        pie_de_tabla: 'Tabla #. Caso de uso "Información de asociados"'
     },
     // - El sistema debe permitir gestionar todos los roles de la organización
     //     - Funciones de creación de roles
@@ -1192,7 +1229,8 @@ const casos_uso = {
                 "El rol ya existe",
                 "El sistema muestra un mensaje de que el rol ya existe",
             ],
-        ]
+        ],
+        pie_de_tabla: 'Tabla #. Caso de uso "Creación de roles"'
     },
     edicion_roles: {
         titulo: "Edición de roles",
@@ -1224,7 +1262,8 @@ const casos_uso = {
                 "El rol no existe",
                 "El sistema muestra un mensaje de que el rol no existe",
             ],
-        ]
+        ],
+        pie_de_tabla: 'Tabla #. Caso de uso "Edición de roles"'
     },
     eliminacion_roles: {
         titulo: "Eliminación de roles",
@@ -1255,7 +1294,8 @@ const casos_uso = {
                 "El rol no existe",
                 "El sistema muestra un mensaje de que el rol no existe",
             ],
-        ]
+        ],
+        pie_de_tabla: 'Tabla #. Caso de uso "Eliminación de roles"'
     },
     asignacion_permisos_roles: {
         titulo: "Asignación de permisos a roles",
@@ -1287,7 +1327,8 @@ const casos_uso = {
                 "El rol no existe",
                 "El sistema muestra un mensaje de que el rol no existe",
             ],
-        ]
+        ],
+        pie_de_tabla: 'Tabla #. Caso de uso "Asignación de permisos a roles"'
     },
 };
 
@@ -1347,6 +1388,8 @@ ${caso.flujos_alternos.map((p, i) => `### ${i}. ${` Flujo alterno\n\n${p.map((p,
 |*Postcondiciones*| - ${caso.postcondiciones.join("<br> - ")}
 |*Flujo principal*|${caso.flujo_principal.map((p, i) => `${i}.  ${p}`).join("<br>")}
 |*Flujos alternos*|${caso.flujos_alternos.map((p, i) => `${i}. <br> ${p.map((p, i) => `${i}. ${p}`).join("<br>")}`).join("<hr>")}
+
+${caso.pie_de_tabla}
 `;
 
     try {
