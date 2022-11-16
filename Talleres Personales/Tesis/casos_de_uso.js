@@ -1346,7 +1346,7 @@ ${caso.flujos_alternos.map((p, i) => `### ${i}. ${` Flujo alterno\n\n${p.map((p,
 |*Precondiciones*| - ${caso.precondiciones.join("<br> - ")}
 |*Postcondiciones*| - ${caso.postcondiciones.join("<br> - ")}
 |*Flujo principal*|${caso.flujo_principal.map((p, i) => `${i}.  ${p}`).join("<br>")}
-|*Flujos alternos*|${caso.flujos_alternos.map((p, i) => `${i}.  ${p.join("<br>")}`).join("<hr>")}
+|*Flujos alternos*|${caso.flujos_alternos.map((p, i) => `${i}.  ${p.join("<br>${i}.  ")}`).join("<hr>")}
 `;
     indice++;
 
@@ -1359,11 +1359,11 @@ ${caso.flujos_alternos.map((p, i) => `### ${i}. ${` Flujo alterno\n\n${p.map((p,
     }
 
     try {
-        fs.writeFileSync(`./tablas/${nombre}.md`, tabla);
+        fs.writeFileSync(`./tablas/${indice}_${nombre}.md`, tabla);
     } catch (error) {
         // crear la carpeta
         fs.mkdirSync("./tablas")
-        fs.writeFileSync(`./tablas/${nombre}.md`, tabla);
+        fs.writeFileSync(`./tablas/${indice}_${nombre}.md`, tabla);
     }
 }
 
