@@ -1348,22 +1348,30 @@ ${caso.flujos_alternos.map((p, i) => `### ${i}. ${` Flujo alterno\n\n${p.map((p,
 |*Flujo principal*|${caso.flujo_principal.map((p, i) => `${i}.  ${p}`).join("<br>")}
 |*Flujos alternos*|${caso.flujos_alternos.map((p, i) => `${i}.  ${p.map((p, i) => `${i}. ${p}`).join("<br>")}`).join("<hr>")}
 `;
+
+    try {
+        fs.writeFileSync(`./casos_uso/${nombre}.md`, documento);
+    } catch (error) {
+        // crear la carpeta
+        fs.mkdirSync("./casos_uso");
+        fs.writeFileSync(`./casos_uso/${nombre}.md`, documento);
+    }
+
+    try {
+        if (indice < 10) {
+            fs.writeFileSync(`./tablas/0${indice}_${nombre}.md`, tabla);
+        } else {
+            fs.writeFileSync(`./tablas/${indice}_${nombre}.md`, tabla);
+        }
+    } catch (error) {
+        // crear la carpeta
+        fs.mkdirSync("./tablas");
+        if (indice < 10) {
+            fs.writeFileSync(`./tablas/0${indice}_${nombre}.md`, tabla);
+        } else {
+            fs.writeFileSync(`./tablas/${indice}_${nombre}.md`, tabla);
+        }
+    }
     indice++;
-
-    try {
-        fs.writeFileSync(`./casos_uso/${nombre}.md`, documento);
-    } catch (error) {
-        // crear la carpeta
-        fs.mkdirSync("./casos_uso")
-        fs.writeFileSync(`./casos_uso/${nombre}.md`, documento);
-    }
-
-    try {
-        fs.writeFileSync(`./tablas/${indice}_${nombre}.md`, tabla);
-    } catch (error) {
-        // crear la carpeta
-        fs.mkdirSync("./tablas")
-        fs.writeFileSync(`./tablas/${indice}_${nombre}.md`, tabla);
-    }
 }
 
