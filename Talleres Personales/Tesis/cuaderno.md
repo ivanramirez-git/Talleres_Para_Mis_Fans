@@ -83,38 +83,7 @@ Las funciones principales del sistema son las siguientes:
     - Funciones de edición de roles
     - Funciones de eliminación de roles
     - Funciones para asignar permisos a los roles autorizaciones y restricciones, todos deben funcionar con el mismo usuario
-    <!-- 
-    
-casos_de_uso = {
-    'registro': {
-        'descripcion': 'Permite a un usuario registrarse en el sistema',
-        'precondiciones': 'El usuario no debe estar registrado en el sistema',
-        'postcondiciones': 'El usuario debe estar registrado en el sistema',
-        'flujo_principal': [
-            'El usuario ingresa su nombre de usuario',
-            'El usuario ingresa su contraseña',
-            'El usuario ingresa su correo electrónico',
-            'El sistema valida los datos ingresados',
-            'El sistema registra al usuario en el sistema',
-            'El sistema envía un correo de confirmación al usuario',
-        ],
-        'flujo_alternativo': [
-            'El usuario ingresa un nombre de usuario ya registrado',
-            'El sistema muestra un mensaje de error',
-            'El sistema no registra al usuario en el sistema',
-        ],
-        'excepciones': [
-            'El sistema no puede enviar el correo de confirmación',
-            'El sistema muestra un mensaje de error',
-            'El sistema no registra al usuario en el sistema',
-        ],
-    },
-    'login': {
-        'descripcion': 'Permite a un usuario ingresar al sistema',
-        'precondiciones': 'El usuario debe estar registrado en el sistema',
-        'postcondiciones': 'El usuario debe ser un asociado activo',
 
-     -->
 ## Quien lo va leer?
 
 - Cliente: Miembros de la organización que serán el cliente y nos darán una retroalimentación de como se sienten con las funcionalidades  propuestas y si se sienten satisfechos con el producto final.
@@ -232,3 +201,167 @@ podría afectarse si estas suposiciones son incorrectas, no se comparten, o se c
 
 
 # 2.7 Distribución de Requerimientos
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Introducción 
+
+Propósito del SRS
+
+En esta sección se describe la intención con la que se realiza el documento, es decir, se deben exponer las razones por las que es importante, identificando el producto de software al cual se le van a especificar los requerimientos, la audiencia que está interesada en el contenido y el alcance del documento, es decir, especificar el alcance del producto que será descrito [1]. En la ilustración 1 se resume el contenido de esta sección. 
+
+-->
+# Introducción
+
+El propósito de este documento es describir los requerimientos funcionales y no funcionales del sistema de información, aplicaciones web y moviles Aucol App.
+Aucol es una organización sin fines de lucro, que tiene como objetivo principal la prestación de servicios de alojamiento a sus asociados, para esto cuenta con una junta directiva que se encarga de administrar la organización.
+
+## Propósito del SRS
+
+El proposito de este documento es dar a conocer las especificaciones de los requerimientos de software para el sistema de informacion y aplicaciones moviles Aucol App. Nuestra intención es que este documento sea de utilidad para los desarrolladores del sistema, para los usuarios y para los administradores del sistema, explicaremos las funcionalidades relevantes del sistema, las restricciones y los supuestos que se tomaron para el desarrollo del sistema, asi como los roles que existen en el sistema y las responsabilidades de cada uno de ellos.
+
+
+
+<!-- 
+ 
+
+Ilustración 1: Propósito 
+
+Alcance 
+
+Se describe el alcance del producto, es decir, la sección contiene una breve descripción del producto de software sobre el cual se realiza el SRS, indicando su nombre,  las funcionalidades que incluirá y su utilidad (objetivos, beneficios). También puede ser incluida la relación entre el producto y las metas corporativas o estrategia de negocio resaltando la importancia que tiene para la organización [1]. 
+
+Forma 
+
+Ilustración 2: Alcance 
+
+ 
+
+
+ -->
+
+
+
+## Alcance
+
+Nuestro software estara dividido en 3 grandes partes, la primera es la aplicacion movil que sera utilizada por los usuarios o asociados en general, y la segunda es la aplicacion web que sera utilizada por los administradores del sistema o miembros de la junta administrativa ya sea seccional o general. La aplicacion movil sera utilizada por los usuarios para poder realizar consultas de la informacion que proveen los administradores, ademas podran pedir extras, ver sus cuentas de cobro y gestionar sus perfiles. Como segunda parte una aplicacion web sera utilizada por los administradores para facilitar la realizacion de sus tareas, podran gestionar los usuarios, los perfiles, las cuentas de cobro, los extras, las tareas que seran asignadas a los usuarios, asi como la realizacion de informes y redaccion de documentos. Estas dos primeras partes funcionaran como clientes de un servidor que sera el encargado de almacenar toda la informacion y proveerla a los clientes, este servidor sera el encargado de realizar las validaciones de los datos, asi como de realizar las consultas a la base de datos y proveer la informacion a los clientes siendo esta la tercera parte del sistema. Tambien administrara un sustema de almacenamiento de archivos que sera utilizado para almacenar los archivos que se suban a la aplicacion, como por ejemplo las imagenes de los perfiles de los usuarios, los archivos de las cuentas de cobro, los archivos de actas y demas documentos relevantes para la organizacion.
+
+El alcance del sistema se puede resumir en las siguientes caracteristicas:
+
+- El sistema debe permitir a los usuarios consultar la informacion que provean los administradores.
+- El sistema debe permitir a los usuarios gestionar sus perfiles.
+- El sistema debe permitir a los usuarios gestionar sus cuentas de cobro.
+- El sistema debe permitir a los usuarios gestionar sus extras.
+- El sistema debe permitir a los administradores gestionar los usuarios.
+
+
+<!-- 
+Definiciones, Acrónimos, y Abreviaciones 
+
+Se deben especificar los términos clave que serán utilizados en el documento con el fin de aclarar el contenido y asegurar su óptimo entendimiento. Se recomienda reutilizar los especificados en el documento SPMP y formar un glosario general de términos. En la tabla 2 se presentan algunos ejemplos de acrónimos para el documento SRS. 
+
+API 
+
+Aplication  Programming Interface 
+
+CRUD 
+
+Create, Retrieve, Update, Delete 
+
+DBMS 
+
+Data Base Management System 
+
+GNU 
+
+Es un acrónimo recursivo que significa "GNU No es Unix" 
+
+GNU GPL 
+
+General Public License o licencia pública general 
+
+JDBC 
+
+Java DataBase Connectivity 
+
+JVM 
+
+Java Virtual Machine 
+
+LAN 
+
+Local Area Network 
+
+PHP 
+
+Es un acrónimo recursivo “Hypertext Preprocessor” 
+
+RFC 
+
+Request For Comments 
+
+SDD 
+
+Software Design Description 
+
+SQL 
+
+Structured Query Language 
+
+SRS 
+
+Software Requirement Specification 
+
+WLAN 
+
+Wireless Local Area Network 
+
+WPA 
+
+World Poker Association 
+
+Tabla 2: Acrónimos 
+
+Referencias 
+
+Indique aquí todas las referencias bibliográficas utilizadas en el documento. Utilice formato IEEE o APA para definirlas. Para administrar automáticamente las referencias, se recomienda el uso de la herramienta Zotero (www.zotero.org). 
+ -->
+## Definiciones, Acrónimos, y Abreviaciones
+
+| Acrónimo | Definición |
+| :--- | :--- |
+| API | Interface de programación de aplicaciones |
+| CRUD | Crear, Recuperar, Actualizar, Eliminar |
+| SRC | Especificación de Requerimientos de Software |
+
+
+
+<!-- 
+
+Apreciación Global  
+
+Esta sección debe tener una descripción general del contenido del documento, especificando su organización o distribución. Es una guía para el lector que le permitirá estructurar la información que encontrará en del documento. 
+
+ 
+
+Forma 
+
+Ilustración 3: Apreciación Global 
+
+
+
+
+
+
+Descripción Global 
+
+En general en esta sección se describe los factores generales que afectan al producto y sus requerimientos, es importante aclarar que en esta sección NO se especifican formalmente los requerimientos, es solo información de fondo que brinda a los lectores una descripción de todo el sistema.Esta en lenguaje de Usuario. Los elementos presentados en esta sección se asociaran en la seccion 3 con Requerimientos Especificos.  -->

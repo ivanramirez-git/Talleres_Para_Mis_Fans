@@ -1,4 +1,4 @@
-casos_uso = {
+const casos_uso = {
     // Las funciones principales del sistema son las siguientes:
 
     // - El sistema debe permitir gestionar cuentas de usuario con distintos roles. (Caso de uso)
