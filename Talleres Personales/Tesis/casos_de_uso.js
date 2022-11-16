@@ -1294,8 +1294,11 @@ const casos_uso = {
 const fs = require("fs");
 
 // Construir un archivo .md para cada caso de uso
+let indice = 0;
 for (const [nombre, caso] of Object.entries(casos_uso)) {
-    const md = `# ${caso.titulo}
+
+
+    const documento = `# ${caso.titulo}
 
 ${caso.descripcion}
 
@@ -1319,15 +1322,48 @@ ${caso.flujo_principal.map((p, i) => `${i}. ${p}`).join("\n")}
 
 ${caso.flujos_alternos.map((p, i) => `### ${i}. ${` Flujo alterno\n\n${p.map((p, i) => `${i}. ${p}`).join("\n")}`}`).join("\n\n")}
 
-`
+`;
+    // Construir un archivo .md para cada tabla
+    /*
+    Ejemplo:
+    
+    |# Requerimiento|1 |
+    |-|-|
+    | *Nombre*|Login de usuario
+    | *Descripción*| Permite a un usuario ingresar en el sistema |
+    |*Actores*|-   Usuario <br>   Sistema
+    |*Precondiciones*| -El usuario debe existir en el sistema <br> -El usuario debe estar activo <br> -El usuario debe haber introducido correctamente su contraseña <br> -El usuario debe estar aprobado por el administrador
+    |*Postcondiciones*|-   El usuario queda logueado en el sistema <br>-   El usuario queda registrado en la sesión actual
+    |*Flujo principal*|0.  El usuario introduce su nombre de usuario y contraseña<br> 1.  El sistema valida los datos<br> 2.  El sistema registra al usuario en la sesión actual<br> 3.  El sistema muestra la página principal del usuario.   
+    |*Flujos alternos*|0.  El usuario no introduce sus datos correctamente <br>1.  El sistema muestra un mensaje de error<hr>0.  El usuario no está activo <br>1.  El sistema muestra un mensaje de error<hr> 0.  El usuario no está aprobado por el administrador<br>1.  El sistema muestra un mensaje de error
+    */
+
+    const tabla = `|# Requerimiento|${indice} |
+|-|-|
+| *Nombre*|${caso.titulo}
+| *Descripción*| ${caso.descripcion} |
+|*Actores*| - ${caso.actores.join("<br> - ")}
+|*Precondiciones*| - ${caso.precondiciones.join("<br> - ")}
+|*Postcondiciones*| - ${caso.postcondiciones.join("<br> - ")}
+|*Flujo principal*|${caso.flujo_principal.map((p, i) => `${i}.  ${p}`).join("<br>")}
+|*Flujos alternos*|${caso.flujos_alternos.map((p, i) => `${i}.  ${p.join("<br>")}`).join("<hr>")}
+`;
+    indice++;
 
     try {
-        fs.writeFileSync(`./casos_uso/${nombre}.md`, md);
+        fs.writeFileSync(`./casos_uso/${nombre}.md`, documento);
     } catch (error) {
         // crear la carpeta
         fs.mkdirSync("./casos_uso")
-        fs.writeFileSync(`./casos_uso/${nombre}.md`, md);
+        fs.writeFileSync(`./casos_uso/${nombre}.md`, documento);
+    }
+
+    try {
+        fs.writeFileSync(`./tablas/${nombre}.md`, tabla);
+    } catch (error) {
+        // crear la carpeta
+        fs.mkdirSync("./tablas")
+        fs.writeFileSync(`./tablas/${nombre}.md`, tabla);
     }
 }
-
 

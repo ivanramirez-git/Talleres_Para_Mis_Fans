@@ -115,12 +115,12 @@ Tabla 2: Acrónimos
  -->
 ## Definiciones, Acrónimos, y Abreviaciones
 
-| Acrónimo | Definición |
-| :--- | :--- |
-| SRC | Especificación de Requerimientos de Software |
-| SERVIDOR | El servidor es el encargado de controlar el acceso a la informacion, asi como de realizar las validaciones de los datos, asi como de realizar las consultas a la base de datos y proveer la informacion a los clientes. |
-| CLIENTE | El cliente es el encargado de mostrar la informacion a traves de una interfaz grafica, asi como de realizar las peticiones al servidor para obtener la informacion. |
-| BASE DE DATOS | La base de datos es el encargado de almacenar la informacion que sera utilizada por el servidor y los clientes. |
+| Acrónimo      | Definición                                                                                                                                                                                                              |
+| :------------ | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| SRC           | Especificación de Requerimientos de Software                                                                                                                                                                            |
+| SERVIDOR      | El servidor es el encargado de controlar el acceso a la informacion, asi como de realizar las validaciones de los datos, asi como de realizar las consultas a la base de datos y proveer la informacion a los clientes. |
+| CLIENTE       | El cliente es el encargado de mostrar la informacion a traves de una interfaz grafica, asi como de realizar las peticiones al servidor para obtener la informacion.                                                     |
+| BASE DE DATOS | La base de datos es el encargado de almacenar la informacion que sera utilizada por el servidor y los clientes.                                                                                                         |
 
 
 <!-- 
@@ -217,6 +217,24 @@ Ilustración 3: Apreciación Global
 
 ## Apreciación Global
 
+<!-- 
+Cuáles son
+las
+principales?
+
+A quien le
+interesa
+cada una?
+
+Cuando se
+van a
+utilizar?
+
+Para qué
+sirven?
+ -->
+### Cuáles son las principales?
+
 El contenido del documento se divide en las siguientes secciones:
 
 1. Introducción: En esta sección se describe el contexto del proyecto, asi como el alcance del mismo.
@@ -230,16 +248,38 @@ El contenido del documento se divide en las siguientes secciones:
 
 6. Anexos: Aqui se encuentran los documentos que se consideren necesarios para el desarrollo del srs.
 
+### A quien le interesa cada una?
 
+A los desarrolladores del sistema, ya que es el documento que les permite conocer los requerimientos del sistema.
+
+### Cuando se van a utilizar?
+
+Cuando se inicia el desarrollo del sistema.
+
+### Para qué sirven?
+
+Para conocer los requerimientos y saber el alcance del proyecto.
 
 
 <!-- 
 
-
-
-
-
-
 Descripción Global 
 
 En general en esta sección se describe los factores generales que afectan al producto y sus requerimientos, es importante aclarar que en esta sección NO se especifican formalmente los requerimientos, es solo información de fondo que brinda a los lectores una descripción de todo el sistema.Esta en lenguaje de Usuario. Los elementos presentados en esta sección se asociaran en la seccion 3 con Requerimientos Especificos.  -->
+
+## Descripción Global
+
+Los temas que se describen en esta sección son:
+
+1. Introducción: En esta sección se describe el contexto del proyecto, asi como el alcance del mismo.
+2. Descripción General: En esta sección se describe el producto, asi como las interfaces con el usuario, el sistema, el hardware y el software.
+3. Requerimientos Específicos: En esta sección se describen los requerimientos funcionales y no funcionales del sistema.
+4. Proceso de Ingeniería de Requerimientos: Que consiste en la descripción de los procesos que se llevaron a cabo para la obtención de los requerimientos del sistema.
+5. Proceso de Verificación: Donde se describe el proceso de verificación de los requerimientos del sistema.
+6. Anexos: Aqui se encuentran los documentos que se consideren necesarios para el desarrollo del srs.
+
+Estos temas van dirigidos a los desarrolladores del sistema, ya que es el documento que les permite conocer los requerimientos del sistema.
+
+Seran utilizados cuando se inicie el desarrollo del sistema.
+
+Serviran para conocer los requerimientos definir los hitos y saber el alcance del proyecto.
