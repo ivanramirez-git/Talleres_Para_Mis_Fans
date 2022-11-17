@@ -79,6 +79,8 @@ public class Home extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -158,6 +160,7 @@ public class Home extends javax.swing.JFrame {
         menuItemAcercaDe = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setIconImages(getIconImages());
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panelHeader.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -182,10 +185,16 @@ public class Home extends javax.swing.JFrame {
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Iconos/Vender Cartones.png"))); // NOI18N
         jButton2.setText("Vender Cartones");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         panelHeader.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 0, -1, -1));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Iconos/Comenzar Bingo.jpg"))); // NOI18N
         jButton1.setText("Comenzar Bingo");
+
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -503,11 +512,11 @@ public class Home extends javax.swing.JFrame {
                 .addGap(9, 9, 9)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jTable1, javax.swing.GroupLayout.PREFERRED_SIZE, 587, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(4, 4, 4))
+                .addComponent(jTable1, javax.swing.GroupLayout.PREFERRED_SIZE, 496, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 90, 190, 630));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 90, 190, 860));
 
         menuArchivo.setText("Archivo");
 
@@ -555,6 +564,8 @@ public class Home extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        // Activar el boton 5
+        jButton5.setEnabled(true);
 
     }// GEN-LAST:event_jButton1ActionPerformed
 
@@ -578,46 +589,78 @@ public class Home extends javax.swing.JFrame {
 
     }// GEN-LAST:event_jButton4ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-        // agregar los tableros a los paneles -> tablero1, tablero2, tablero3, tablero4, tablero5, ... , tablero10
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton3ActionPerformed
+        // tableros[i].getPanel().setVisible(true);
+        // panelBody.add(tableros[i].getPanel(), new
+        // org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+        // panelBody.updateUI();
+        // agregar los tableros a los paneles -> tablero1, tablero2, tablero3, tablero4,
+        // tablero5, ... , tablero10
+        // tablero1.add(tableros[0].getPanel(), new
+        // org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
         for (int i = 0; i < 10; i++) {
+            // tableros[i].getPanel().setBounds(0, 45, -1, -1);
             switch (i) {
-            case 0:
-                tablero1.add(tableros[i].getPanel());
-                break;
-            case 1:
-                tablero2.add(tableros[i].getPanel());
-                break;
-            case 2:
-                tablero3.add(tableros[i].getPanel());
-                break;
-            case 3:
-                tablero4.add(tableros[i].getPanel());
-                break;
-            case 4:
-                tablero5.add(tableros[i].getPanel());
-                break;
-            case 5:
-                tablero6.add(tableros[i].getPanel());
-                break;
-            case 6:
-                tablero7.add(tableros[i].getPanel());
-                break;
-            case 7:
-                tablero8.add(tableros[i].getPanel());
-                break;
-            case 8:
-                tablero9.add(tableros[i].getPanel());
-                break;
-            case 9:
-                tablero10.add(tableros[i].getPanel());
-                break;
+                case 0:
+                    tablero1.add(tableros[i].getPanel(),
+                            new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 45, -1, -1));
+                    break;
+                case 1:
+                    tablero2.add(tableros[i].getPanel(),
+                            new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 45, -1, -1));
+                    break;
+                case 2:
+                    tablero3.add(tableros[i].getPanel(),
+                            new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 45, -1, -1));
+                    break;
+                case 3:
+                    tablero4.add(tableros[i].getPanel(),
+                            new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 45, -1, -1));
+                    break;
+                case 4:
+                    tablero5.add(tableros[i].getPanel(),
+                            new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 45, -1, -1));
+                    break;
+                case 5:
+                    tablero6.add(tableros[i].getPanel(),
+                            new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 45, -1, -1));
+                    break;
+                case 6:
+                    tablero7.add(tableros[i].getPanel(),
+                            new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 45, -1, -1));
+                    break;
+                case 7:
+                    tablero8.add(tableros[i].getPanel(),
+                            new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 45, -1, -1));
+                    break;
+                case 8:
+                    tablero9.add(tableros[i].getPanel(),
+                            new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 45, -1, -1));
+                    break;
+                case 9:
+                    tablero10.add(tableros[i].getPanel(),
+                            new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 45, -1, -1));
+                    break;
             }
-            
+            // Actualizar los paneles
+            tableros[i].getPanel().updateUI();
+
         }
-        
-    }//GEN-LAST:event_jButton3ActionPerformed
+        // Actualizar las vistas
+        tablero1.updateUI();
+        tablero2.updateUI();
+        tablero3.updateUI();
+        tablero4.updateUI();
+        tablero5.updateUI();
+        tablero6.updateUI();
+        tablero7.updateUI();
+        tablero8.updateUI();
+        tablero9.updateUI();
+        tablero10.updateUI();
+
+        // activar boton 2
+        jButton2.setEnabled(true);
+    }// GEN-LAST:event_jButton3ActionPerformed
 
     // Funcion para generar un numero aleatorio entre min y max
     public int generarNumeroAleatorio(int min, int max) {
@@ -692,6 +735,18 @@ public class Home extends javax.swing.JFrame {
         jTable1.setModel(model);
 
     }
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        // activar el boton1
+        jButton1.setEnabled(true);
+        // Desplegar un menu de opciones con los cartones disponibles
+        // para vender
+        for (int i = 0; i < 10; i++) {
+            System.out.println(personas[i].getNombre());
+        }
+
+    }// GEN-LAST:event_jButton2ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cliente1;

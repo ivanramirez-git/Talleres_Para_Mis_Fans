@@ -5,9 +5,11 @@ import java.util.ArrayList;
 // aleatorio
 import java.util.Random;
 
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTable;
-
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.TableColumn;
 import ticobingo.Estado;
 
 // serializable, hilo
@@ -19,7 +21,7 @@ public class Tablero extends Thread implements Serializable {
     private int id;
     private Estado estado;
     private JPanel panel;
-    JTable tabla;
+    private JTable tabla;
 
     // Si este tablero es ganador, agregar a la lista de ganadores del estado el id
     // de este tablero
@@ -153,6 +155,25 @@ public class Tablero extends Thread implements Serializable {
                     }
                 }
             }
+        }
+        
+        // hacer que la celda de cada tabla sea de 30x30
+        tabla.setRowHeight(30);
+        tabla.setRowSelectionAllowed(false);
+        tabla.setCellSelectionEnabled(true);
+        tabla.setShowGrid(false);
+        tabla.setShowHorizontalLines(true);
+        tabla.setShowVerticalLines(true);
+        // Centrar el texto de las celdas
+        DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
+        centerRenderer.setHorizontalAlignment(JLabel.CENTER);
+        for (int i = 0; i < 5; i++) {
+            tabla.getColumnModel().getColumn(i).setCellRenderer(centerRenderer);
+        }
+        // hacer que cada columna tenga el mismo ancho de celda (30)
+        for (int i = 0; i < 5; i++) {
+            TableColumn column = tabla.getColumnModel().getColumn(i);
+            column.setPreferredWidth(30);
         }
     }
 
