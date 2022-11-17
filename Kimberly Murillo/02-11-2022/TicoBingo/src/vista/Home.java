@@ -6,9 +6,13 @@
 package vista;
 
 import java.awt.Component;
+import java.awt.Color;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 import modelo.Persona;
@@ -61,11 +65,23 @@ public class Home extends javax.swing.JFrame {
         // dar borde a cada celda
         jTable1.setShowGrid(true);
 
+        cliente1.setEnabled(false);
+        cliente2.setEnabled(false);
+        cliente3.setEnabled(false);
+        cliente4.setEnabled(false);
+        cliente5.setEnabled(false);
+        cliente6.setEnabled(false);
+        cliente7.setEnabled(false);
+        cliente8.setEnabled(false);
+        cliente9.setEnabled(false);
+        cliente10.setEnabled(false);
+
         // Bloquear boton 5
         jButton5.setEnabled(false);
         jButton2.setEnabled(false);
         jButton3.setEnabled(false);
         jButton1.setEnabled(false);
+
     }
 
     /**
@@ -81,7 +97,9 @@ public class Home extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         panelHeader = new javax.swing.JPanel();
@@ -132,7 +150,7 @@ public class Home extends javax.swing.JFrame {
         tablero8 = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
-        estadi8 = new javax.swing.JTextField();
+        estado8 = new javax.swing.JTextField();
         cliente8 = new javax.swing.JButton();
         tablero10 = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
@@ -250,6 +268,11 @@ public class Home extends javax.swing.JFrame {
         tablero1.add(estado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, 80, 20));
 
         cliente1.setText("Datos del Cliente");
+        cliente1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cliente1ActionPerformed(evt);
+            }
+        });
         tablero1.add(cliente1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, -1, -1));
 
         tablero3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -269,6 +292,11 @@ public class Home extends javax.swing.JFrame {
         tablero3.add(estado3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, 80, 20));
 
         cliente3.setText("Datos del Cliente");
+        cliente3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cliente3ActionPerformed(evt);
+            }
+        });
         tablero3.add(cliente3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, -1, -1));
 
         tablero2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -288,6 +316,11 @@ public class Home extends javax.swing.JFrame {
         tablero2.add(estado2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, 80, 20));
 
         cliente2.setText("Datos del Cliente");
+        cliente2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cliente2ActionPerformed(evt);
+            }
+        });
         tablero2.add(cliente2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, -1, -1));
 
         tablero5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -307,6 +340,11 @@ public class Home extends javax.swing.JFrame {
         tablero5.add(estado5, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, 80, 20));
 
         cliente5.setText("Datos del Cliente");
+        cliente5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cliente5ActionPerformed(evt);
+            }
+        });
         tablero5.add(cliente5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, -1, -1));
 
         tablero6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -326,6 +364,11 @@ public class Home extends javax.swing.JFrame {
         tablero6.add(estado6, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, 80, 20));
 
         cliente6.setText("Datos del Cliente");
+        cliente6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cliente6ActionPerformed(evt);
+            }
+        });
         tablero6.add(cliente6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, -1, -1));
 
         tablero7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -345,6 +388,11 @@ public class Home extends javax.swing.JFrame {
         tablero7.add(estado7, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, 80, 20));
 
         cliente7.setText("Datos del Cliente");
+        cliente7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cliente7ActionPerformed(evt);
+            }
+        });
         tablero7.add(cliente7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, -1, -1));
 
         tablero4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -364,6 +412,11 @@ public class Home extends javax.swing.JFrame {
         tablero4.add(estado4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, 80, 20));
 
         cliente4.setText("Datos del Cliente");
+        cliente4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cliente4ActionPerformed(evt);
+            }
+        });
         tablero4.add(cliente4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, -1, -1));
 
         tablero8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -375,14 +428,19 @@ public class Home extends javax.swing.JFrame {
         jLabel18.setText("Estado:");
         tablero8.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, -1, -1));
 
-        estadi8.setEditable(false);
-        estadi8.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        estadi8.setForeground(new java.awt.Color(51, 51, 255));
-        estadi8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        estadi8.setText("DISPONIBLE");
-        tablero8.add(estadi8, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, 80, 20));
+        estado8.setEditable(false);
+        estado8.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        estado8.setForeground(new java.awt.Color(51, 51, 255));
+        estado8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        estado8.setText("DISPONIBLE");
+        tablero8.add(estado8, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, 80, 20));
 
         cliente8.setText("Datos del Cliente");
+        cliente8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cliente8ActionPerformed(evt);
+            }
+        });
         tablero8.add(cliente8, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, -1, -1));
 
         tablero10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -402,6 +460,11 @@ public class Home extends javax.swing.JFrame {
         tablero10.add(estado10, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, 80, 20));
 
         cliente10.setText("Datos del Cliente");
+        cliente10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cliente10ActionPerformed(evt);
+            }
+        });
         tablero10.add(cliente10, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, -1, -1));
 
         tablero9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -421,61 +484,100 @@ public class Home extends javax.swing.JFrame {
         tablero9.add(estado9, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, 80, 20));
 
         cliente9.setText("Datos del Cliente");
+        cliente9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cliente9ActionPerformed(evt);
+            }
+        });
         tablero9.add(cliente9, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, -1, -1));
 
         javax.swing.GroupLayout panelBody1Layout = new javax.swing.GroupLayout(panelBody1);
         panelBody1.setLayout(panelBody1Layout);
         panelBody1Layout.setHorizontalGroup(
-            panelBody1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelBody1Layout.createSequentialGroup()
-                .addGroup(panelBody1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(panelBody1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(panelBody1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(tablero5, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE)
-                            .addComponent(tablero1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(panelBody1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(tablero2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(tablero6, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(panelBody1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(panelBody1Layout.createSequentialGroup()
-                                .addComponent(tablero7, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(tablero8, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(panelBody1Layout.createSequentialGroup()
-                                .addComponent(tablero3, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(tablero4, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelBody1Layout.createSequentialGroup()
-                        .addGap(203, 203, 203)
-                        .addComponent(tablero9, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(144, 144, 144)
-                        .addComponent(tablero10, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+                panelBody1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(panelBody1Layout.createSequentialGroup()
+                                .addGroup(panelBody1Layout
+                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addGroup(panelBody1Layout.createSequentialGroup()
+                                                .addContainerGap()
+                                                .addGroup(panelBody1Layout
+                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING,
+                                                                false)
+                                                        .addComponent(tablero5, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                260, Short.MAX_VALUE)
+                                                        .addComponent(tablero1, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addGroup(panelBody1Layout
+                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING,
+                                                                false)
+                                                        .addComponent(tablero2, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addComponent(tablero6, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                260, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addGroup(panelBody1Layout
+                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addGroup(panelBody1Layout.createSequentialGroup()
+                                                                .addComponent(tablero7,
+                                                                        javax.swing.GroupLayout.PREFERRED_SIZE, 260,
+                                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addPreferredGap(
+                                                                        javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                .addComponent(tablero8,
+                                                                        javax.swing.GroupLayout.PREFERRED_SIZE, 260,
+                                                                        javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                        .addGroup(panelBody1Layout.createSequentialGroup()
+                                                                .addComponent(tablero3,
+                                                                        javax.swing.GroupLayout.PREFERRED_SIZE, 260,
+                                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addPreferredGap(
+                                                                        javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                .addComponent(tablero4,
+                                                                        javax.swing.GroupLayout.PREFERRED_SIZE, 260,
+                                                                        javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING,
+                                                panelBody1Layout.createSequentialGroup()
+                                                        .addGap(203, 203, 203)
+                                                        .addComponent(tablero9, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addGap(144, 144, 144)
+                                                        .addComponent(tablero10, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                260, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
         panelBody1Layout.setVerticalGroup(
-            panelBody1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelBody1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(panelBody1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(tablero3, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tablero2, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tablero1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tablero4, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panelBody1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(tablero5, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tablero6, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tablero7, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tablero8, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(panelBody1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(tablero10, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tablero9, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+                panelBody1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(panelBody1Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(
+                                        panelBody1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(tablero3, javax.swing.GroupLayout.PREFERRED_SIZE, 275,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(tablero2, javax.swing.GroupLayout.PREFERRED_SIZE, 275,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(tablero1, javax.swing.GroupLayout.PREFERRED_SIZE, 275,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(tablero4, javax.swing.GroupLayout.PREFERRED_SIZE, 275,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(
+                                        panelBody1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(tablero5, javax.swing.GroupLayout.PREFERRED_SIZE, 275,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(tablero6, javax.swing.GroupLayout.PREFERRED_SIZE, 275,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(tablero7, javax.swing.GroupLayout.PREFERRED_SIZE, 275,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(tablero8, javax.swing.GroupLayout.PREFERRED_SIZE, 275,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(
+                                        panelBody1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(tablero10, javax.swing.GroupLayout.PREFERRED_SIZE, 275,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(tablero9, javax.swing.GroupLayout.PREFERRED_SIZE, 275,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
 
         getContentPane().add(panelBody1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 1070, 860));
 
@@ -484,37 +586,37 @@ public class Home extends javax.swing.JFrame {
         jLabel1.setText("Numeros Jugados");
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
+                new Object[][] {
+                        { null, null, null, null },
+                        { null, null, null, null },
+                        { null, null, null, null },
+                        { null, null, null, null }
+                },
+                new String[] {
+                        "Title 1", "Title 2", "Title 3", "Title 4"
+                }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(49, 49, 49)
-                .addComponent(jLabel1))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(4, 4, 4)
-                .addComponent(jTable1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
+                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(49, 49, 49)
+                                .addComponent(jLabel1))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(4, 4, 4)
+                                .addComponent(jTable1, javax.swing.GroupLayout.PREFERRED_SIZE, 180,
+                                        javax.swing.GroupLayout.PREFERRED_SIZE)));
         jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(9, 9, 9)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jTable1, javax.swing.GroupLayout.PREFERRED_SIZE, 496, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
+                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(9, 9, 9)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 10,
+                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jTable1, javax.swing.GroupLayout.PREFERRED_SIZE, 496,
+                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap()));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 90, 190, 860));
 
@@ -562,6 +664,55 @@ public class Home extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void cliente1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_cliente1ActionPerformed
+        // Mostrar un jDialog con los datos del cliente
+        String nombre = personas[0].getNombre();
+        String apellidos = personas[0].getApellidos();
+        String cedula = personas[0].getCedula();
+        String telefono = personas[0].getTelefono();
+        String numeroDeCarton = personas[0].getNumeroCarton() + "";
+
+        JOptionPane.showMessageDialog(this, "Nombre: " + nombre + " " + apellidos + " Cedula: " + cedula + " Telefono: "
+                + telefono + " Numero de Carton: " + numeroDeCarton);
+
+    }// GEN-LAST:event_cliente1ActionPerformed
+
+    private void cliente2ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_cliente2ActionPerformed
+        // TODO add your handling code here:
+    }// GEN-LAST:event_cliente2ActionPerformed
+
+    private void cliente3ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_cliente3ActionPerformed
+        // TODO add your handling code here:
+    }// GEN-LAST:event_cliente3ActionPerformed
+
+    private void cliente4ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_cliente4ActionPerformed
+        // TODO add your handling code here:
+    }// GEN-LAST:event_cliente4ActionPerformed
+
+    private void cliente5ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_cliente5ActionPerformed
+        // TODO add your handling code here:
+    }// GEN-LAST:event_cliente5ActionPerformed
+
+    private void cliente6ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_cliente6ActionPerformed
+        // TODO add your handling code here:
+    }// GEN-LAST:event_cliente6ActionPerformed
+
+    private void cliente7ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_cliente7ActionPerformed
+        // TODO add your handling code here:
+    }// GEN-LAST:event_cliente7ActionPerformed
+
+    private void cliente8ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_cliente8ActionPerformed
+        // TODO add your handling code here:
+    }// GEN-LAST:event_cliente8ActionPerformed
+
+    private void cliente9ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_cliente9ActionPerformed
+        // TODO add your handling code here:
+    }// GEN-LAST:event_cliente9ActionPerformed
+
+    private void cliente10ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_cliente10ActionPerformed
+        // TODO add your handling code here:
+    }// GEN-LAST:event_cliente10ActionPerformed
+
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         // Activar el boton 5
@@ -570,6 +721,127 @@ public class Home extends javax.swing.JFrame {
     }// GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {
+        estado1.setText("Disponible");
+        estado2.setText("Disponible");
+        estado3.setText("Disponible");
+        estado4.setText("Disponible");
+        estado5.setText("Disponible");
+        estado6.setText("Disponible");
+        estado7.setText("Disponible");
+        estado8.setText("Disponible");
+        estado9.setText("Disponible");
+        estado10.setText("Disponible");
+        cliente1.setEnabled(false);
+        cliente2.setEnabled(false);
+        cliente3.setEnabled(false);
+        cliente4.setEnabled(false);
+        cliente5.setEnabled(false);
+        cliente6.setEnabled(false);
+        cliente7.setEnabled(false);
+        cliente8.setEnabled(false);
+        cliente9.setEnabled(false);
+        cliente10.setEnabled(false);
+        // quitar el panel de los paneles tablero1
+        try {
+            tablero1.remove(tableros[0].getPanel());
+            tablero1.updateUI();
+        } catch (Exception e) {
+            System.out.println("Error al remover el panel");
+        }
+
+        try {
+            tablero2.remove(tableros[1].getPanel());
+            tablero2.updateUI();
+        } catch (Exception e) {
+            System.out.println("Error al remover el panel");
+        }
+
+        try {
+            tablero3.remove(tableros[2].getPanel());
+            tablero3.updateUI();
+        } catch (Exception e) {
+            System.out.println("Error al remover el panel");
+        }
+
+        try {
+            tablero4.remove(tableros[3].getPanel());
+            tablero4.updateUI();
+        } catch (Exception e) {
+            System.out.println("Error al remover el panel");
+        }
+
+        try {
+            tablero5.remove(tableros[4].getPanel());
+            tablero5.updateUI();
+        } catch (Exception e) {
+            System.out.println("Error al remover el panel");
+        }
+
+        try {
+            tablero6.remove(tableros[5].getPanel());
+            tablero6.updateUI();
+        } catch (Exception e) {
+            System.out.println("Error al remover el panel");
+        }
+
+        try {
+            tablero7.remove(tableros[6].getPanel());
+            tablero7.updateUI();
+        } catch (Exception e) {
+            System.out.println("Error al remover el panel");
+        }
+
+        try {
+            tablero8.remove(tableros[7].getPanel());
+            tablero8.updateUI();
+        } catch (Exception e) {
+            System.out.println("Error al remover el panel");
+        }
+
+        try {
+            tablero9.remove(tableros[8].getPanel());
+            tablero9.updateUI();
+        } catch (Exception e) {
+            System.out.println("Error al remover el panel");
+        }
+
+        try {
+            tablero10.remove(tableros[9].getPanel());
+            tablero10.updateUI();
+        } catch (Exception e) {
+            System.out.println("Error al remover el panel");
+        }
+
+        // Dejar tabla en blanco
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+                new Object[][] {},
+                new String[] {
+                }));
+        // Preparar 33 espacios, 3 columnas y 11 filas
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+                new Object[][] {
+                        { null, null, null },
+                        { null, null, null },
+                        { null, null, null },
+                        { null, null, null },
+                        { null, null, null },
+                        { null, null, null },
+                        { null, null, null },
+                        { null, null, null },
+                        { null, null, null },
+                        { null, null, null },
+                        { null, null, null }
+                },
+                new String[] {
+                }));
+        // dar borde a cada celda
+        jTable1.setShowGrid(true);
+
+        // Bloquear boton 5
+        jButton5.setEnabled(false);
+        jButton2.setEnabled(false);
+        jButton3.setEnabled(true);
+        jButton1.setEnabled(false);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
                 new Object[][] {
@@ -583,6 +855,8 @@ public class Home extends javax.swing.JFrame {
         // inicializar 10 tableros
         for (int i = 0; i < 10; i++) {
             tableros[i] = new Tablero(i, estado);
+            tableros[i].getPanel().setVisible(false);
+            tableros[i].getPanel().updateUI();
         }
         // Bloquear boton 5
         jButton3.setEnabled(true);
@@ -599,6 +873,7 @@ public class Home extends javax.swing.JFrame {
         // tablero1.add(tableros[0].getPanel(), new
         // org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
         for (int i = 0; i < 10; i++) {
+
             // tableros[i].getPanel().setBounds(0, 45, -1, -1);
             switch (i) {
                 case 0:
@@ -641,8 +916,10 @@ public class Home extends javax.swing.JFrame {
                     tablero10.add(tableros[i].getPanel(),
                             new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 45, -1, -1));
                     break;
+
             }
             // Actualizar los paneles
+            tableros[i].getPanel().setVisible(true);
             tableros[i].getPanel().updateUI();
 
         }
@@ -742,10 +1019,88 @@ public class Home extends javax.swing.JFrame {
         jButton1.setEnabled(true);
         // Desplegar un menu de opciones con los cartones disponibles
         // para vender
+        List<Integer> cartonesDisponibles = new ArrayList<Integer>();
         for (int i = 0; i < 10; i++) {
-            System.out.println(personas[i].getNombre());
+            if (personas[i] == null) {
+                cartonesDisponibles.add(i + 1);
+            }
         }
-
+        // mostrar un dropdown con los cartones disponibles en un jdialgo
+        String[] cartones = new String[cartonesDisponibles.size()];
+        for (int i = 0; i < cartonesDisponibles.size(); i++) {
+            cartones[i] = String.valueOf(cartonesDisponibles.get(i));
+        }
+        String carton = (String) JOptionPane.showInputDialog(null, "Seleccione un carton", "Cartones disponibles",
+                JOptionPane.QUESTION_MESSAGE, null, cartones, cartones[0]);
+        // obtener el carton seleccionado
+        int cartonSeleccionado = Integer.parseInt(carton);
+        // crear un objeto persona desde un jdialog con un formulario
+        // private String nombre;
+        // private String apellidos;
+        // private String cedula;
+        // private String telefono;
+        // private int numeroCarton;
+        Persona persona = new Persona();
+        persona.setNombre(JOptionPane.showInputDialog("Ingrese su nombre"));
+        persona.setApellidos(JOptionPane.showInputDialog("Ingrese sus apellidos"));
+        persona.setCedula(JOptionPane.showInputDialog("Ingrese su cedula"));
+        persona.setTelefono(JOptionPane.showInputDialog("Ingrese su telefono"));
+        persona.setNumeroCarton(cartonSeleccionado);
+        // asignar el objeto persona al arreglo de personas
+        personas[cartonSeleccionado - 1] = persona;
+        // Cambiar el estado del carton a vendido
+        switch (cartonSeleccionado) {
+            case 1:
+                estado1.setText("Vendido");
+                // activar el boton
+                cliente1.setEnabled(true);
+                break;
+            case 2:
+                estado2.setText("Vendido");
+                // activar el boton
+                cliente2.setEnabled(true);
+                break;
+            case 3:
+                estado3.setText("Vendido");
+                // activar el boton
+                cliente3.setEnabled(true);
+                break;
+            case 4:
+                estado4.setText("Vendido");
+                // activar el boton
+                cliente4.setEnabled(true);
+                break;
+            case 5:
+                estado5.setText("Vendido");
+                // activar el boton
+                cliente5.setEnabled(true);
+                break;
+            case 6:
+                estado6.setText("Vendido");
+                // activar el boton
+                cliente6.setEnabled(true);
+                break;
+            case 7:
+                estado7.setText("Vendido");
+                // activar el boton
+                cliente7.setEnabled(true);
+                break;
+            case 8:
+                estado8.setText("Vendido");
+                // activar el boton
+                cliente8.setEnabled(true);
+                break;
+            case 9:
+                estado9.setText("Vendido");
+                // activar el boton
+                cliente9.setEnabled(true);
+                break;
+            case 10:
+                estado10.setText("Vendido");
+                // activar el boton
+                cliente10.setEnabled(true);
+                break;
+        }
     }// GEN-LAST:event_jButton2ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -759,7 +1114,6 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JButton cliente7;
     private javax.swing.JButton cliente8;
     private javax.swing.JButton cliente9;
-    private javax.swing.JTextField estadi8;
     private javax.swing.JTextField estado1;
     private javax.swing.JTextField estado10;
     private javax.swing.JTextField estado2;
@@ -768,6 +1122,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JTextField estado5;
     private javax.swing.JTextField estado6;
     private javax.swing.JTextField estado7;
+    private javax.swing.JTextField estado8;
     private javax.swing.JTextField estado9;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;

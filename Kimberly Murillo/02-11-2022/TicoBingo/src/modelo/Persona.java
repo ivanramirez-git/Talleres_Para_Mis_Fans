@@ -11,6 +11,9 @@ public class Persona implements Serializable {
     private String telefono;
     private int numeroCarton;
 
+    public Persona() {
+    }
+
     public Persona(String nombre, String apellidos, String cedula, String telefono, int numeroCarton) {
         this.nombre = nombre;
         this.apellidos = apellidos;
