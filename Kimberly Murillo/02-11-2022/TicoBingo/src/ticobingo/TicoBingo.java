@@ -25,45 +25,19 @@ public class TicoBingo {
     public static void main(String[] args) {
         // Estado global
         Estado estado = new Estado();
-        int numero;
-        Home frame = new Home();
+        Home frame = new Home(estado);
         // Ciclo para enviar numeros a el estado
 
-        List<Tablero> tableros = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
-            tableros.add(new Tablero(i, estado));
-            tableros.get(i).getPanel().setBounds(10, (i+1) * 105 + 10, 400, 100);
-            // frame.add(tableros.get(i).getPanel());
-            System.out.println("Tablero " + i + " agregado");
-        }
+        // List<Tablero> tableros = new ArrayList<>();
+        // for (int i = 0; i < 10; i++) {
+        // tableros.add(new Tablero(i, estado));
+        // tableros.get(i).getPanel().setBounds(10, (i+1) * 105 + 10, 400, 100);
+        // // frame.add(tableros.get(i).getPanel());
+        // System.out.println("Tablero " + i + " agregado");
+        // }
 
         frame.setVisible(true);
-        do {
-            // imprimir estado
-            System.out.println(estado);
-            java.util.Scanner scanner = new java.util.Scanner(System.in);
-            System.out.print("Ingrese un numero: ");
-            try {
-                numero = scanner.nextInt();
-                if (numero > 0 && numero < 76) {
-                    estado.set("currentNumber", numero);
-                } else {
-                    // cerrar scanner
-                    scanner.close();
-                    break;
-                }
-            } catch (Exception e) {
-                System.out.println("Error: " + e.getMessage());
-            }
-            // esperar 1 segundo
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        } while (true);
-
-        System.exit(0);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
 }

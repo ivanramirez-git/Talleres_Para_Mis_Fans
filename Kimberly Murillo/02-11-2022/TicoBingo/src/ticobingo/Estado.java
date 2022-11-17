@@ -39,6 +39,14 @@ public class Estado {
         state.clear();
     }
 
+    public boolean containsKey(String key) {
+        // valida que el key no sea nulo
+        if (key != null) {
+            return state.containsKey(key);
+        }
+        return false;
+    }
+
     @Override
     public String toString() {
         return state.toString();

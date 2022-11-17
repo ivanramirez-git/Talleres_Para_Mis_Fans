@@ -301,6 +301,53 @@ Las funciones principales del sistema son las siguientes:
     ❌: No pertenece al modulo
     🚧: No esta definido
      -->
-| **Modulos** <hr> **Funcionalidades**             | Servidor | App Movil | App Web | Casos de uso<hr>Nombre | ID  |
-| ------------------------------------------------ | -------- | --------- | ------- | ---------------------- | --- |
-| Gestionar cuentas de usuario con distintos roles | ✅        | ✅         | ✅       | Registrar usuario      | 1   |
+| **Modulos** <hr> **Funcionalidades**               | Servidor | App Movil | App Web | Casos de uso<hr>Nombre     | ID  |
+| -------------------------------------------------- | -------- | --------- | ------- | -------------------------- | --- |
+| Gestionar cuentas de usuario con distintos roles   | ✅        | ✅         | ✅       | Registrar usuario          | 0   |
+|                                                    | ✅        | ✅         | ✅       | Login                      | 1   |
+|                                                    | ✅        | ✅         | ✅       | Logout                     | 2   |
+| Gestionar todo el ciclo de vida de los oficios     | ✅        | ❌         | ✅       | Asignar tareas             | 3   |
+|                                                    | ✅        | ✅         | ✅       | Mostrar tareas             | 4   |
+|                                                    | ✅        | ✅         | ✅       | Revision de tareas         | 5   |
+|                                                    | ✅        | ❌         | ❌       | Documentación de tareas    | 6   |
+|                                                    | ✅        | ✅         | 🚧       | Consultar instrucciones    | 7   |
+|                                                    | ✅        | ✅         | ❌       | Calificación y sugerencias | 8   |
+| Gestionar todo el ciclo de vida de los extras      | ✅        | ✅         | ✅       | Asignar extras             | 9   |
+|                                                    | ✅        | 🚧         | ✅       | Aprobación de extras       | 10  |
+|                                                    | ✅        | ❌         | ❌       | Documentación de extras    | 11  |
+| Gestionar todo el ciclo de vida de las multas      | ✅        | ✅         | ✅       | Creación de multas         | 12  |
+|                                                    | ✅        | ✅         | ✅       | Asignación de multas       | 13  |
+|                                                    | ✅        | ❌         | ✅       | Aprobación de multas       | 14  |
+|                                                    | ✅        | ✅         | ✅       | Publicación de multas      | 15  |
+|                                                    | ✅        | ❌         | ❌       | Documentación de multas    | 16  |
+|                                                    | ✅        | ❌         | ✅       | Pago de multas             | 17  |
+| Gestionar todo el ciclo de vida de las actas       | ✅        | ❌         | ✅       | Construcción de actas      | 18  |
+|                                                    | ✅        | ❌         | 🚧       | Publicación de actas       | 19  |
+| Gestionar todo el ciclo de vida de los informes    | ✅        | ❌         | ✅       | Creación de informes       | 20  |
+|                                                    | ✅        | 🚧         | ✅       | Revision de informes       | 21  |
+|                                                    | ✅        | ❌         | 🚧       | Publicación de informes    | 22  |
+| Gestionar todo el ciclo de vida de los reglamentos | ✅        | ❌         | ✅       | Creación de reglamentos    | 23  |
+|                                                    | ✅        | 🚧         | ✅       | Revision de reglamentos    | 24  |
+|                                                    | ✅        | ❌         | 🚧       | Publicación de reglamentos | 25  |
+|                                                    | ✅        | ✅         | ✅       | Búsqueda de reglamentos    | 26  |
+| Gestionar todo el ciclo de vida de las cuotas      | ✅        | ❌         | ✅       | Creación de cuotas         | 27  |
+|                                                    | ✅        | ❌         | ✅       | Publicación de cuentas     | 28  |
+|                                                    | ✅        | 🚧         | ✅       | Recibo de pagos            | 29  |
+|                                                    | ✅        | ❌         | 🚧       | Notificación de saldos     | 30  |
+| Gestionar el acceso a toda la información          | ✅        | ❌         | ✅       | Consulta de usuarios       | 31  |
+|                                                    | ✅        | ✅         | ✅       | Consulta de tareas         | 32  |
+|                                                    | ✅        | ✅         | ✅       | Consulta de extras         | 33  |
+|                                                    | ✅        | ✅         | ✅       | Consulta de multas         | 34  |
+|                                                    | ✅        | ✅         | ✅       | Consulta de actas          | 35  |
+|                                                    | ✅        | ✅         | ✅       | Consulta de informes       | 36  |
+|                                                    | ✅        | ✅         | ✅       | Consulta de reglamentos    | 37  |
+|                                                    | ✅        | ✅         | ✅       | Consulta de cuotas         | 38  |
+| Gestionar los roles de la organización             | ✅        | ❌         | ✅       | Creación de roles          | 39  |
+|                                                    | ✅        | ❌         | ✅       | Edición de roles           | 40  |
+|                                                    | ✅        | ❌         | ✅       | Eliminación de roles       | 41  |
+|                                                    | ✅        | ❌         | ✅       | Asignación de permisos     | 42  |
+
+Tabla #: Matriz de casos de uso
+
+
+
