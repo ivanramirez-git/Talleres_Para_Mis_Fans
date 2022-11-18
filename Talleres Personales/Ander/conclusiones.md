@@ -227,16 +227,16 @@ Ultimamente Node.js ha ganado mucha popularidad, pero Django sigue siendo una bu
 
 ## VII. REFERENCIAS
 
-[1] N. Chapman. Web Design: a complete introduction, p. 10
-[2] H. D. La Web Semántica. Revista Cubana de Ciencias Informáticas, 7(1), 76-85.
-[3] I. Susana, "XXIII Workshop de Investigadores en Ciencias de la Computación (WICC 2021, Chilecito, La Rioja)", Red de Universidades con Carreras en Informática, 2021, pp 347-350.
-[4] I. Susana, "XXIII Workshop de Investigadores en Ciencias de la Computación (WICC 2021, Chilecito, La Rioja)", Red de Universidades con Carreras en Informática, 2021, pp 347-350.
-[5] L. Craig. UML y Patrones. Una introducción al análisis y diseño orientado a objetos y al proceso unificado. Pearson Educación. Madrid, 2003. pp 2-245.
-[6] P. Roger. Ingeniería del Software. Un enfoque práctico. México: McGraw-Hill, 2005.
-[7] S. G. Sotomayor. Que son metodologías ágiles (Agile, Scrum). IEBSchool, 2021.
-[8] Kanbanize. Que es Kanban. Kanbanize, 2021.
-[9] Z. Powell. Angular vs React. Kinsta, 2022.
-[10] G. Khanna. Django vs Node.js: Which One is Best for Your Next Project. Appwrk, 2022.
+* [1] N. Chapman. Web Design: a complete introduction, p. 10
+* [2] H. D. La Web Semántica. Revista Cubana de Ciencias Informáticas, 7(1), 76-85.
+* [3] I. Susana, "XXIII Workshop de Investigadores en Ciencias de la Computación (WICC 2021, Chilecito, La Rioja)", Red de Universidades con Carreras en Informática, 2021, pp 347-350.
+* [4] I. Susana, "XXIII Workshop de Investigadores en Ciencias de la Computación (WICC 2021, Chilecito, La Rioja)", Red de Universidades con Carreras en Informática, 2021, pp 347-350.
+* [5] L. Craig. UML y Patrones. Una introducción al análisis y diseño orientado a objetos y al proceso unificado. Pearson Educación. Madrid, 2003. pp 2-245.
+* [6] P. Roger. Ingeniería del Software. Un enfoque práctico. México: McGraw-Hill, 2005.
+* [7] S. G. Sotomayor. Que son metodologías ágiles (Agile, Scrum). IEBSchool, 2021.
+* [8] Kanbanize. Que es Kanban. Kanbanize, 2021.
+* [9] Z. Powell. Angular vs React. Kinsta, 2022.
+* [10] G. Khanna. Django vs Node.js: Which One is Best for Your Next Project. Appwrk, 2022.
 <!-- [7] https://www.iebschool.com/blog/que-son-metodologias-agiles-agile-scrum/      SANDRA GARRIDO SOTOMAYOR el 9 DICIEMBRE, 2021
 Tiempo de lectura: 10 min-->
 <!-- [8] https://kanbanize.com/es/recursos-de-kanban/primeros-pasos/que-es-kanban     -->
