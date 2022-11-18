@@ -69,3 +69,26 @@ public class Persona implements Serializable {
     }
 
 }
+
+/*
+
+-- SQL Script for table persona
+-- Create Database: CREATE DATABASE `historial`;
+
+DROP DATABASE IF EXISTS `historial`;
+CREATE DATABASE `historial`;
+USE `historial`;
+
+DROP TABLE IF EXISTS `persona`;
+CREATE TABLE `persona` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(45) DEFAULT NULL,
+  `apellidos` varchar(45) DEFAULT NULL,
+  `cedula` varchar(45) DEFAULT NULL,
+  `telefono` varchar(45) DEFAULT NULL,
+  `numeroCarton` int(11) DEFAULT NULL,
+  `fechahora` datetime DEFAULT NULL,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+
+ */

@@ -5,12 +5,7 @@
  */
 package ticobingo;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.swing.JFrame;
-
-import modelo.Tablero;
 import vista.Home;
 
 /**
