@@ -14,11 +14,13 @@ h1 {
 
 main {
     display: grid;
-    /* Para que se muestre en forma de cuadricula */
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    /* Para que se muestre en 4 columnas */
-    gap: 58px;
-    /* Gap es el espacio entre las columnas */
+    /* Para que se muestre en forma de cuadricula y sea responsive, osea que se muestren en horizontal segun el numero de ancho */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* Para que se muestren en horizontal segun el numero de ancho */
+    /* Gap vertical de 50 y horizontal de 20 */
+    grid-gap: 50px 20px;
+    /* Para que haya un espacio entre los elementos */
+
 }
 
 .image-container {
@@ -48,12 +50,14 @@ article:hover {
 
 
 main {
-    margin: 50px 250px;
-    /* Para que haya un espacio entre el main y el borde */
+    /* Para que haya un espacio entre el main y el borde, 
+    margin: auto 20px; si es < 300px */
+    margin: auto 20px;
+
 }
 
 li {
-    margin-left: 30px;
+    margin-left: 20px;
     /* Para que haya un espacio entre el li y el borde */
 }
 
@@ -70,3 +74,62 @@ li {
     justify-content: center;
     /* Para que se centre */
 }
+
+
+
+
+/* HEADER START */
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+/* para dispositivos moviles */
+@media (max-width: 600px) {
+    header {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    nav {
+        display: none;
+    }
+
+    /* boton para activar el slidebar */
+    header button {
+        background-color: #fff;
+        color: #333;
+        padding: 10px;
+        border: none;
+        margin-right: 20px;
+        cursor: pointer;
+    }
+
+    /* slidebar */
+    header nav {
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: -100%;
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+        transition: all 0.5s;
+    }
+
+    /* mostrar slidebar */
+    header nav.active {
+        left: 0;
+    }
+}
+
+
+/* HEADER END */

@@ -1,0 +1,325 @@
+-- ACTIVIDAD 1
+-- Una vez que ya ha generado la estructura de la base datos INVENTARIOS, del Tema 1:
+-- TABLAS : PARTES ( NUMPARTE character (2), NOMPARTE character(20), COLOR
+-- character (10),PESO numeric (3), COSTO numeric (4) )
+-- PROVEEDOR ( NUMEROPROV character (2), NOMBRE character(20), CIUDAD character
+-- (10), ESTATUS numeric (2) )
+-- COMPRAS (NUMEROPROV character (2) , NUMPARTE character (2), CANTIDAD numeric
+-- (2),FECHA datetime )
+-- Hemos encontrado que algunos datos no caben en esa estructura , asi que , elimine la
+-- estructura de las tablas generadas de esta forma:
+-- DROP TABLE PARTES
+-- DROP TABLE PROVEEDOR
+-- DROP TABLE COMPRAS
+-- Ahora, vuelva a generar la estructura con la siguiente definición de datos (DDL)
+-- PARTES ( NUMPARTE character (3), NOMPARTE character(20),PESO numeric(3), COLOR
+-- character (10), COSTO numeric (6),EXISTENCIA numeric(6)PRIMARY KEY NUMPARTE )
+-- PROVEEDOR ( NUMEROPROV character (3), NOMBRE character(20), CIUDAD character
+-- (20), ESTATUS numeric (2) PRIMARY KEY NUMEROPROV)
+-- CONSIDERANDO QUE NUMPARTE ES LA LLAVE PRINCIPAL DE LA TABLA PARTES:
+-- NUMEROPROV ES LA LLAVE PRINCIPAL DE LA TABLA PROVEEDOR y NUMEROPROV y
+-- NUMPARTE SON LAS LLAVES SECUNDARIAS DE LA TABLA COMPRAS :
+-- PONGA ESAS CLAUSULAS EN LA SIGUIENTE DEFINICION :
+-- COMPRAS (NUMEROPROV character (3) , NUMPARTE character (3), CANTIDAD numeric
+-- (6),FECHA datetime )
+-- Ahora si ya estamos listos para empezar a realizar las consultas de actualización y las de
+-- solo lectura.
+DROP DATABASE IF EXISTS Actividad1;
+CREATE DATABASE Actividad1;
+USE Actividad1;
+CREATE TABLE PARTES (
+    NUMPARTE CHAR(3) PRIMARY KEY,
+    NOMPARTE CHAR(20),
+    PESO NUMERIC(3),
+    COLOR CHAR(10),
+    COSTO NUMERIC(6),
+    EXISTENCIA NUMERIC(6)
+);
+CREATE TABLE PROVEEDOR (
+    NUMEROPROV CHAR(3) PRIMARY KEY,
+    NOMBRE CHAR(20),
+    CIUDAD CHAR(20),
+    ESTATUS NUMERIC(2)
+);
+CREATE TABLE COMPRAS (
+    NUMEROPROV CHAR(3),
+    NUMPARTE CHAR(3),
+    CANTIDAD NUMERIC(6),
+    FECHA DATETIME,
+    FOREIGN KEY (NUMEROPROV) REFERENCES PROVEEDOR (NUMEROPROV),
+    FOREIGN KEY (NUMPARTE) REFERENCES PARTES (NUMPARTE)
+);
+
+-- 1--- Insertar los siguientes valores para las tablas: PARTES, PROVEEDOR, COMPRAS
+-- utilizando la instrucción INSERT de SQL
+-- Ejemplo: INSERT INTO PARTES VALUES ( 'P1','MOUSE',1,'GRIS',80,100)
+INSERT INTO PARTES VALUES ('P01','MOUSE',1,'GRIS',80,100);
+INSERT INTO PARTES VALUES ('P02','MARCADOR',5,'NARANJA',50,50);
+INSERT INTO PARTES VALUES ('P03','LAPICES',8,'AZUL',100,200);
+INSERT INTO PARTES VALUES ('P04','CARPETA',10,'NEGRO',500,10);
+INSERT INTO PARTES VALUES ('P05','COMPUTADOR MOD HP1',8,'BLANCO',5000,10);
+INSERT INTO PARTES VALUES ('P06','COMPUTADORA MOD HP2',1,'NEGRO',10000,3);
+INSERT INTO PARTES VALUES ('P07','IPAD MOD A',1,'BLANCO',7000,100);
+INSERT INTO PARTES VALUES ('P08','IMPRESORA HP',2,'GRIS',2000,20);
+INSERT INTO PARTES VALUES ('P09','PIZARRA INTERACTIVA',10,'BLANCO',30000,2);
+INSERT INTO PARTES VALUES ('P10','PROYECTOR MULTIMEDIA',2,'NEGRO',4000,5);
+INSERT INTO PARTES VALUES ('P11','USB 32G',1,'VERDE',200,100);
+INSERT INTO PARTES VALUES ('P12','USB 16G',1,'ROSA',200,100);
+INSERT INTO PROVEEDOR VALUES ('S1','WILIAMS','LONDRES',10);
+INSERT INTO PROVEEDOR VALUES ('S2','PETIT','PARIS',20);
+INSERT INTO PROVEEDOR VALUES ('S3','LENNON','LONDRES',10);
+INSERT INTO PROVEEDOR VALUES ('S4','ONASIS','ATENAS',10);
+INSERT INTO PROVEEDOR VALUES ('S5','SMITH','NUEVA YORK',30);
+INSERT INTO PROVEEDOR VALUES ('S6','GARZA','MONTERREY',30);
+INSERT INTO PROVEEDOR VALUES ('S7','PEREZ','MEXICO',30);
+INSERT INTO PROVEEDOR VALUES ('S8','CARDIN','PARIS',20);
+INSERT INTO PROVEEDOR VALUES ('S9','BARRIENTOS','BUENOS AIRES',20);
+INSERT INTO PROVEEDOR VALUES ('S10','SADA','MONTERREY',30);
+INSERT INTO COMPRAS VALUES ('S1','P01',350,null);
+INSERT INTO COMPRAS VALUES ('S2','P02',200,null);
+INSERT INTO COMPRAS VALUES ('S3','P03',100,null);
+INSERT INTO COMPRAS VALUES ('S4','P04',150,null);
+INSERT INTO COMPRAS VALUES ('S5','P05',500,null);
+INSERT INTO COMPRAS VALUES ('S6','P06',750,null);
+INSERT INTO COMPRAS VALUES ('S7','P07',600,null);
+INSERT INTO COMPRAS VALUES ('S8','P08',300,null);
+INSERT INTO COMPRAS VALUES ('S9','P09',550,null);
+INSERT INTO COMPRAS VALUES ('S10','P09',600,null);
+INSERT INTO COMPRAS VALUES ('S2','P01',650,null);
+INSERT INTO COMPRAS VALUES ('S2','P02',850,null);
+INSERT INTO COMPRAS VALUES ('S2','P04',300,null);
+INSERT INTO COMPRAS VALUES ('S2','P06',175,null);
+INSERT INTO COMPRAS VALUES ('S2','P08',205,null);
+INSERT INTO COMPRAS VALUES ('S3','P01',420,null);
+INSERT INTO COMPRAS VALUES ('S4','P01',240,null);
+INSERT INTO COMPRAS VALUES ('S4','P10',100,null);
+INSERT INTO COMPRAS VALUES ('S5','P11',320,null);
+INSERT INTO COMPRAS VALUES ('S6','P11',430,null);
+INSERT INTO COMPRAS VALUES ('S7','P11',530,null);
+
+-- Listar todas las tablas de la base de datos
+SELECT * FROM PARTES;
+SELECT * FROM PROVEEDOR;
+SELECT * FROM COMPRAS;
+
+-- ACTIVIDAD 3 
+-- SELECT * FROM tabla
+-- Objetivo de la actividad:
+-- Elaboración de Consultas (QUERIES) Básicas en SQL, utilizando SELECT, WHERE y
+-- funciones a nivel de registro. Mostrar el Código SQL y los resultados.
+
+-- SOLUCIONES
+-- 1.- Obtener un listado de todos los proveedores.
+SELECT * FROM PROVEEDOR;
+
+-- 2.- Obtener un listado que muestre el nombre y el número de proveedor, de las ciudades
+-- que tengan ESTATUS MAYOR DE 10.
+SELECT NOMBRE, NUMEROPROV FROM PROVEEDOR WHERE ESTATUS > 10;
+
+-- 3. - Obtener un listado que muestre el número de proveedor de los proveedores que
+-- estén en la Cd. de Paris.
+SELECT NUMEROPROV FROM PROVEEDOR WHERE CIUDAD = 'PARIS';
+
+-- 4- Obtener un listado que muestre el número de proveedor, de los proveedores que
+-- estén en la Cd. de Paris, en orden descendente de status.
+SELECT NUMEROPROV FROM PROVEEDOR WHERE CIUDAD = 'PARIS' ORDER BY ESTATUS DESC;
+
+-- 5.- Obtener un listado que muestre la descripción y el costo de los productos que sean
+-- de color ROSA.
+SELECT NOMPARTE, COSTO FROM PARTES WHERE COLOR = 'ROSA';
+
+-- 6.- Obtener un listado que muestre todos los datos de los productos ( todos los datos)
+-- que cuesten más de 5000.
+SELECT * FROM PARTES WHERE COSTO > 5000;
+
+-- 7 .- Obtener un listado que muestre la descripción de los productos de color AZUL.
+SELECT NOMPARTE FROM PARTES WHERE COLOR = 'AZUL';
+
+-- 8 - Obtener un listado que muestre el nombre de los proveedores que surten la pieza
+-- “P02”
+SELECT NOMBRE FROM PROVEEDOR WHERE NUMEROPROV IN (SELECT NUMEROPROV FROM COMPRAS WHERE NUMPARTE = 'P02');
+
+-- ACTIVIDAD 4
+-- REALIZAR CONSULTAS DE NIVELES (ANIDADAS) Y QUERIES AGRUPADOS (Utilizando
+-- GROUP BY y HAVING)
+-- Objetivo de la actividad: Elaboración de Consultas (QUERIES) de niveles en SQL,
+-- utilizando las operaciones Producto Cartesiano y la operación INNER JOIN.. Mostrar el
+-- Código SQL y los resultados.
+-- EJEMPLO: Listar el número de parte y la ciudad de donde procede el proveedor, de las
+-- partes que se están surtiendo actualmente.
+-- select * from compras, proveedor
+-- (OBSERVEN QUE EL OPERADOR DEL PRODUCTO CARTESIANO EN EL CÓDIGO SQL ES LA
+-- COMA MUY IMPORTANTE SABER QUE ESTE SIGNO NO ES DE ADORNO SINO QUE ES UN
+-- OPERADOR.
+-- CORRAN EL PROGRAMA PARA OBSERVAR EL RESULTADO. AQUÍ SE REALIZA EL
+-- PRODUCTO CARTESIANO ENTRE LAS TABLAS COMPRAS Y PROVEEDORES, PERO
+-- OBTENDREMOS TODOS LOS ATRIBUTOS Y RENGLONES QUE NO TENGAN SIGNIFICADO,
+-- SINO HASTA QUE HAGAMOS COINCIDIR LAS LLAVES DE LA TABLA PADRE O SEA
+-- PROVEEDOR Y LA LLAVE DE LA TABLA HIJA, EN ESTE CASO ES LA TABLA COMPRAS)
+-- select proveedor. numeroprov, ciudad from compras, proveedor where compras.
+-- numeroprov = proveedor. numeroprov
+-- (EN ESTE QUERIE, OBSERVEN QUE SE ESTÁ SOLICITANDO DESPLEGAR O MOSTRAR
+-- CIERTOS ATRIBUTOS, ES DECIR APLICAMOS LA OPERACIÓN PROYECCIÓN AL ESCRIBIR
+-- LOS ATRIBUTOS EN EL CÓDIGO y COMO EN LAS DOS TABLAS EXISTE UN ATRIBUTO
+-- NUMEROPROV , SE DEBE INCLUIR EN NOMBRE DE LA TABLA CON UN PUNTO . ANTES
+-- DEL NOMBRE DEL ATRIBUTO. PARA ENCONTRAR LAS TUPLAS QUE SI NOS INTERESAN,
+-- ES DECIR COINCIDEN EN LA LLAVE)
+-- CON QUERIES DE NIVELES ESTE MISMO PROGRAMA REQUIERE DE 2 NIVELES. ES DECIR
+-- 2 PROGRAMAS CON SU CORRESPONDIENTE SELECT. PARA PRACTICAR CON 2
+-- NIVELES, LO MODIFICAMOS ASÍ:
+-- OBTENER LAS CIUDADES DE DONDE PROCEDEN LOS PROVEEDORES QUE ESTÁN
+-- SURTIENDO PRODUCTOS, ES DECIR QUE APARECEN EN LA TABLA COMPRAS.
+--  SELECT NUMEROPROV, CIUDAD FROM PROVEEDOR
+-- sin repetidos se utiliza la cláusula DISTINCT :
+-- select distinct prov. numeroprov , ciudad from Compras, Proveedor where compras.
+-- numeroprov = prov.numeroprov WHERE NUMEROPROV = ANY ( SELECT NUMEROPROV
+-- FROM COMPRAS)
+-- SE UTILIZARÁN EN ESTA PRACTICA TAMBIÉN LA CLÁUSULA DESC Y LAS FUNCIONES
+-- MIN, MAX, AVERAGE, COUNT y SUM. CONSULTE EN EL LIBRO SU SINTAXIS.
+
+-- SOLUCIONES
+
+-- 1.- EXPLIQUE LA DIFERENCIA DE UTILIZAR OPERACIÓN PRODUCTO CARTESIANO Y LA
+-- OPERACIÓN INNER JOIN EN SQL, ADEMÁS MENCIONE SU REPRESENTACIÓN EN
+-- CÓDIGO SQL.
+
+-- La diferencia entre el producto cartesiano y el inner join es que el producto cartesiano
+-- nos muestra todos los datos de las tablas, sin importar si tienen relación o no, mientras que el inner
+-- join nos muestra los datos que tienen relación entre sí.
+-- Ejemplo:
+-- SELECT * FROM PROVEEDOR, COMPRAS;
+-- SELECT * FROM PROVEEDOR INNER JOIN COMPRAS ON PROVEEDOR.NUMEROPROV = COMPRAS.NUMEROPROV;
+
+-- SE PIDE REALIZAR LOS PROGRAMAS EN SQL PARA :
+-- 2.- Obtener un listado que muestre el NOMBRE del proveedor de los proveedores que
+-- estén en la Cd. de Paris, en orden descendente del status.
+SELECT NOMBRE FROM PROVEEDOR WHERE CIUDAD = 'PARIS' ORDER BY ESTATUS DESC;
+
+-- 3.- Obtener el número de proveedor de los proveedores, que actualmente estén
+-- surtiendo la parte P03. CON PRODUCTO CARTESIANO
+SELECT PROVEEDOR.NUMEROPROV FROM PROVEEDOR, COMPRAS WHERE PROVEEDOR.NUMEROPROV = COMPRAS.NUMEROPROV AND COMPRAS.NUMPARTE = 'P03';
+
+-- 4.- Obtener el nombre de proveedor de los proveedores, que actualmente estén
+-- surtiendo la parte P03. CON REUNIÓN NATURAL
+SELECT PROVEEDOR.NOMBRE FROM PROVEEDOR NATURAL JOIN COMPRAS WHERE COMPRAS.NUMPARTE = 'P03';
+
+-- 5.-Obtener el nombre de proveedor de los proveedores, que actualmente estén surtiendo
+-- la parte P03. CON QUERIES DE NIVELES
+SELECT PROVEEDOR.NOMBRE FROM PROVEEDOR WHERE PROVEEDOR.NUMEROPROV IN (SELECT COMPRAS.NUMEROPROV FROM COMPRAS WHERE COMPRAS.NUMPARTE = 'P03');
+
+-- 6.-.-Obtener el nombre de proveedor de los proveedores, que actualmente estén
+-- surtiendo la parte P03.
+SELECT PROVEEDOR.NOMBRE FROM PROVEEDOR INNER JOIN COMPRAS ON PROVEEDOR.NUMEROPROV = COMPRAS.NUMEROPROV WHERE COMPRAS.NUMPARTE = 'P03';
+
+-- 7.- Obtener el número del proveedor de aquellos que tengan menor status. Obtener el
+-- nombre de proveedor que tenga el Estatus máximo.
+SELECT NUMEROPROV FROM PROVEEDOR WHERE ESTATUS = (SELECT MIN(ESTATUS) FROM PROVEEDOR);
+SELECT NOMBRE FROM PROVEEDOR WHERE ESTATUS = (SELECT MAX(ESTATUS) FROM PROVEEDOR);
+
+-- 8.-Utilizando “Querys” de 2 niveles , obtener el número del proveedor ,de aquellos que
+-- actualmente están surtiendo la parte P10.
+SELECT PROVEEDOR.NUMEROPROV FROM PROVEEDOR WHERE PROVEEDOR.NUMEROPROV IN (SELECT COMPRAS.NUMEROPROV FROM COMPRAS WHERE COMPRAS.NUMPARTE = 'P10');
+
+-- 9.- Utilizando “Querys” de niveles, obtener el nombre del proveedor de aquellos que
+-- actualmente están surtiendo partes de color “rojo”.
+SELECT PROVEEDOR.NOMBRE FROM PROVEEDOR WHERE PROVEEDOR.NUMEROPROV IN (SELECT COMPRAS.NUMEROPROV FROM COMPRAS WHERE COMPRAS.NUMPARTE IN (SELECT PARTES.NUMPARTE FROM PARTES WHERE PARTES.COLOR = 'ROJO'));
+
+-- 10.- Utilizando “Querys” de niveles obtener el nombre de las partes que surten más de
+-- un proveedor.
+SELECT PARTES.NOMPARTE FROM PARTES WHERE PARTES.NUMPARTE IN (SELECT COMPRAS.NUMPARTE FROM COMPRAS GROUP BY COMPRAS.NUMPARTE HAVING COUNT(COMPRAS.NUMPARTE) > 1);
+
+-- 11.- Obtener el número total de proveedores. Utilizando la función COUNT.
+SELECT COUNT(NUMEROPROV) FROM PROVEEDOR;
+
+-- 12.- Listar todos los datos de proveedor que esté surtiendo actualmente cualquier parte
+-- y que la ciudad sea LONDRES.
+SELECT * FROM PROVEEDOR WHERE PROVEEDOR.NUMEROPROV IN (SELECT COMPRAS.NUMEROPROV FROM COMPRAS) AND CIUDAD = 'LONDRES';
+
+-- 13.- Utilizando “Querys” de niveles, obtener las ciudades en las que haya más de un
+-- proveedor.
+SELECT CIUDAD FROM PROVEEDOR WHERE PROVEEDOR.NUMEROPROV IN (SELECT COMPRAS.NUMEROPROV FROM COMPRAS GROUP BY COMPRAS.NUMEROPROV HAVING COUNT(COMPRAS.NUMEROPROV) > 1);
+
+-- 14.- Obtener un listado de las partes que pesen más de 5.
+SELECT * FROM PARTES WHERE PESO > 5;
+
+-- 15.- Obtener un listado de los proveedores (nombres) que están en una misma ciudad.
+SELECT NOMBRE FROM PROVEEDOR WHERE CIUDAD IN (SELECT CIUDAD FROM PROVEEDOR GROUP BY CIUDAD HAVING COUNT(CIUDAD) > 1);
+
+-- 16.- Analice el siguiente programa y determine lo que obtiene select * from Proveedor as
+-- primera, Proveedor as segunda where primera.ciudad = segunda.ciudad and
+-- primera.numeroprov > segunda.numeroprov
+-- SOLUCIONES
+-- SOLUCIÓN: El programa anterior nos muestra los datos de los proveedores que se encuentran en la misma ciudad y que el número de proveedor de la primera tabla sea mayor al de la segunda tabla.
+
+-- ACTIVIDAD 5
+
+-- CONSULTAS DE ACTUALIZACIÓN
+-- Objetivo de la actividad:
+-- Elaboración de Consultas (QUERIES) de Actualización en SQL. Mostrar el Código SQL y
+-- los resultados.
+
+-- SOLUCIONES
+-- 1.- EXPLIQUE LA FUNCIÓN Y EL FORMATO EN LENGUAJE SQL DE LAS INSTRUCCIONES
+-- PARA:
+-- INSERTAR DATOS: Función para insertar datos en una tabla.
+-- INSERT INTO NOMBRE_TABLA (CAMPO1, CAMPO2, CAMPO3, CAMPO4) VALUES (VALOR1, VALOR2, VALOR3, VALOR4);
+
+-- MODIFICACIÓN DE DATOS: Función para modificar datos en una tabla.
+-- UPDATE NOMBRE_TABLA SET CAMPO1 = VALOR1, CAMPO2 = VALOR2, CAMPO3 = VALOR3, CAMPO4 = VALOR4 WHERE CONDICION;
+
+-- ELIMINAR DATOS: Función para eliminar datos en una tabla.
+-- DELETE FROM NOMBRE_TABLA WHERE CONDICION;
+
+-- MODIFICAR LA ESTRUCTURA DE LA BASE DE DATOS: Función para modificar la estructura de una tabla.
+-- ALTER TABLE NOMBRE_TABLA ADD CAMPO1 TIPO_DATO;
+-- ALTER TABLE NOMBRE_TABLA DROP CAMPO1;
+-- ALTER TABLE NOMBRE_TABLA MODIFY CAMPO1 TIPO_DATO;
+-- ALTER TABLE NOMBRE_TABLA RENAME TO NUEVO_NOMBRE_TABLA;
+
+-- ELIMINAR LA ESTRUCTURA DE LA BASE DE DATOS: Función para eliminar la estructura de una tabla.
+-- DROP TABLE NOMBRE_TABLA;
+
+-- 2.- DAR DE ALTA LOS SIGUIENTES PROVEEDORES:
+-- NÚMERO S20 , PALAZUELOS ,DE LA CIUDAD VENEZUELA, CON STATUS 10 .
+-- NUMERO S18 , CORTEZ ,DE LA CIUDAD BUENOS AIRES, CON STATUS 20 .
+-- NUMERO S19 , SINATRA ,DE LA CIUDAD ‘NUEVA YORK’, CON STATUS 10 .
+INSERT INTO PROVEEDOR (NUMEROPROV, NOMBRE, CIUDAD, ESTATUS) VALUES ('S20', 'PALAZUELOS', 'VENEZUELA', 10);
+INSERT INTO PROVEEDOR (NUMEROPROV, NOMBRE, CIUDAD, ESTATUS) VALUES ('S18', 'CORTEZ', 'BUENOS AIRES', 20);
+INSERT INTO PROVEEDOR (NUMEROPROV, NOMBRE, CIUDAD, ESTATUS) VALUES ('S19', 'SINATRA', 'NUEVA YORK', 10);
+
+-- 3.- MODIFICAR A TODOS LOS PROVEEDORES DE LA CIUDAD MEXICO Y PONERLE CDMX.
+UPDATE PROVEEDOR SET CIUDAD = 'CDMX' WHERE CIUDAD = 'MEXICO';
+
+--  4.- AUMENTAR UN 10 % AL COSTO DE LOS PRODUCTOS DE COLOR AZUL.
+UPDATE PARTES SET COSTO = COSTO * 1.1 WHERE COLOR = 'AZUL';
+
+--  5.- ELIMINAR LOS PEDIDOS DE LA TABLA COMPRAS, SI EL PROVEEDOR ES S2.
+-- DELETE FROM COMPRAS WHERE NUMEROPROV = 'S2';
+
+-- 6.- ELIMINAR TODOS LOS PEDIDOS DE LA TABLA COMPRAS.
+-- DELETE FROM COMPRAS;
+
+
+-- ACTIVIDAD 6
+-- Debido a las regulaciones por la pandemia de covid-19, eliminar en cascada los registros de compras que surten los proveedores de NUEVA YORK.
+-- Mostrar los registros borrados al ejecutar el trigger.
+
+DROP TRIGGER IF EXISTS TRG_BORRAR_COMPRAS;
+DELIMITER $$
+CREATE TRIGGER TRG_BORRAR_COMPRAS
+BEFORE DELETE ON PROVEEDOR
+FOR EACH ROW
+BEGIN
+    DELETE FROM COMPRAS WHERE NUMEROPROV = OLD.NUMEROPROV;
+END$$
+DELIMITER ;
+
+INSERT INTO COMPRAS VALUES ('S19', 'P01', 150, null);
+INSERT INTO COMPRAS VALUES ('S19', 'P02', 150, null);
+INSERT INTO COMPRAS VALUES ('S19', 'P03', 150, null);
+INSERT INTO COMPRAS VALUES ('S19', 'P04', 150, null);
+INSERT INTO COMPRAS VALUES ('S19', 'P05', 150, null);
+
+SELECT * FROM COMPRAS,PROVEEDOR WHERE COMPRAS.NUMEROPROV = PROVEEDOR.NUMEROPROV AND PROVEEDOR.CIUDAD = 'NUEVA YORK';
+
+DELETE FROM PROVEEDOR WHERE CIUDAD = 'NUEVA YORK';

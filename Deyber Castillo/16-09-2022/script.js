@@ -170,3 +170,11 @@ function filtrar() {
 }
 
 
+const menuBtn = document.querySelector("header button");
+const menu = document.querySelector("header nav");
+
+menuBtn.addEventListener("click", () => {
+  menu.classList.toggle("active");
+});
+
+
