@@ -6,8 +6,8 @@ class AppTheme {
   static const String fontNameBold = 'Roboto-Bold'; // App Bar
 
   // Color Primario
-  static const Color primaryColor = Colors.teal;
-  static const Color primaryColorDark = Color.fromARGB(255, 53, 0, 44);
+  static const Color primaryColor = Color.fromARGB(255, 0, 22, 150);
+  static const Color primaryColorDark = Color.fromARGB(255, 201, 201, 201);
   // Theme Light
   static final ThemeData lightTheme = ThemeData.light().copyWith(
     // Color Primario
@@ -19,7 +19,7 @@ class AppTheme {
     // TextButton Theme
     textButtonTheme: TextButtonThemeData(
       style: TextButton.styleFrom(
-        primary: primaryColor,
+        foregroundColor: primaryColor,
       ),
     ),
     // FloatingActionButton Theme
@@ -29,7 +29,7 @@ class AppTheme {
     // ElevatedButton Theme
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
-        primary: primaryColor,
+        backgroundColor: primaryColor,
       ),
     ),
     // Divider Theme
@@ -70,7 +70,7 @@ class AppTheme {
     // TextButton Theme
     textButtonTheme: TextButtonThemeData(
       style: TextButton.styleFrom(
-        primary: primaryColorDark,
+        foregroundColor: primaryColorDark,
       ),
     ),
     // FloatingActionButton Theme
@@ -80,7 +80,7 @@ class AppTheme {
     // ElevatedButton Theme
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
-        primary: primaryColorDark,
+        backgroundColor: primaryColorDark,
         shape: const StadiumBorder(),
         elevation: 0,
       ),

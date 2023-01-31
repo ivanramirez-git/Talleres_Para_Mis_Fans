@@ -3,65 +3,65 @@ import 'package:clase63/models/models.dart';
 import 'package:clase63/screens/screens.dart';
 
 class AppRoutes {
-  static const initialRoute = 'home';
+  static const initialRoute = '/home';
 
   static final menuOptions = <MenuOption>[
     MenuOption(
-      route: 'listview1',
+      route: '/listview1',
       name: 'Listview 1',
       icon: Icons.list,
       screen: const Listview1Screen(),
     ),
     MenuOption(
-      route: 'listview2',
+      route: '/listview2',
       name: 'Listview 2',
       icon: Icons.list,
       screen: const Listview2Screen(),
     ),
     MenuOption(
-      route: 'alert',
+      route: '/alert',
       name: 'Alert',
       icon: Icons.info,
       screen: const AlertScreen(),
     ),
     MenuOption(
-      route: 'card',
+      route: '/card',
       name: 'Card',
       icon: Icons.card_giftcard,
       screen: const CardScreen(),
     ),
     MenuOption(
-      route: 'cards_notifications',
+      route: '/cards_notifications',
       name: 'Card Notifications',
       icon: Icons.notifications,
       screen: const CardsNotifications(),
     ),
     MenuOption(
-      route: 'avatar',
+      route: '/avatar',
       name: 'Circle Avatar',
       icon: Icons.account_circle,
       screen: const AvatarScreen(),
     ),
     MenuOption(
-      route: 'animated',
+      route: '/animated',
       name: 'Animated',
       icon: Icons.animation,
       screen: const AnimatedScreen(),
     ),
     MenuOption(
-      route: 'inputs',
+      route: '/inputs',
       name: 'Inputs',
       icon: Icons.input,
       screen: const InputsScreen(),
     ),
     MenuOption(
-      route: 'slider',
+      route: '/slider',
       name: 'Slider & Checks',
       icon: Icons.slideshow,
       screen: const SliderScreen(),
     ),
     MenuOption(
-      route: 'listview_builder',
+      route: '/listview_builder',
       name: 'Listview Builder',
       icon: Icons.list,
       screen: const ListViewBuilderScreen(),
@@ -71,7 +71,7 @@ class AppRoutes {
   // get app rouutes
   static Map<String, Widget Function(BuildContext)> getAppRoutes() {
     var home = MenuOption(
-      route: 'home',
+      route: '/home',
       name: 'Home',
       icon: Icons.home,
       screen: const HomeScreen(),
@@ -88,7 +88,7 @@ class AppRoutes {
   // funcion que convierte un menu options en routes
   static Route onGenerateRoute(RouteSettings settings) {
     return MaterialPageRoute(
-      builder: (context) => const AlertScreen(),
+      builder: (context) => const HomeScreen(),
     );
   }
 }

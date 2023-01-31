@@ -21,7 +21,7 @@ class _AnimatedScreenState extends State<AnimatedScreen> {
   void changeShape() {
     if (_isActive) {
       // Timer 10 veces de 1 segundo
-      _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
+      _timer = Timer.periodic(const Duration(seconds: 2), (timer) {
         setState(() {
           // aleatoriamente cambiar el tamaño de la forma
           _width = Random().nextInt(1000).toDouble();

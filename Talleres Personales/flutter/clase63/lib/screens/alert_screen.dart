@@ -3,6 +3,8 @@ import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'package:flutter/foundation.dart';
+
 class AlertScreen extends StatelessWidget {
   const AlertScreen({Key? key}) : super(key: key);
 
@@ -66,12 +68,21 @@ class AlertScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-          child: ElevatedButton(
-              onPressed: () => Platform.isIOS ? displayDialogIOS(context) : displayDialog(context),
-              child: const Text('Alerta'))),
+        child: ElevatedButton(
+          onPressed: () {
+            debugPrint('Alerta');
+            if (defaultTargetPlatform == TargetPlatform.iOS) {
+              displayDialogIOS(context);
+            } else {
+              displayDialog(context);
+            }
+          },
+          child: const Text('Alerta'),
+        ),
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.pop(context);
+          Navigator.of(context).pop();
         },
         child: const Icon(Icons.close),
       ),
